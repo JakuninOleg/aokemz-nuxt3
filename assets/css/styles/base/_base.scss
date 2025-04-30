@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "ProximaNova", -apple-system, Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.nuxt-link-exact-active {
+  opacity: 1;
+}
+
+.section {
+  // width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  // display: grid;
+  width: 100%;
+
+  @include respond(phone) {
+    padding: 0 30px;
+  }
+
+  @include respond(tab) {
+    padding: 0 35px;
+    max-width: 1350px;
+  }
+
+  @include respond(laptop) {
+    padding: 0 60px;
+    max-width: 1350px;
+  }
+
+  @include respond(largedesktop) {
+    max-width: 1700px;
+  }
+}
+
+.banner {
+  &-image {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+
+  &-news {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    display: grid;
+    justify-items: end;
+    align-items: center;
+  }
+}
+
+.margin-body {
+  @include respond(laptop) {
+    margin-left: 454px;
+  }
+}
+
+.nuxt-link-active {
+  color: rgb(96, 165, 250);
+}
+
+.link{
+  color: rgb(96, 165, 250);
+}
+
+// .slider {
+//   margin: 0 auto;
+//   width: 100%;
+// }
+
+.bg-opacity {
+  background-color:rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  // height: 50%;
+  padding: 10px 16px;
+  width: 40%;
+  max-height: 330px;
+  display: grid;
+  gap: 5px;
+}
+
+.swiper-pagination-bullet {
+  background-color: white;
+  opacity: 1;
+  border: none;
+  box-shadow: none;
+  transition: 0.32s ease-out;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+  &-active {
+    background-color: white;
+    opacity: 0.5;
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.grid-history {
+  grid-template-columns: 1fr;
+  display: grid;
+
+  @include respond(tab) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond(desktop) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &__element {
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    gap: 10px;
+  }
+}
+
+.history-element {
+  height: 150px;
+  width: 100%;
+
+  @include respond(desktop) {
+    height: 100%;
+  }
+}
+
+.grid-certificates {
+  display: grid;
+  gap: 20px;
+
+  @include respond(tab) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include respond(desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.text-indent {
+  text-indent: 20px;
+}
+
+.grid-main {
+  grid-template-columns: 380px 1fr;
+}
+
+.h-70vh {
+  height: 70vh;
+}
+
+.indent-8 {
+  text-indent: 2rem;
+}

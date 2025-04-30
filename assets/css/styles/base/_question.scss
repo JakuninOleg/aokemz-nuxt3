@@ -1,0 +1,23 @@
+.question {
+   &__answer {
+     display: flex;
+     flex-direction: column;
+     height: auto;
+     margin-top: 2px;
+     transition: all 0.32s ease-out;
+     overflow: hidden;
+ 
+     &--closed {
+       height: 0;
+     }
+   }
+ 
+   &__list {
+     overflow: hidden;
+     transition: all 0.2s ease-out;
+ 
+     &--opened {
+       margin-top: 3rem;
+     }
+   }
+ }
