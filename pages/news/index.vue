@@ -1,6 +1,6 @@
 <template>
   <section class="section mt-8 lg:mt-24 mb-10 lg:mb-16">
-    <h1 class="text-2xl lg:text-3xl mb-6 font-semibold">НОВОСТИ</h1>
+    <!-- <h1 class="text-2xl lg:text-3xl mb-6 font-semibold">НОВОСТИ</h1>
     <div
       class="grid xl:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-10 mb-10"
     >
@@ -38,7 +38,7 @@
           </div>
         </NuxtLink>
       </div>
-    </div>
+    </div> -->
     <!-- <ul class="mb-10 grid gap-2">
       <li v-for="(article, index) in articles" :key="index">
         <span>
@@ -65,11 +65,11 @@
 </template>
 
 <script>
-export default {
-  computed: {
-    articles() {
-      return this.$store.state.news
-    },
-  },
-}
+// export default {
+//   computed: {
+//     articles() {
+//       return this.$store.state.news
+//     },
+//   },
+// }
 </script>

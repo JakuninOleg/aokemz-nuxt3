@@ -25,7 +25,7 @@ export default defineNuxtConfig({
 
   plugins: [
     '~/plugins/contentful',
-    '~/plugins/vue-yandex-maps.js'
+    // '~/plugins/vue-yandex-maps.js'
   ],
 
   runtimeConfig: {
