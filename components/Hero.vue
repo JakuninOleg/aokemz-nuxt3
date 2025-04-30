@@ -4,12 +4,12 @@
       <img
         src="~assets/images/newkemz.jpg"
         alt="Баннер"
-        class="w-full h-70vh object-contain brightness-50 absolute z-20"
+        class="w-full h-70vh object-contain absolute z-20"
       />
       <img
         src="~assets/images/newkemz_bg.png"
         alt="Баннер"
-        class="w-full h-70vh object-fill brightness-50 absolute z-10"
+        class="w-full h-70vh object-fill absolute z-10"
       />
       <!-- <video class="w-full h-70vh object-cover brightness-50 absolute z-1" autoplay loop muted playsinline >
         <source src="~assets/video/kemz_ny.mp4" type="video/mp4" />

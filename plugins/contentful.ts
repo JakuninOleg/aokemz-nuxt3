@@ -10,7 +10,7 @@ export default defineNuxtPlugin(() => {
 
   return {
     provide: {
-      contentful: client
-    }
+      contentful: client,
+    },
   }
 })

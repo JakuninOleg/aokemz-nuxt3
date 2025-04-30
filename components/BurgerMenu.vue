@@ -27,7 +27,7 @@
           class="burger-menu__list-item"
           @click="toggleMenu"
         >
-          <NuxtLink :to="'/' + link.link">{{ link.name }}</NuxtLink>
+          <NuxtLink :to="link.link">{{ link.name }}</NuxtLink>
         </li>
       </ul>
     </section>

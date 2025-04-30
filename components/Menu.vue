@@ -15,7 +15,7 @@
             class="font-semibold text-2xl mb-2"
           >
             <NuxtLink
-              :to="'/' + link.link"
+              :to="link.link"
               class="opacity-60 hover:opacity-100"
               >{{ link.name }}</NuxtLink
             >

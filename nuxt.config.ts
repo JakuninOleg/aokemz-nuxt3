@@ -1,31 +1,31 @@
-// nuxt.config.ts — Nuxt 3 версия
-import { defineNuxtConfig } from 'nuxt/config'
-
 export default defineNuxtConfig({
+  compatibilityDate: '2025-04-30',
+
   app: {
     head: {
       title: 'ОАО "КЭМЗ"',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        {
-          name: 'description',
-          content: 'Placeholder description',
-        },
-        { name: 'title', content: 'ОАО "КЭМЗ"' },
+        { name: 'description', content: 'Placeholder description' },
+        { name: 'title', content: 'ОАО "КЭМЗ"' }
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-    },
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    }
   },
 
   css: [
-    '@/assets/css/styles/main.scss',
-    '@/assets/css/tailwind.css'
+    '~/assets/css/styles/main.scss'       // Подключаем стили Tailwind
   ],
 
   modules: [
-    '@vite-pwa/nuxt',
+    // '@vite-pwa/nuxt',
     '@nuxtjs/tailwindcss'
+  ],
+
+  plugins: [
+    '~/plugins/contentful',
+    '~/plugins/vue-yandex-maps.js'
   ],
 
   runtimeConfig: {
@@ -36,27 +36,45 @@ export default defineNuxtConfig({
     }
   },
 
-  tailwindcss: {
-    cssPath: '@/assets/css/tailwind.css',
-    configPath: 'tailwind.config.js'
-  },
+  // tailwindcss: {
+  //   cssPath: '~/assets/css/tailwind.css',
+  //   configPath: 'tailwind.config.ts',
+  //   exposeConfig: false
+  // },
 
-  pwa: {
-    registerType: 'autoUpdate',
-    manifest: {
-      name: 'ОАО "КЭМЗ"',
-      short_name: 'ОАО "КЭМЗ"',
-      theme_color: '#2F78CD',
-      background_color: '#2F78CD'
-    },
-    meta: {
-      name: 'ОАО "КЭМЗ"'
-    }
-  },
+  // pwa: {
+  //   registerType: 'autoUpdate',
+  //   manifest: {
+  //     name: 'ОАО "КЭМЗ"',
+  //     short_name: 'ОАО "КЭМЗ"',
+  //     theme_color: '#2F78CD',
+  //     background_color: '#2F78CD',
+  //     display: 'standalone',
+  //     scope: '/',
+  //     start_url: '/',
+  //     icons: [
+  //       {
+  //         src: '/pwa-192x192.png',
+  //         sizes: '192x192',
+  //         type: 'image/png'
+  //       },
+  //       {
+  //         src: '/pwa-512x512.png',
+  //         sizes: '512x512',
+  //         type: 'image/png'
+  //       }
+  //     ]
+  //   },
+  //   devOptions: {
+  //     enabled: true,
+  //     type: 'module'
+  //   }
+  // },
 
   postcss: {
     plugins: {
       'postcss-nesting': {}
     }
-  }
+  },
+  
 })
