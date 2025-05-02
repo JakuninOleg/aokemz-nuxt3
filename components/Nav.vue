@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { NuxtLink } from '#components'
 import BurgerMenu from '~/components/BurgerMenu.vue'
 import Menu from '~/components/Menu.vue'

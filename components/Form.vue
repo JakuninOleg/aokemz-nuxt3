@@ -14,7 +14,7 @@
       </label>
       <label class="label grid gap-2">
         <span class="font-medium">Телефон</span>
-        <input-phone class="font-light border pl-2 py-2 border-gray-500" />
+        <InputPhone v-model="phone" />
       </label>
       <label class="label grid gap-2">
         <span class="font-medium">Email</span>
@@ -37,6 +37,9 @@
       </label>
       <p v-if="sent" class="text-xl font-bold text-green-500 mt-6">
         Ваша заявка успешно отправлена
+      </p>
+      <p v-if="error" class="text-xl font-bold text-red-500 mt-6">
+        Ошибка отправки: {{ error }}
       </p>
       <svg
         v-if="loader"
@@ -74,99 +77,57 @@
 import { ref } from 'vue'
 import InputPhone from './InputPhone.vue'
 
-// Props
-defineProps({
-  header: {
-    type: String,
-    default: 'Форма'
-  }
-})
+defineProps<{
+  header?: string
+}>()
 
 // Состояния формы
 const name = ref('')
-const message = ref('')
+const phone = ref('')
 const email = ref('')
+const message = ref('')
 const sent = ref(false)
 const loader = ref(false)
-
-// Телефон — предполагаю, что он в Pinia или в отдельном инпуте?
-const phone = ref('')
+const error = ref('')
 
 // Отправка формы
 const submit = async () => {
   loader.value = true
+  error.value = ''
 
   const text = `
     Заявка от ${name.value}
-    Номер телефона: ${phone.value}
+    Номер телефона: ${phone.value || 'Не указан'}
     Почтовый адрес: ${email.value}
     Текст сообщения:
     ${message.value}
   `
 
   try {
-    await $fetch('/api/sendMail', {
+    const response = await $fetch('/api/sendMail', {
       method: 'POST',
       body: {
         subject: 'Заявка с сайта aokemz.ru',
         text,
-        html: `<p>${text.replace(/\n/g, '<br>')}</p>`
-      }
+        html: `<p>${text.replace(/\n/g, '<br>')}</p>`,
+      },
     })
-    sent.value = true
+
+    if (response.success) {
+      sent.value = true
+      // Сбрасываем форму
+      name.value = ''
+      phone.value = ''
+      email.value = ''
+      message.value = ''
+    } else {
+      throw new Error(response.error || 'Неизвестная ошибка')
+    }
   } catch (e) {
     console.error('Ошибка отправки:', e)
+    error.value = 'Не удалось отправить заявку. Попробуйте позже.'
   } finally {
     loader.value = false
   }
 }
 </script>
-
-<!-- <script>
-import InputPhone from './InputPhone.vue'
-
-export default {
-  components: {
-    InputPhone,
-  },
-  props: {
-    header: {
-      type: String,
-      default: 'Форма',
-    },
-  },
-  data() {
-    return {
-      name: '',
-      message: '',
-      email: '',
-      sent: false,
-      loader: false,
-    }
-  },
-  methods: {
-    submit() {
-      this.loader = true
-      this.$axios
-        .$post('/mail/send', {
-          from: this.name,
-          subject: 'Заявка с сайта aokemz.ru',
-          text: `
-            Заявка от ${this.name}
-            Номер телефона: ${this.$store.getters.phone}
-            Почтовый адрес: ${this.email}
-            Текст сообщения:
-            ${this.message}
-          `,
-        })
-        .catch((err) => {
-          return err.response.data
-        })
-        .then(() => {
-          this.loader = false
-          this.sent = true
-        })
-    },
-  },
-}
-</script> -->

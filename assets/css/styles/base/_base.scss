@@ -73,7 +73,15 @@ body {
   }
 }
 
-.nuxt-link-active {
+.router-link-active {
+  color: rgb(96, 165, 250);
+}
+
+.ink-active {
+  color: rgb(96, 165, 250);
+}
+
+.router-link-exact-active {
   color: rgb(96, 165, 250);
 }
 

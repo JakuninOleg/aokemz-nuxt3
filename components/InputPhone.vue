@@ -1,110 +1,90 @@
 <template>
   <input
-    v-model="phone"
+    v-model="formattedPhone"
     type="tel"
     placeholder="Ваш телефон"
-    required="true"
-    @focus.prevent="focusPhone"
+    required
+    class="font-light border pl-2 py-2 border-gray-500"
+    @focus="focusPhone"
     @blur="blurPhone"
     @input="formatPhone"
   />
 </template>
 
-<script>
-export default {
-  data: () => {
-    return {
-      phone: '',
-      phoneRegex: /^[+](7)(\s)[(]/,
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+const props = defineProps<{
+  modelValue: string // Для v-model
+}>()
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', value: string): void // Для v-model
+}>()
+
+const phone = ref(props.modelValue || '') // Чистый номер (только цифры)
+const formattedPhone = ref('') // Форматированный номер (+7 (123) 456-78-90)
+const phoneRegex = /^\+7 \(\d{0,3}/ // Проверка начала номера
+
+// Синхронизация с v-model
+watch(phone, (newPhone) => {
+  emit('update:modelValue', newPhone)
+})
+
+// При фокусе добавляем +7 (
+const focusPhone = () => {
+  if (!phone.value) {
+    formattedPhone.value = '+7 ('
+  }
+}
+
+// При потере фокуса очищаем, если номер слишком короткий
+const blurPhone = () => {
+  if (phone.value.length < 10) {
+    phone.value = ''
+    formattedPhone.value = ''
+  }
+}
+
+// Форматирование номера
+const formatPhone = (e: Event) => {
+  const input = e.target as HTMLInputElement
+  let phoneStr = input.value.replace(/\D/g, '') // Только цифры
+
+  // Ограничиваем длину номера до 11 цифр
+  if (phoneStr.length > 11) {
+    phoneStr = phoneStr.slice(0, 11)
+  }
+
+  // Обновляем чистый номер
+  phone.value = phoneStr.length > 1 ? phoneStr : ''
+
+  // Форматируем отображаемый номер
+  if (!input.value.match(phoneRegex) && input.selectionStart! > 4) {
+    formattedPhone.value = '+7 (' + input.value.substring(4, 18)
+  } else if (phoneStr.length > 9) {
+    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-${phoneStr.substring(7, 9)}-${phoneStr.substring(9, 11)}`
+  } else if (phoneStr.length > 7) {
+    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-${phoneStr.substring(7, 9)}`
+  } else if (phoneStr.length > 6) {
+    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-`
+  } else if (phoneStr.length > 4) {
+    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4)}`
+  } else if (phoneStr.length > 3) {
+    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)})`
+  } else {
+    formattedPhone.value = `+7 (${phoneStr.substring(1)}`
+  }
+
+  // Корректируем при удалении
+  if (e.inputType === 'deleteContentBackward') {
+    if (phoneStr.length === 9) {
+      formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-${phoneStr.substring(7, 9)}`
+    } else if (phoneStr.length === 7) {
+      formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}`
+    } else if (phoneStr.length === 4) {
+      formattedPhone.value = `+7 (${phoneStr.substring(1, 4)})`
     }
-  },
-  methods: {
-    focusPhone(e) {
-      if (this.phone === '') {
-        this.phone = '+7 ('
-      }
-    },
-    blurPhone() {
-      if (this.phone.length < 5) {
-        this.phone = ''
-      }
-    },
-    formatPhone(e) {
-      let phoneStr = this.phone.replace(/\D/g, '')
-      if (!this.phone.match(this.phoneRegex) && e.target.selectionStart > 4) {
-        this.phone = '+7 (' + this.phone.substring(4, 18)
-      } else if (e.target.selectionStart < 3) {
-        phoneStr += phoneStr.charAt(0)
-        phoneStr = phoneStr.substring(1)
-      }
-      if (isNaN(e.data) || e.data === ' ' || phoneStr.length > 11) {
-        this.phone = this.phone.replace(/.$/, '')
-      } else if (phoneStr.length > 9) {
-        this.phone =
-          '+7 (' +
-          phoneStr.substring(1, 4) +
-          ') ' +
-          phoneStr.substring(4, 7) +
-          '-' +
-          phoneStr.substring(7, 9) +
-          '-' +
-          phoneStr.substring(9, 11)
-      } else if (
-        phoneStr.length > 8 &&
-        e.inputType === 'deleteContentBackward'
-      ) {
-        this.phone =
-          '+7 (' +
-          phoneStr.substring(1, 4) +
-          ') ' +
-          phoneStr.substring(4, 7) +
-          '-' +
-          phoneStr.substring(7, 9)
-      } else if (phoneStr.length > 8) {
-        this.phone =
-          '+7 (' +
-          phoneStr.substring(1, 4) +
-          ') ' +
-          phoneStr.substring(4, 7) +
-          '-' +
-          phoneStr.substring(7, 9) +
-          '-'
-      } else if (phoneStr.length > 7) {
-        this.phone =
-          '+7 (' +
-          phoneStr.substring(1, 4) +
-          ') ' +
-          phoneStr.substring(4, 7) +
-          '-' +
-          phoneStr.substring(7, 9)
-      } else if (
-        phoneStr.length > 6 &&
-        e.inputType === 'deleteContentBackward'
-      ) {
-        this.phone =
-          '+7 (' + phoneStr.substring(1, 4) + ') ' + phoneStr.substring(4, 7)
-      } else if (phoneStr.length > 6) {
-        this.phone =
-          '+7 (' +
-          phoneStr.substring(1, 4) +
-          ') ' +
-          phoneStr.substring(4, 7) +
-          '-'
-      } else if (phoneStr.length > 4) {
-        this.phone =
-          '+7 (' + phoneStr.substring(1, 4) + ') ' + phoneStr.substring(4, 7)
-      } else if (
-        phoneStr.length > 3 &&
-        e.inputType === 'deleteContentBackward'
-      ) {
-        this.phone = '+7 (' + phoneStr.substring(1, 4)
-      } else if (phoneStr.length > 3) {
-        this.phone = '+7 (' + phoneStr.substring(1, 4) + ') '
-      } else {
-        this.phone = '+7 (' + phoneStr.substring(1, 4)
-      }
-      this.$store.dispatch('setPhone', this.phone.replace(/\D/g, ''))
-    },
-  },
+  }
 }
 </script>
