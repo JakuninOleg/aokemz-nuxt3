@@ -61,12 +61,6 @@ export default {
           email: 'omts@aokemz.ru',
         },
         {
-          position: 'Начальник отдела материально-технического снабжения',
-          surname: 'Абатурова Ирина Рудольфовна',
-          tel: ['(34383) 3-36-25'],
-          email: 'omts@aokemz.ru',
-        },
-        {
           position: 'Отдел технического контроля',
           tel: ['(34383) 3-36-30'],
           email: 'otk@aokemz.ru',
