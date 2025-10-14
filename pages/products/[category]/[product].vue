@@ -26,9 +26,9 @@
       <h2 class="text-xl font-bold">Технические данные</h2>
       <div class="grid gap-4" v-html="richTextHtml2" />
       <p
-        class="text-lg font-light mr-2 hover:font-bold transition ease-out transition-duration-320"
+        class="text-lg font-light mr-2 transition ease-out transition-duration-320"
       >
-        <NuxtLink :to="'/products/' + route.params.category" class="flex items-center w-full">
+        <NuxtLink :to="'/products/' + route.params.category" class="flex items-center w-full link">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6 mr-4"

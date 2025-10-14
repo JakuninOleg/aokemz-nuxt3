@@ -32,7 +32,7 @@
             <li v-for="product in fields" :key="product.sys.id" class="mb-2">
               <NuxtLink
                 :to="'/products/' + category.fields.url + '/' + product.fields.url"
-                class="nuxt-link-active"
+                class="link"
               >
                 {{ product.fields.name }}
               </NuxtLink>
@@ -69,9 +69,9 @@
         </div>
       </section>
       <p
-        class="text-lg font-light mr-2 hover:font-bold transition ease-out transition-duration-320"
+        class="text-lg font-light mr-2 transition ease-out transition-duration-320"
       >
-        <NuxtLink to="/products" class="flex items-center w-full">
+        <NuxtLink to="/products" class="flex items-center w-full link">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6 mr-4"
