@@ -28,6 +28,7 @@ export default defineEventHandler(async (event) => {
     phone: body?.phone,
     email: body?.email,
     message: body?.message,
+    consent: body?.consent === true,
   })
 
   if (!parsed.success) {

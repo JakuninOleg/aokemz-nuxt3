@@ -29,6 +29,9 @@
         <NuxtLink to="/documents" class="mt-4 inline-block text-sm text-kemz-brand hover:underline">
           Документы и опросные листы
         </NuxtLink>
+        <NuxtLink to="/legal" class="mt-2 block text-sm text-kemz-muted hover:text-kemz-brand">
+          Правовая информация
+        </NuxtLink>
       </div>
 
       <div>

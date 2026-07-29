@@ -38,9 +38,18 @@ export default <Partial<Config>>{
         }
       },
       fontFamily: {
-        sans: ['Manrope', 'ProximaNova', ...defaultTheme.fontFamily.sans],
-        display: ['"Barlow Condensed"', 'Manrope', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter', 'ProximaNova', ...defaultTheme.fontFamily.sans],
+        display: ['Syne', 'Inter', ...defaultTheme.fontFamily.sans],
         proxima: ['ProximaNova', ...defaultTheme.fontFamily.sans]
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
+        tighter: '-0.03em',
+        tight: '-0.02em',
+      },
+      lineHeight: {
+        hero: '0.92',
+        heading: '1.05',
       },
       height: {
         76: '19rem',

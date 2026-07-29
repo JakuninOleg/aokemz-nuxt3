@@ -71,6 +71,9 @@
         }}</span>
       </label>
 
+      <FormConsent v-model="consent" :invalid="Boolean(fieldErrors.consent)" />
+      <span v-if="fieldErrors.consent" class="text-sm text-red-600">{{ fieldErrors.consent }}</span>
+
       <p v-if="sent" class="text-xl font-bold text-green-600 mt-2">
         Ваша заявка успешно отправлена
       </p>
@@ -126,6 +129,7 @@ const phone = ref('')
 const email = ref('')
 const message = ref('')
 const website = ref('')
+const consent = ref(false)
 const sent = ref(false)
 const loader = ref(false)
 const error = ref('')
@@ -134,6 +138,7 @@ const fieldErrors = reactive<Record<string, string>>({
   phone: '',
   email: '',
   message: '',
+  consent: '',
 })
 
 function clearFieldErrors() {
@@ -141,6 +146,7 @@ function clearFieldErrors() {
   fieldErrors.phone = ''
   fieldErrors.email = ''
   fieldErrors.message = ''
+  fieldErrors.consent = ''
 }
 
 function applyFieldErrors(fields?: { path: string; message: string }[]) {
@@ -169,6 +175,7 @@ const submit = async () => {
     phone: phone.value,
     email: email.value,
     message: message.value,
+    consent: consent.value,
   })
 
   if (!parsed.success) {
@@ -191,7 +198,7 @@ const submit = async () => {
         phone: parsed.data.phone,
         email: parsed.data.email,
         message: parsed.data.message,
-        website: website.value,
+        consent: consent.value,
       },
     })
 
@@ -202,6 +209,7 @@ const submit = async () => {
       email.value = ''
       message.value = ''
       website.value = ''
+      consent.value = false
     } else {
       throw new Error('Неизвестная ошибка')
     }

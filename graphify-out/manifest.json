@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "components/Form.vue": {
-    "mtime": 1785288856.534315,
-    "ast_hash": "58d03ffd2089e14420bc86857465d254",
+    "mtime": 1785329901.9506228,
+    "ast_hash": "9af3815973659b0197203c75dc3342fe",
     "semantic_hash": ""
   },
   "components/Hero.vue": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "components/InputPhone.vue": {
-    "mtime": 1785288856.534315,
-    "ast_hash": "de0d99d045b99129ebcec6fc8c521ffb",
+    "mtime": 1785322725.9803863,
+    "ast_hash": "95484b4a45616044ccb8818810dace4e",
     "semantic_hash": ""
   },
   "components/Menu.vue": {
@@ -50,13 +50,13 @@
     "semantic_hash": ""
   },
   "nuxt.config.ts": {
-    "mtime": 1785289600.9005947,
-    "ast_hash": "cec8e2067f4a88df7c08307f0ade2107",
+    "mtime": 1785336995.4044378,
+    "ast_hash": "207120d93f01530bcf79097f8e2ca0e7",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785288856.542294,
-    "ast_hash": "71bc39c5bd57e558b8638f72b64317a5",
+    "mtime": 1785335541.4129028,
+    "ast_hash": "98e83c2339b67b7fdaa165411b780cf4",
     "semantic_hash": ""
   },
   "pages/about/index.vue": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "pages/index.vue": {
-    "mtime": 1785289088.3776214,
-    "ast_hash": "d139909299feac29cd09a1c45a201081",
+    "mtime": 1785337411.0686996,
+    "ast_hash": "11114d385138110bd3080538d60e944d",
     "semantic_hash": ""
   },
   "pages/news/[new].vue": {
@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "server/api/sendMail.post.ts": {
-    "mtime": 1785288856.5432913,
-    "ast_hash": "3309b5aa99c118f56906de021e923303",
+    "mtime": 1785329883.7136314,
+    "ast_hash": "40bcbe877b7a9d06daa5d37b3d4ee8e9",
     "semantic_hash": ""
   },
   "server/tsconfig.json": {
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "tailwind.config.ts": {
-    "mtime": 1785289618.8885057,
-    "ast_hash": "b16c74e00426dddd251f31329d3d6454",
+    "mtime": 1785316641.8563366,
+    "ast_hash": "ad5335cb016032279b9ffad3ea3adce2",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "docs/brand-facts.md": {
-    "mtime": 1785289784.0515697,
-    "ast_hash": "d96edc44175a97ef039fb3dc63e6d0ea",
+    "mtime": 1785337096.1161077,
+    "ast_hash": "3b5ec4633ee321434521a71e61ad882c",
     "semantic_hash": ""
   },
   "layouts/README.md": {
@@ -390,8 +390,8 @@
     "semantic_hash": ""
   },
   "utils/contactValidation.ts": {
-    "mtime": 1785288856.5442607,
-    "ast_hash": "9abd9aa3555742b24295ba5fe6cc7e30",
+    "mtime": 1785329778.5169833,
+    "ast_hash": "9f67bd48789375187c18222c392e0a2d",
     "semantic_hash": ""
   },
   "pages/documents/index.vue": {
@@ -445,43 +445,28 @@
     "semantic_hash": ""
   },
   "components/AppFooter.vue": {
-    "mtime": 1785289047.6587403,
-    "ast_hash": "3c6ce4a15cf0f94e08dfddcc34d22aaa",
+    "mtime": 1785329883.7136314,
+    "ast_hash": "f498f6150ff41792eb108b3aaae9a49e",
     "semantic_hash": ""
   },
   "components/AppHeader.vue": {
-    "mtime": 1785289113.614436,
-    "ast_hash": "5934132bcfb04d503a19aa77688f3080",
-    "semantic_hash": ""
-  },
-  "components/home/HomeApplication.vue": {
-    "mtime": 1785289077.0522692,
-    "ast_hash": "4dd8f3f5e84df7ed7dd1234d64268832",
+    "mtime": 1785334292.6977127,
+    "ast_hash": "b4ea1896f012653e2cfb840d9c614613",
     "semantic_hash": ""
   },
   "components/home/HomeCapabilities.vue": {
-    "mtime": 1785289080.8814957,
-    "ast_hash": "f8670581a80d605126ee9e66ee1be5d6",
-    "semantic_hash": ""
-  },
-  "components/home/HomeCta.vue": {
-    "mtime": 1785289081.9648645,
-    "ast_hash": "5a75483757b5ff66ea95979572fb81d9",
+    "mtime": 1785337403.323699,
+    "ast_hash": "a586b6d7067e3a1ad08c7d4562468c20",
     "semantic_hash": ""
   },
   "components/home/HomeDirections.vue": {
-    "mtime": 1785289057.611643,
-    "ast_hash": "4300068a7a7933b2991376eb526a90d8",
+    "mtime": 1785337401.6028376,
+    "ast_hash": "57e688f5e1bc9fd39b190107a8ad6786",
     "semantic_hash": ""
   },
   "components/home/HomeHero.vue": {
-    "mtime": 1785289776.4911242,
-    "ast_hash": "4c132375a51e363c5f67ffc27b31607c",
-    "semantic_hash": ""
-  },
-  "components/home/HomeTrust.vue": {
-    "mtime": 1785289057.5972042,
-    "ast_hash": "12f83e8ea375bbca29157c986b90c08a",
+    "mtime": 1785337399.087335,
+    "ast_hash": "1d2f4e97161d0c23aa636c53877d65e0",
     "semantic_hash": ""
   },
   "composables/useSiteNav.ts": {
@@ -497,36 +482,6 @@
   "locales/ru.json": {
     "mtime": 1785289241.018402,
     "ast_hash": "22d0ca2a4a9aad948af415119dd1a428",
-    "semantic_hash": ""
-  },
-  "components/demos/DemoSwitcher.vue": {
-    "mtime": 1785289672.6905446,
-    "ast_hash": "125be76b8162f7b698aec0a608623734",
-    "semantic_hash": ""
-  },
-  "composables/useHomeDemoContent.ts": {
-    "mtime": 1785289619.1357684,
-    "ast_hash": "4b5a9cd6ba8ffdcddc3b0526f1570574",
-    "semantic_hash": ""
-  },
-  "pages/new-layout-1.vue": {
-    "mtime": 1785289729.4404545,
-    "ast_hash": "bb4e42b4c1763d816b08b3e1d27128ca",
-    "semantic_hash": ""
-  },
-  "pages/new-layout-2.vue": {
-    "mtime": 1785289752.059523,
-    "ast_hash": "61303438d4efd00f03a2a3c308325d54",
-    "semantic_hash": ""
-  },
-  "pages/new-layout-3.vue": {
-    "mtime": 1785289896.3227005,
-    "ast_hash": "a27517345cd572b14be97012102f0e95",
-    "semantic_hash": ""
-  },
-  "pages/new-layouts/index.vue": {
-    "mtime": 1785289764.4737766,
-    "ast_hash": "1b1d9496713684f71e1605dabed27665",
     "semantic_hash": ""
   },
   "public/media/copper-motor.jpg": {
@@ -562,6 +517,221 @@
   "public/media/steel-workshop.jpg": {
     "mtime": 1785289604.315348,
     "ast_hash": "91d16f12f8136ff1eb5a972282030880",
+    "semantic_hash": ""
+  },
+  "scripts/gen-video.mjs": {
+    "mtime": 1785316502.8381386,
+    "ast_hash": "bb6ec99723d2505a13f12c5b95e17716",
+    "semantic_hash": ""
+  },
+  "public/media/excavator-hero.jpg": {
+    "mtime": 1785317925.0268168,
+    "ast_hash": "f364b636b72c559fb211331492f42779",
+    "semantic_hash": ""
+  },
+  "public/media/excavator-isolated-light.png": {
+    "mtime": 1785318668.129725,
+    "ast_hash": "274adf7f56ec5ca257786718709e79ff",
+    "semantic_hash": ""
+  },
+  "public/media/excavator-large.jpg": {
+    "mtime": 1785318007.309496,
+    "ast_hash": "7322b9e6b22cded37a6548c9a80e5469",
+    "semantic_hash": ""
+  },
+  "public/media/excavator-pit.jpg": {
+    "mtime": 1785317926.1243756,
+    "ast_hash": "7cd9e1fb6b7959881ef55cda5dc55b44",
+    "semantic_hash": ""
+  },
+  "public/media/excavator-sunset.jpg": {
+    "mtime": 1785318006.725336,
+    "ast_hash": "552428d588129b2f9babf252adc0d030",
+    "semantic_hash": ""
+  },
+  "public/media/hero-excavator.jpg": {
+    "mtime": 1785318006.149598,
+    "ast_hash": "7c062e438569defa98ccf4b0983d62cf",
+    "semantic_hash": ""
+  },
+  "public/media/motor-render-dark.png": {
+    "mtime": 1785318647.5427063,
+    "ast_hash": "118f79aaf215c300c2bbda052a8d1762",
+    "semantic_hash": ""
+  },
+  "public/media/motor-rotor.jpg": {
+    "mtime": 1785318088.5101728,
+    "ast_hash": "73459812db8656229151e84ca5b5a9e6",
+    "semantic_hash": ""
+  },
+  "public/media/excavator-on-white.png": {
+    "mtime": 1785320283.0362115,
+    "ast_hash": "84b69d0d297eeed6f5ac291b47e485c7",
+    "semantic_hash": ""
+  },
+  "public/media/hero-bwe-dusk.png": {
+    "mtime": 1785320083.6978598,
+    "ast_hash": "cee21f45b21c879a182a1035e37ea492",
+    "semantic_hash": ""
+  },
+  "public/media/plant-foundry.png": {
+    "mtime": 1785320117.1410644,
+    "ast_hash": "8756895302057329d539dcdd628328eb",
+    "semantic_hash": ""
+  },
+  "public/media/plant-lathe.png": {
+    "mtime": 1785320130.3841188,
+    "ast_hash": "b1e13f3b96b23648bb83f6377b09f3c4",
+    "semantic_hash": ""
+  },
+  "public/media/plant-teststand.png": {
+    "mtime": 1785320145.2509997,
+    "ast_hash": "ac2f943bafe3008232fdf9dfe231061a",
+    "semantic_hash": ""
+  },
+  "public/media/plant-windings.png": {
+    "mtime": 1785320102.7585714,
+    "ast_hash": "15e7369426f8eef1f9ae44dbd9c1d721",
+    "semantic_hash": ""
+  },
+  "public/media/hero-excavator-schematic.png": {
+    "mtime": 1785336870.6542242,
+    "ast_hash": "dfa56ffee5e10003165c19033dc961b5",
+    "semantic_hash": ""
+  },
+  "components/home/HomeSupplyMap.vue": {
+    "mtime": 1785336994.8716826,
+    "ast_hash": "b9de90088ba5047528006fd7f0c95873",
+    "semantic_hash": ""
+  },
+  "public/media/dir-drilling-rig.png": {
+    "mtime": 1785328966.1568642,
+    "ast_hash": "36ffc9a1587141cd516ddc82d62ac2ff",
+    "semantic_hash": ""
+  },
+  "public/media/dir-excavator-drive.png": {
+    "mtime": 1785329002.1894803,
+    "ast_hash": "881257069adb1dc72d64dc18bbfb41fb",
+    "semantic_hash": ""
+  },
+  "public/media/dir-hv-switchgear.png": {
+    "mtime": 1785329022.2533593,
+    "ast_hash": "80a39b4adfd79cbacfff62005168373a",
+    "semantic_hash": ""
+  },
+  "public/media/dir-mine-motor.png": {
+    "mtime": 1785329008.088024,
+    "ast_hash": "d06697331099ce4c3cc61fe4fd14b063",
+    "semantic_hash": ""
+  },
+  "public/media/dir-traction-motor.png": {
+    "mtime": 1785328978.68254,
+    "ast_hash": "28f6d3649c21ec9c30bf4b87663a3af0",
+    "semantic_hash": ""
+  },
+  "public/media/map-russia-cis.png": {
+    "mtime": 1785329231.9748557,
+    "ast_hash": "07181a557ffcc3f2aa3495126f5e22ad",
+    "semantic_hash": ""
+  },
+  "components/FormConsent.vue": {
+    "mtime": 1785329776.8936276,
+    "ast_hash": "acc447e01f54db0ca522cbd5c01b17b9",
+    "semantic_hash": ""
+  },
+  "pages/legal/index.vue": {
+    "mtime": 1785329775.6180804,
+    "ast_hash": "59446fc6c7ccf1ca8542269c2e08346a",
+    "semantic_hash": ""
+  },
+  "utils/legalContent.ts": {
+    "mtime": 1785329766.5081263,
+    "ast_hash": "2442c350e53f65fd9d94ea78949c7f3c",
+    "semantic_hash": ""
+  },
+  "public/media/map-territories-fill.png": {
+    "mtime": 1785331521.233554,
+    "ast_hash": "07fd7f63a3d0ddc01525b9a8bae308b3",
+    "semantic_hash": ""
+  },
+  "public/media/map-landmass-seamless.png": {
+    "mtime": 1785331940.726851,
+    "ast_hash": "c4cf7d9298de873486bc0c5a9ca0e104",
+    "semantic_hash": ""
+  },
+  "public/media/map-territories-noborders.png": {
+    "mtime": 1785331810.1503308,
+    "ast_hash": "07c69eed774f471583bbf963ac5d2c7e",
+    "semantic_hash": ""
+  },
+  "public/media/map-russia-cis-backup.png": {
+    "mtime": 1785329231.9748557,
+    "ast_hash": "07181a557ffcc3f2aa3495126f5e22ad",
+    "semantic_hash": ""
+  },
+  "public/media/map-russia-neighbors.png": {
+    "mtime": 1785332114.6487246,
+    "ast_hash": "a25047e30e769163cecf776c6d62d7a3",
+    "semantic_hash": ""
+  },
+  "scripts/analyze-images.ps1": {
+    "mtime": 1785332498.4632988,
+    "ast_hash": "70478d07fbea850b6b786541b68430fe",
+    "semantic_hash": ""
+  },
+  "scripts/calibrate-map-pins.ts": {
+    "mtime": 1785333070.6479151,
+    "ast_hash": "5b5bc6e627303ca78f33aa02c1ac9d76",
+    "semantic_hash": ""
+  },
+  "scripts/debug-map-pins.ps1": {
+    "mtime": 1785333133.7080956,
+    "ast_hash": "aa44331ebab43fd26a2ba5a8dabf3f4d",
+    "semantic_hash": ""
+  },
+  "utils/supplyMapCoords.ts": {
+    "mtime": 1785333123.7632174,
+    "ast_hash": "c68ca51ce531ea7931cd1c2901c1aec5",
+    "semantic_hash": ""
+  },
+  "public/media/map-eurasia-supply.png": {
+    "mtime": 1785332998.8034072,
+    "ast_hash": "4f927543b32b11091cfff608d576111e",
+    "semantic_hash": ""
+  },
+  "components/home/HomeContactLead.vue": {
+    "mtime": 1785337409.1934338,
+    "ast_hash": "f5c63c702a98d9f381ac606d902935a9",
+    "semantic_hash": ""
+  },
+  "components/home/HomeGeography.vue": {
+    "mtime": 1785337404.0873358,
+    "ast_hash": "627205c07d1c40b062f1101d7f166010",
+    "semantic_hash": ""
+  },
+  "components/home/HomeProcess.vue": {
+    "mtime": 1785337402.7848413,
+    "ast_hash": "cd442d44638f89a5b7d65cc27bb8f016",
+    "semantic_hash": ""
+  },
+  "components/home/HomeSiteFooter.vue": {
+    "mtime": 1785337409.9481745,
+    "ast_hash": "d86b68e281785926f3ad878a81f9c8e0",
+    "semantic_hash": ""
+  },
+  "components/home/HomeStats.vue": {
+    "mtime": 1785337399.6131308,
+    "ast_hash": "21a9e94276993fc8a65018a3b017406f",
+    "semantic_hash": ""
+  },
+  "components/home/HomeTopbar.vue": {
+    "mtime": 1785337398.1806743,
+    "ast_hash": "6bb93df5984c1952531abad105934d32",
+    "semantic_hash": ""
+  },
+  "utils/homeContent.ts": {
+    "mtime": 1785337382.6144924,
+    "ast_hash": "ab2f6fee259e5e2ec00cd405cdd306b5",
     "semantic_hash": ""
   }
 }

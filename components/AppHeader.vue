@@ -36,9 +36,9 @@
           :to="link.link"
           class="text-sm font-medium tracking-wide transition-opacity hover:opacity-100"
           :class="[
-            isActiveLink(link.link, route.path) ? 'opacity-100' : 'opacity-70',
+            isActiveLink(link.link, currentPath) ? 'opacity-100' : 'opacity-70',
             scrolled
-              ? isActiveLink(link.link, route.path)
+              ? isActiveLink(link.link, currentPath)
                 ? 'text-kemz-brand'
                 : 'text-kemz-ink'
               : 'text-white',
@@ -118,7 +118,7 @@
             <NuxtLink
               :to="link.link"
               class="block px-3 py-3 text-base font-medium"
-              :class="isActiveLink(link.link, route.path) ? 'text-kemz-brand' : 'text-kemz-ink'"
+              :class="isActiveLink(link.link, currentPath) ? 'text-kemz-brand' : 'text-kemz-ink'"
               @click="menuOpen = false"
             >
               {{ link.name }}
@@ -148,21 +148,24 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
+const nuxtApp = useNuxtApp()
 const { links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink } = useSiteNav()
 
 const menuOpen = ref(false)
 const scrollPast = ref(false)
 
+/** Safe on error.vue where router injection may be missing */
+const currentPath = computed(() => nuxtApp._route?.path ?? '/')
+
 /** Dark translucent bar only over home hero; solid light on other routes / after scroll */
-const scrolled = computed(() => route.path !== '/' || scrollPast.value)
+const scrolled = computed(() => currentPath.value !== '/' || scrollPast.value)
 
 const onScroll = () => {
   scrollPast.value = window.scrollY > 24
 }
 
 watch(
-  () => route.path,
+  currentPath,
   () => {
     menuOpen.value = false
     scrollPast.value = false

@@ -102,8 +102,23 @@
 | `public/media/copper-motor.jpg` | Unsplash | Capability imagery |
 | `public/media/heavy-industry.jpg` | Unsplash | Application band |
 | `public/media/steel-workshop.jpg` | Unsplash | Dark plant band |
+| `public/media/motor-render-dark.png` | AI generate | Секция «Электродвигатели» — рендер на тёмном, под выноски |
+| `public/media/hero-bwe-dusk.png` | AI generate | Hero layout-1 — роторный экскаватор на закате |
+| `public/media/excavator-on-white.png` | AI generate | «Созданы для гигантов» — роторный экскаватор на белом |
+| `public/media/plant-foundry.png` | AI generate | «Технологии» — литьё, статорный корпус |
+| `public/media/plant-windings.png` | AI generate | «Технологии» — медные обмотки статора |
+| `public/media/plant-lathe.png` | AI generate | «Технологии» — обточка вала |
+| `public/media/plant-teststand.png` | AI generate | «Технологии» + фон секции контактов — стенд |
+| `public/media/excavator-isolated-light.png` | AI generate | Не используется (заменён на `excavator-on-white.png`) |
+| `public/media/hero-excavator-schematic.png` | AI generate | Hero — ЭКГ сверху + ряд деталей/движков снизу, синий акцент |
+| `public/media/dir-excavator-drive.png` | AI generate | Направления — карьерный экскаватор |
+| `public/media/dir-drilling-rig.png` | AI generate | Направления — буровая установка |
+| `public/media/dir-traction-motor.png` | AI generate | Направления — тяговый двигатель |
+| `public/media/dir-hv-switchgear.png` | AI generate | Направления — ВВ-аппаратура |
+| `public/media/dir-mine-motor.png` | AI generate | Направления — шахтный двигатель |
+| `public/media/map-eurasia-supply.png` | AI generate | География — Евразия до Индии, стиль map-russia-cis, точки по lat/lon |
 
-Демо-макеты главной: `/new-layouts`, `/new-layout-1`, `/new-layout-2`, `/new-layout-3`.
+Главная страница: `/` (светлая B2B-тема, синий акцент `#2F78CD`).
 
 ## Деплой / почта заявок
 

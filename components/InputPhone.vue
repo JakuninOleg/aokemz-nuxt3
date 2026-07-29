@@ -7,6 +7,7 @@
     autocomplete="tel"
     name="phone"
     placeholder="+7 (___) ___-__-__"
+    maxlength="18"
     required
     class="font-light border pl-2 py-2 border-gray-500 w-full"
     :class="{ 'border-red-500': invalid }"
@@ -91,9 +92,19 @@ function apply(digits: string, caretDigits?: number) {
   formattedPhone.value = digits ? formatFromDigits(digits) : ''
   emit('update:modelValue', digits)
 
-  if (caretDigits === undefined || !inputEl.value) return
+  const el = inputEl.value
+  if (!el) return
+
+  // Vue skips a DOM patch when an extra digit is truncated back to the same
+  // reactive value. Restore the controlled display explicitly so the browser
+  // cannot leave that digit after the caret.
+  if (el.value !== formattedPhone.value) {
+    el.value = formattedPhone.value
+  }
+
+  if (caretDigits === undefined) return
   const pos = caretAfterDigitCount(formattedPhone.value, caretDigits)
-  nextTick(() => inputEl.value?.setSelectionRange(pos, pos))
+  nextTick(() => el.setSelectionRange(pos, pos))
 }
 
 watch(

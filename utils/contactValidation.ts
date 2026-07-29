@@ -104,6 +104,9 @@ export const contactLeadSchema = z.object({
     .min(10, 'Сообщение слишком короткое')
     .max(2000, 'Сообщение слишком длинное')
     .refine((v) => !looksLikeGibberish(v), 'Проверьте текст сообщения'),
+  consent: z.literal(true, {
+    errorMap: () => ({ message: 'Необходимо согласие на обработку персональных данных' }),
+  }),
 })
 
 export type ContactLeadInput = z.input<typeof contactLeadSchema>
