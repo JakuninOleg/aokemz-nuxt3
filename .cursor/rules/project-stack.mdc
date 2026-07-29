@@ -12,4 +12,5 @@ alwaysApply: true
 - Domain: `aokemz.ru`. Company: ОАО «Карпинский электромашиностроительный завод» (Карпинск), not Кемерово.
 - Brand facts and inventable content: `docs/brand-facts.md`.
 - Design language: hybrid industrial — read `.cursor/skills/kemz-industrial-design/SKILL.md` before UI work.
+- Copy / headlines / SEO text: read `.cursor/skills/stop-slop/SKILL.md` — no AI marketing slop.
 - Graphify: if `graphify-out/graph.json` exists, prefer `graphify query` / `path` / `explain` for codebase questions.

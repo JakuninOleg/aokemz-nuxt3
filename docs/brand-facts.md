@@ -95,7 +95,11 @@
 
 _(пока пусто — заполнять по мере генерации)_
 
-## Полезные ссылки
+## Деплой / почта заявок
+
+- **Сейчас (тест):** `MAIL_TO=oleg.kemz@gmail.com` только.
+- **Перед продом:** вернуть `MAIL_TO=sales@aokemz.ru, oleg.kemz@gmail.com` в Vercel env и `.env`.
+
 
 - Локально: `static/ОАО КЭМЗ.pdf`, `static/Возможности КЭМЗ.docx`, опросные листы
 - https://www.aokemz.ru/about

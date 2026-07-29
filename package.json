@@ -27,7 +27,8 @@
     "postcss-nesting": "^12.1.0",
     "prat": "^1.1.0",
     "sass": "^1.87.0",
-    "sass-loader": "^13.3.3"
+    "sass-loader": "^13.3.3",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@vite-pwa/nuxt": "^1.0.0",

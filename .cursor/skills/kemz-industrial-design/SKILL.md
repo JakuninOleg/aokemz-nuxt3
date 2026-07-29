@@ -22,6 +22,7 @@ References to steal patterns from (not clone): Parvalux, Central Moloney, Lödig
 3. No card soup in heroes; no floating promo chips on media.
 4. Avoid: purple/indigo AI look, cream+terracotta, broadsheet hairlines, glow stacks, emoji.
 5. Facts and inventable stats: `docs/brand-facts.md`. Prefer real anchors (1960, 590 kW БЕЛАЗ, 8000 м, ЭКГ/ЭШ).
+6. **Copy:** follow `.cursor/skills/stop-slop/SKILL.md` — concrete plant language, no AI landing-page sludge.
 
 ## Tokens (baseline)
 

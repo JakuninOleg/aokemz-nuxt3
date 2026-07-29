@@ -1,90 +1,184 @@
 <template>
   <input
-    v-model="formattedPhone"
+    ref="inputEl"
+    :value="formattedPhone"
     type="tel"
-    placeholder="Ваш телефон"
+    inputmode="tel"
+    autocomplete="tel"
+    name="phone"
+    placeholder="+7 (___) ___-__-__"
     required
-    class="font-light border pl-2 py-2 border-gray-500"
-    @focus="focusPhone"
-    @blur="blurPhone"
-    @input="formatPhone"
+    class="font-light border pl-2 py-2 border-gray-500 w-full"
+    :class="{ 'border-red-500': invalid }"
+    @focus="onFocus"
+    @blur="onBlur"
+    @keydown="onKeydown"
+    @input="onInput"
   />
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+/**
+ * RU phone mask (+7 …).
+ * Digits in v-model → 7XXXXXXXXXX. Backspace/Delete edit digits, not "( ) -".
+ */
+import { nextTick, ref, watch } from 'vue'
+import {
+  digitsOnly,
+  formatRuPhoneDisplay,
+  normalizeRuPhone,
+} from '~/utils/contactValidation'
 
 const props = defineProps<{
-  modelValue: string // Для v-model
+  modelValue: string
+  invalid?: boolean
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', value: string): void // Для v-model
+  (e: 'update:modelValue', value: string): void
 }>()
 
-const phone = ref(props.modelValue || '') // Чистый номер (только цифры)
-const formattedPhone = ref('') // Форматированный номер (+7 (123) 456-78-90)
-const phoneRegex = /^\+7 \(\d{0,3}/ // Проверка начала номера
+const inputEl = ref<HTMLInputElement | null>(null)
+const phone = ref('')
+const formattedPhone = ref('')
 
-// Синхронизация с v-model
-watch(phone, (newPhone) => {
-  emit('update:modelValue', newPhone)
-})
-
-// При фокусе добавляем +7 (
-const focusPhone = () => {
-  if (!phone.value) {
-    formattedPhone.value = '+7 ('
-  }
+function toRuDigits(raw: string): string {
+  let d = digitsOnly(raw)
+  if (!d) return ''
+  if (d.startsWith('8')) d = `7${d.slice(1)}`
+  if (d.startsWith('9')) d = `7${d}`
+  if (!d.startsWith('7')) d = `7${d}`
+  return d.slice(0, 11)
 }
 
-// При потере фокуса очищаем, если номер слишком короткий
-const blurPhone = () => {
-  if (phone.value.length < 10) {
-    phone.value = ''
-    formattedPhone.value = ''
+function formatFromDigits(digits: string): string {
+  if (!digits || digits === '7') return '+7 ('
+  if (digits.length < 4) return `+7 (${digits.slice(1)}`
+  if (digits.length === 4) return `+7 (${digits.slice(1, 4)}`
+  if (digits.length < 7) return `+7 (${digits.slice(1, 4)}) ${digits.slice(4)}`
+  if (digits.length < 9) {
+    return `+7 (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7)}`
   }
+  return `+7 (${digits.slice(1, 4)}) ${digits.slice(4, 7)}-${digits.slice(7, 9)}-${digits.slice(9)}`
 }
 
-// Форматирование номера
-const formatPhone = (e: Event) => {
-  const input = e.target as HTMLInputElement
-  let phoneStr = input.value.replace(/\D/g, '') // Только цифры
-
-  // Ограничиваем длину номера до 11 цифр
-  if (phoneStr.length > 11) {
-    phoneStr = phoneStr.slice(0, 11)
+/** How many phone digits appear in `formatted` before `caret` */
+function digitCountBefore(formatted: string, caret: number): number {
+  let n = 0
+  for (let i = 0; i < caret && i < formatted.length; i++) {
+    if (/\d/.test(formatted[i]!)) n++
   }
+  return n
+}
 
-  // Обновляем чистый номер
-  phone.value = phoneStr.length > 1 ? phoneStr : ''
-
-  // Форматируем отображаемый номер
-  if (!input.value.match(phoneRegex) && input.selectionStart! > 4) {
-    formattedPhone.value = '+7 (' + input.value.substring(4, 18)
-  } else if (phoneStr.length > 9) {
-    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-${phoneStr.substring(7, 9)}-${phoneStr.substring(9, 11)}`
-  } else if (phoneStr.length > 7) {
-    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-${phoneStr.substring(7, 9)}`
-  } else if (phoneStr.length > 6) {
-    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-`
-  } else if (phoneStr.length > 4) {
-    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4)}`
-  } else if (phoneStr.length > 3) {
-    formattedPhone.value = `+7 (${phoneStr.substring(1, 4)})`
-  } else {
-    formattedPhone.value = `+7 (${phoneStr.substring(1)}`
+function caretAfterDigitCount(formatted: string, digitCount: number): number {
+  if (digitCount <= 0) {
+    const open = formatted.indexOf('(')
+    return open >= 0 ? open + 1 : formatted.length
   }
-
-  // Корректируем при удалении
-  if (e.inputType === 'deleteContentBackward') {
-    if (phoneStr.length === 9) {
-      formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}-${phoneStr.substring(7, 9)}`
-    } else if (phoneStr.length === 7) {
-      formattedPhone.value = `+7 (${phoneStr.substring(1, 4)}) ${phoneStr.substring(4, 7)}`
-    } else if (phoneStr.length === 4) {
-      formattedPhone.value = `+7 (${phoneStr.substring(1, 4)})`
+  let n = 0
+  for (let i = 0; i < formatted.length; i++) {
+    if (/\d/.test(formatted[i]!)) {
+      n++
+      if (n >= digitCount) return i + 1
     }
   }
+  return formatted.length
+}
+
+function apply(digits: string, caretDigits?: number) {
+  phone.value = digits
+  formattedPhone.value = digits ? formatFromDigits(digits) : ''
+  emit('update:modelValue', digits)
+
+  if (caretDigits === undefined || !inputEl.value) return
+  const pos = caretAfterDigitCount(formattedPhone.value, caretDigits)
+  nextTick(() => inputEl.value?.setSelectionRange(pos, pos))
+}
+
+watch(
+  () => props.modelValue,
+  (value) => {
+    const next = toRuDigits(value || '')
+    phone.value = next
+    formattedPhone.value = next ? formatFromDigits(next) : ''
+  },
+  { immediate: true }
+)
+
+function onFocus() {
+  if (!phone.value) apply('7', 1)
+}
+
+function clearIncomplete() {
+  emit('update:modelValue', '')
+  phone.value = ''
+  formattedPhone.value = ''
+  if (inputEl.value) inputEl.value.value = ''
+}
+
+function onBlur() {
+  const raw = phone.value || toRuDigits(inputEl.value?.value || '')
+  const normalized = normalizeRuPhone(raw)
+  if (!normalized) {
+    clearIncomplete()
+    return
+  }
+  phone.value = normalized
+  formattedPhone.value = formatRuPhoneDisplay(normalized)
+  emit('update:modelValue', normalized)
+}
+
+function onKeydown(e: KeyboardEvent) {
+  if (e.key !== 'Backspace' && e.key !== 'Delete') return
+
+  const el = inputEl.value
+  if (!el) return
+
+  const start = el.selectionStart ?? 0
+  const end = el.selectionEnd ?? 0
+  const formatted = formattedPhone.value
+  e.preventDefault()
+
+  if (start !== end) {
+    const from = digitCountBefore(formatted, start)
+    const to = digitCountBefore(formatted, end)
+    let digits = phone.value.slice(0, from) + phone.value.slice(to)
+    digits = toRuDigits(digits) || '7'
+    apply(digits, Math.max(1, from))
+    return
+  }
+
+  if (e.key === 'Backspace') {
+    const idx = digitCountBefore(formatted, start)
+    if (idx <= 1) {
+      apply('7', 1)
+      return
+    }
+    const digits = phone.value.slice(0, idx - 1) + phone.value.slice(idx)
+    apply(digits || '7', idx - 1)
+    return
+  }
+
+  const idx = digitCountBefore(formatted, start)
+  if (idx < 1 || idx >= phone.value.length) return
+  const digits = phone.value.slice(0, idx) + phone.value.slice(idx + 1)
+  apply(digits || '7', idx)
+}
+
+function onInput() {
+  const el = inputEl.value
+  if (!el) return
+
+  // Count against the browser value after the insert (not previous Vue state).
+  const caret = el.selectionStart ?? el.value.length
+  const typingAtEnd = caret >= el.value.length
+  const digitsBefore = digitCountBefore(el.value, caret)
+  const digits = toRuDigits(el.value) || '7'
+  const caretDigits = typingAtEnd
+    ? digits.length
+    : Math.max(1, Math.min(digits.length, digitsBefore))
+
+  apply(digits, caretDigits)
 }
 </script>

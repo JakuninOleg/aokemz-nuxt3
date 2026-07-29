@@ -29,6 +29,12 @@ export default defineNuxtConfig({
   ],
 
   runtimeConfig: {
+    smtpHost: process.env.SMTP_HOST || 'smtp.gmail.com',
+    smtpPort: process.env.SMTP_PORT || '465',
+    smtpUser: process.env.SMTP_USER || '',
+    smtpPass: process.env.SMTP_PASS || '',
+    mailFrom: process.env.MAIL_FROM || '',
+    mailTo: process.env.MAIL_TO || '',
     public: {
       CTF_SPACE_ID: process.env.CTF_SPACE_ID,
       CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,

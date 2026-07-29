@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "components/Form.vue": {
-    "mtime": 1746209546.971389,
-    "ast_hash": "e58134479b258a6627cfa2a87e586670",
+    "mtime": 1785287525.7335598,
+    "ast_hash": "410ae1e88e31a3ea5011530c7c059153",
     "semantic_hash": ""
   },
   "components/Hero.vue": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "components/InputPhone.vue": {
-    "mtime": 1746209524.8450887,
-    "ast_hash": "e9768245820846a34f1c736b080a4af6",
+    "mtime": 1785287460.6889648,
+    "ast_hash": "c47750949f063779f2f668dce73e4b1d",
     "semantic_hash": ""
   },
   "components/Menu.vue": {
@@ -50,13 +50,13 @@
     "semantic_hash": ""
   },
   "nuxt.config.ts": {
-    "mtime": 1746055518.582902,
-    "ast_hash": "82aa48a7b8773e6f669f8f5d80646ead",
+    "mtime": 1785287396.0316834,
+    "ast_hash": "8d400c877dd95cfe480d47496269a519",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1746052124.999209,
-    "ast_hash": "63baec9bfdce92b9cb28a91f47ce60f1",
+    "mtime": 1785287362.7499323,
+    "ast_hash": "d49c3aacfa3b4e268f821832aaed6c88",
     "semantic_hash": ""
   },
   "pages/about/index.vue": {
@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "server/api/sendMail.post.ts": {
-    "mtime": 1746038791.4535449,
-    "ast_hash": "9c0f2959e157acceb21160c890b702b5",
+    "mtime": 1785287446.6289077,
+    "ast_hash": "3309b5aa99c118f56906de021e923303",
     "semantic_hash": ""
   },
   "server/tsconfig.json": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "docs/brand-facts.md": {
-    "mtime": 1785286939.467239,
-    "ast_hash": "0821f0a31070ba3c96691ac9d00de7af",
+    "mtime": 1785287265.1760848,
+    "ast_hash": "12d4428eeb1ceb7a3d4e6e622fa4ae81",
     "semantic_hash": ""
   },
   "layouts/README.md": {
@@ -367,6 +367,31 @@
   "assets/video/kemz_ny.mp4": {
     "mtime": 1702986510.3332512,
     "ast_hash": "40492a984e64e34a0983d509c4700fe2",
+    "semantic_hash": ""
+  },
+  "docs/_extract_static.py": {
+    "mtime": 1785287109.4690428,
+    "ast_hash": "e21694eb977e43b00b672b5f1e54afde",
+    "semantic_hash": ""
+  },
+  "docs/_pdf_tools/extract.js": {
+    "mtime": 1785287224.3445423,
+    "ast_hash": "29d1b8d3c38759c4370a5a5d05c8166e",
+    "semantic_hash": ""
+  },
+  "server/utils/leadEmail.ts": {
+    "mtime": 1785287405.1405878,
+    "ast_hash": "5ed007e8c63dafa4afc65840778483ff",
+    "semantic_hash": ""
+  },
+  "server/utils/rateLimit.ts": {
+    "mtime": 1785287410.144814,
+    "ast_hash": "a6fbf399c20faaac4f1f6ce6ef3f2266",
+    "semantic_hash": ""
+  },
+  "utils/contactValidation.ts": {
+    "mtime": 1785287444.590367,
+    "ast_hash": "c6df26d941124bb110270653501daf44",
     "semantic_hash": ""
   }
 }

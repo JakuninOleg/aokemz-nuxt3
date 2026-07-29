@@ -13,6 +13,8 @@ Project knowledge graph lives in `graphify-out/`.
 
 For UI/redesign work read `.cursor/skills/kemz-industrial-design/SKILL.md` and `docs/brand-facts.md`.
 
+For any marketing/UI copy read `.cursor/skills/stop-slop/SKILL.md` (no AI-slop tone).
+
 ## Cursor rules
 
 See `.cursor/rules/` — Gitflow, stack, hybrid design, forms, Contentful/SEO.
