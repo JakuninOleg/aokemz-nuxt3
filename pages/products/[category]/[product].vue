@@ -5,13 +5,13 @@
     </div>
     <div v-else-if="error" class="text-center text-red-500">
       <p>{{ error.message }}</p>
-      <NuxtLink to="/products" class="text-blue-500">Вернуться к каталогу</NuxtLink>
+      <NuxtLink to="/products" class="text-kemz-blue">Вернуться к каталогу</NuxtLink>
     </div>
     <div v-else-if="!product" class="text-center text-red-500">
       <p>Продукт не найден</p>
-      <NuxtLink to="/products" class="text-blue-500">Вернуться к каталогу</NuxtLink>
+      <NuxtLink to="/products" class="text-kemz-blue">Вернуться к каталогу</NuxtLink>
     </div>
-    <div v-else>
+    <div v-else class="min-w-0">
       <h1 class="text-xl md:text-3xl font-bold mb-10">
         {{ product.fields.name }}
       </h1>
@@ -20,15 +20,16 @@
         :src="'https:' + product.fields.image.fields.file.url"
         :alt="product.fields.name"
         loading="lazy"
-        class="h-80 rounded-t-lg"
+        class="h-80 max-w-full object-contain rounded-t-lg mb-6"
       />
-      <div class="grid gap-4" v-html="richTextHtml" />
-      <h2 class="text-xl font-bold">Технические данные</h2>
-      <div class="grid gap-4" v-html="richTextHtml2" />
-      <p
-        class="text-lg font-light mr-2 transition ease-out transition-duration-320"
-      >
-        <NuxtLink :to="'/products/' + route.params.category" class="flex items-center w-full link">
+      <div class="kemz-richtext grid gap-4 min-w-0" v-html="descriptionHtml" />
+      <h2 class="text-xl font-bold mt-8">Технические данные</h2>
+      <div class="kemz-richtext grid gap-4 min-w-0" v-html="paramsHtml" />
+      <p class="text-lg font-light mr-2 mt-10">
+        <NuxtLink
+          :to="'/products/' + route.params.category"
+          class="flex items-center w-full link text-kemz-blue"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-6 w-6 mr-4"
@@ -51,150 +52,56 @@
 </template>
 
 <script setup lang="ts">
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
 import type { EntryCollection } from 'contentful'
+import { renderContentfulHtml } from '~/utils/contentfulRichText'
 
-// Типизация для Contentful
 interface ContentfulEntry {
   sys: { id: string }
   fields: {
     name: string
     url: string
     image?: { fields: { file: { url: string } } }
-    description?: any // Rich Text
-    params?: any // Rich Text
+    description?: unknown
+    params?: unknown
     category?: { sys: { id: string }; fields: { url: string } }
   }
 }
 
-// Получаем параметры маршрута
 const route = useRoute()
-const productId = route.params.product
-const categoryId = route.params.category
+const productId = route.params.product as string
 
-// Логирование для отладки
-console.log('Category ID:', categoryId, 'Product ID:', productId)
-
-// Нормализация URL
-const slugify = (text: string) =>
-  text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '')
-
-// Опции для рендеринга Rich Text
-const options = {
-  renderMark: {
-    [MARKS.BOLD]: (text: string) => `<span class="font-bold">${text}</span>`,
-    [MARKS.ITALIC]: (text: string) => `<p class="article__red">${text}</p>`,
-  },
-  renderNode: {
-    [BLOCKS.HEADING_2]: (node: any, children: any) =>
-      `<h2 class="heading-2">${children(node.content)}</h2>`,
-    [BLOCKS.UL_LIST]: (node: any, children: any) =>
-      `<ul class="ul mt-4">${children(node.content)}</ul>`,
-    [BLOCKS.LIST_ITEM]: (node: any, children: any) =>
-      `<li class="">${children(node.content)}</li>`,
-    [BLOCKS.EMBEDDED_ASSET]: (node: any) =>
-      `<img class="image-article" src="${node.data.target.fields.file.url}"/>`,
-      [INLINES.ENTRY_HYPERLINK]: (node) =>
-            `<a class="link" href="/products/another/${node.data.target.fields.url}">${node.content[0].value}</a>`,
-    // [INLINES.ENTRY_HYPERLINK]: (node: any) => {
-    //   const linkedProduct = node.data.target
-    //   console.log('Linked product:', linkedProduct)
-    //   const linkedCategoryUrl = linkedProduct.fields.category?.fields?.url
-    //     ? slugify(linkedProduct.fields.category.fields.url)
-    //     : 'unknown'
-    //   const linkedProductUrl = linkedProduct.fields.url ? slugify(linkedProduct.fields.url) : 'unknown'
-    //   const link = `/products/${linkedCategoryUrl}/${linkedProductUrl}`
-    //   console.log('Generated link:', link)
-    //   return `<a class="link" href="${link}">${node.content[0].value}</a>`
-    // },
-    [BLOCKS.TABLE]: (node: any, children: any) =>
-      `<table class="table-fixed border-collapse border-spacing-4 border-slate-500"><tbody>${children(node.content)}</tbody></table>`,
-    [BLOCKS.TABLE_HEADER_CELL]: (node: any, children: any) =>
-      `<th class="bg-gray-300 px-4 border border-slate-700">${children(node.content)}</th>`,
-    [BLOCKS.TABLE_CELL]: (node: any, children: any) =>
-      `<td class="px-4 border border-slate-700">${children(node.content)}</td>`,
-  },
-}
-
-// Загрузка данных продукта
 const { data: product, pending, error } = await useAsyncData(
   `contentful-product-${productId}`,
   async () => {
     const { $contentful } = useNuxtApp()
-    try {
-      // Получаем продукт по fields.url
-      const data: EntryCollection<ContentfulEntry> = await $contentful.getEntries({
-        content_type: 'subcategory',
-        'fields.url': productId,
-      })
-      console.log('Contentful product response:', data)
-      if (!data.items.length) {
-        console.warn('No product found for fields.url:', productId)
-        throw createError({
-          statusCode: 404,
-          message: 'Продукт не найден',
-        })
-      }
-
-      // // Проверяем категорию продукта
-      // const productCategoryUrl = data.items[0].fields.category?.fields?.url
-      // if (productCategoryUrl && slugify(productCategoryUrl) !== categoryId) {
-      //   console.warn(
-      //     `Product category (${productCategoryUrl}) does not match URL category (${categoryId})`
-      //   )
-      //   // Перенаправляем на правильную категорию
-      //   navigateTo(`/products/${slugify(productCategoryUrl)}/${productId}`)
-      //   return null
-      // }
-
-      return data.items[0]
-    } catch (err) {
-      console.error('Contentful product error:', err)
+    const data: EntryCollection<ContentfulEntry> = await $contentful.getEntries({
+      content_type: 'subcategory',
+      'fields.url': productId,
+    })
+    if (!data.items.length) {
       throw createError({
         statusCode: 404,
         message: 'Продукт не найден',
       })
     }
+    return data.items[0]
   },
-  {
-    default: () => null,
-  }
+  { default: () => null }
 )
 
-// Рендеринг Rich Text
-const richTextHtml = computed(() =>
-  product.value && product.value.fields.description
-    ? documentToHtmlString(product.value.fields.description, options)
-    : ''
+const descriptionHtml = computed(() =>
+  renderContentfulHtml(product.value?.fields.description)
 )
-const richTextHtml2 = computed(() =>
-  product.value && product.value.fields.params
-    ? documentToHtmlString(product.value.fields.params, options)
-    : ''
-)
+const paramsHtml = computed(() => renderContentfulHtml(product.value?.fields.params))
 
-// Настройка SEO
-// useHead({
-//   title: product.value?.fields.name || 'Продукт',
-//   meta: [
-//     {
-//       name: 'description',
-//       content: 'Описание продукта',
-//     },
-//   ],
-// })
+useSeoMeta({
+  title: () =>
+    product.value?.fields.name
+      ? `${product.value.fields.name} | ОАО «КЭМЗ»`
+      : 'Продукт | ОАО «КЭМЗ»',
+  description: () =>
+    product.value?.fields.name
+      ? `${product.value.fields.name}: технические данные, ОАО Карпинский электромашиностроительный завод`
+      : 'Каталог продукции ОАО КЭМЗ',
+})
 </script>
-
-<style>
-td {
-  width: 20%;
-}
-</style>

@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "components/Form.vue": {
-    "mtime": 1785287525.7335598,
-    "ast_hash": "410ae1e88e31a3ea5011530c7c059153",
+    "mtime": 1785288856.534315,
+    "ast_hash": "58d03ffd2089e14420bc86857465d254",
     "semantic_hash": ""
   },
   "components/Hero.vue": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "components/InputPhone.vue": {
-    "mtime": 1785287460.6889648,
-    "ast_hash": "c47750949f063779f2f668dce73e4b1d",
+    "mtime": 1785288856.534315,
+    "ast_hash": "de0d99d045b99129ebcec6fc8c521ffb",
     "semantic_hash": ""
   },
   "components/Menu.vue": {
@@ -50,13 +50,13 @@
     "semantic_hash": ""
   },
   "nuxt.config.ts": {
-    "mtime": 1785287396.0316834,
-    "ast_hash": "8d400c877dd95cfe480d47496269a519",
+    "mtime": 1785288856.5383043,
+    "ast_hash": "4f66d76c1efd9e8df12fc8b7afe0a9a4",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785287362.7499323,
-    "ast_hash": "d49c3aacfa3b4e268f821832aaed6c88",
+    "mtime": 1785288856.542294,
+    "ast_hash": "71bc39c5bd57e558b8638f72b64317a5",
     "semantic_hash": ""
   },
   "pages/about/index.vue": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "pages/products/[category]/[product].vue": {
-    "mtime": 1760402737.9121299,
-    "ast_hash": "faa498bc41202c17b086f6b45a2fa2e3",
+    "mtime": 1785288943.902079,
+    "ast_hash": "7e64d9aeb2897a2670ed9b9dc5b9d3cb",
     "semantic_hash": ""
   },
   "pages/products/[category]/index.vue": {
@@ -115,7 +115,7 @@
     "semantic_hash": ""
   },
   "server/api/sendMail.post.ts": {
-    "mtime": 1785287446.6289077,
+    "mtime": 1785288856.5432913,
     "ast_hash": "3309b5aa99c118f56906de021e923303",
     "semantic_hash": ""
   },
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "tailwind.config.ts": {
-    "mtime": 1746046636.283635,
-    "ast_hash": "45a7a82d7f1d3d14cba9fb3a59ca53dc",
+    "mtime": 1785288944.7904673,
+    "ast_hash": "9d3df2cea0a41f9141fe0dae2dd7a5f1",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   ".cursor/skills/kemz-industrial-design/SKILL.md": {
-    "mtime": 1785286952.6438649,
-    "ast_hash": "c47b7de53fe608661fcaa4129fbba8f6",
+    "mtime": 1785288856.531322,
+    "ast_hash": "a94e6f176dd5cc83b7c34e1e482e1e21",
     "semantic_hash": ""
   },
   ".cursor/skills/kemz-industrial-design/reference.md": {
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1785286955.8839715,
-    "ast_hash": "0490a4e7d1192e61642a71c5b92140aa",
+    "mtime": 1785288856.533317,
+    "ast_hash": "14799063f93806267d4a9150d84e01e5",
     "semantic_hash": ""
   },
   "README.md": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "docs/brand-facts.md": {
-    "mtime": 1785287265.1760848,
-    "ast_hash": "12d4428eeb1ceb7a3d4e6e622fa4ae81",
+    "mtime": 1785288856.5353122,
+    "ast_hash": "202eb32c7b25187669da460fdba35c0d",
     "semantic_hash": ""
   },
   "layouts/README.md": {
@@ -380,18 +380,68 @@
     "semantic_hash": ""
   },
   "server/utils/leadEmail.ts": {
-    "mtime": 1785287405.1405878,
-    "ast_hash": "5ed007e8c63dafa4afc65840778483ff",
+    "mtime": 1785288856.5432913,
+    "ast_hash": "24d6bb6a8d6eecd14547c098f0ea0617",
     "semantic_hash": ""
   },
   "server/utils/rateLimit.ts": {
-    "mtime": 1785287410.144814,
-    "ast_hash": "a6fbf399c20faaac4f1f6ce6ef3f2266",
+    "mtime": 1785288856.5432913,
+    "ast_hash": "9c34a6add18350717141f3b43325c47f",
     "semantic_hash": ""
   },
   "utils/contactValidation.ts": {
-    "mtime": 1785287444.590367,
-    "ast_hash": "c6df26d941124bb110270653501daf44",
+    "mtime": 1785288856.5442607,
+    "ast_hash": "9abd9aa3555742b24295ba5fe6cc7e30",
+    "semantic_hash": ""
+  },
+  "pages/documents/index.vue": {
+    "mtime": 1785288960.7014074,
+    "ast_hash": "9189274a7c46def583704352935ccdd8",
+    "semantic_hash": ""
+  },
+  "pages/special/index.vue": {
+    "mtime": 1785288960.7014074,
+    "ast_hash": "72e498ca111e7c1cb9bceea5e1394bf5",
+    "semantic_hash": ""
+  },
+  "utils/contentfulRichText.ts": {
+    "mtime": 1785288941.2954328,
+    "ast_hash": "65c7d3d0ed9c54e2f5b5c23f7f60ec69",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/stop-slop/SKILL.md": {
+    "mtime": 1785288856.5323207,
+    "ast_hash": "c4807c98db715bafaf8949d9e1b5c6ff",
+    "semantic_hash": ""
+  },
+  ".cursor/skills/stop-slop/references.md": {
+    "mtime": 1785288856.5323207,
+    "ast_hash": "f172a323dfb05cb16e0a013838ef5031",
+    "semantic_hash": ""
+  },
+  "docs/design-proposal.md": {
+    "mtime": 1785288914.3399093,
+    "ast_hash": "8413d6cbd0cd4d08099db207fb1ffeb5",
+    "semantic_hash": ""
+  },
+  "public/docs/\u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
+    "mtime": 1676907848.7812393,
+    "ast_hash": "d672812fec56c71f91e5f5ee26443ac4",
+    "semantic_hash": ""
+  },
+  "public/docs/\u041e\u043f\u0440\u043e\u0441\u043d\u044b\u0439 \u043b\u0438\u0441\u0442 \u0432\u044b\u0441\u043e\u043a\u043e\u0432\u043e\u043b\u044c\u0442\u043d\u043e\u0439 \u0430\u043f\u043f\u0430\u0440\u0430\u0442\u0443\u0440\u044b \u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
+    "mtime": 1676907854.0581212,
+    "ast_hash": "e276b989d4422fca6df099f289d3753d",
+    "semantic_hash": ""
+  },
+  "public/docs/\u041e\u043f\u0440\u043e\u0441\u043d\u044b\u0439 \u043b\u0438\u0441\u0442 \u043d\u0430 \u044d\u043b\u0435\u043a\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043c\u0430\u0448\u0438\u043d\u044b \u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
+    "mtime": 1676907851.164862,
+    "ast_hash": "250c39de0a7f966fe555aa5ebf9148d2",
+    "semantic_hash": ""
+  },
+  "public/docs/\u041f\u0435\u0440\u0435\u0447\u0435\u043d\u044c \u0437\u0430\u043f\u0430\u0441\u043d\u044b\u0445 \u0447\u0430\u0441\u0442\u0435\u0439 \u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
+    "mtime": 1676907857.0062335,
+    "ast_hash": "68c22eb806c746d2165225c643672a3e",
     "semantic_hash": ""
   }
 }

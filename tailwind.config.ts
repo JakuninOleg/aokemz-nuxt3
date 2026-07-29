@@ -25,7 +25,20 @@ export default <Partial<Config>>{
         },
         gray: {
           300: '#F3F4F8'
+        },
+        kemz: {
+          ink: '#0b0d10',
+          graphite: '#1a1f26',
+          steel: '#e8ecf1',
+          paper: '#f5f7fa',
+          blue: '#2f78cd',
+          'blue-deep': '#1e4f8c',
+          brand: '#004c97',
+          muted: '#6b7280'
         }
+      },
+      fontFamily: {
+        sans: ['ProximaNova', ...defaultTheme.fontFamily.sans]
       },
       height: {
         76: '19rem',
