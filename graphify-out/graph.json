@@ -1632,6 +1632,17 @@
       "norm_label": "about/index.vue"
     },
     {
+      "label": "lines",
+      "file_type": "code",
+      "source_file": "pages/about/index.vue",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "pages_about_index_lines",
+      "community": 24,
+      "community_name": "about/index.vue",
+      "norm_label": "lines"
+    },
+    {
       "label": "contacts/index.vue",
       "file_type": "code",
       "source_file": "pages/contacts/index.vue",
@@ -1643,15 +1654,37 @@
       "norm_label": "contacts/index.vue"
     },
     {
-      "label": "data()",
+      "label": "Phone",
       "file_type": "code",
       "source_file": "pages/contacts/index.vue",
-      "source_location": "L39",
+      "source_location": "L40",
       "_origin": "ast",
-      "id": "pages_contacts_index_data",
+      "id": "pages_contacts_index_phone",
       "community": 19,
       "community_name": "contacts/index.vue",
-      "norm_label": "data()"
+      "norm_label": "phone"
+    },
+    {
+      "label": "Contact",
+      "file_type": "code",
+      "source_file": "pages/contacts/index.vue",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "pages_contacts_index_contact",
+      "community": 19,
+      "community_name": "contacts/index.vue",
+      "norm_label": "contact"
+    },
+    {
+      "label": "contacts",
+      "file_type": "code",
+      "source_file": "pages/contacts/index.vue",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "pages_contacts_index_contacts",
+      "community": 19,
+      "community_name": "contacts/index.vue",
+      "norm_label": "contacts"
     },
     {
       "label": "documents/index.vue",
@@ -2177,8 +2210,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "utils_contactvalidation",
-      "community": 5,
-      "community_name": "package.json",
+      "community": 7,
+      "community_name": "InputPhone.vue",
       "norm_label": "contactvalidation.ts"
     },
     {
@@ -2221,8 +2254,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "utils_contactvalidation_lookslikegibberish",
-      "community": 5,
-      "community_name": "package.json",
+      "community": 7,
+      "community_name": "InputPhone.vue",
       "norm_label": "lookslikegibberish()"
     },
     {
@@ -2232,8 +2265,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "utils_contactvalidation_contactleadschema",
-      "community": 5,
-      "community_name": "package.json",
+      "community": 7,
+      "community_name": "InputPhone.vue",
       "norm_label": "contactleadschema"
     },
     {
@@ -2243,8 +2276,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "utils_contactvalidation_contactleadinput",
-      "community": 5,
-      "community_name": "package.json",
+      "community": 7,
+      "community_name": "InputPhone.vue",
       "norm_label": "contactleadinput"
     },
     {
@@ -3054,7 +3087,7 @@
       "label": "Permissions / what you do not need overnight",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L98",
+      "source_location": "L100",
       "_origin": "ast",
       "id": "docs_design_proposal_permissions_what_you_do_not_need_overnight",
       "community": 34,
@@ -3065,7 +3098,7 @@
       "label": "Blockers only you can clear",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L102",
+      "source_location": "L104",
       "_origin": "ast",
       "id": "docs_design_proposal_blockers_only_you_can_clear",
       "community": 34,
@@ -4929,12 +4962,45 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "pages/about/index.vue",
+      "source_location": "L101",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_about_index",
+      "target": "pages_about_index_lines",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "pages/contacts/index.vue",
-      "source_location": "L39",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "pages_contacts_index",
-      "target": "pages_contacts_index_data",
+      "target": "pages_contacts_index_contact",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/contacts/index.vue",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_contacts_index",
+      "target": "pages_contacts_index_contacts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/contacts/index.vue",
+      "source_location": "L40",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_contacts_index",
+      "target": "pages_contacts_index_phone",
       "confidence_score": 1.0
     },
     {
@@ -6148,7 +6214,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L102",
+      "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
@@ -6214,7 +6280,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L98",
+      "source_location": "L100",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
@@ -6289,5 +6355,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a28bec1e2b07ff32c1c5921941131f0613e24c17"
+  "built_at_commit": "ecc5f6398fbc4a478ec35db579b27b8019ab6ced"
 }

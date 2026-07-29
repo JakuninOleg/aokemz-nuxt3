@@ -1,78 +1,93 @@
 <template>
-  <section class="section mt-8 lg:mt-24 mb-10 lg:mb-16">
-    <h1 class="font-bold text-3xl mb-6 lg:mb-12">Контакты</h1>
-    <ul class="grid gap-6 divide-y divide-slate-700">
-      <li
-        v-for="(contact, index) in contacts"
-        :key="index"
-        class="grid gap-2 pt-6"
-      >
-        <h2 class="font-semibold text-xl">{{ contact.position }}</h2>
-        <h2 v-if="contact.surname" class="font-semibold text-xl mb-2">
-          {{ contact.surname }}
-        </h2>
-        <div class="grid gap-4 lg:flex">
-          <div class="lg:mr-60 grid gap-2">
-            <p class="text-lg font-medium">Телефон:</p>
-            <a
-              v-for="(tel, ind) in contact.tel"
-              :key="ind"
-              :href="'tel: +7' + tel"
-              class="nuxt-link-active"
-              >+7 {{ tel }}</a
-            >
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="text-lg font-medium">E-mail:</p>
-            <a :href="'mailto:' + contact.email" class="nuxt-link-active">{{
-              contact.email
-            }}</a>
-          </div>
+  <section class="section py-12 lg:py-16 mb-8">
+    <h1 class="text-3xl font-bold tracking-tight text-kemz-ink">Контакты</h1>
+    <p class="mt-3 max-w-xl text-kemz-muted">
+      624930, Свердловская обл., г. Карпинск, ул. Карпинского, 1
+    </p>
+
+    <ul class="mt-12 grid gap-0 divide-y divide-kemz-steel border-y border-kemz-steel">
+      <li v-for="(contact, index) in contacts" :key="index" class="grid gap-4 py-8 sm:grid-cols-[1fr_auto]">
+        <div>
+          <h2 class="text-lg font-semibold text-kemz-ink">{{ contact.position }}</h2>
+          <p v-if="contact.person" class="mt-1 text-kemz-muted">{{ contact.person }}</p>
+        </div>
+        <div class="sm:text-right">
+          <a
+            v-for="tel in contact.phones"
+            :key="tel.href"
+            :href="tel.href"
+            class="block font-medium text-kemz-brand hover:underline"
+          >
+            {{ tel.label }}
+          </a>
+          <a
+            :href="`mailto:${contact.email}`"
+            class="mt-2 block text-sm text-kemz-muted hover:text-kemz-brand"
+          >
+            {{ contact.email }}
+          </a>
         </div>
       </li>
     </ul>
+
+    <div class="mt-12 max-w-xl">
+      <Form header="Написать в отдел продаж" />
+    </div>
   </section>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      contacts: [
-        {
-          position: 'Приёмная генерального директора',
-          tel: ['(34383) 3-28-51'],
-          email: 'info@aokemz.ru',
-        },
-        {
-          position: 'Начальник отдела кадров',
-          surname: 'Архиреева Любовь Алексеевна',
-          tel: ['(343) 833-36-89'],
-          email: 'laa@aokemz.ru',
-        },
-        {
-          position: 'Отдел продаж',
-          tel: ['(343) 278-37-43'],
-          email: 'sales@aokemz.ru',
-        },
-        {
-          position: 'Отдел материально-технического снабжения',
-          tel: ['(34383) 3-35-22', '(34383) 3-36-40', '(34383) 3-28-96'],
-          email: 'omts@aokemz.ru',
-        },
-        {
-          position: 'Отдел технического контроля',
-          tel: ['(34383) 3-36-30'],
-          email: 'otk@aokemz.ru',
-        },
-        {
-          position: 'Начальник службы качества',
-          surname: 'Тягунов Антон Сергеевич',
-          tel: ['(34383) 3-36-30'],
-          email: 'tas@aokemz.ru',
-        },
-      ],
-    }
-  },
+<script setup lang="ts">
+type Phone = { label: string; href: string }
+
+type Contact = {
+  position: string
+  person?: string
+  phones: Phone[]
+  email: string
 }
+
+const contacts: Contact[] = [
+  {
+    position: 'Приёмная генерального директора',
+    phones: [{ label: '+7 (34383) 3-28-51', href: 'tel:+73438332851' }],
+    email: 'info@aokemz.ru',
+  },
+  {
+    position: 'Отдел продаж',
+    phones: [{ label: '+7 (343) 278-37-43', href: 'tel:+73432783743' }],
+    email: 'sales@aokemz.ru',
+  },
+  {
+    position: 'Отдел материально-технического снабжения',
+    phones: [
+      { label: '+7 (34383) 3-35-22', href: 'tel:+73438333522' },
+      { label: '+7 (34383) 3-36-40', href: 'tel:+73438333640' },
+      { label: '+7 (34383) 3-28-96', href: 'tel:+73438332896' },
+    ],
+    email: 'omts@aokemz.ru',
+  },
+  {
+    position: 'Отдел технического контроля',
+    phones: [{ label: '+7 (34383) 3-36-30', href: 'tel:+73438333630' }],
+    email: 'otk@aokemz.ru',
+  },
+  {
+    position: 'Начальник службы качества',
+    person: 'Тягунов Антон Сергеевич',
+    phones: [{ label: '+7 (34383) 3-36-30', href: 'tel:+73438333630' }],
+    email: 'tas@aokemz.ru',
+  },
+  {
+    position: 'Начальник отдела кадров',
+    person: 'Архиреева Любовь Алексеевна',
+    phones: [{ label: '+7 (343) 833-36-89', href: 'tel:+73438333689' }],
+    email: 'laa@aokemz.ru',
+  },
+]
+
+useSeoMeta({
+  title: 'Контакты | ОАО «КЭМЗ»',
+  description:
+    'Контакты ОАО КЭМЗ в Карпинске: отдел продаж, снабжение, ОТК, кадры. Телефон продаж +7 (343) 278-37-43.',
+})
 </script>

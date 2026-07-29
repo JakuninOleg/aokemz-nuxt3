@@ -60,13 +60,13 @@
     "semantic_hash": ""
   },
   "pages/about/index.vue": {
-    "mtime": 1760403179.0973191,
-    "ast_hash": "cf7ff05a3e899000d10bc8f0ff7fd88f",
+    "mtime": 1785289238.4845662,
+    "ast_hash": "bdc1524238b1afc1489151a3266a0805",
     "semantic_hash": ""
   },
   "pages/contacts/index.vue": {
-    "mtime": 1760398915.8848355,
-    "ast_hash": "26dc10a1b78a27d1e1219ad1f6152044",
+    "mtime": 1785289204.9006405,
+    "ast_hash": "63d97410a20b9a3afa5102eec1e84c0e",
     "semantic_hash": ""
   },
   "pages/index.vue": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "docs/design-proposal.md": {
-    "mtime": 1785289107.3725173,
-    "ast_hash": "130988d0b7631e7b61444dcc1892c5c0",
+    "mtime": 1785289242.4532936,
+    "ast_hash": "acb4eb38bf0a57a2aaad62a73af94718",
     "semantic_hash": ""
   },
   "public/docs/\u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
@@ -487,6 +487,16 @@
   "composables/useSiteNav.ts": {
     "mtime": 1785289031.8658469,
     "ast_hash": "ffaac095cc44574a922843b258c17d10",
+    "semantic_hash": ""
+  },
+  "locales/en.json": {
+    "mtime": 1785289242.2707522,
+    "ast_hash": "e8c9695c2d9ae6218549d782dbf24366",
+    "semantic_hash": ""
+  },
+  "locales/ru.json": {
+    "mtime": 1785289241.018402,
+    "ast_hash": "22d0ca2a4a9aad948af415119dd1a428",
     "semantic_hash": ""
   }
 }

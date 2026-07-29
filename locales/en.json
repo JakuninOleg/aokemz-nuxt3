@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "about": "About",
+    "products": "Products",
+    "news": "News",
+    "documents": "Documents",
+    "contacts": "Contacts",
+    "special": "Special offers",
+    "request": "Inquiry"
+  },
+  "home": {
+    "brandLine": "JSC KEMZ · Karpinsk",
+    "heroTitle": "Drives for quarry and walking excavators",
+    "heroSupport": "Generators up to 1250 kW, EKG and ESH kit motors. Plant stand testing in Karpinsk.",
+    "ctaCatalog": "Product catalog",
+    "ctaLead": "Sales inquiry"
+  },
+  "footer": {
+    "blurb": "Karpinsk Electrical Machine Building Plant. Electric machines and drive kits for quarry equipment since 1960."
+  }
+}

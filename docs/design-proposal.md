@@ -93,7 +93,9 @@ Locale switcher in header. Prefer `/en/...` prefix for SEO demos.
 - `/documents`, `/special` pages; docs under `public/docs/`
 - Product rich-text mobile table tray
 
-Still pending: catalog/about/contacts polish, i18n, drop unused `Nav`/`Menu` if A sticks.
+Still pending: catalog/about/contacts polish, full `@nuxtjs/i18n` wiring, drop unused `Nav`/`Menu` if A sticks.
+
+Locale JSON stubs live in `locales/ru.json` + `locales/en.json` (UI chrome). Module install + switcher: follow-up commit so EN demo does not block RU review.
 
 ## Permissions / what you do not need overnight
 

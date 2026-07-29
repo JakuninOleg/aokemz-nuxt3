@@ -1,16 +1,16 @@
 # Graph Report - aokemz-nuxt3  (2026-07-29)
 
 ## Corpus Check
-- 57 files · ~511,954 words
+- 59 files · ~512,219 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 283 nodes · 281 edges · 51 communities (37 shown, 14 thin omitted)
+- 286 nodes · 284 edges · 51 communities (36 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a28bec1e`
+- Built from commit: `ecc5f639`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,8 +34,10 @@
 - server/tsconfig.json
 - assets/README.md
 - layouts/README.md
+- contacts/index.vue
 - news/index.vue
 - pages/README.md
+- about/index.vue
 - sendMail.post.ts
 - _extract_static.py
 - Stop slop (КЭМЗ)
@@ -77,7 +79,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (51 total, 14 thin omitted)
+## Communities (51 total, 15 thin omitted)
 
 ### Community 0 - "dependencies"
 Cohesion: 0.06
@@ -100,16 +102,16 @@ Cohesion: 0.15
 Nodes (13): eslint, eslint-config-prettier, eslint-plugin-prettier, eslint-plugin-vue, devDependencies, eslint, eslint-config-prettier, eslint-plugin-prettier (+5 more)
 
 ### Community 5 - "package.json"
-Cohesion: 0.17
-Nodes (20): apply(), caretAfterDigitCount(), clearIncomplete(), digitCountBefore(), emit, formatFromDigits(), formattedPhone, inputEl (+12 more)
+Cohesion: 0.22
+Nodes (18): apply(), caretAfterDigitCount(), clearIncomplete(), digitCountBefore(), emit, formatFromDigits(), formattedPhone, inputEl (+10 more)
 
 ### Community 6 - "КЭМЗ hybrid industrial design"
 Cohesion: 0.11
 Nodes (16): Email HTML, Form block, Grid, Layout & component patterns, Product hotspot, Shell, Direction, Hard rules (+8 more)
 
 ### Community 7 - "InputPhone.vue"
-Cohesion: 0.29
-Nodes (7): buildLeadEmail(), escapeHtml(), formatMoscowTime(), Bucket, buckets, checkRateLimit(), ContactLead
+Cohesion: 0.21
+Nodes (9): buildLeadEmail(), escapeHtml(), formatMoscowTime(), Bucket, buckets, checkRateLimit(), ContactLead, ContactLeadInput (+1 more)
 
 ### Community 8 - "[product].vue"
 Cohesion: 0.28
@@ -130,6 +132,10 @@ Nodes (4): id, NewsEntry, richTextHtml, route
 ### Community 12 - "Nuxt Minimal Starter"
 Cohesion: 0.40
 Nodes (4): Development Server, Nuxt Minimal Starter, Production, Setup
+
+### Community 19 - "contacts/index.vue"
+Cohesion: 0.50
+Nodes (3): Contact, contacts, Phone
 
 ### Community 28 - "sendMail.post.ts"
 Cohesion: 0.33
@@ -160,19 +166,19 @@ Cohesion: 0.50
 Nodes (3): description, props, title
 
 ## Knowledge Gaps
-- **148 isolated node(s):** `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route`, `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink }`, `menuOpen` (+143 more)
+- **152 isolated node(s):** `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route`, `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink }`, `menuOpen` (+147 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route` to the rest of the system?**
-  _148 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _152 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `КЭМЗ hybrid industrial design` be split into smaller, more focused modules?**
