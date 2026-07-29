@@ -14,10 +14,10 @@ Facts: `docs/brand-facts.md`.
 | `/products…` | Contentful |
 | `/news…` | Contentful |
 | `/contacts` | Hard-coded people |
-| `/special`, `/documents` | **404** (nav lies) |
-| PDFs in `static/` | Likely not served on Nuxt3 (need `public/`) |
+| `/special`, `/documents` | Stubs + `public/docs/` (WIP on this branch) |
+| PDFs | Copied to `public/docs/` |
 
-Chrome today: fixed left gray rail + ProximaNova + blue `#004c97`.
+Chrome **before**: fixed left gray rail. **On this branch (Option A WIP)**: sticky top header + footer, no sidebar.
 
 ## Option A: “Precision plant” (recommended)
 
@@ -81,14 +81,28 @@ Locale switcher in header. Prefer `/en/...` prefix for SEO demos.
 ## What you will review when awake
 
 - [ ] Option A vs B vs C
-- [ ] Header vs sidebar
-- [ ] First home section work (code / screenshots)
-- [ ] Table scroll on a real product page
+- [ ] New top header (dark on home hero → light on scroll / other pages)
+- [ ] Home sections: hero, trust, directions, application, plant, CTA+form
+- [ ] Table scroll on a real product page (`utils/contentfulRichText.ts`)
 - [ ] Whether EN ships in same PR or follow-up
+
+### Implemented overnight (branch `feature/hybrid-redesign`)
+
+- `AppHeader` / `AppFooter` + `composables/useSiteNav`
+- Home rebuilt as `components/home/*`
+- `/documents`, `/special` pages; docs under `public/docs/`
+- Product rich-text mobile table tray
+
+Still pending: catalog/about/contacts polish, i18n, drop unused `Nav`/`Menu` if A sticks.
+
+## Permissions / what you do not need overnight
+
+Agent can keep coding on `feature/hybrid-redesign` without waiting. Helpful if Cursor auto-approves network/shell for `npm`/`git push`. Do **not** need to grant destructive git.
 
 ## Blockers only you can clear
 
 - Vercel env: SMTP_* / MAIL_* (prod restore sales@)
 - Rotate leaked Gmail app password
-- Optional: better plant photos if you have them
-- Approve generated imagery policy (already OK per earlier note)
+- Confirm Option A (or switch B/C)
+- Optional: better plant photos
+- Optional: broad auto-approve so overnight runs do not pause on prompts

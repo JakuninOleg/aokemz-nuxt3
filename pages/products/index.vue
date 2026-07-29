@@ -10,19 +10,17 @@
       <p>{{ error.message }}</p>
       <NuxtLink to="/" class="text-blue-500">Вернуться на главную</NuxtLink>
     </div>
-    <div v-else class="grid xl:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-10 mb-10">
+    <div v-else class="grid gap-6 mb-16 sm:grid-cols-2 xl:grid-cols-3">
       <div v-for="category in filteredCategories" :key="category.sys.id">
-        <NuxtLink :to="'/products/' + category.fields.url">
-          <div
-            class="border-2 border-gray-200 rounded-lg min-w-50 h-64 transition transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
-          >
+        <NuxtLink :to="'/products/' + category.fields.url" class="group block">
+          <div class="overflow-hidden border border-kemz-steel bg-white transition-colors group-hover:border-kemz-blue">
             <img
               :src="'https:' + category.fields.image.fields.file.url"
               :alt="category.fields.Name"
               loading="lazy"
-              class="w-full h-40 object-cover rounded-t-lg"
+              class="w-full h-44 object-cover"
             />
-            <h2 class="text-xl font-semibold pl-4 py-6">
+            <h2 class="text-lg font-semibold px-4 py-5 text-kemz-ink">
               {{ category.fields.Name }}
             </h2>
           </div>

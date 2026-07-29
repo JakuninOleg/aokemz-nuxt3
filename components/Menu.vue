@@ -34,12 +34,22 @@
       </div>
 
       <footer class="font-normal text-lg grid gap-4">
-        <a class="flex text-md xl:text-lg text-blue-500 hover:text-blue-600 mr-6 font-medium mb-2" target="_blank" href="/ОАО КЭМЗ.pdf">
+        <a
+          class="flex text-md xl:text-lg text-blue-500 hover:text-blue-600 mr-6 font-medium mb-2"
+          target="_blank"
+          rel="noopener noreferrer"
+          :href="encodeURI('/docs/ОАО КЭМЗ.pdf')"
+        >
           <img src="~/assets/images/pdf.png" alt="pdf" loading="lazy" class="w-10 object-contain mr-3" />
           <p class="self-end">Презентация компании</p>
         </a>
 
-        <a class="flex text-md xl:text-lg text-blue-500 hover:text-blue-600 mr-6 font-medium mb-2" target="_blank" href="/Возможности КЭМЗ.docx">
+        <a
+          class="flex text-md xl:text-lg text-blue-500 hover:text-blue-600 mr-6 font-medium mb-2"
+          target="_blank"
+          rel="noopener noreferrer"
+          :href="encodeURI('/docs/Возможности КЭМЗ.docx')"
+        >
           <img src="~/assets/images/word.png" alt="pdf" loading="lazy" class="w-10 object-contain mr-3" />
           <p class="self-end">Возможности КЭМЗ</p>
         </a>

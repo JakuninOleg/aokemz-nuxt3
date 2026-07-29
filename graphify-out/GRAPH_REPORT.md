@@ -1,16 +1,16 @@
 # Graph Report - aokemz-nuxt3  (2026-07-29)
 
 ## Corpus Check
-- 48 files · ~510,272 words
+- 57 files · ~511,954 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 258 nodes · 269 edges · 37 communities (28 shown, 9 thin omitted)
+- 283 nodes · 281 edges · 51 communities (37 shown, 14 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `072a9116`
+- Built from commit: `a28bec1e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -41,10 +41,18 @@
 - Stop slop (КЭМЗ)
 - Design proposal: hybrid redesign (for morning review)
 - documents/index.vue
+- package.json
+- AppHeader.vue
+- error.vue
+- AppFooter.vue
+- useSiteNav.ts
+- HomeCapabilities.vue
+- HomeDirections.vue
+- HomeTrust.vue
 
 ## God Nodes (most connected - your core abstractions)
-1. `КЭМЗ hybrid industrial design` - 10 edges
-2. `Design proposal: hybrid redesign (for morning review)` - 10 edges
+1. `Design proposal: hybrid redesign (for morning review)` - 11 edges
+2. `КЭМЗ hybrid industrial design` - 10 edges
 3. `ОАО КЭМЗ — факты и контент для сайта` - 9 edges
 4. `apply()` - 7 edges
 5. `scripts` - 7 edges
@@ -55,21 +63,21 @@
 10. `Stop-slop references (compact)` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `onBlur()` --calls--> `formatRuPhoneDisplay()`  [EXTRACTED]
-  components/InputPhone.vue → utils/contactValidation.ts
+- `buildLeadEmail()` --calls--> `formatRuPhoneDisplay()`  [EXTRACTED]
+  server/utils/leadEmail.ts → utils/contactValidation.ts
 - `submit()` --calls--> `validateContactLead()`  [EXTRACTED]
   components/Form.vue → utils/contactValidation.ts
 - `toRuDigits()` --calls--> `digitsOnly()`  [EXTRACTED]
   components/InputPhone.vue → utils/contactValidation.ts
+- `onBlur()` --calls--> `formatRuPhoneDisplay()`  [EXTRACTED]
+  components/InputPhone.vue → utils/contactValidation.ts
 - `onBlur()` --calls--> `normalizeRuPhone()`  [EXTRACTED]
   components/InputPhone.vue → utils/contactValidation.ts
-- `buildLeadEmail()` --calls--> `formatRuPhoneDisplay()`  [EXTRACTED]
-  server/utils/leadEmail.ts → utils/contactValidation.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (37 total, 9 thin omitted)
+## Communities (51 total, 14 thin omitted)
 
 ### Community 0 - "dependencies"
 Cohesion: 0.06
@@ -80,28 +88,28 @@ Cohesion: 0.18
 Nodes (11): Ассеты, Деплой / почта заявок, Документы владельцев в `static/` (первичный источник), История / люди (проверено, осторожно в маркетинге), ОАО КЭМЗ — факты и контент для сайта, Продукция (каталог + открытые источники), Производственные возможности (`Возможности КЭМЗ.docx`), Сгенерированные / выдуманные ассеты (+3 more)
 
 ### Community 2 - "Nav.vue"
-Cohesion: 0.15
+Cohesion: 0.17
 Nodes (6): emit, route, toggleMenu(), route, links, menuOpened
 
 ### Community 3 - "Form.vue"
-Cohesion: 0.13
+Cohesion: 0.19
 Nodes (13): applyFieldErrors(), clearFieldErrors(), email, error, fieldErrors, loader, message, name (+5 more)
 
 ### Community 4 - "devDependencies"
-Cohesion: 0.08
-Nodes (24): eslint, eslint-config-prettier, eslint-plugin-prettier, eslint-plugin-vue, devDependencies, eslint, eslint-config-prettier, eslint-plugin-prettier (+16 more)
+Cohesion: 0.15
+Nodes (13): eslint, eslint-config-prettier, eslint-plugin-prettier, eslint-plugin-vue, devDependencies, eslint, eslint-config-prettier, eslint-plugin-prettier (+5 more)
 
 ### Community 5 - "package.json"
-Cohesion: 0.22
-Nodes (17): apply(), caretAfterDigitCount(), clearIncomplete(), digitCountBefore(), emit, formatFromDigits(), formattedPhone, inputEl (+9 more)
+Cohesion: 0.17
+Nodes (20): apply(), caretAfterDigitCount(), clearIncomplete(), digitCountBefore(), emit, formatFromDigits(), formattedPhone, inputEl (+12 more)
 
 ### Community 6 - "КЭМЗ hybrid industrial design"
 Cohesion: 0.11
 Nodes (16): Email HTML, Form block, Grid, Layout & component patterns, Product hotspot, Shell, Direction, Hard rules (+8 more)
 
 ### Community 7 - "InputPhone.vue"
-Cohesion: 0.21
-Nodes (10): buildLeadEmail(), escapeHtml(), formatMoscowTime(), Bucket, buckets, checkRateLimit(), ContactLead, ContactLeadInput (+2 more)
+Cohesion: 0.29
+Nodes (7): buildLeadEmail(), escapeHtml(), formatMoscowTime(), Bucket, buckets, checkRateLimit(), ContactLead
 
 ### Community 8 - "[product].vue"
 Cohesion: 0.28
@@ -136,27 +144,37 @@ Cohesion: 0.13
 Nodes (13): Keep, Phrases to cut (EN), Phrases to cut (RU), Punctuation tells, Stop-slop references (compact), Structures to avoid, Core rules (global), Examples (+5 more)
 
 ### Community 34 - "Design proposal: hybrid redesign (for morning review)"
-Cohesion: 0.18
-Nodes (10): Blockers only you can clear, Current map, Design proposal: hybrid redesign (for morning review), i18n EN/RU (for employers), Option A: “Precision plant” (recommended), Option B: “Awwards dark”, Option C: Keep left rail, restyle, Product tables (mobile) (+2 more)
+Cohesion: 0.15
+Nodes (12): Blockers only you can clear, Current map, Design proposal: hybrid redesign (for morning review), i18n EN/RU (for employers), Implemented overnight (branch `feature/hybrid-redesign`), Option A: “Precision plant” (recommended), Option B: “Awwards dark”, Option C: Keep left rail, restyle (+4 more)
+
+### Community 37 - "package.json"
+Cohesion: 0.17
+Nodes (11): license, name, private, scripts, build, dev, generate, lint (+3 more)
+
+### Community 38 - "AppHeader.vue"
+Cohesion: 0.29
+Nodes (5): { links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink }, menuOpen, route, scrolled, scrollPast
+
+### Community 39 - "error.vue"
+Cohesion: 0.50
+Nodes (3): description, props, title
 
 ## Knowledge Gaps
-- **133 isolated node(s):** `route`, `name`, `phone`, `email`, `message` (+128 more)
+- **148 isolated node(s):** `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route`, `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink }`, `menuOpen` (+143 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `devDependencies`?**
-  _High betweenness centrality (0.042) - this node is a cross-community bridge._
-- **What connects `route`, `name`, `phone` to the rest of the system?**
-  _133 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `dependencies` connect `dependencies` to `package.json`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **What connects `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route` to the rest of the system?**
+  _148 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
-- **Should `Form.vue` be split into smaller, more focused modules?**
-  _Cohesion score 0.1286549707602339 - nodes in this community are weakly interconnected._
-- **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `КЭМЗ hybrid industrial design` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Stop slop (КЭМЗ)` be split into smaller, more focused modules?**

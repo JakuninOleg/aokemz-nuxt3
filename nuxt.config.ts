@@ -7,8 +7,12 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Placeholder description' },
-        { name: 'title', content: 'ОАО "КЭМЗ"' }
+        {
+          name: 'description',
+          content:
+            'ОАО Карпинский электромашиностроительный завод: электрические машины и комплекты приводов для карьерных экскаваторов. Карпинск, с 1960.'
+        },
+        { name: 'title', content: 'ОАО «КЭМЗ»' }
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
     }

@@ -1,12 +1,9 @@
 <template>
-  <div class="lg:grid grid-main">
-    <Nav />
-    <main class="lg:flex flex-1 w-full">
-      <NuxtPage />
+  <div class="flex min-h-screen flex-col bg-white text-kemz-ink">
+    <AppHeader />
+    <main class="flex-1 w-full">
+      <slot />
     </main>
+    <AppFooter />
   </div>
 </template>
-
-<script setup>
-import Nav from '~/components/Nav.vue'
-</script>

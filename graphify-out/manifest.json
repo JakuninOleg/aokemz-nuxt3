@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "components/Menu.vue": {
-    "mtime": 1746209121.457835,
-    "ast_hash": "05f0732aa5a5d2244a7e63868eac90e0",
+    "mtime": 1785289088.641781,
+    "ast_hash": "381e5cc2cff9422d9aec2cae598ae55b",
     "semantic_hash": ""
   },
   "components/MenuLink.vue": {
@@ -40,18 +40,18 @@
     "semantic_hash": ""
   },
   "error.vue": {
-    "mtime": 1746048116.8626668,
-    "ast_hash": "cde456cc041d4fa274e8db046ffe3a2d",
+    "mtime": 1785289100.0911813,
+    "ast_hash": "515870363c6bea09588236c68b274386",
     "semantic_hash": ""
   },
   "layouts/default.vue": {
-    "mtime": 1760402908.3591647,
-    "ast_hash": "81552b47f39bad37b91ccaf22eca2c17",
+    "mtime": 1785289083.7699008,
+    "ast_hash": "00303b675a21b235380cd272cb26f1bf",
     "semantic_hash": ""
   },
   "nuxt.config.ts": {
-    "mtime": 1785288856.5383043,
-    "ast_hash": "4f66d76c1efd9e8df12fc8b7afe0a9a4",
+    "mtime": 1785289101.9527922,
+    "ast_hash": "9972f5f8f9d501d0f244ee83dbb1dfa7",
     "semantic_hash": ""
   },
   "package.json": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "pages/index.vue": {
-    "mtime": 1729293486.5144043,
-    "ast_hash": "f282f51a4d36a030f4510b869983493f",
+    "mtime": 1785289088.3776214,
+    "ast_hash": "d139909299feac29cd09a1c45a201081",
     "semantic_hash": ""
   },
   "pages/news/[new].vue": {
@@ -95,8 +95,8 @@
     "semantic_hash": ""
   },
   "pages/products/index.vue": {
-    "mtime": 1746050589.2060864,
-    "ast_hash": "adb40ac172b0348206e1dc6e9a607ba1",
+    "mtime": 1785289153.6939378,
+    "ast_hash": "fb2f44ee824f375b9f625dedef80b9f3",
     "semantic_hash": ""
   },
   "plugins/contentful.ts": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "docs/design-proposal.md": {
-    "mtime": 1785288914.3399093,
-    "ast_hash": "8413d6cbd0cd4d08099db207fb1ffeb5",
+    "mtime": 1785289107.3725173,
+    "ast_hash": "130988d0b7631e7b61444dcc1892c5c0",
     "semantic_hash": ""
   },
   "public/docs/\u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
@@ -442,6 +442,51 @@
   "public/docs/\u041f\u0435\u0440\u0435\u0447\u0435\u043d\u044c \u0437\u0430\u043f\u0430\u0441\u043d\u044b\u0445 \u0447\u0430\u0441\u0442\u0435\u0439 \u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
     "mtime": 1676907857.0062335,
     "ast_hash": "68c22eb806c746d2165225c643672a3e",
+    "semantic_hash": ""
+  },
+  "components/AppFooter.vue": {
+    "mtime": 1785289047.6587403,
+    "ast_hash": "3c6ce4a15cf0f94e08dfddcc34d22aaa",
+    "semantic_hash": ""
+  },
+  "components/AppHeader.vue": {
+    "mtime": 1785289113.614436,
+    "ast_hash": "5934132bcfb04d503a19aa77688f3080",
+    "semantic_hash": ""
+  },
+  "components/home/HomeApplication.vue": {
+    "mtime": 1785289077.0522692,
+    "ast_hash": "4dd8f3f5e84df7ed7dd1234d64268832",
+    "semantic_hash": ""
+  },
+  "components/home/HomeCapabilities.vue": {
+    "mtime": 1785289080.8814957,
+    "ast_hash": "f8670581a80d605126ee9e66ee1be5d6",
+    "semantic_hash": ""
+  },
+  "components/home/HomeCta.vue": {
+    "mtime": 1785289081.9648645,
+    "ast_hash": "5a75483757b5ff66ea95979572fb81d9",
+    "semantic_hash": ""
+  },
+  "components/home/HomeDirections.vue": {
+    "mtime": 1785289057.611643,
+    "ast_hash": "4300068a7a7933b2991376eb526a90d8",
+    "semantic_hash": ""
+  },
+  "components/home/HomeHero.vue": {
+    "mtime": 1785289050.1486688,
+    "ast_hash": "c76ae80965fdfa2e88babd86ddb31815",
+    "semantic_hash": ""
+  },
+  "components/home/HomeTrust.vue": {
+    "mtime": 1785289057.5972042,
+    "ast_hash": "12f83e8ea375bbca29157c986b90c08a",
+    "semantic_hash": ""
+  },
+  "composables/useSiteNav.ts": {
+    "mtime": 1785289031.8658469,
+    "ast_hash": "ffaac095cc44574a922843b258c17d10",
     "semantic_hash": ""
   }
 }
