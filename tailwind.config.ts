@@ -38,7 +38,9 @@ export default <Partial<Config>>{
         }
       },
       fontFamily: {
-        sans: ['ProximaNova', ...defaultTheme.fontFamily.sans]
+        sans: ['Manrope', 'ProximaNova', ...defaultTheme.fontFamily.sans],
+        display: ['"Barlow Condensed"', 'Manrope', ...defaultTheme.fontFamily.sans],
+        proxima: ['ProximaNova', ...defaultTheme.fontFamily.sans]
       },
       height: {
         76: '19rem',

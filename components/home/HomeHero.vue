@@ -1,9 +1,9 @@
 <template>
   <section class="relative isolate min-h-[88vh] overflow-hidden bg-kemz-ink text-white">
     <img
-      src="~/assets/images/newkemz.jpg"
+      :src="heroSrc"
       alt="Электрические машины ОАО КЭМЗ для карьерной техники"
-      class="absolute inset-0 h-full w-full object-cover opacity-45 hero-media"
+      class="absolute inset-0 h-full w-full object-cover opacity-50 hero-media"
     />
     <div
       class="absolute inset-0 bg-gradient-to-r from-kemz-ink via-kemz-ink/85 to-kemz-ink/40"
@@ -19,7 +19,7 @@
         ОАО «КЭМЗ» · Карпинск
       </p>
       <h1
-        class="hero-fade hero-fade-delay-1 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl xl:text-6xl"
+        class="hero-fade hero-fade-delay-1 max-w-3xl font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl"
       >
         Приводы для карьерных и шагающих экскаваторов
       </h1>
@@ -43,6 +43,10 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const heroSrc = '/media/hero-excavator-dusk.png'
+</script>
 
 <style scoped>
 .hero-media {

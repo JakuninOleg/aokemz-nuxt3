@@ -1,16 +1,16 @@
 # Graph Report - aokemz-nuxt3  (2026-07-29)
 
 ## Corpus Check
-- 59 files · ~512,219 words
+- 65 files · ~729,540 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 286 nodes · 284 edges · 51 communities (36 shown, 15 thin omitted)
+- 313 nodes · 305 edges · 55 communities (38 shown, 17 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ecc5f639`
+- Built from commit: `28f1282c`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -51,9 +51,12 @@
 - HomeCapabilities.vue
 - HomeDirections.vue
 - HomeTrust.vue
+- new-layout-2.vue
+- DemoSwitcher.vue
+- new-layouts/index.vue
 
 ## God Nodes (most connected - your core abstractions)
-1. `Design proposal: hybrid redesign (for morning review)` - 11 edges
+1. `Design proposal: hybrid redesign (for morning review)` - 12 edges
 2. `КЭМЗ hybrid industrial design` - 10 edges
 3. `ОАО КЭМЗ — факты и контент для сайта` - 9 edges
 4. `apply()` - 7 edges
@@ -79,7 +82,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (51 total, 15 thin omitted)
+## Communities (55 total, 17 thin omitted)
 
 ### Community 0 - "dependencies"
 Cohesion: 0.06
@@ -90,16 +93,16 @@ Cohesion: 0.18
 Nodes (11): Ассеты, Деплой / почта заявок, Документы владельцев в `static/` (первичный источник), История / люди (проверено, осторожно в маркетинге), ОАО КЭМЗ — факты и контент для сайта, Продукция (каталог + открытые источники), Производственные возможности (`Возможности КЭМЗ.docx`), Сгенерированные / выдуманные ассеты (+3 more)
 
 ### Community 2 - "Nav.vue"
-Cohesion: 0.17
-Nodes (6): emit, route, toggleMenu(), route, links, menuOpened
+Cohesion: 0.15
+Nodes (7): emit, route, toggleMenu(), route, links, { links: siteLinks }, menuOpened
 
 ### Community 3 - "Form.vue"
-Cohesion: 0.19
-Nodes (13): applyFieldErrors(), clearFieldErrors(), email, error, fieldErrors, loader, message, name (+5 more)
+Cohesion: 0.10
+Nodes (22): applyFieldErrors(), clearFieldErrors(), email, error, fieldErrors, loader, message, name (+14 more)
 
 ### Community 4 - "devDependencies"
-Cohesion: 0.15
-Nodes (13): eslint, eslint-config-prettier, eslint-plugin-prettier, eslint-plugin-vue, devDependencies, eslint, eslint-config-prettier, eslint-plugin-prettier (+5 more)
+Cohesion: 0.08
+Nodes (24): eslint, eslint-config-prettier, eslint-plugin-prettier, eslint-plugin-vue, devDependencies, eslint, eslint-config-prettier, eslint-plugin-prettier (+16 more)
 
 ### Community 5 - "package.json"
 Cohesion: 0.22
@@ -110,8 +113,8 @@ Cohesion: 0.11
 Nodes (16): Email HTML, Form block, Grid, Layout & component patterns, Product hotspot, Shell, Direction, Hard rules (+8 more)
 
 ### Community 7 - "InputPhone.vue"
-Cohesion: 0.21
-Nodes (9): buildLeadEmail(), escapeHtml(), formatMoscowTime(), Bucket, buckets, checkRateLimit(), ContactLead, ContactLeadInput (+1 more)
+Cohesion: 0.25
+Nodes (6): links, { links: nav, isActiveLink }, open, route, { trust, directions, caps, media }, year
 
 ### Community 8 - "[product].vue"
 Cohesion: 0.28
@@ -150,12 +153,12 @@ Cohesion: 0.13
 Nodes (13): Keep, Phrases to cut (EN), Phrases to cut (RU), Punctuation tells, Stop-slop references (compact), Structures to avoid, Core rules (global), Examples (+5 more)
 
 ### Community 34 - "Design proposal: hybrid redesign (for morning review)"
-Cohesion: 0.15
-Nodes (12): Blockers only you can clear, Current map, Design proposal: hybrid redesign (for morning review), i18n EN/RU (for employers), Implemented overnight (branch `feature/hybrid-redesign`), Option A: “Precision plant” (recommended), Option B: “Awwards dark”, Option C: Keep left rail, restyle (+4 more)
+Cohesion: 0.14
+Nodes (13): Blockers only you can clear, Current map, Design proposal: hybrid redesign (for morning review), i18n EN/RU (for employers), Implemented overnight (branch `feature/hybrid-redesign`), Live demos (branch `feature/hybrid-redesign`), Option A: “Precision plant” (recommended), Option B: “Awwards dark” (+5 more)
 
 ### Community 37 - "package.json"
-Cohesion: 0.17
-Nodes (11): license, name, private, scripts, build, dev, generate, lint (+3 more)
+Cohesion: 0.40
+Nodes (4): links, { links: nav }, scrolled, { trust, directions, caps, media }
 
 ### Community 38 - "AppHeader.vue"
 Cohesion: 0.29
@@ -165,22 +168,28 @@ Nodes (5): { links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink 
 Cohesion: 0.50
 Nodes (3): description, props, title
 
+### Community 51 - "new-layout-2.vue"
+Cohesion: 0.50
+Nodes (3): links, { links: nav }, { trust, directions, caps, media }
+
 ## Knowledge Gaps
-- **152 isolated node(s):** `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route`, `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink }`, `menuOpen` (+147 more)
+- **171 isolated node(s):** `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route`, `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail, isActiveLink }`, `menuOpen` (+166 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `package.json`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
-- **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `devDependencies`?**
+  _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **What connects `{ links, salesPhoneDisplay, salesPhoneHref, salesEmail }`, `year`, `route` to the rest of the system?**
-  _152 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _171 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
+- **Should `Form.vue` be split into smaller, more focused modules?**
+  _Cohesion score 0.10317460317460317 - nodes in this community are weakly interconnected._
+- **Should `devDependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `КЭМЗ hybrid industrial design` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Stop slop (КЭМЗ)` be split into smaller, more focused modules?**

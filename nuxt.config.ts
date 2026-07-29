@@ -1,36 +1,38 @@
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-04-30',
 
   app: {
     head: {
-      title: 'ОАО "КЭМЗ"',
+      title: 'OAO KEMZ',
+      htmlAttrs: { lang: 'ru' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
           content:
-            'ОАО Карпинский электромашиностроительный завод: электрические машины и комплекты приводов для карьерных экскаваторов. Карпинск, с 1960.'
+            'OAO Karpinskiy Electromagnetic Machine Plant: electric machines and drive kits for quarry excavators. Karpinsk, since 1960.',
         },
-        { name: 'title', content: 'ОАО «КЭМЗ»' }
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-    }
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap',
+        },
+      ],
+    },
   },
 
-  css: [
-    '~/assets/css/styles/main.scss'       // Подключаем стили Tailwind
-  ],
+  css: ['~/assets/css/styles/main.scss'],
 
-  modules: [
-    // '@vite-pwa/nuxt',
-    '@nuxtjs/tailwindcss'
-  ],
+  modules: ['@nuxtjs/tailwindcss'],
 
-  plugins: [
-    '~/plugins/contentful',
-    // '~/plugins/vue-yandex-maps.js'
-  ],
+  plugins: ['~/plugins/contentful'],
 
   runtimeConfig: {
     smtpHost: process.env.SMTP_HOST || 'smtp.gmail.com',
@@ -42,49 +44,13 @@ export default defineNuxtConfig({
     public: {
       CTF_SPACE_ID: process.env.CTF_SPACE_ID,
       CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
-      API_BASE_URL: 'https://www.aokemz.ru'
-    }
+      API_BASE_URL: 'https://www.aokemz.ru',
+    },
   },
-
-  // tailwindcss: {
-  //   cssPath: '~/assets/css/tailwind.css',
-  //   configPath: 'tailwind.config.ts',
-  //   exposeConfig: false
-  // },
-
-  // pwa: {
-  //   registerType: 'autoUpdate',
-  //   manifest: {
-  //     name: 'ОАО "КЭМЗ"',
-  //     short_name: 'ОАО "КЭМЗ"',
-  //     theme_color: '#2F78CD',
-  //     background_color: '#2F78CD',
-  //     display: 'standalone',
-  //     scope: '/',
-  //     start_url: '/',
-  //     icons: [
-  //       {
-  //         src: '/pwa-192x192.png',
-  //         sizes: '192x192',
-  //         type: 'image/png'
-  //       },
-  //       {
-  //         src: '/pwa-512x512.png',
-  //         sizes: '512x512',
-  //         type: 'image/png'
-  //       }
-  //     ]
-  //   },
-  //   devOptions: {
-  //     enabled: true,
-  //     type: 'module'
-  //   }
-  // },
 
   postcss: {
     plugins: {
-      'postcss-nesting': {}
-    }
+      'postcss-nesting': {},
+    },
   },
-  
 })

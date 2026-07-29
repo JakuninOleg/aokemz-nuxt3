@@ -93,7 +93,17 @@
 
 ### Сгенерированные / выдуманные ассеты
 
-_(пока пусто — заполнять по мере генерации)_
+| Файл | Источник | Назначение |
+|------|----------|------------|
+| `public/media/hero-excavator-dusk.png` | AI generate | Hero / layout-1,2 |
+| `public/media/hero-motor-copper.png` | AI generate | Layout-2 product focus |
+| `public/media/quarry-excavator.jpg` | Unsplash | Layout-3 hero |
+| `public/media/factory-floor.jpg` | Unsplash | Plant section |
+| `public/media/copper-motor.jpg` | Unsplash | Capability imagery |
+| `public/media/heavy-industry.jpg` | Unsplash | Application band |
+| `public/media/steel-workshop.jpg` | Unsplash | Dark plant band |
+
+Демо-макеты главной: `/new-layouts`, `/new-layout-1`, `/new-layout-2`, `/new-layout-3`.
 
 ## Деплой / почта заявок
 

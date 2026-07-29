@@ -46,7 +46,17 @@ Least disruptive. Restyle sidebar to ink/steel, polish type. Caps Awwards ceilin
 
 Good if stakeholders fear IA change. Weaker first impression.
 
-**Default while you sleep: Option A foundation.**
+## Live demos (branch `feature/hybrid-redesign`)
+
+| URL | Option |
+|-----|--------|
+| [/new-layouts](/new-layouts) | Hub |
+| [/new-layout-1](/new-layout-1) | A Precision plant |
+| [/new-layout-2](/new-layout-2) | B Awwards dark |
+| [/new-layout-3](/new-layout-3) | C Ink rail (Menu/Nav rewrite) |
+
+Fonts: Manrope (UI) + Barlow Condensed (display). Media in `public/media/`.
+
 
 ## Product tables (mobile)
 

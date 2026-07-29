@@ -35,8 +35,8 @@
     "semantic_hash": ""
   },
   "components/Nav.vue": {
-    "mtime": 1746208882.3880088,
-    "ast_hash": "691ded2d0f1174653e56b46f86cbd97e",
+    "mtime": 1785289877.9118462,
+    "ast_hash": "9cc2b729013dc8a2c6d3464c1a5623b4",
     "semantic_hash": ""
   },
   "error.vue": {
@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "nuxt.config.ts": {
-    "mtime": 1785289101.9527922,
-    "ast_hash": "9972f5f8f9d501d0f244ee83dbb1dfa7",
+    "mtime": 1785289600.9005947,
+    "ast_hash": "cec8e2067f4a88df7c08307f0ade2107",
     "semantic_hash": ""
   },
   "package.json": {
@@ -135,8 +135,8 @@
     "semantic_hash": ""
   },
   "tailwind.config.ts": {
-    "mtime": 1785288944.7904673,
-    "ast_hash": "9d3df2cea0a41f9141fe0dae2dd7a5f1",
+    "mtime": 1785289618.8885057,
+    "ast_hash": "b16c74e00426dddd251f31329d3d6454",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "docs/brand-facts.md": {
-    "mtime": 1785288856.5353122,
-    "ast_hash": "202eb32c7b25187669da460fdba35c0d",
+    "mtime": 1785289784.0515697,
+    "ast_hash": "d96edc44175a97ef039fb3dc63e6d0ea",
     "semantic_hash": ""
   },
   "layouts/README.md": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "docs/design-proposal.md": {
-    "mtime": 1785289242.4532936,
-    "ast_hash": "acb4eb38bf0a57a2aaad62a73af94718",
+    "mtime": 1785289815.9060602,
+    "ast_hash": "d11419fa9e47aa40b1fc445326802e9f",
     "semantic_hash": ""
   },
   "public/docs/\u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
@@ -475,8 +475,8 @@
     "semantic_hash": ""
   },
   "components/home/HomeHero.vue": {
-    "mtime": 1785289050.1486688,
-    "ast_hash": "c76ae80965fdfa2e88babd86ddb31815",
+    "mtime": 1785289776.4911242,
+    "ast_hash": "4c132375a51e363c5f67ffc27b31607c",
     "semantic_hash": ""
   },
   "components/home/HomeTrust.vue": {
@@ -497,6 +497,71 @@
   "locales/ru.json": {
     "mtime": 1785289241.018402,
     "ast_hash": "22d0ca2a4a9aad948af415119dd1a428",
+    "semantic_hash": ""
+  },
+  "components/demos/DemoSwitcher.vue": {
+    "mtime": 1785289672.6905446,
+    "ast_hash": "125be76b8162f7b698aec0a608623734",
+    "semantic_hash": ""
+  },
+  "composables/useHomeDemoContent.ts": {
+    "mtime": 1785289619.1357684,
+    "ast_hash": "4b5a9cd6ba8ffdcddc3b0526f1570574",
+    "semantic_hash": ""
+  },
+  "pages/new-layout-1.vue": {
+    "mtime": 1785289729.4404545,
+    "ast_hash": "bb4e42b4c1763d816b08b3e1d27128ca",
+    "semantic_hash": ""
+  },
+  "pages/new-layout-2.vue": {
+    "mtime": 1785289752.059523,
+    "ast_hash": "61303438d4efd00f03a2a3c308325d54",
+    "semantic_hash": ""
+  },
+  "pages/new-layout-3.vue": {
+    "mtime": 1785289896.3227005,
+    "ast_hash": "a27517345cd572b14be97012102f0e95",
+    "semantic_hash": ""
+  },
+  "pages/new-layouts/index.vue": {
+    "mtime": 1785289764.4737766,
+    "ast_hash": "1b1d9496713684f71e1605dabed27665",
+    "semantic_hash": ""
+  },
+  "public/media/copper-motor.jpg": {
+    "mtime": 1785289604.1332898,
+    "ast_hash": "588dfa4328426ce0db06b332363e9a87",
+    "semantic_hash": ""
+  },
+  "public/media/factory-floor.jpg": {
+    "mtime": 1785289604.00748,
+    "ast_hash": "58941c90642ce87ff99e31d89b436fb6",
+    "semantic_hash": ""
+  },
+  "public/media/heavy-industry.jpg": {
+    "mtime": 1785289603.7245471,
+    "ast_hash": "372c6c0d8312002ff7f3b44f9d740425",
+    "semantic_hash": ""
+  },
+  "public/media/hero-excavator-dusk.png": {
+    "mtime": 1785289634.2150526,
+    "ast_hash": "26835c27ac343b452365c61fe472a2de",
+    "semantic_hash": ""
+  },
+  "public/media/hero-motor-copper.png": {
+    "mtime": 1785289648.668113,
+    "ast_hash": "d99ba2c3587f3db0831d028c2fd850d5",
+    "semantic_hash": ""
+  },
+  "public/media/quarry-excavator.jpg": {
+    "mtime": 1785289604.4886756,
+    "ast_hash": "9fe703dbf7d58945f54682c459836e6b",
+    "semantic_hash": ""
+  },
+  "public/media/steel-workshop.jpg": {
+    "mtime": 1785289604.315348,
+    "ast_hash": "91d16f12f8136ff1eb5a972282030880",
     "semantic_hash": ""
   }
 }

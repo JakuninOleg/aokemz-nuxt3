@@ -601,7 +601,7 @@
       "label": "menuOpened",
       "file_type": "code",
       "source_file": "components/Nav.vue",
-      "source_location": "L30",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "components_nav_menuopened",
       "community": 2,
@@ -609,10 +609,21 @@
       "norm_label": "menuopened"
     },
     {
+      "label": "{ links: siteLinks }",
+      "file_type": "code",
+      "source_file": "components/Nav.vue",
+      "source_location": "L36",
+      "_origin": "ast",
+      "id": "components_nav_links_sitelinks",
+      "community": 2,
+      "community_name": "Nav.vue",
+      "norm_label": "{ links: sitelinks }"
+    },
+    {
       "label": "links",
       "file_type": "code",
       "source_file": "components/Nav.vue",
-      "source_location": "L32",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "components_nav_links",
       "community": 2,
@@ -629,6 +640,39 @@
       "community": 2,
       "community_name": "Nav.vue",
       "norm_label": "togglemenu()"
+    },
+    {
+      "label": "DemoSwitcher.vue",
+      "file_type": "code",
+      "source_file": "components/demos/DemoSwitcher.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_demos_demoswitcher",
+      "community": 52,
+      "community_name": "DemoSwitcher.vue",
+      "norm_label": "demoswitcher.vue"
+    },
+    {
+      "label": "route",
+      "file_type": "code",
+      "source_file": "components/demos/DemoSwitcher.vue",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "components_demos_demoswitcher_route",
+      "community": 52,
+      "community_name": "DemoSwitcher.vue",
+      "norm_label": "route"
+    },
+    {
+      "label": "items",
+      "file_type": "code",
+      "source_file": "components/demos/DemoSwitcher.vue",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "components_demos_demoswitcher_items",
+      "community": 52,
+      "community_name": "DemoSwitcher.vue",
+      "norm_label": "items"
     },
     {
       "label": "HomeApplication.vue",
@@ -728,6 +772,28 @@
       "community": 44,
       "community_name": "HomeTrust.vue",
       "norm_label": "items"
+    },
+    {
+      "label": "useHomeDemoContent.ts",
+      "file_type": "code",
+      "source_file": "composables/useHomeDemoContent.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "composables_usehomedemocontent",
+      "community": 54,
+      "community_name": "useHomeDemoContent.ts",
+      "norm_label": "usehomedemocontent.ts"
+    },
+    {
+      "label": "useHomeDemoContent()",
+      "file_type": "code",
+      "source_file": "composables/useHomeDemoContent.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "composables_usehomedemocontent_usehomedemocontent",
+      "community": 54,
+      "community_name": "useHomeDemoContent.ts",
+      "norm_label": "usehomedemocontent()"
     },
     {
       "label": "useSiteNav.ts",
@@ -967,8 +1033,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "package",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "package.json"
     },
     {
@@ -978,8 +1044,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "package_name",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "name"
     },
     {
@@ -989,8 +1055,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "package_version",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "version"
     },
     {
@@ -1000,8 +1066,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "package_private",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "private"
     },
     {
@@ -1011,8 +1077,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "package_license",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "license"
     },
     {
@@ -1022,8 +1088,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "scripts"
     },
     {
@@ -1033,8 +1099,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "dev"
     },
     {
@@ -1044,8 +1110,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "build"
     },
     {
@@ -1055,8 +1121,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_start",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "start"
     },
     {
@@ -1066,8 +1132,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_generate",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "generate"
     },
     {
@@ -1077,8 +1143,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "package_scripts_lint_js",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "lint:js"
     },
     {
@@ -1088,8 +1154,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_scripts_lint",
-      "community": 37,
-      "community_name": "package.json",
+      "community": 4,
+      "community_name": "devDependencies",
       "norm_label": "lint"
     },
     {
@@ -1720,6 +1786,226 @@
       "norm_label": "pages/index.vue"
     },
     {
+      "label": "new-layout-1.vue",
+      "file_type": "code",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pages_new_layout_1",
+      "community": 37,
+      "community_name": "package.json",
+      "norm_label": "new-layout-1.vue"
+    },
+    {
+      "label": "{ trust, directions, caps, media }",
+      "file_type": "code",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L153",
+      "_origin": "ast",
+      "id": "pages_new_layout_1_trust_directions_caps_media",
+      "community": 37,
+      "community_name": "package.json",
+      "norm_label": "{ trust, directions, caps, media }"
+    },
+    {
+      "label": "{ links: nav }",
+      "file_type": "code",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L154",
+      "_origin": "ast",
+      "id": "pages_new_layout_1_links_nav",
+      "community": 37,
+      "community_name": "package.json",
+      "norm_label": "{ links: nav }"
+    },
+    {
+      "label": "links",
+      "file_type": "code",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L155",
+      "_origin": "ast",
+      "id": "pages_new_layout_1_links",
+      "community": 37,
+      "community_name": "package.json",
+      "norm_label": "links"
+    },
+    {
+      "label": "scrolled",
+      "file_type": "code",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L157",
+      "_origin": "ast",
+      "id": "pages_new_layout_1_scrolled",
+      "community": 37,
+      "community_name": "package.json",
+      "norm_label": "scrolled"
+    },
+    {
+      "label": "new-layout-2.vue",
+      "file_type": "code",
+      "source_file": "pages/new-layout-2.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pages_new_layout_2",
+      "community": 51,
+      "community_name": "new-layout-2.vue",
+      "norm_label": "new-layout-2.vue"
+    },
+    {
+      "label": "{ trust, directions, caps, media }",
+      "file_type": "code",
+      "source_file": "pages/new-layout-2.vue",
+      "source_location": "L136",
+      "_origin": "ast",
+      "id": "pages_new_layout_2_trust_directions_caps_media",
+      "community": 51,
+      "community_name": "new-layout-2.vue",
+      "norm_label": "{ trust, directions, caps, media }"
+    },
+    {
+      "label": "{ links: nav }",
+      "file_type": "code",
+      "source_file": "pages/new-layout-2.vue",
+      "source_location": "L137",
+      "_origin": "ast",
+      "id": "pages_new_layout_2_links_nav",
+      "community": 51,
+      "community_name": "new-layout-2.vue",
+      "norm_label": "{ links: nav }"
+    },
+    {
+      "label": "links",
+      "file_type": "code",
+      "source_file": "pages/new-layout-2.vue",
+      "source_location": "L138",
+      "_origin": "ast",
+      "id": "pages_new_layout_2_links",
+      "community": 51,
+      "community_name": "new-layout-2.vue",
+      "norm_label": "links"
+    },
+    {
+      "label": "new-layout-3.vue",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pages_new_layout_3",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "new-layout-3.vue"
+    },
+    {
+      "label": "route",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L146",
+      "_origin": "ast",
+      "id": "pages_new_layout_3_route",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "route"
+    },
+    {
+      "label": "open",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L147",
+      "_origin": "ast",
+      "id": "pages_new_layout_3_open",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "open"
+    },
+    {
+      "label": "year",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L148",
+      "_origin": "ast",
+      "id": "pages_new_layout_3_year",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "year"
+    },
+    {
+      "label": "{ trust, directions, caps, media }",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L149",
+      "_origin": "ast",
+      "id": "pages_new_layout_3_trust_directions_caps_media",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "{ trust, directions, caps, media }"
+    },
+    {
+      "label": "{ links: nav, isActiveLink }",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L150",
+      "_origin": "ast",
+      "id": "pages_new_layout_3_links_nav_isactivelink",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "{ links: nav, isactivelink }"
+    },
+    {
+      "label": "links",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L151",
+      "_origin": "ast",
+      "id": "pages_new_layout_3_links",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "links"
+    },
+    {
+      "label": "isActive()",
+      "file_type": "code",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L152",
+      "_origin": "ast",
+      "id": "pages_new_layout_3_isactive",
+      "community": 7,
+      "community_name": "InputPhone.vue",
+      "norm_label": "isactive()"
+    },
+    {
+      "label": "new-layouts/index.vue",
+      "file_type": "code",
+      "source_file": "pages/new-layouts/index.vue",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "pages_new_layouts_index",
+      "community": 53,
+      "community_name": "new-layouts/index.vue",
+      "norm_label": "new-layouts/index.vue"
+    },
+    {
+      "label": "{ media }",
+      "file_type": "code",
+      "source_file": "pages/new-layouts/index.vue",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "pages_new_layouts_index_media",
+      "community": 53,
+      "community_name": "new-layouts/index.vue",
+      "norm_label": "{ media }"
+    },
+    {
+      "label": "variants",
+      "file_type": "code",
+      "source_file": "pages/new-layouts/index.vue",
+      "source_location": "L46",
+      "_origin": "ast",
+      "id": "pages_new_layouts_index_variants",
+      "community": 53,
+      "community_name": "new-layouts/index.vue",
+      "norm_label": "variants"
+    },
+    {
       "label": "[new].vue",
       "file_type": "code",
       "source_file": "pages/news/[new].vue",
@@ -2012,8 +2298,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "server_api_sendmail_post",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "sendmail.post.ts"
     },
     {
@@ -2056,8 +2342,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "server_utils_leademail",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "leademail.ts"
     },
     {
@@ -2067,8 +2353,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "server_utils_leademail_escapehtml",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "escapehtml()"
     },
     {
@@ -2078,8 +2364,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "server_utils_leademail_formatmoscowtime",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "formatmoscowtime()"
     },
     {
@@ -2089,8 +2375,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "server_utils_leademail_buildleademail",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "buildleademail()"
     },
     {
@@ -2100,8 +2386,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "server_utils_ratelimit",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "ratelimit.ts"
     },
     {
@@ -2111,8 +2397,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "server_utils_ratelimit_bucket",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "bucket"
     },
     {
@@ -2122,8 +2408,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "server_utils_ratelimit_buckets",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "buckets"
     },
     {
@@ -2133,8 +2419,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "server_utils_ratelimit_checkratelimit",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "checkratelimit()"
     },
     {
@@ -2210,8 +2496,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "utils_contactvalidation",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "contactvalidation.ts"
     },
     {
@@ -2254,8 +2540,8 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "utils_contactvalidation_lookslikegibberish",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "lookslikegibberish()"
     },
     {
@@ -2265,8 +2551,8 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "utils_contactvalidation_contactleadschema",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "contactleadschema"
     },
     {
@@ -2276,8 +2562,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "utils_contactvalidation_contactleadinput",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "contactleadinput"
     },
     {
@@ -2287,8 +2573,8 @@
       "source_location": "L110",
       "_origin": "ast",
       "id": "utils_contactvalidation_contactlead",
-      "community": 7,
-      "community_name": "InputPhone.vue",
+      "community": 3,
+      "community_name": "Form.vue",
       "norm_label": "contactlead"
     },
     {
@@ -2955,7 +3241,7 @@
       "label": "\u0414\u0435\u043f\u043b\u043e\u0439 / \u043f\u043e\u0447\u0442\u0430 \u0437\u0430\u044f\u0432\u043e\u043a",
       "file_type": "document",
       "source_file": "docs/brand-facts.md",
-      "source_location": "L98",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "docs_brand_facts_\u0434\u0435\u043f\u043b\u043e\u0439_\u043f\u043e\u0447\u0442\u0430_\u0437\u0430\u044f\u0432\u043e\u043a",
       "community": 1,
@@ -3029,10 +3315,21 @@
       "norm_label": "option c: keep left rail, restyle"
     },
     {
+      "label": "Live demos (branch `feature/hybrid-redesign`)",
+      "file_type": "document",
+      "source_file": "docs/design-proposal.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "docs_design_proposal_live_demos_branch_feature_hybrid_redesign",
+      "community": 34,
+      "community_name": "Design proposal: hybrid redesign (for morning review)",
+      "norm_label": "live demos (branch `feature/hybrid-redesign`)"
+    },
+    {
       "label": "Product tables (mobile)",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L51",
+      "source_location": "L61",
       "_origin": "ast",
       "id": "docs_design_proposal_product_tables_mobile",
       "community": 34,
@@ -3043,7 +3340,7 @@
       "label": "i18n EN/RU (for employers)",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L59",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "docs_design_proposal_i18n_en_ru_for_employers",
       "community": 34,
@@ -3054,7 +3351,7 @@
       "label": "Refactor queue (Nuxt3)",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L71",
+      "source_location": "L81",
       "_origin": "ast",
       "id": "docs_design_proposal_refactor_queue_nuxt3",
       "community": 34,
@@ -3065,7 +3362,7 @@
       "label": "What you will review when awake",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L81",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "docs_design_proposal_what_you_will_review_when_awake",
       "community": 34,
@@ -3076,7 +3373,7 @@
       "label": "Implemented overnight (branch `feature/hybrid-redesign`)",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L89",
+      "source_location": "L99",
       "_origin": "ast",
       "id": "docs_design_proposal_implemented_overnight_branch_feature_hybrid_redesign",
       "community": 34,
@@ -3087,7 +3384,7 @@
       "label": "Permissions / what you do not need overnight",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L100",
+      "source_location": "L110",
       "_origin": "ast",
       "id": "docs_design_proposal_permissions_what_you_do_not_need_overnight",
       "community": 34,
@@ -3098,7 +3395,7 @@
       "label": "Blockers only you can clear",
       "file_type": "document",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L104",
+      "source_location": "L114",
       "_origin": "ast",
       "id": "docs_design_proposal_blockers_only_you_can_clear",
       "community": 34,
@@ -3288,7 +3585,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/Nav.vue",
-      "source_location": "L27",
+      "source_location": "L32",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_nav",
@@ -3978,7 +4275,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/Nav.vue",
-      "source_location": "L28",
+      "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_nav",
@@ -4011,7 +4308,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/Nav.vue",
-      "source_location": "L32",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_nav",
@@ -4022,7 +4319,18 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/Nav.vue",
-      "source_location": "L30",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "components_nav",
+      "target": "components_nav_links_sitelinks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/Nav.vue",
+      "source_location": "L35",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_nav",
@@ -4038,6 +4346,28 @@
       "_origin": "ast",
       "source": "components_nav",
       "target": "components_nav_togglemenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/demos/DemoSwitcher.vue",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "components_demos_demoswitcher",
+      "target": "components_demos_demoswitcher_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "components/demos/DemoSwitcher.vue",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "components_demos_demoswitcher",
+      "target": "components_demos_demoswitcher_route",
       "confidence_score": 1.0
     },
     {
@@ -4071,6 +4401,17 @@
       "_origin": "ast",
       "source": "components_home_hometrust",
       "target": "components_home_hometrust_items",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "composables/useHomeDemoContent.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "composables_usehomedemocontent",
+      "target": "composables_usehomedemocontent_usehomedemocontent",
       "confidence_score": 1.0
     },
     {
@@ -5012,6 +5353,182 @@
       "_origin": "ast",
       "source": "pages_documents_index",
       "target": "pages_documents_index_docs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L155",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_1",
+      "target": "pages_new_layout_1_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L154",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_1",
+      "target": "pages_new_layout_1_links_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_1",
+      "target": "pages_new_layout_1_scrolled",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-1.vue",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_1",
+      "target": "pages_new_layout_1_trust_directions_caps_media",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-2.vue",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_2",
+      "target": "pages_new_layout_2_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-2.vue",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_2",
+      "target": "pages_new_layout_2_links_nav",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-2.vue",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_2",
+      "target": "pages_new_layout_2_trust_directions_caps_media",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_3",
+      "target": "pages_new_layout_3_isactive",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L151",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_3",
+      "target": "pages_new_layout_3_links",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_3",
+      "target": "pages_new_layout_3_links_nav_isactivelink",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_3",
+      "target": "pages_new_layout_3_open",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_3",
+      "target": "pages_new_layout_3_route",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_3",
+      "target": "pages_new_layout_3_trust_directions_caps_media",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layout-3.vue",
+      "source_location": "L148",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layout_3",
+      "target": "pages_new_layout_3_year",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layouts/index.vue",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layouts_index",
+      "target": "pages_new_layouts_index_media",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "pages/new-layouts/index.vue",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "pages_new_layouts_index",
+      "target": "pages_new_layouts_index_variants",
       "confidence_score": 1.0
     },
     {
@@ -6104,7 +6621,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/brand-facts.md",
-      "source_location": "L98",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_brand_facts_\u043e\u0430\u043e_\u043a\u044d\u043c\u0437_\u0444\u0430\u043a\u0442\u044b_\u0438_\u043a\u043e\u043d\u0442\u0435\u043d\u0442_\u0434\u043b\u044f_\u0441\u0430\u0439\u0442\u0430",
@@ -6214,7 +6731,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L104",
+      "source_location": "L114",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
@@ -6236,11 +6753,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L59",
+      "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
       "target": "docs_design_proposal_i18n_en_ru_for_employers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/design-proposal.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
+      "target": "docs_design_proposal_live_demos_branch_feature_hybrid_redesign",
       "confidence_score": 1.0
     },
     {
@@ -6280,7 +6808,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L100",
+      "source_location": "L110",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
@@ -6291,7 +6819,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L51",
+      "source_location": "L61",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
@@ -6302,7 +6830,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L71",
+      "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
@@ -6313,7 +6841,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L81",
+      "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_design_proposal_hybrid_redesign_for_morning_review",
@@ -6324,7 +6852,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "docs/design-proposal.md",
-      "source_location": "L89",
+      "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
       "source": "docs_design_proposal_what_you_will_review_when_awake",
@@ -6355,5 +6883,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ecc5f6398fbc4a478ec35db579b27b8019ab6ced"
+  "built_at_commit": "28f1282c5f47f2271e31c3a25333d531b63bfa85"
 }
