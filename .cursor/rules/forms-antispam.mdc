@@ -1,0 +1,15 @@
+---
+description: Contact form validation, anti-spam, and email templates
+globs: "{components/Form.vue,components/InputPhone.vue,server/api/**}"
+alwaysApply: false
+---
+
+# Forms & mail
+
+- Validate on **client and server**. Never trust HTML `required` alone.
+- Reject spam patterns: random Latin strings, disposable-looking bulk mail, invalid RU phones, empty/garbage messages.
+- RU phone: normalize to digits; expect `7` + 10 digits (or clear international rules). Mask UI ≠ validation.
+- Server (`sendMail`): schema (e.g. zod), honeypot field, rate limit, optional Turnstile later.
+- SMTP credentials only from `runtimeConfig` / env. Never commit passwords.
+- Outbound mail: branded HTML template + plain-text fallback; include name, phone, email, message, timestamp.
+- Do not log full PII unnecessarily; never echo secrets in error responses.

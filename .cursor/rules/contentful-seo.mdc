@@ -1,0 +1,14 @@
+---
+description: Contentful data fetching and SEO patterns
+globs: "{pages/**/*.vue,plugins/contentful.ts,stores/**}"
+alwaysApply: false
+---
+
+# Contentful & SEO
+
+- Fetch with `useAsyncData` + `$contentful.getEntries`; stable keys (`contentful-categories`, etc.).
+- Prefer Composition API; avoid resurrecting commented Pinia store unless caching is clearly needed.
+- Every public page: `useSeoMeta` / `useHead` with unique title + description (no "Placeholder description").
+- Product/news: derive meta from Contentful fields when present; fall back to sensible defaults from `docs/brand-facts.md`.
+- Images: `https:` + Contentful URL, meaningful `alt`, lazy-load below fold.
+- Plan for `sitemap` / `robots` / JSON-LD `Organization` (+ `Product` on product pages) in SEO phase — don't block UI on missing modules.

@@ -1,0 +1,16 @@
+---
+description: Hybrid industrial design direction for ОАО КЭМЗ site
+globs: "**/*.{vue,scss,css}"
+alwaysApply: false
+---
+
+# Hybrid industrial UI
+
+- Direction: **hybrid** — dark atmospheric hero/CTA + light working surfaces (catalog, forms, docs).
+- Brand first on marketing surfaces; one composition per viewport; no card sprawl in heroes.
+- Palette: graphite/near-black, cool light gray, brand blue accent (`#2F78CD` family). Avoid purple gradients, cream+terracotta, glow spam, emoji.
+- Typography: expressive sans (not Inter/Roboto/Arial/system as hero face). All-caps sparingly for industrial headlines.
+- Imagery: real plant/product when available; generated assets OK if labeled in `docs/brand-facts.md`. Prefer excavator/motor context over abstract blobs.
+- Motion: 2–3 intentional effects max per page (reveal, hotspot, CTA). No noise.
+- Mobile: same hierarchy; sidebar-era layout may become top header — don't preserve awkward left rail if it fights the redesign.
+- Preserve Contentful-driven product/news structure; redesign presentation, not CMS invent-for-fun.

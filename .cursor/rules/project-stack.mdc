@@ -1,0 +1,15 @@
+---
+description: Nuxt 3 + Contentful + Vercel stack conventions for ОАО КЭМЗ
+alwaysApply: true
+---
+
+# Stack
+
+- Nuxt 3 (Composition API + `<script setup>` for new/edited files).
+- Contentful CDA via `plugins/contentful.ts` (`$contentful`). Prefer `useAsyncData` on pages.
+- Tailwind + existing SCSS in `assets/css`. Extend tokens, don't invent a second system.
+- Hosting: Vercel. Secrets only in `runtimeConfig` / Vercel env — never hardcode SMTP or tokens.
+- Domain: `aokemz.ru`. Company: ОАО «Карпинский электромашиностроительный завод» (Карпинск), not Кемерово.
+- Brand facts and inventable content: `docs/brand-facts.md`.
+- Design language: hybrid industrial — read `.cursor/skills/kemz-industrial-design/SKILL.md` before UI work.
+- Graphify: if `graphify-out/graph.json` exists, prefer `graphify query` / `path` / `explain` for codebase questions.
