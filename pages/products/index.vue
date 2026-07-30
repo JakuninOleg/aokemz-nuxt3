@@ -1,30 +1,53 @@
 <template>
-  <div class="section mt-8 lg:mt-24">
-    <h1 class="text-2xl lg:text-3xl font-bold mb-6 lg:mb-16">
-      Каталог продукции
-    </h1>
-    <div v-if="pending" class="text-center">
-      <p>Загрузка...</p>
-    </div>
-    <div v-else-if="error" class="text-center text-red-500">
-      <p>{{ error.message }}</p>
-      <NuxtLink to="/" class="text-blue-500">Вернуться на главную</NuxtLink>
-    </div>
-    <div v-else class="grid gap-6 mb-16 sm:grid-cols-2 xl:grid-cols-3">
-      <div v-for="category in filteredCategories" :key="category.sys.id">
-        <NuxtLink :to="'/products/' + category.fields.url" class="group block">
-          <div class="overflow-hidden border border-kemz-steel bg-white transition-colors group-hover:border-kemz-blue">
+  <div class="kemz-light">
+    <header class="cat-hero">
+      <div class="wrap">
+        <p class="section-tag cat-hero__tag">Каталог</p>
+        <h1>Продукция завода</h1>
+        <p class="cat-hero__lead">
+          Электрические машины и комплекты приводов для карьерной техники, буровых установок и
+          шахтного оборудования.
+        </p>
+      </div>
+    </header>
+
+    <div class="cat-body">
+      <div class="wrap">
+        <div v-if="pending" class="cat-status">
+          <p>Загрузка каталога…</p>
+        </div>
+
+        <div v-else-if="error" class="cat-status cat-status--error">
+          <p>{{ error.message || 'Не удалось загрузить категории' }}</p>
+          <NuxtLink to="/" class="text-link">На главную</NuxtLink>
+        </div>
+
+        <div v-else-if="!filteredCategories.length" class="cat-status">
+          <p>Категории пока не опубликованы</p>
+        </div>
+
+        <div v-else class="cat-grid">
+          <NuxtLink
+            v-for="category in filteredCategories"
+            :key="category.sys.id"
+            :to="'/products/' + category.fields.url"
+            class="cat-card"
+          >
             <img
+              v-if="category.fields.image?.fields?.file?.url"
               :src="'https:' + category.fields.image.fields.file.url"
               :alt="category.fields.Name"
               loading="lazy"
-              class="w-full h-44 object-cover"
+              width="640"
+              height="400"
+              class="cat-card__media"
             />
-            <h2 class="text-lg font-semibold px-4 py-5 text-kemz-ink">
-              {{ category.fields.Name }}
-            </h2>
-          </div>
-        </NuxtLink>
+            <div class="cat-card__body">
+              <h2 class="cat-card__title">{{ category.fields.Name }}</h2>
+              <span class="cat-card__more">Открыть →</span>
+            </div>
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>
@@ -32,6 +55,7 @@
 
 <script setup lang="ts">
 import type { EntryCollection } from 'contentful'
+import { PAGE_SEO } from '~/utils/siteSeo'
 
 interface ContentfulEntry {
   sys: { id: string }
@@ -43,7 +67,6 @@ interface ContentfulEntry {
   }
 }
 
-// Загрузка категорий
 const { data: categories, pending, error } = await useAsyncData(
   'contentful-categories',
   async () => {
@@ -54,7 +77,7 @@ const { data: categories, pending, error } = await useAsyncData(
         order: '-sys.createdAt',
       })
       return data.items
-    } catch (err) {
+    } catch {
       throw createError({
         statusCode: 500,
         message: 'Не удалось загрузить категории',
@@ -63,10 +86,9 @@ const { data: categories, pending, error } = await useAsyncData(
   },
   {
     default: () => [],
-  }
+  },
 )
 
-// Фильтрованные категории
 const filteredCategories = computed(() => {
   return (
     categories.value
@@ -74,4 +96,8 @@ const filteredCategories = computed(() => {
       .reverse() || []
   )
 })
+
+usePageSeo(PAGE_SEO.products)
 </script>
+
+<style lang="scss" src="~/assets/css/catalog-light.scss"></style>

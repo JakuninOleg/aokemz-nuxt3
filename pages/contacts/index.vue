@@ -1,42 +1,48 @@
 <template>
-  <section class="section py-12 lg:py-16 mb-8">
-    <h1 class="text-3xl font-bold tracking-tight text-kemz-ink">Контакты</h1>
-    <p class="mt-3 max-w-xl text-kemz-muted">
-      624930, Свердловская обл., г. Карпинск, ул. Карпинского, 1
-    </p>
+  <div class="kemz-light">
+    <header class="cat-hero">
+      <div class="wrap">
+        <p class="section-tag cat-hero__tag">Связь</p>
+        <h1>Контакты</h1>
+        <address class="cat-address cat-hero__lead">
+          624930, Свердловская обл., г. Карпинск, ул. Карпинского, 1
+        </address>
+      </div>
+    </header>
 
-    <ul class="mt-12 grid gap-0 divide-y divide-kemz-steel border-y border-kemz-steel">
-      <li v-for="(contact, index) in contacts" :key="index" class="grid gap-4 py-8 sm:grid-cols-[1fr_auto]">
-        <div>
-          <h2 class="text-lg font-semibold text-kemz-ink">{{ contact.position }}</h2>
-          <p v-if="contact.person" class="mt-1 text-kemz-muted">{{ contact.person }}</p>
-        </div>
-        <div class="sm:text-right">
-          <a
-            v-for="tel in contact.phones"
-            :key="tel.href"
-            :href="tel.href"
-            class="block font-medium text-kemz-brand hover:underline"
-          >
-            {{ tel.label }}
-          </a>
-          <a
-            :href="`mailto:${contact.email}`"
-            class="mt-2 block text-sm text-kemz-muted hover:text-kemz-brand"
-          >
-            {{ contact.email }}
-          </a>
-        </div>
-      </li>
-    </ul>
+    <div class="cat-body">
+      <div class="wrap">
+        <ul class="cat-contacts">
+          <li v-for="(contact, index) in contacts" :key="index" class="cat-contacts__row">
+            <div>
+              <h2 class="cat-contacts__role">{{ contact.position }}</h2>
+              <p v-if="contact.person" class="cat-contacts__person">{{ contact.person }}</p>
+            </div>
+            <div class="cat-contacts__links">
+              <a
+                v-for="tel in contact.phones"
+                :key="tel.href"
+                :href="tel.href"
+              >
+                {{ tel.label }}
+              </a>
+              <a :href="`mailto:${contact.email}`">{{ contact.email }}</a>
+            </div>
+          </li>
+        </ul>
 
-    <div class="mt-12 max-w-xl">
-      <Form header="Написать в отдел продаж" />
+        <div class="cat-form-block">
+          <p>Заявка уходит в отдел продаж. Ответ обычно в рабочие дни.</p>
+          <Form header="Написать в отдел продаж" />
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { PAGE_SEO } from '~/utils/siteSeo'
+
 type Phone = { label: string; href: string }
 
 type Contact = {
@@ -85,9 +91,7 @@ const contacts: Contact[] = [
   },
 ]
 
-useSeoMeta({
-  title: 'Контакты | ОАО «КЭМЗ»',
-  description:
-    'Контакты ОАО КЭМЗ в Карпинске: отдел продаж, снабжение, ОТК, кадры. Телефон продаж +7 (343) 278-37-43.',
-})
+usePageSeo(PAGE_SEO.contacts)
 </script>
+
+<style lang="scss" src="~/assets/css/catalog-light.scss"></style>

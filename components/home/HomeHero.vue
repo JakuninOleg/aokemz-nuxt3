@@ -1,9 +1,18 @@
 <template>
   <section class="hero">
     <img
-      src="/media/hero-excavator-schematic.png"
+      src="/media/hero-excavator-schematic-640.webp"
+      srcset="
+        /media/hero-excavator-schematic-640.webp 640w,
+        /media/hero-excavator-schematic.webp 960w
+      "
+      sizes="100vw"
       alt=""
       class="hero-schematic"
+      width="960"
+      height="640"
+      decoding="async"
+      fetchpriority="high"
       aria-hidden="true"
     />
     <div class="wrap hero-front">
@@ -25,3 +34,19 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/media/hero-excavator-schematic-640.webp',
+      type: 'image/webp',
+      imagesrcset:
+        '/media/hero-excavator-schematic-640.webp 640w, /media/hero-excavator-schematic.webp 960w',
+      imagesizes: '100vw',
+    },
+  ],
+})
+</script>

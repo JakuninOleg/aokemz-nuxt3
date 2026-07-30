@@ -37,6 +37,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   (e: 'update:modelValue', value: string): void
+  (e: 'blur'): void
 }>()
 
 const inputEl = ref<HTMLInputElement | null>(null)
@@ -132,12 +133,15 @@ function onBlur() {
   const raw = phone.value || toRuDigits(inputEl.value?.value || '')
   const normalized = normalizeRuPhone(raw)
   if (!normalized) {
-    clearIncomplete()
+    // Incomplete entry: clear only empty/+7 stub so validation can show a clear error
+    if (!raw || raw === '7') clearIncomplete()
+    emit('blur')
     return
   }
   phone.value = normalized
   formattedPhone.value = formatRuPhoneDisplay(normalized)
   emit('update:modelValue', normalized)
+  emit('blur')
 }
 
 function onKeydown(e: KeyboardEvent) {

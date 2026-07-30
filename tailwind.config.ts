@@ -33,13 +33,14 @@ export default <Partial<Config>>{
           paper: '#f5f7fa',
           blue: '#2f78cd',
           'blue-deep': '#1e4f8c',
-          brand: '#004c97',
+          brand: '#2f78cd',
           muted: '#6b7280'
         }
       },
       fontFamily: {
-        sans: ['Inter', 'ProximaNova', ...defaultTheme.fontFamily.sans],
-        display: ['Syne', 'Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['"Source Sans 3"', 'ProximaNova', ...defaultTheme.fontFamily.sans],
+        display: ['"Barlow Condensed"', '"Source Sans 3"', ...defaultTheme.fontFamily.sans],
+        mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
         proxima: ['ProximaNova', ...defaultTheme.fontFamily.sans]
       },
       letterSpacing: {

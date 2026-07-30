@@ -22,7 +22,14 @@
 
       <div class="process-gallery">
         <figure v-for="photo in HOME_PROCESS_PHOTOS" :key="photo.src">
-          <img :src="photo.src" :alt="photo.alt" />
+          <img
+            :src="photo.src"
+            :alt="photo.alt"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          />
           <figcaption>{{ photo.caption }}</figcaption>
         </figure>
       </div>

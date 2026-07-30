@@ -33,6 +33,8 @@
             autocomplete="organization"
             placeholder="Ваше имя / название компании"
             :class="{ invalid: errors.name }"
+            @blur="onBlur('name')"
+            @input="onEdit('name')"
           />
           <small v-if="errors.name">{{ errors.name }}</small>
         </label>
@@ -42,6 +44,8 @@
             v-model="form.phone"
             :invalid="Boolean(errors.phone)"
             class="form-phone"
+            @blur="onBlur('phone')"
+            @update:model-value="onEdit('phone')"
           />
           <small v-if="errors.phone">{{ errors.phone }}</small>
         </label>
@@ -54,6 +58,8 @@
             autocomplete="email"
             placeholder="mail@company.ru"
             :class="{ invalid: errors.email }"
+            @blur="onBlur('email')"
+            @input="onEdit('email')"
           />
           <small v-if="errors.email">{{ errors.email }}</small>
         </label>
@@ -65,15 +71,26 @@
             rows="4"
             placeholder="Тип машины, привод, мощность, сроки"
             :class="{ invalid: errors.message }"
+            @blur="onBlur('message')"
+            @input="onEdit('message')"
           />
           <small v-if="errors.message">{{ errors.message }}</small>
         </label>
-        <FormConsent v-model="form.consent" :invalid="Boolean(errors.consent)" />
+        <FormConsent
+          v-model="form.consent"
+          :invalid="Boolean(errors.consent)"
+          @update:model-value="onConsentChange"
+        />
         <small v-if="errors.consent" class="form-error">{{ errors.consent }}</small>
         <p v-if="sent" class="form-success">Заявка отправлена. Ответим в рабочий день.</p>
         <p v-if="submitError" class="form-error">{{ submitError }}</p>
-        <button type="submit" class="button button-solid submit" :disabled="sending">
-          {{ sending ? 'Отправка' : 'Отправить заявку' }}
+
+        <div v-if="sending" class="form-sending" role="status" aria-live="polite">
+          <span class="form-sending__spinner" aria-hidden="true" />
+          Отправляем заявку…
+        </div>
+        <button v-else-if="!sent" type="submit" class="button button-solid submit">
+          Отправить заявку
         </button>
       </form>
     </div>
@@ -81,21 +98,59 @@
 </template>
 
 <script setup lang="ts">
-import { validateContactLead } from '~/utils/contactValidation'
+import {
+  type ContactLeadField,
+  validateContactField,
+  validateContactLead,
+} from '~/utils/contactValidation'
 
 const sent = ref(false)
 const sending = ref(false)
 const submitError = ref('')
 const website = ref('')
-const form = reactive({ name: '', phone: '', email: '', message: '', consent: false })
-const errors = reactive<Record<string, string>>({})
+const form = reactive({
+  name: '',
+  phone: '',
+  email: '',
+  message: '',
+  consent: false,
+})
+const errors = reactive<Record<ContactLeadField, string>>({
+  name: '',
+  phone: '',
+  email: '',
+  message: '',
+  consent: '',
+})
 
-function clearErrors() {
-  Object.keys(errors).forEach((key) => delete errors[key])
+function onBlur(field: ContactLeadField) {
+  // Phone may clear asynchronously on blur — validate after sync
+  nextTick(() => {
+    errors[field] = validateContactField(field, form[field])
+  })
+}
+
+function onEdit(field: ContactLeadField) {
+  if (!errors[field]) return
+  errors[field] = validateContactField(field, form[field])
+}
+
+function onConsentChange(value: boolean) {
+  form.consent = value
+  errors.consent = value ? '' : validateContactField('consent', value)
+}
+
+function validateAllFields(): boolean {
+  let ok = true
+  for (const field of Object.keys(errors) as ContactLeadField[]) {
+    const message = validateContactField(field, form[field])
+    errors[field] = message
+    if (message) ok = false
+  }
+  return ok
 }
 
 async function submitForm() {
-  clearErrors()
   submitError.value = ''
 
   if (website.value.trim()) {
@@ -103,13 +158,10 @@ async function submitForm() {
     return
   }
 
+  if (!validateAllFields()) return
+
   const parsed = validateContactLead(form)
-  if (!parsed.success) {
-    for (const issue of parsed.error.issues) {
-      errors[String(issue.path[0] || '')] = issue.message
-    }
-    return
-  }
+  if (!parsed.success) return
 
   sending.value = true
   try {
@@ -119,6 +171,9 @@ async function submitForm() {
     })
     sent.value = true
     Object.assign(form, { name: '', phone: '', email: '', message: '', consent: false })
+    for (const field of Object.keys(errors) as ContactLeadField[]) {
+      errors[field] = ''
+    }
   } catch (error: any) {
     submitError.value = error?.data?.message || 'Не удалось отправить. Напишите на sales@aokemz.ru'
   } finally {

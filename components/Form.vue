@@ -29,13 +29,20 @@
           :class="{ 'border-red-500': fieldErrors.name }"
           maxlength="120"
           required
+          @blur="onBlur('name')"
+          @input="onEdit('name')"
         />
         <span v-if="fieldErrors.name" class="text-sm text-red-600">{{ fieldErrors.name }}</span>
       </label>
 
       <label class="label grid gap-2">
         <span class="font-medium">Телефон</span>
-        <InputPhone v-model="phone" :invalid="Boolean(fieldErrors.phone)" />
+        <InputPhone
+          v-model="phone"
+          :invalid="Boolean(fieldErrors.phone)"
+          @blur="onBlur('phone')"
+          @update:model-value="onEdit('phone')"
+        />
         <span v-if="fieldErrors.phone" class="text-sm text-red-600">{{ fieldErrors.phone }}</span>
       </label>
 
@@ -51,6 +58,8 @@
           :class="{ 'border-red-500': fieldErrors.email }"
           maxlength="160"
           required
+          @blur="onBlur('email')"
+          @input="onEdit('email')"
         />
         <span v-if="fieldErrors.email" class="text-sm text-red-600">{{ fieldErrors.email }}</span>
       </label>
@@ -65,13 +74,19 @@
           :class="{ 'border-red-500': fieldErrors.message }"
           maxlength="2000"
           required
+          @blur="onBlur('message')"
+          @input="onEdit('message')"
         />
         <span v-if="fieldErrors.message" class="text-sm text-red-600">{{
           fieldErrors.message
         }}</span>
       </label>
 
-      <FormConsent v-model="consent" :invalid="Boolean(fieldErrors.consent)" />
+      <FormConsent
+        v-model="consent"
+        :invalid="Boolean(fieldErrors.consent)"
+        @update:model-value="onConsentChange"
+      />
       <span v-if="fieldErrors.consent" class="text-sm text-red-600">{{ fieldErrors.consent }}</span>
 
       <p v-if="sent" class="text-xl font-bold text-green-600 mt-2">
@@ -81,33 +96,36 @@
         {{ error }}
       </p>
 
-      <svg
-        v-if="loader"
-        class="animate-spin -ml-1 mr-3 h-8 w-8 text-black mt-4"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
-      >
-        <circle
-          class="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          stroke-width="4"
-        />
-        <path
-          class="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        />
-      </svg>
+      <div v-if="loader" class="form-loader mt-4" role="status" aria-live="polite">
+        <svg
+          class="animate-spin h-8 w-8 text-kemz-brand"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          />
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          />
+        </svg>
+        <span>Отправляем заявку…</span>
+      </div>
 
       <button
-        v-if="!loader && !sent"
-        class="text-lg mt-4 bg-blue-500 py-2 w-44 text-white hover:bg-blue-600 transition duration-300 ease-in-out rounded transform hover:shadow-lg active:shadow-none active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        v-else-if="!sent"
+        class="text-lg mt-4 bg-blue-500 py-2 w-44 text-white hover:bg-blue-600 transition duration-300 ease-in-out rounded transform hover:shadow-lg active:shadow-none active:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 disabled:opacity-60"
         type="submit"
+        :disabled="loader"
       >
         Отправить
       </button>
@@ -118,7 +136,11 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import InputPhone from './InputPhone.vue'
-import { validateContactLead } from '~/utils/contactValidation'
+import {
+  type ContactLeadField,
+  validateContactField,
+  validateContactLead,
+} from '~/utils/contactValidation'
 
 defineProps<{
   header?: string
@@ -133,7 +155,7 @@ const consent = ref(false)
 const sent = ref(false)
 const loader = ref(false)
 const error = ref('')
-const fieldErrors = reactive<Record<string, string>>({
+const fieldErrors = reactive<Record<ContactLeadField, string>>({
   name: '',
   phone: '',
   email: '',
@@ -141,34 +163,51 @@ const fieldErrors = reactive<Record<string, string>>({
   consent: '',
 })
 
-function clearFieldErrors() {
-  fieldErrors.name = ''
-  fieldErrors.phone = ''
-  fieldErrors.email = ''
-  fieldErrors.message = ''
-  fieldErrors.consent = ''
+const fieldValues = (): Record<ContactLeadField, unknown> => ({
+  name: name.value,
+  phone: phone.value,
+  email: email.value,
+  message: message.value,
+  consent: consent.value,
+})
+
+function onBlur(field: ContactLeadField) {
+  nextTick(() => {
+    fieldErrors[field] = validateContactField(field, fieldValues()[field])
+  })
 }
 
-function applyFieldErrors(fields?: { path: string; message: string }[]) {
-  clearFieldErrors()
-  for (const field of fields || []) {
-    if (field.path in fieldErrors) {
-      fieldErrors[field.path] = field.message
-    }
+function onEdit(field: ContactLeadField) {
+  if (!fieldErrors[field]) return
+  fieldErrors[field] = validateContactField(field, fieldValues()[field])
+}
+
+function onConsentChange(value: boolean) {
+  consent.value = value
+  fieldErrors.consent = value ? '' : validateContactField('consent', value)
+}
+
+function validateAllFields(): boolean {
+  let ok = true
+  for (const field of Object.keys(fieldErrors) as ContactLeadField[]) {
+    const message = validateContactField(field, fieldValues()[field])
+    fieldErrors[field] = message
+    if (message) ok = false
   }
+  return ok
 }
 
 const submit = async () => {
-  loader.value = true
   error.value = ''
-  clearFieldErrors()
 
   // Honeypot filled → fake success (do not tip off bots)
   if (website.value.trim()) {
     sent.value = true
-    loader.value = false
     return
   }
+
+  // Show field errors without starting the submit loader
+  if (!validateAllFields()) return
 
   const parsed = validateContactLead({
     name: name.value,
@@ -178,17 +217,9 @@ const submit = async () => {
     consent: consent.value,
   })
 
-  if (!parsed.success) {
-    applyFieldErrors(
-      parsed.error.issues.map((issue) => ({
-        path: String(issue.path[0] || ''),
-        message: issue.message,
-      }))
-    )
-    error.value = parsed.error.issues[0]?.message || 'Проверьте поля формы'
-    loader.value = false
-    return
-  }
+  if (!parsed.success) return
+
+  loader.value = true
 
   try {
     const response = await $fetch<{ success: boolean }>('/api/sendMail', {
@@ -210,6 +241,9 @@ const submit = async () => {
       message.value = ''
       website.value = ''
       consent.value = false
+      for (const field of Object.keys(fieldErrors) as ContactLeadField[]) {
+        fieldErrors[field] = ''
+      }
     } else {
       throw new Error('Неизвестная ошибка')
     }
@@ -220,7 +254,13 @@ const submit = async () => {
       message?: string
     }
     const fields = err?.data?.data?.fields
-    if (fields?.length) applyFieldErrors(fields)
+    if (fields?.length) {
+      for (const field of fields) {
+        if (field.path in fieldErrors) {
+          fieldErrors[field.path as ContactLeadField] = field.message
+        }
+      }
+    }
     error.value =
       err?.data?.message ||
       err?.statusMessage ||
@@ -230,3 +270,14 @@ const submit = async () => {
   }
 }
 </script>
+
+<style scoped>
+.form-loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #2f78cd;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+</style>

@@ -10,6 +10,7 @@ export function digitsOnly(value: string): string {
 /**
  * Normalize RU phone to 7XXXXXXXXXX (11 digits).
  * Accepts +7…, 8…, or 9XXXXXXXXX mobile without country code.
+ * After country code 7, the next digit must be 3–9 (DEF/ABC codes).
  */
 export function normalizeRuPhone(value: string): string | null {
   let digits = digitsOnly(value)
@@ -23,6 +24,44 @@ export function normalizeRuPhone(value: string): string | null {
 
   if (!/^7[3-9]\d{9}$/.test(digits)) return null
   return digits
+}
+
+/** Explicit RU phone validation message for UI. */
+export function ruPhoneError(value: string): string | null {
+  const trimmed = (value || '').trim()
+  if (!trimmed) return 'Укажите телефон'
+
+  let digits = digitsOnly(trimmed)
+  if (!digits || digits === '7') return 'Укажите телефон'
+
+  if (digits.length === 11 && digits.startsWith('8')) {
+    digits = `7${digits.slice(1)}`
+  } else if (digits.length === 10 && digits.startsWith('9')) {
+    digits = `7${digits}`
+  }
+
+  if (digits.length < 11) {
+    return `Не хватает цифр: нужно 11, сейчас ${digits.length} (код страны 7 + 10 цифр номера)`
+  }
+
+  if (digits.length > 11) {
+    return 'Слишком много цифр: российский номер — +7 и ещё 10 цифр'
+  }
+
+  if (!digits.startsWith('7')) {
+    return 'Номер должен начинаться с +7 (Россия)'
+  }
+
+  const codeDigit = digits[1]
+  if (codeDigit && !/[3-9]/.test(codeDigit)) {
+    return `После +7 первая цифра кода должна быть от 3 до 9, а не «${codeDigit}». Пример: +7 (912) 345-67-89 или +7 (343) 278-37-43`
+  }
+
+  if (!/^7[3-9]\d{9}$/.test(digits)) {
+    return 'Проверьте номер: +7, затем код из 3 цифр (первая 3–9) и ещё 7 цифр'
+  }
+
+  return null
 }
 
 export function formatRuPhoneDisplay(digits: string): string {
@@ -86,7 +125,7 @@ export const contactLeadSchema = z.object({
       if (!normalized) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
-          message: 'Введите телефон в формате +7 (XXX) XXX-XX-XX',
+          message: ruPhoneError(v) || 'Укажите корректный российский телефон',
         })
         return z.NEVER
       }
@@ -111,7 +150,26 @@ export const contactLeadSchema = z.object({
 
 export type ContactLeadInput = z.input<typeof contactLeadSchema>
 export type ContactLead = z.output<typeof contactLeadSchema>
+export type ContactLeadField = keyof ContactLeadInput
 
 export function validateContactLead(data: unknown) {
   return contactLeadSchema.safeParse(data)
+}
+
+/** Validate a single field (for blur). Returns message or empty string. */
+export function validateContactField(field: ContactLeadField, value: unknown): string {
+  const fillers: ContactLeadInput = {
+    name: 'ООО Пример',
+    phone: '79991234567',
+    email: 'sales@example.com',
+    message: 'Текст сообщения для проверки поля',
+    consent: true,
+  }
+  const result = contactLeadSchema.safeParse({
+    ...fillers,
+    [field]: value,
+  })
+  if (result.success) return ''
+  const issue = result.error.issues.find((item) => item.path[0] === field)
+  return issue?.message || 'Проверьте поле'
 }

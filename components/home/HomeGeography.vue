@@ -13,7 +13,7 @@
       </div>
 
       <div class="geo-layout">
-        <HomeSupplyMap />
+        <LazyHomeSupplyMap />
 
         <div class="geo-regions">
           <article v-for="region in HOME_GEO_REGIONS" :key="region.name">

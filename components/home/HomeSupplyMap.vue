@@ -3,11 +3,13 @@
     <div v-show="!failed" ref="mapRoot" class="supply-map__leaflet" />
     <div v-if="failed" class="supply-map__fallback">
       <img
-        src="/media/map-eurasia-supply.png"
+        src="/media/map-eurasia-supply.webp"
         alt="Карта поставок: Россия, СНГ, Индия"
         class="supply-map__fallback-img"
-        width="1536"
-        height="1024"
+        width="1200"
+        height="800"
+        loading="lazy"
+        decoding="async"
       />
       <ul class="supply-map__pins">
         <li
@@ -41,12 +43,13 @@ const fallbackSites = sitesWithMapPosition().map((site) =>
 )
 
 let map: LeafletMap | null = null
+let observer: IntersectionObserver | null = null
 
-onMounted(async () => {
-  await nextTick()
-  if (!mapRoot.value || import.meta.server) return
+async function initMap() {
+  if (!mapRoot.value || import.meta.server || map) return
 
   try {
+    await import('leaflet/dist/leaflet.css')
     const leaflet = await import('leaflet')
     const L = leaflet.default
 
@@ -106,9 +109,32 @@ onMounted(async () => {
     console.error('[HomeSupplyMap] Leaflet init failed', error)
     failed.value = true
   }
+}
+
+onMounted(async () => {
+  await nextTick()
+  if (!mapRoot.value || import.meta.server) return
+
+  if (!('IntersectionObserver' in window)) {
+    await initMap()
+    return
+  }
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return
+      observer?.disconnect()
+      observer = null
+      void initMap()
+    },
+    { rootMargin: '240px 0px' },
+  )
+  observer.observe(mapRoot.value)
 })
 
 onBeforeUnmount(() => {
+  observer?.disconnect()
+  observer = null
   map?.remove()
   map = null
 })
@@ -120,14 +146,14 @@ onBeforeUnmount(() => {
   overflow: hidden;
   border: 1px solid #e8ecf1;
   background: #f5f7fa;
-  min-height: 420px;
-  height: min(52vw, 520px);
+  min-height: 280px;
+  height: min(68vw, 420px);
 }
 
 .supply-map__leaflet {
   width: 100%;
   height: 100%;
-  min-height: 420px;
+  min-height: 280px;
 }
 
 .supply-map__fallback {

@@ -16,6 +16,7 @@ export type HomeProduct = {
   description: string
   specs: HomeProductSpec[]
   image: string
+  imageSm: string
   alt: string
   caption: string
 }
@@ -61,7 +62,8 @@ export const HOME_PRODUCTS: HomeProduct[] = [
       { label: 'Шагающие', value: 'ЭШ-6/45…ЭШ-11/70' },
       { label: 'Мощность', value: 'до 1250 кВт' },
     ],
-    image: '/media/dir-excavator-drive.png',
+    image: '/media/dir-excavator-drive.webp',
+    imageSm: '/media/dir-excavator-drive-480.webp',
     alt: 'Карьерный экскаватор ЭКГ с электрическим приводом в работе',
     caption: 'Привод карьерного экскаватора',
   },
@@ -75,7 +77,8 @@ export const HOME_PRODUCTS: HomeProduct[] = [
       { label: 'Мощность', value: 'до 1000 кВт' },
       { label: 'Бурение', value: 'до 8000 м' },
     ],
-    image: '/media/dir-drilling-rig.png',
+    image: '/media/dir-drilling-rig.webp',
+    imageSm: '/media/dir-drilling-rig-480.webp',
     alt: 'Буровая установка с электрическим приводом на промышленной площадке',
     caption: 'Привод буровой установки',
   },
@@ -89,7 +92,8 @@ export const HOME_PRODUCTS: HomeProduct[] = [
       { label: 'Реактор', value: 'Р-1,5/1000' },
       { label: 'Дроссель', value: 'ДР-150' },
     ],
-    image: '/media/dir-traction-motor.png',
+    image: '/media/dir-traction-motor.webp',
+    imageSm: '/media/dir-traction-motor-480.webp',
     alt: 'Тяговый электродвигатель для железнодорожного транспорта',
     caption: 'Тяговый двигатель ДПТ',
   },
@@ -103,7 +107,8 @@ export const HOME_PRODUCTS: HomeProduct[] = [
       { label: 'Марки', value: 'ВВУ / ВВС / ВВУС' },
       { label: 'Разъединитель', value: 'С-35' },
     ],
-    image: '/media/dir-hv-switchgear.png',
+    image: '/media/dir-hv-switchgear.webp',
+    imageSm: '/media/dir-hv-switchgear-480.webp',
     alt: 'Высоковольтный разъединитель и выключатели классов 27,5 и 35 кВ',
     caption: 'Высоковольтная аппаратура 35 кВ',
   },
@@ -117,7 +122,8 @@ export const HOME_PRODUCTS: HomeProduct[] = [
       { label: 'Исполнение', value: 'взрывобезопасное' },
       { label: 'Применение', value: 'шахтное оборудование' },
     ],
-    image: '/media/dir-mine-motor.png',
+    image: '/media/dir-mine-motor.webp',
+    imageSm: '/media/dir-mine-motor-480.webp',
     alt: 'Взрывобезопасный шахтный асинхронный электродвигатель',
     caption: 'Шахтный двигатель',
   },
@@ -132,9 +138,9 @@ export const HOME_PROCESS: HomeProcessStep[] = [
 ]
 
 export const HOME_PROCESS_PHOTOS: HomeProcessPhoto[] = [
-  { src: '/media/plant-foundry.png', alt: 'Литейный участок завода', caption: 'Литьё' },
-  { src: '/media/plant-windings.png', alt: 'Укладка медной обмотки статора', caption: 'Обмотка' },
-  { src: '/media/plant-teststand.png', alt: 'Электрическая машина на испытательном стенде', caption: 'Испытания' },
+  { src: '/media/plant-foundry.webp', alt: 'Литейный участок завода', caption: 'Литьё' },
+  { src: '/media/plant-windings.webp', alt: 'Укладка медной обмотки статора', caption: 'Обмотка' },
+  { src: '/media/plant-teststand.webp', alt: 'Электрическая машина на испытательном стенде', caption: 'Испытания' },
 ]
 
 export const HOME_CAPABILITIES: HomeCapability[] = [

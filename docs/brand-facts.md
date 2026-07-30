@@ -91,34 +91,18 @@
 
 - Недостающие фото/3D: генерировать можно; складывать в `public/` или Contentful; список выдуманных ассетов вести ниже при появлении.
 
-### Сгенерированные / выдуманные ассеты
+### Сгенерированные / выдуманные ассеты (в проде)
 
-| Файл | Источник | Назначение |
-|------|----------|------------|
-| `public/media/hero-excavator-dusk.png` | AI generate | Hero / layout-1,2 |
-| `public/media/hero-motor-copper.png` | AI generate | Layout-2 product focus |
-| `public/media/quarry-excavator.jpg` | Unsplash | Layout-3 hero |
-| `public/media/factory-floor.jpg` | Unsplash | Plant section |
-| `public/media/copper-motor.jpg` | Unsplash | Capability imagery |
-| `public/media/heavy-industry.jpg` | Unsplash | Application band |
-| `public/media/steel-workshop.jpg` | Unsplash | Dark plant band |
-| `public/media/motor-render-dark.png` | AI generate | Секция «Электродвигатели» — рендер на тёмном, под выноски |
-| `public/media/hero-bwe-dusk.png` | AI generate | Hero layout-1 — роторный экскаватор на закате |
-| `public/media/excavator-on-white.png` | AI generate | «Созданы для гигантов» — роторный экскаватор на белом |
-| `public/media/plant-foundry.png` | AI generate | «Технологии» — литьё, статорный корпус |
-| `public/media/plant-windings.png` | AI generate | «Технологии» — медные обмотки статора |
-| `public/media/plant-lathe.png` | AI generate | «Технологии» — обточка вала |
-| `public/media/plant-teststand.png` | AI generate | «Технологии» + фон секции контактов — стенд |
-| `public/media/excavator-isolated-light.png` | AI generate | Не используется (заменён на `excavator-on-white.png`) |
-| `public/media/hero-excavator-schematic.png` | AI generate | Hero — ЭКГ сверху + ряд деталей/движков снизу, синий акцент |
-| `public/media/dir-excavator-drive.png` | AI generate | Направления — карьерный экскаватор |
-| `public/media/dir-drilling-rig.png` | AI generate | Направления — буровая установка |
-| `public/media/dir-traction-motor.png` | AI generate | Направления — тяговый двигатель |
-| `public/media/dir-hv-switchgear.png` | AI generate | Направления — ВВ-аппаратура |
-| `public/media/dir-mine-motor.png` | AI generate | Направления — шахтный двигатель |
-| `public/media/map-eurasia-supply.png` | AI generate | География — Евразия до Индии, стиль map-russia-cis, точки по lat/lon |
+| Файл | Назначение |
+|------|------------|
+| `public/media/hero-excavator-schematic.webp` (+640, `.png` OG) | Hero главной + Open Graph |
+| `public/media/dir-*.webp` (+480) | Направления на главной |
+| `public/media/plant-*.webp` | Галерея технологий на главной |
+| `public/media/map-eurasia-supply.webp` | Карта поставок |
+| `public/media/about-*.webp` | Страница `/about` |
 
 Главная страница: `/` (светлая B2B-тема, синий акцент `#2F78CD`).
+Страница о заводе: `/about` (тот же light industrial язык).
 
 ## Деплой / почта заявок
 

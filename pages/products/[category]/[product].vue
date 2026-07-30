@@ -1,54 +1,54 @@
 <template>
-  <section class="section mt-8 lg:mt-24 grid gap-10 mb-16">
-    <div v-if="pending" class="text-center">
-      <p>Загрузка...</p>
-    </div>
-    <div v-else-if="error" class="text-center text-red-500">
-      <p>{{ error.message }}</p>
-      <NuxtLink to="/products" class="text-kemz-blue">Вернуться к каталогу</NuxtLink>
-    </div>
-    <div v-else-if="!product" class="text-center text-red-500">
-      <p>Продукт не найден</p>
-      <NuxtLink to="/products" class="text-kemz-blue">Вернуться к каталогу</NuxtLink>
-    </div>
-    <div v-else class="min-w-0">
-      <h1 class="text-xl md:text-3xl font-bold mb-10">
-        {{ product.fields.name }}
-      </h1>
-      <img
-        v-if="product.fields.image"
-        :src="'https:' + product.fields.image.fields.file.url"
-        :alt="product.fields.name"
-        loading="lazy"
-        class="h-80 max-w-full object-contain rounded-t-lg mb-6"
-      />
-      <div class="kemz-richtext grid gap-4 min-w-0" v-html="descriptionHtml" />
-      <h2 class="text-xl font-bold mt-8">Технические данные</h2>
-      <div class="kemz-richtext grid gap-4 min-w-0" v-html="paramsHtml" />
-      <p class="text-lg font-light mr-2 mt-10">
-        <NuxtLink
-          :to="'/products/' + route.params.category"
-          class="flex items-center w-full link text-kemz-blue"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 mr-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+  <div class="kemz-light">
+    <div class="cat-detail">
+      <div class="wrap">
+        <div v-if="pending" class="cat-status">
+          <p>Загрузка…</p>
+        </div>
+
+        <div v-else-if="error" class="cat-status cat-status--error">
+          <p>{{ error.message || 'Ошибка загрузки' }}</p>
+          <NuxtLink to="/products" class="text-link">← К каталогу</NuxtLink>
+        </div>
+
+        <div v-else-if="!product" class="cat-status cat-status--error">
+          <p>Продукт не найден</p>
+          <NuxtLink to="/products" class="text-link">← К каталогу</NuxtLink>
+        </div>
+
+        <template v-else>
+          <header class="cat-detail__head">
+            <h1>{{ product.fields.name }}</h1>
+          </header>
+
+          <figure
+            v-if="product.fields.image?.fields?.file?.url"
+            class="cat-detail__media"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            <img
+              :src="'https:' + product.fields.image.fields.file.url"
+              :alt="product.fields.name"
+              loading="lazy"
+              width="800"
+              height="600"
             />
-          </svg>
-          Вернуться к категории
-        </NuxtLink>
-      </p>
+          </figure>
+
+          <div class="kemz-richtext" v-html="descriptionHtml" />
+
+          <h2 class="cat-detail__section-title">Технические данные</h2>
+          <div class="kemz-richtext" v-html="paramsHtml" />
+
+          <NuxtLink
+            :to="'/products/' + route.params.category"
+            class="text-link cat-detail__back cat-detail__back--end"
+          >
+            ← Вернуться к категории
+          </NuxtLink>
+        </template>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -71,12 +71,13 @@ const route = useRoute()
 const productId = route.params.product as string
 
 const { data: product, pending, error } = await useAsyncData(
-  `contentful-product-${productId}`,
+  `contentful-product-${productId}-inc3`,
   async () => {
     const { $contentful } = useNuxtApp()
     const data: EntryCollection<ContentfulEntry> = await $contentful.getEntries({
       content_type: 'subcategory',
       'fields.url': productId,
+      include: 3,
     })
     if (!data.items.length) {
       throw createError({
@@ -86,22 +87,32 @@ const { data: product, pending, error } = await useAsyncData(
     }
     return data.items[0]
   },
-  { default: () => null }
+  { default: () => null },
 )
 
 const descriptionHtml = computed(() =>
-  renderContentfulHtml(product.value?.fields.description)
+  renderContentfulHtml(product.value?.fields.description),
 )
 const paramsHtml = computed(() => renderContentfulHtml(product.value?.fields.params))
 
 useSeoMeta({
   title: () =>
     product.value?.fields.name
-      ? `${product.value.fields.name} | ОАО «КЭМЗ»`
+      ? `${product.value.fields.name} — каталог | ОАО «КЭМЗ»`
       : 'Продукт | ОАО «КЭМЗ»',
   description: () =>
     product.value?.fields.name
-      ? `${product.value.fields.name}: технические данные, ОАО Карпинский электромашиностроительный завод`
-      : 'Каталог продукции ОАО КЭМЗ',
+      ? `${product.value.fields.name}: технические данные и применение. ОАО «Карпинский электромашиностроительный завод», Карпинск.`
+      : 'Карточка продукции ОАО «КЭМЗ»: электрические машины и комплекты приводов.',
+  ogTitle: () =>
+    product.value?.fields.name
+      ? `${product.value.fields.name} | ОАО «КЭМЗ»`
+      : 'Продукт | ОАО «КЭМЗ»',
+  ogDescription: () =>
+    product.value?.fields.name
+      ? `${product.value.fields.name}: технические данные ОАО «КЭМЗ».`
+      : 'Каталог продукции ОАО «КЭМЗ».',
 })
 </script>
+
+<style lang="scss" src="~/assets/css/catalog-light.scss"></style>

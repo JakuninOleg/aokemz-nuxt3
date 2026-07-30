@@ -13,9 +13,15 @@
   font-family: 'Source Sans 3', sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  overflow-x: clip;
 }
 
-.wrap { width: min(100% - 48px, 1280px); margin-inline: auto; }
+.wrap {
+  width: min(100% - 48px, 1280px);
+  max-width: 100%;
+  min-width: 0;
+  margin-inline: auto;
+}
 h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .02em; }
 
 .topbar {
@@ -98,8 +104,8 @@ h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text
   overflow: hidden;
   display: flex;
   align-items: center;
-  min-height: min(78vh, 700px);
-  padding: 140px 0 88px;
+  min-height: min(70vh, 640px);
+  padding: 56px 0 72px;
   background: #ffffff;
   border-bottom: 1px solid var(--line);
 }
@@ -230,11 +236,18 @@ h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text
 .products-shell {
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
+  max-width: 100%;
+  min-width: 0;
   border: 1px solid var(--line);
   background: var(--white);
   box-shadow: 0 18px 50px rgba(11, 13, 16, .04);
 }
+.product-tabs-wrap {
+  min-width: 0;
+  max-width: 100%;
+}
 .product-tabs { border-right: 1px solid var(--line); }
+.product-tabs-hint { display: none; }
 .product-tab {
   display: grid;
   grid-template-columns: 28px 1fr;
@@ -258,12 +271,12 @@ h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text
 .product-panel {
   display: grid;
   grid-template-columns: minmax(0, 1fr) min(48%, 520px);
-  min-height: 520px;
+  min-height: 420px;
 }
 .product-copy {
   align-self: start;
   padding: 20px 40px 44px;
-  min-height: 520px;
+  min-height: 420px;
 }
 .product-code { color: var(--brand-deep); font-family: 'IBM Plex Mono', monospace; font-size: 16px; letter-spacing: .06em; }
 .product-copy h3 { margin-top: 12px; font-size: clamp(28px, 2.6vw, 38px); line-height: .96; min-height: 2.1em; }
@@ -284,7 +297,8 @@ h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text
 
 .product-visual {
   position: relative;
-  min-height: 520px;
+  min-height: 420px;
+  max-height: 480px;
   overflow: hidden;
   border-left: 1px solid var(--line);
   background: #eef2f6;
@@ -293,11 +307,7 @@ h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text
   position: absolute;
   inset: 0;
   margin: 0;
-  opacity: 0;
-  transition: opacity .25s ease;
-  pointer-events: none;
 }
-.product-slide.active { opacity: 1; pointer-events: auto; }
 .product-slide img {
   width: 100%;
   height: 100%;
@@ -333,7 +343,7 @@ h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text
 .process-list h3 { margin-top: 16px; font-size: 22px; }
 .process-list p { margin-top: 10px; color: var(--muted); font-size: 15px; line-height: 1.65; }
 .process-gallery { display: grid; grid-template-columns: 1.1fr .9fr 1.1fr; gap: 12px; margin-top: 36px; }
-.process-gallery figure { position: relative; min-height: 260px; overflow: hidden; border: 1px solid var(--line); background: var(--white); }
+.process-gallery figure { position: relative; aspect-ratio: 4 / 3; max-height: 280px; overflow: hidden; border: 1px solid var(--line); background: var(--white); }
 .process-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
 .process-gallery figure:hover img { transform: scale(1.03); }
 .process-gallery figcaption {
@@ -369,7 +379,10 @@ h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text
 }
 .geo-regions li:last-child { border-bottom: 0; }
 
-.contact { border-top: 1px solid var(--line); background: var(--paper); }
+.contact {
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
 .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; }
 .contact-lead { max-width: 480px; margin-top: 20px; color: var(--muted); font-size: 16px; line-height: 1.7; }
 .contact-more { margin-top: 18px; }
@@ -379,8 +392,14 @@ address a:hover { color: var(--brand); }
 address span { color: var(--muted); }
 
 form { position: relative; display: grid; gap: 16px; }
-form label { display: grid; gap: 7px; }
-form label > span { color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 16px; letter-spacing: .05em; text-transform: uppercase; }
+form label:not(.form-consent) { display: grid; gap: 7px; }
+form label:not(.form-consent) > span {
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 16px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
 form input, form textarea, .form-phone {
   width: 100%;
   border: 1px solid var(--line-strong) !important;
@@ -396,11 +415,38 @@ form input, form textarea, .form-phone {
 .form-phone { height: 47px !important; }
 form input:focus, form textarea:focus, .form-phone:focus { border-color: var(--brand) !important; }
 form .invalid, .form-phone.border-red-500 { border-color: #dc5353 !important; }
-form small, .form-error { color: #c0392b; font-size: 12px; }
-.form-success { color: #2d7a46; font-size: 13px; }
-.submit { width: max-content; border: 0; }
+form small, .form-error { display: block; margin-top: 4px; color: #c0392b; font-size: 12px; line-height: 1.4; }
+.form-success { color: #1f7a3f; font-size: 14px; font-weight: 600; }
+.honeypot { position: absolute; left: -9999px; height: 0; width: 0; opacity: 0; overflow: hidden; }
+.form-sending {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.form-sending__spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--brand-light);
+  border-top-color: var(--brand);
+  border-radius: 50%;
+  animation: form-spin .7s linear infinite;
+}
+@keyframes form-spin {
+  to { transform: rotate(360deg); }
+}
+.submit {
+  justify-self: start;
+  width: max-content;
+  margin-top: 6px;
+  border: 0;
+}
 .submit:disabled { cursor: wait; opacity: .55; }
-.honeypot { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
 
 footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted); font-family: 'IBM Plex Mono', monospace; font-size: 11px; background: var(--white); }
 .footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; }
@@ -408,8 +454,6 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted)
 .footer-nav a:hover { color: var(--brand); }
 
 @media (max-width: 1100px) {
-  .nav-links { display: none; }
-  .menu-toggle { display: inline-flex; }
   .product-panel { grid-template-columns: minmax(0, 1fr) min(44%, 420px); }
   .geo-layout { grid-template-columns: 1fr; }
 }
@@ -422,7 +466,7 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted)
   .product-tab span,
   .capability-grid span,
   .geo-region-tag,
-  form label > span,
+  form label:not(.form-consent) > span,
   .hero-lead {
     font-size: 18px;
   }
@@ -431,39 +475,143 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; color: var(--muted)
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
-    padding: 120px 0 64px;
+    padding: 40px 0 56px;
   }
   .hero-schematic {
-    object-position: 85% center;
-    opacity: .24;
+    object-position: 88% center;
+    opacity: .2;
   }
-  .contact-grid { grid-template-columns: 1fr; }
+  .hero-actions .button {
+    width: 100%;
+  }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .stat:nth-child(odd) { border-left: 0; }
-  .stat:nth-child(3) { border-left: 0; }
-  .products-shell { grid-template-columns: 1fr; }
-  .product-tabs { display: flex; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line); }
-  .product-tab { min-width: 210px; border-bottom: 0; border-right: 1px solid var(--line); }
+  .chapter { padding: 56px 0; }
+  .section-head { margin-bottom: 28px; padding-bottom: 16px; }
+  .stat:first-child {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat:nth-child(even) { border-left: 0; }
+  .stat:nth-child(3),
+  .stat:nth-child(5) { border-left: 1px solid var(--line); }
+  .products-shell {
+    grid-template-columns: minmax(0, 1fr);
+    overflow: hidden;
+  }
+  .product-tabs-wrap {
+    position: relative;
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+  .product-tabs {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    border-right: 0;
+    border-bottom: 0;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+  .product-tabs-hint {
+    display: block;
+    position: static;
+    margin: 0;
+    padding: 8px 14px 10px;
+    border-top: 1px dashed var(--line);
+    background: var(--paper);
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: right;
+    pointer-events: none;
+    box-shadow: none;
+    transform: none;
+    top: auto;
+    right: auto;
+    z-index: auto;
+    opacity: 1;
+  }
+  .product-tab {
+    flex: 0 0 50%;
+    width: 50%;
+    min-width: 0;
+    max-width: 50%;
+    box-sizing: border-box;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+    scroll-snap-align: start;
+  }
+  .product-tab:last-child {
+    border-right: 0;
+  }
   .product-panel { grid-template-columns: 1fr; min-height: auto; }
   .product-copy { min-height: auto; padding: 28px 22px; }
   .product-copy h3, .product-copy > p { min-height: auto; }
-  .product-visual { min-height: 360px; border-left: 0; border-top: 1px solid var(--line); }
+  .product-visual { min-height: 280px; max-height: 340px; border-left: 0; border-top: 1px solid var(--line); }
   .process-list { grid-template-columns: repeat(2, 1fr); }
   .process-list li { border-bottom: 1px solid var(--line); }
   .capability-grid, .geo-regions { grid-template-columns: 1fr 1fr; }
+  .submit { width: 100%; }
 }
 
 @media (max-width: 640px) {
   .wrap { width: min(100% - 32px, 1280px); }
-  .nav-row { height: 66px; }
-  .brand-copy small, .nav-cta { display: none; }
-  .hero { padding: 110px 0 56px; }
-  .hero h1 { font-size: clamp(42px, 14vw, 64px); }
-  .chapter { padding: 72px 0; }
-  .section-head { display: grid; gap: 18px; }
-  .section-head h2, .contact h2 { font-size: 40px; }
+  .hero { padding: 28px 0 40px; }
+  .hero-front { width: min(100% - 32px, 1280px); }
+  .hero h1 {
+    font-size: clamp(28px, 8vw, 38px);
+    letter-spacing: 0.01em;
+    line-height: 0.98;
+  }
+  .hero-lead {
+    margin-top: 18px;
+    font-size: 15px;
+  }
+  .hero-actions {
+    margin-top: 22px;
+  }
+  .chapter { padding: 36px 0; }
+  .section-head {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+  .section-head h2, .contact h2 {
+    font-size: 28px;
+    line-height: 1.02;
+  }
+  .section-head > p,
+  .contact-lead {
+    font-size: 15px;
+  }
   .process-list, .capability-grid, .process-gallery, .geo-regions { grid-template-columns: 1fr; }
-  .footer-row { display: grid; }
+  .product-copy { padding: 22px 18px; }
+  .product-copy h3 { font-size: 26px; }
+  .product-visual { min-height: 200px; max-height: 240px; }
+  .process-gallery { gap: 10px; margin-top: 24px; }
+  .process-gallery figure { max-height: 200px; }
+  .process-list li { padding: 20px 16px; }
+  .capability-grid article { min-height: 0; padding: 20px 16px; }
+  .stat { min-height: 100px; padding: 16px 10px; }
+  .stat strong { font-size: 1.45rem; }
+  .stat--long strong { font-size: 1.25rem; }
+  .stat:first-child strong { font-size: 1.85rem; }
+  .stat span { font-size: 12px; }
+  .contact-grid { gap: 28px; }
+  form input, form textarea, .form-phone {
+    font-size: 16px !important; /* avoid iOS zoom */
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

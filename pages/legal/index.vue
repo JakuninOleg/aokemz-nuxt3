@@ -243,12 +243,9 @@
 
 <script setup lang="ts">
 import { legalOperator, legalUpdatedAt } from '~/utils/legalContent'
+import { PAGE_SEO } from '~/utils/siteSeo'
 
-useSeoMeta({
-  title: 'Правовая информация — обработка персональных данных | ОАО КЭМЗ',
-  description:
-    'Политика обработки персональных данных и согласие субъекта для сайта ОАО КЭМЗ в соответствии с 152-ФЗ.',
-})
+usePageSeo(PAGE_SEO.legal)
 </script>
 
 <style scoped>

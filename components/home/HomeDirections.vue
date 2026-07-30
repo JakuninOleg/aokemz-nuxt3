@@ -13,20 +13,28 @@
       </div>
 
       <div class="products-shell">
-        <div class="product-tabs" role="tablist" aria-label="Направления продукции">
-          <button
-            v-for="(product, index) in HOME_PRODUCTS"
-            :key="product.name"
-            type="button"
-            role="tab"
-            class="product-tab"
-            :class="{ active: activeProduct === index }"
-            :aria-selected="activeProduct === index"
-            @click="activeProduct = index"
+        <div class="product-tabs-wrap">
+          <div
+            ref="tabsEl"
+            class="product-tabs"
+            role="tablist"
+            aria-label="Направления продукции"
           >
-            <span>0{{ index + 1 }}</span>
-            {{ product.name }}
-          </button>
+            <button
+              v-for="(product, index) in HOME_PRODUCTS"
+              :key="product.name"
+              type="button"
+              role="tab"
+              class="product-tab"
+              :class="{ active: activeProduct === index }"
+              :aria-selected="activeProduct === index"
+              @click="activeProduct = index"
+            >
+              <span>0{{ index + 1 }}</span>
+              {{ product.name }}
+            </button>
+          </div>
+          <p class="product-tabs-hint" aria-hidden="true">Листайте вправо →</p>
         </div>
 
         <div class="product-panel">
@@ -44,15 +52,18 @@
           </div>
 
           <div class="product-visual" aria-live="polite">
-            <figure
-              v-for="(product, index) in HOME_PRODUCTS"
-              :key="product.image"
-              class="product-slide"
-              :class="{ active: activeProduct === index }"
-              :aria-hidden="activeProduct !== index"
-            >
-              <img :src="product.image" :alt="product.alt" />
-              <figcaption>{{ product.caption }}</figcaption>
+            <figure class="product-slide active">
+              <img
+                :src="currentProduct.imageSm"
+                :srcset="`${currentProduct.imageSm} 480w, ${currentProduct.image} 800w`"
+                sizes="(max-width: 900px) 100vw, 48vw"
+                :alt="currentProduct.alt"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>{{ currentProduct.caption }}</figcaption>
             </figure>
           </div>
         </div>
@@ -66,4 +77,12 @@ import { HOME_PRODUCTS } from '~/utils/homeContent'
 
 const activeProduct = ref(0)
 const currentProduct = computed(() => HOME_PRODUCTS[activeProduct.value]!)
+const tabsEl = ref<HTMLElement | null>(null)
+
+watch(activeProduct, (index) => {
+  const root = tabsEl.value
+  if (!root) return
+  const tab = root.children[index] as HTMLElement | undefined
+  tab?.scrollIntoView({ inline: 'nearest', block: 'nearest', behavior: 'smooth' })
+})
 </script>

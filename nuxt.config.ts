@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'OAO KEMZ',
+      title: 'ОАО «КЭМЗ»',
       htmlAttrs: { lang: 'ru' },
       meta: [
         { charset: 'utf-8' },
@@ -13,29 +13,49 @@ export default defineNuxtConfig({
         {
           name: 'description',
           content:
-            'OAO Karpinskiy Electromagnetic Machine Plant: electric machines and drive kits for quarry excavators. Karpinsk, since 1960.',
+            'ОАО «Карпинский электромашиностроительный завод»: электрические машины и комплекты приводов для карьерной техники. Карпинск, с 1960 года.',
         },
+        { name: 'theme-color', content: '#2f78cd' },
+        { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
+          rel: 'preload',
+          as: 'style',
+          href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=IBM+Plex+Mono:wght@400&family=Source+Sans+3:wght@400;600;700&display=swap',
+        },
+        {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=IBM+Plex+Mono:wght@400&family=Source+Sans+3:wght@400;600;700&display=swap',
+          media: 'print',
+          onload: "this.media='all'",
         },
       ],
     },
   },
 
-  css: ['~/assets/css/styles/main.scss', 'leaflet/dist/leaflet.css'],
+  css: ['~/assets/css/styles/main.scss'],
 
   modules: ['@nuxtjs/tailwindcss'],
 
   vite: {
+    build: {
+      cssCodeSplit: true,
+    },
     optimizeDeps: {
       include: ['leaflet'],
     },
+  },
+
+  experimental: {
+    payloadExtraction: true,
+  },
+
+  nitro: {
+    compressPublicAssets: true,
   },
 
   plugins: ['~/plugins/contentful'],

@@ -32,14 +32,25 @@ export function renderContentfulHtml(doc: unknown): string {
         if (!src) return ''
         return `<img class="my-4 max-w-full h-auto rounded" src="${src}" alt="${title}" loading="lazy" />`
       },
+      [INLINES.HYPERLINK]: (node: any, next: any) => {
+        const uri = node.data?.uri || '#'
+        return `<a class="kemz-inline-link" href="${uri}">${next(node.content)}</a>`
+      },
       [INLINES.ENTRY_HYPERLINK]: (node: any) => {
-        const fields = node.data?.target?.fields
+        const fields = node.data?.target?.fields || {}
         const label = node.content?.[0]?.value || fields?.name || 'ссылка'
-        const cat = fields?.category?.fields?.url
-        const prod = fields?.url
+        const catUrl =
+          typeof fields?.category?.fields?.url === 'string'
+            ? fields.category.fields.url
+            : null
+        const prod = typeof fields?.url === 'string' ? fields.url : null
         const href =
-          cat && prod ? `/products/${cat}/${prod}` : prod ? `/products/${prod}` : '#'
-        return `<a class="text-kemz-blue underline underline-offset-2 hover:text-kemz-blue-deep" href="${href}">${label}</a>`
+          catUrl && prod
+            ? `/products/${catUrl}/${prod}`
+            : prod
+              ? `/products/${prod}`
+              : '#'
+        return `<a class="kemz-inline-link" href="${href}">${label}</a>`
       },
       [BLOCKS.TABLE]: (node: any, next: any) =>
         `<div class="kemz-table-scroll my-6 -mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto overscroll-x-contain">
