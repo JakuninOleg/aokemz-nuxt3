@@ -59,10 +59,10 @@ export function buildLeadEmail(
     .map(
       ([label, value]) => `
       <tr>
-        <td width="32%" style="padding:15px 20px;border-bottom:1px solid #dbe5f0;background:#f4f8fc;color:#54708c;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;vertical-align:top;text-align:left;">
+        <td class="email-field-label" width="32%" style="padding:15px 20px;border-bottom:1px solid #dbe5f0;background:#f4f8fc;color:#54708c;font-size:12px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;vertical-align:top;text-align:left;">
           ${escapeHtml(label)}
         </td>
-        <td width="68%" style="padding:15px 20px;border-bottom:1px solid #dbe5f0;color:#102b52;font-size:15px;font-weight:600;line-height:1.55;text-align:left;word-break:break-word;overflow-wrap:anywhere;">
+        <td class="email-field-value" width="68%" style="padding:15px 20px;border-bottom:1px solid #dbe5f0;color:#102b52;font-size:15px;font-weight:600;line-height:1.55;text-align:left;word-break:break-word;overflow-wrap:anywhere;">
           ${escapeHtml(value)}
         </td>
       </tr>`,
@@ -71,25 +71,53 @@ export function buildLeadEmail(
 
   const html = `<!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"></head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    @media only screen and (max-width: 600px) {
+      .email-shell { width: 100% !important; }
+      .email-content { padding: 14px 10px 12px !important; }
+      .email-fields tr { display: block !important; }
+      .email-fields .email-field-label,
+      .email-fields .email-field-value {
+        display: block !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: left !important;
+      }
+      .email-fields .email-field-label {
+        padding: 13px 16px 4px !important;
+        border-bottom: 0 !important;
+      }
+      .email-fields .email-field-value {
+        padding: 0 16px 14px !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+      }
+      .email-heading { font-size: 23px !important; }
+    }
+  </style>
+</head>
 <body style="margin:0;padding:0;background:#edf3f9;font-family:Arial,Helvetica,sans-serif;color:#102b52;">
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#edf3f9;padding:32px 12px;">
     <tr>
       <td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#ffffff;border:1px solid #c9d9e9;border-radius:12px;overflow:hidden;">
+        <table class="email-shell" role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#ffffff;border:1px solid #c9d9e9;border-radius:12px;overflow:hidden;">
           <tr>
             <td style="height:5px;background:#1476df;font-size:0;line-height:0;">&nbsp;</td>
           </tr>
           <tr>
             <td style="background:#082b57;padding:28px 30px 26px;text-align:left;">
               <div style="color:#8fc5ff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">ОАО «КЭМЗ»</div>
-              <div style="color:#ffffff;font-size:25px;font-weight:700;line-height:1.2;padding-top:9px;">Новая заявка с сайта</div>
+              <div class="email-heading" style="color:#ffffff;font-size:25px;font-weight:700;line-height:1.2;padding-top:9px;">Новая заявка с сайта</div>
               <div style="color:#c7dcf1;font-size:13px;line-height:1.5;padding-top:8px;">aokemz.ru&nbsp;&nbsp;•&nbsp;&nbsp;${escapeHtml(when)}</div>
             </td>
           </tr>
           <tr>
-            <td style="padding:24px 20px 20px;text-align:left;">
-              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border:1px solid #dbe5f0;border-collapse:separate;border-spacing:0;border-radius:8px;overflow:hidden;">${rowHtml}</table>
+            <td class="email-content" style="padding:24px 20px 20px;text-align:left;">
+              <table class="email-fields" role="presentation" width="100%" cellspacing="0" cellpadding="0" style="width:100%;border:1px solid #dbe5f0;border-collapse:separate;border-spacing:0;border-radius:8px;overflow:hidden;">${rowHtml}</table>
             </td>
           </tr>
           <tr>
