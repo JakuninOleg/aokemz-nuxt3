@@ -1,9 +1,9 @@
-@import "base/mixins";
-@import "base/base.scss";
-@import "base/fonts";
-@import "base/question";
-
-@import "layout/burger-menu";
+@use "base/base";
+@use "base/fonts";
+@use "base/question";
+@use "layout/burger-menu";
+@use "../site-theme";
+@use "../internal-hero";
 
 
 

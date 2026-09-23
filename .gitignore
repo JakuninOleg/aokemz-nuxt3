@@ -2,6 +2,9 @@
 .output
 .data
 .nuxt
+.nuxt-validation
+.nuxt-about-check/
+artifacts/
 .nitro
 .cache
 dist
@@ -22,3 +25,21 @@ logs
 .env
 .env.*
 !.env.example
+
+# graphify temp / cache (keep graph.json + GRAPH_REPORT.md tracked)
+graphify-out/.graphify_*
+graphify-out/cost.json
+graphify-out/.needs_update
+graphify-out/cache/
+graphify-out/[0-9][0-9][0-9][0-9]-*/
+
+# local doc extracts (regenerate via docs/_extract_static.py / _pdf_tools)
+docs/_extract_static/
+docs/_pdf_tools/node_modules/
+docs/_pdf_tools/package-lock.json
+docs/_pdf_tools/package.json
+docs/_extract_pdf_raw.py
+
+.lighthouse-home.json
+.lighthouse*.json
+.vercel

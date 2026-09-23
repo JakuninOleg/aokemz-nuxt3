@@ -1,0 +1,8 @@
+# Панорама полного цикла
+
+Файл: `public/media/about/about-cycle-panorama-v2.png`.
+Создан встроенным Image Generation по композиции присланного пользователем фрагмента макета. Это иллюстрация, не документальное фото изделия или площадки КЭМЗ. Текст, этапы производства и ссылки остаются HTML, не частью картинки. Логотипов в кадре нет.
+
+## Финальный prompt
+
+Generate a production-ready panoramic raster asset for the КЭМЗ website Full production cycle section. Image 1 is the exact composition reference: reproduce ONLY the narrow machinery-and-blueprint panorama in the middle of that screenshot, NOT any UI, text, timeline, buttons or browser chrome. Image 2 is a supporting machinery detail reference. Very wide landscape 3:1. Left quarter pale blue engineering line drawing of a circular electrical machine cross section and shaft elevations on near-white #f4f9fd. Blend continuously from drawing into a photorealistic bright factory floor. A long polished horizontal steel shaft extends from around 25% width towards a large blue-gray cylindrical electrical motor centered at 65% width, with a second connected cylinder at 85%. Zoom OUT relative to image2, entire upper silhouette and support base visible with margins, no cropped motor at edges. The machinery should occupy lower 65% of image, top soft factory windows dissolving to near white so website text can sit above it. Bottom edge softly dissolves into #f4f9fd, supports visible. Cool muted blue-gray steel, natural factory daylight, restrained editorial photographic realism, same camera and scene balance as the panorama in image1. No text whatsoever, no logos, no labels, no circles/dots/timeline overlay, no watermarks. Output only the panorama.

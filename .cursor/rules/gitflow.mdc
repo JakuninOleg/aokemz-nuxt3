@@ -1,0 +1,25 @@
+---
+description: Gitflow branching and PR workflow for aokemz-nuxt3
+alwaysApply: true
+---
+
+# Gitflow
+
+- Default integration branch: `develop`. Production: `master`.
+- Never commit feature work directly to `master` or `develop`.
+- New work: `feature/<short-name>` from latest `develop`.
+- Hotfixes: `hotfix/<short-name>` from `master`, merge back to `master` and `develop`.
+- Releases: `release/x.y` from `develop` when preparing a deployable cut.
+- Open PRs into `develop` (features) or `master` (release/hotfix). Prefer small PRs.
+- Do not create commits or push unless the user asks.
+- Do not use `--force` on `master`/`develop`, `--no-verify`, or interactive rebase.
+- After meaningful code changes: run `graphify update .` (AST-only).
+---
+# Branch naming examples
+
+```
+feature/form-antispam
+feature/home-hybrid-redesign
+feature/seo-meta
+hotfix/smtp-env
+```

@@ -1,0 +1,127 @@
+/*
+ * Internal route heroes deliberately keep their desktop composition in each
+ * page stylesheet. On a phone they share the editorial treatment established
+ * on /about and /documents: a photograph transitions into a paper
+ * surface with readable, non-overlaid copy. The home-page hero is excluded.
+ */
+@media (max-width: 720px) {
+  .kemz-home.kemz-home .internal-hero--mobile-surface {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    min-height: 360px;
+    height: auto;
+    overflow: hidden;
+    background: var(--home-paper);
+    color: var(--home-ink);
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, transparent 0%, rgba(244, 249, 253, 0.18) 24%, var(--home-paper) 52%);
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface .internal-hero__image {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: -2;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: var(--internal-mobile-image-position, center top);
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface .internal-hero__content {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    width: min(calc(100% - 32px), var(--home-container));
+    min-height: 0;
+    margin-inline: auto;
+    padding-block: 88px 24px;
+  }
+
+  /* A paper-backed breadcrumb stays legible over every photograph. */
+  .kemz-home.kemz-home .internal-hero--mobile-surface .internal-hero__crumbs {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: -8px;
+    padding: 6px 8px;
+    border-left: 2px solid var(--home-blue);
+    background: rgba(244, 249, 253, 0.9);
+    color: var(--home-navy) !important;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.25;
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface .internal-hero__crumbs > * {
+    color: var(--home-navy) !important;
+  }
+
+  /* Long-form heroes follow the established /about composition. */
+  .kemz-home.kemz-home .internal-hero--mobile-about {
+    min-height: 530px;
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-about::after {
+    background: linear-gradient(180deg, transparent 10%, rgba(244, 249, 253, 0.2) 28%, var(--home-paper) 55%);
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-about .internal-hero__image {
+    height: 300px;
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-about .internal-hero__content {
+    padding-block: 150px 28px;
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface h1,
+  .kemz-home.kemz-home .internal-hero--mobile-surface h2 {
+    color: var(--home-navy) !important;
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface .category-hero__lead,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .products-hero__lead,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .production-hero__lead,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .news-hero__lead,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .contacts-hero__lead,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .legal-hero__lead {
+    color: var(--home-muted) !important;
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface .category-hero__benefits,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .products-hero__points,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .production-hero__points,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .contacts-hero__points,
+  .kemz-home.kemz-home .internal-hero--mobile-surface .legal-hero__points {
+    color: var(--home-ink) !important;
+  }
+
+  .kemz-home.kemz-home .internal-hero--mobile-surface svg {
+    color: var(--home-blue);
+  }
+
+  .kemz-home.kemz-home .products-hero__points {
+    display: grid;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .kemz-home.kemz-home .products-hero__points li {
+    min-height: 32px;
+  }
+
+  .kemz-home.kemz-home .news-hero.internal-hero--mobile-surface {
+    min-height: 300px;
+  }
+
+  .kemz-home.kemz-home .news-hero.internal-hero--mobile-surface .news-hero__rail {
+    display: none;
+  }
+}

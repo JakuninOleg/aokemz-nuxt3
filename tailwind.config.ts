@@ -25,7 +25,32 @@ export default <Partial<Config>>{
         },
         gray: {
           300: '#F3F4F8'
+        },
+        kemz: {
+          ink: '#0b0d10',
+          graphite: '#1a1f26',
+          steel: '#e8ecf1',
+          paper: '#f5f7fa',
+          blue: '#2f78cd',
+          'blue-deep': '#1e4f8c',
+          brand: '#2f78cd',
+          muted: '#6b7280'
         }
+      },
+      fontFamily: {
+        sans: ['"Source Sans 3"', 'ProximaNova', ...defaultTheme.fontFamily.sans],
+        display: ['"Barlow Condensed"', '"Source Sans 3"', ...defaultTheme.fontFamily.sans],
+        mono: ['"IBM Plex Mono"', ...defaultTheme.fontFamily.mono],
+        proxima: ['ProximaNova', ...defaultTheme.fontFamily.sans]
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
+        tighter: '-0.03em',
+        tight: '-0.02em',
+      },
+      lineHeight: {
+        hero: '0.92',
+        heading: '1.05',
       },
       height: {
         76: '19rem',
