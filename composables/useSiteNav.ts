@@ -5,11 +5,11 @@ export type SiteNavLink = {
 
 export function useSiteNav() {
   const links: SiteNavLink[] = [
+    { name: 'Продукция', link: '/products' },
+    { name: 'Производство', link: '/production' },
     { name: 'О заводе', link: '/about' },
-    { name: 'Каталог', link: '/products' },
-    { name: 'Новости', link: '/news' },
     { name: 'Документы', link: '/documents' },
-    { name: 'Контакты', link: '/contacts' },
+    { name: 'Новости', link: '/news' },
   ]
 
   const salesPhoneDisplay = '+7 (343) 278-37-43'

@@ -1,0 +1,16 @@
+{
+  "name": "ОАО «КЭМЗ»",
+  "short_name": "КЭМЗ",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#2f78cd",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

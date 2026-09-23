@@ -1,27 +1,44 @@
-<template>
-  <section class="chapter about-cycle">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <span class="section-tag">02 · Производственный цикл</span>
-          <h2>От задания<br />до стенда</h2>
-        </div>
-        <p>
-          Конструкция, заготовка, сборка и испытания идут на одной площадке в Карпинске.
-        </p>
-      </div>
+<script setup lang="ts">
+import { ABOUT_CYCLE, ABOUT_CYCLE_MEDIA } from "~/utils/aboutContent";
+</script>
 
-      <ol class="about-cycle__list">
-        <li v-for="(step, index) in ABOUT_CYCLE" :key="step.title">
-          <span class="about-cycle__num">0{{ index + 1 }}</span>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
+<template>
+  <section class="abt-cycle" aria-labelledby="about-cycle-title">
+    <div class="abt-cycle__inner">
+      <div class="ref-container abt-cycle__head">
+        <p class="ref-label">Производство</p>
+        <h2 id="about-cycle-title" class="ref-title">
+          Полный цикл на одной площадке
+        </h2>
+        <p class="ref-body">
+          Все ключевые этапы, от разработки до испытаний, выполняются на
+          территории завода.<br />Контролируем качество на каждом шаге и
+          отвечаем за результат перед заказчиком.
+        </p>
+        <NuxtLink class="abt-text-link" to="/production"
+          >Как мы работаем <span aria-hidden="true">→</span></NuxtLink
+        >
+      </div>
+      <div class="abt-cycle__visual">
+        <img
+          class="abt-cycle__shaft"
+          :src="ABOUT_CYCLE_MEDIA.image"
+          :alt="ABOUT_CYCLE_MEDIA.imageAlt"
+          width="2172"
+          height="724"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <ol
+        class="ref-container abt-cycle__steps"
+        aria-label="Этапы производства"
+      >
+        <li v-for="step in ABOUT_CYCLE" :key="step.icon">
+          <strong>{{ step.title }}</strong>
+          <span>{{ step.text }}</span>
         </li>
       </ol>
     </div>
   </section>
 </template>
-
-<script setup lang="ts">
-import { ABOUT_CYCLE } from '~/utils/aboutContent'
-</script>

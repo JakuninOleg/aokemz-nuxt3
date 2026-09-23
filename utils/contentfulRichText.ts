@@ -3,7 +3,39 @@ import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types'
 
 function assetUrl(url?: string) {
   if (!url) return ''
-  return url.startsWith('//') ? `https:${url}` : url
+  const normalized = url.startsWith('//') ? `https:${url}` : url
+  return /^https:\/\//i.test(normalized) ? normalized : ''
+}
+
+function escapeAttribute(value: string) {
+  return value.replace(/[&<>'"]/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    "'": '&#39;',
+    '"': '&quot;',
+  })[character] || character)
+}
+
+function escapeHtml(value: string) {
+  return escapeAttribute(value)
+}
+
+function safeContentSlug(value: unknown) {
+  if (typeof value !== 'string') return null
+  const slug = value.trim()
+  return /^[a-z0-9][a-z0-9-]*$/i.test(slug) ? slug : null
+}
+
+function safeLink(uri?: string) {
+  if (!uri) return null
+  if (uri.startsWith('/') || uri.startsWith('#')) return uri
+  try {
+    const url = new URL(uri)
+    return ['https:', 'http:', 'mailto:', 'tel:'].includes(url.protocol) ? url.href : null
+  } catch {
+    return null
+  }
 }
 
 /** Shared Contentful → HTML for product/news bodies (mobile-safe tables). */
@@ -27,30 +59,29 @@ export function renderContentfulHtml(doc: unknown): string {
       [BLOCKS.LIST_ITEM]: (node: any, next: any) => `<li>${next(node.content)}</li>`,
       [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
         const file = node.data?.target?.fields?.file
-        const title = node.data?.target?.fields?.title || ''
+        const title = String(node.data?.target?.fields?.title || '')
         const src = assetUrl(file?.url)
         if (!src) return ''
-        return `<img class="my-4 max-w-full h-auto rounded" src="${src}" alt="${title}" loading="lazy" />`
+        return `<img class="my-4 max-w-full h-auto rounded" src="${escapeAttribute(src)}" alt="${escapeAttribute(title)}" loading="lazy" decoding="async" />`
       },
       [INLINES.HYPERLINK]: (node: any, next: any) => {
-        const uri = node.data?.uri || '#'
-        return `<a class="kemz-inline-link" href="${uri}">${next(node.content)}</a>`
+        const href = safeLink(node.data?.uri)
+        if (!href) return next(node.content)
+        const external = /^https?:\/\//i.test(href)
+        return `<a class="kemz-inline-link" href="${escapeAttribute(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ''}>${next(node.content)}</a>`
       },
       [INLINES.ENTRY_HYPERLINK]: (node: any) => {
         const fields = node.data?.target?.fields || {}
-        const label = node.content?.[0]?.value || fields?.name || 'ссылка'
-        const catUrl =
-          typeof fields?.category?.fields?.url === 'string'
-            ? fields.category.fields.url
-            : null
-        const prod = typeof fields?.url === 'string' ? fields.url : null
+        const label = String(node.content?.[0]?.value || fields?.name || 'ссылка')
+        const catUrl = safeContentSlug(fields?.category?.fields?.url)
+        const prod = safeContentSlug(fields?.url)
         const href =
           catUrl && prod
             ? `/products/${catUrl}/${prod}`
             : prod
               ? `/products/${prod}`
               : '#'
-        return `<a class="kemz-inline-link" href="${href}">${label}</a>`
+        return `<a class="kemz-inline-link" href="${escapeAttribute(href)}">${escapeHtml(label)}</a>`
       },
       [BLOCKS.TABLE]: (node: any, next: any) =>
         `<div class="kemz-table-scroll my-6 -mx-4 px-4 sm:mx-0 sm:px-0 overflow-x-auto overscroll-x-contain">

@@ -1,19 +1,15 @@
 <template>
-  <section class="about-cta">
-    <div class="wrap about-cta__inner">
+  <section class="abt-cta" aria-labelledby="about-cta-title">
+    <div class="ref-container abt-cta__inner">
       <div>
-        <span class="section-tag">Дальше</span>
-        <h2>Каталог, документы<br />или заявка</h2>
-        <p class="about-cta__lead">
-          Нужны ТТХ, опросный лист или параметры машины: откройте каталог или напишите в отдел
-          продаж.
+        <p class="abt-cta__label">Технический отдел</p>
+        <h2 id="about-cta-title">Обсудить задачу<br />с техническим отделом</h2>
+        <p class="abt-cta__lead">
+          Подберём исполнение под параметры машины и подготовим опросный лист.
         </p>
       </div>
-      <div class="about-cta__actions">
-        <NuxtLink to="/products" class="button button-solid">Каталог</NuxtLink>
-        <NuxtLink to="/documents" class="button button-ghost">Документы</NuxtLink>
-        <NuxtLink to="/contacts" class="button button-ghost">Контакты</NuxtLink>
-      </div>
+      <HomeActionButton class="abt-cta__action" to="/contacts" on-dark>Связаться</HomeActionButton>
+      <p class="abt-cta__aside">Электрические машины<br />для карьерной техники</p>
     </div>
   </section>
 </template>

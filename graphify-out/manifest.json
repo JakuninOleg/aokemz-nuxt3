@@ -2,116 +2,116 @@
   "app.vue": {
     "mtime": 1746042233.9453807,
     "ast_hash": "b34add5f9d3d146aeef32a0279659fd4",
-    "semantic_hash": ""
+    "semantic_hash": "b34add5f9d3d146aeef32a0279659fd4"
   },
   "components/Form.vue": {
-    "mtime": 1785363566.234203,
-    "ast_hash": "c2dc916c432e7eea0bbe7d1ddb38158d",
+    "mtime": 1789924415.8283544,
+    "ast_hash": "7be366b17185d0fa7b40c7fd13f79c6e",
     "semantic_hash": ""
   },
   "components/InputPhone.vue": {
-    "mtime": 1785363566.2453568,
+    "mtime": 1789815619.2042255,
     "ast_hash": "82db851752550a9297a918286d4084bd",
-    "semantic_hash": ""
+    "semantic_hash": "82db851752550a9297a918286d4084bd"
   },
   "error.vue": {
-    "mtime": 1785337574.4979446,
-    "ast_hash": "515870363c6bea09588236c68b274386",
-    "semantic_hash": ""
+    "mtime": 1789853059.6932325,
+    "ast_hash": "1a43ce996b73dceb41bbd38aede17090",
+    "semantic_hash": "1a43ce996b73dceb41bbd38aede17090"
   },
   "layouts/default.vue": {
-    "mtime": 1785363566.2321844,
-    "ast_hash": "e803425b016deb27d7152434eea605c1",
-    "semantic_hash": ""
+    "mtime": 1789862562.885113,
+    "ast_hash": "831a71b1bc51705b66370340643bc65c",
+    "semantic_hash": "831a71b1bc51705b66370340643bc65c"
   },
   "nuxt.config.ts": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "f15bfc2984a4a952ed66e9a87cd5cb2b",
+    "mtime": 1790171559.9723551,
+    "ast_hash": "c0fc2fcac6828c94e757e04b1a44be3b",
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1785366415.295941,
-    "ast_hash": "a92eb082bab2526b3928116dbf82a9b0",
+    "mtime": 1789903449.2577848,
+    "ast_hash": "d0ce147921cbd65d93ca0ce513efb2ec",
     "semantic_hash": ""
   },
   "pages/about/index.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "f39b4be545056df31dd67e8a725a2cdb",
-    "semantic_hash": ""
+    "mtime": 1789892471.6742747,
+    "ast_hash": "44d16bde7d28f626fb862f70f5fdbf48",
+    "semantic_hash": "44d16bde7d28f626fb862f70f5fdbf48"
   },
   "pages/contacts/index.vue": {
-    "mtime": 1785363566.2316704,
-    "ast_hash": "9f700c6671c14b9a19470004bbdd079c",
-    "semantic_hash": ""
+    "mtime": 1789864116.7161503,
+    "ast_hash": "f66281dae77493dd6d15231534508c03",
+    "semantic_hash": "f66281dae77493dd6d15231534508c03"
   },
   "pages/index.vue": {
-    "mtime": 1785363566.2361987,
-    "ast_hash": "6c1c7f02d92e9884cb3b8475d2e90883",
+    "mtime": 1790024234.135734,
+    "ast_hash": "67b37033002ae628fcb6df74ed67951b",
     "semantic_hash": ""
   },
   "pages/news/[new].vue": {
-    "mtime": 1785363566.2361987,
-    "ast_hash": "e6cc2166c93f56a9d50d67c1caa055bb",
-    "semantic_hash": ""
+    "mtime": 1789864120.6011894,
+    "ast_hash": "d97e28649dc8c91ab7426ae470c9b355",
+    "semantic_hash": "d97e28649dc8c91ab7426ae470c9b355"
   },
   "pages/news/index.vue": {
-    "mtime": 1785363566.2503393,
-    "ast_hash": "547fe506b490ed3acd11e0be9d305dbb",
-    "semantic_hash": ""
+    "mtime": 1789892474.3145175,
+    "ast_hash": "50b2d3d0c0e4c3e8883eaf947d3dc557",
+    "semantic_hash": "50b2d3d0c0e4c3e8883eaf947d3dc557"
   },
   "pages/products/[category]/[product].vue": {
-    "mtime": 1785363566.234203,
-    "ast_hash": "bb4956c2e423a7f7f745c1cbecff79a6",
-    "semantic_hash": ""
+    "mtime": 1789864123.4282792,
+    "ast_hash": "56be57d2f60ecc2f8ed2130269952ec9",
+    "semantic_hash": "56be57d2f60ecc2f8ed2130269952ec9"
   },
   "pages/products/[category]/index.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "4e28c771c3bc78600f0dd3f67f3eb22e",
-    "semantic_hash": ""
+    "mtime": 1789864122.483044,
+    "ast_hash": "3ffff3b180a38c56b6fc3673af324003",
+    "semantic_hash": "3ffff3b180a38c56b6fc3673af324003"
   },
   "pages/products/index.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "3892ea3f6c3cb45b8c4dc7458184599c",
-    "semantic_hash": ""
+    "mtime": 1789892548.1478484,
+    "ast_hash": "6db9d1f29ec2f120c98ae9369559a048",
+    "semantic_hash": "6db9d1f29ec2f120c98ae9369559a048"
   },
   "plugins/contentful.ts": {
-    "mtime": 1785363566.2361987,
-    "ast_hash": "522c2d53aac53216eb7a1bf45b9348d4",
-    "semantic_hash": ""
+    "mtime": 1789772253.230938,
+    "ast_hash": "5b84149797cef38dfd7acec52fa2ef6b",
+    "semantic_hash": "5b84149797cef38dfd7acec52fa2ef6b"
   },
   "server/api/sendMail.post.ts": {
-    "mtime": 1785337574.7662477,
-    "ast_hash": "40bcbe877b7a9d06daa5d37b3d4ee8e9",
+    "mtime": 1789903707.158782,
+    "ast_hash": "c5972da51a9ac890ac26ff9ed0109f14",
     "semantic_hash": ""
   },
   "server/tsconfig.json": {
     "mtime": 1745913528.0,
     "ast_hash": "32a978380246c0479e2c9fb9dd0cf7ab",
-    "semantic_hash": ""
+    "semantic_hash": "32a978380246c0479e2c9fb9dd0cf7ab"
   },
   "tailwind.config.ts": {
-    "mtime": 1785363566.2361987,
+    "mtime": 1789772253.230938,
     "ast_hash": "66abd65b446944e2e741182f054e8a60",
-    "semantic_hash": ""
+    "semantic_hash": "66abd65b446944e2e741182f054e8a60"
   },
   "tsconfig.json": {
     "mtime": 1745913528.0,
     "ast_hash": "0fac5c1cfa8521b2091133f39e89c39d",
-    "semantic_hash": ""
+    "semantic_hash": "0fac5c1cfa8521b2091133f39e89c39d"
   },
   ".cursor/skills/kemz-industrial-design/SKILL.md": {
-    "mtime": 1785288856.531322,
+    "mtime": 1789122339.30229,
     "ast_hash": "a94e6f176dd5cc83b7c34e1e482e1e21",
     "semantic_hash": ""
   },
   ".cursor/skills/kemz-industrial-design/reference.md": {
-    "mtime": 1785286954.4669771,
-    "ast_hash": "0bfe99d9c5ee2e6ac4dbe7bddd8ca629",
+    "mtime": 1789122339.30229,
+    "ast_hash": "6bb19748562a05fc23de97242b840554",
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1785288856.533317,
-    "ast_hash": "14799063f93806267d4a9150d84e01e5",
+    "mtime": 1789688381.2548723,
+    "ast_hash": "84f928eb1f8709f5558364c94363a565",
     "semantic_hash": ""
   },
   "README.md": {
@@ -125,8 +125,8 @@
     "semantic_hash": ""
   },
   "docs/brand-facts.md": {
-    "mtime": 1785366414.516815,
-    "ast_hash": "3dbc2661e17799ccec783193f947906e",
+    "mtime": 1790171562.7260692,
+    "ast_hash": "761f8b010daea8a399801ee2d00101b1",
     "semantic_hash": ""
   },
   "layouts/README.md": {
@@ -137,11 +137,6 @@
   "pages/README.md": {
     "mtime": 1618328422.9205432,
     "ast_hash": "1236dfd89d7965650b372546b52fb1e7",
-    "semantic_hash": ""
-  },
-  "public/robots.txt": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "b209ebb0c05d9806f168b78628e23947",
     "semantic_hash": ""
   },
   "assets/images/pdf.png": {
@@ -157,361 +152,1756 @@
   "assets/video/kemz_ny.mp4": {
     "mtime": 1702986510.3332512,
     "ast_hash": "40492a984e64e34a0983d509c4700fe2",
-    "semantic_hash": ""
+    "semantic_hash": "40492a984e64e34a0983d509c4700fe2"
   },
   "docs/_extract_static.py": {
-    "mtime": 1785287109.4690428,
-    "ast_hash": "e21694eb977e43b00b672b5f1e54afde",
-    "semantic_hash": ""
+    "mtime": 1789122339.3132603,
+    "ast_hash": "c5c39746ccf82d98659d543919e42fe2",
+    "semantic_hash": "c5c39746ccf82d98659d543919e42fe2"
   },
   "docs/_pdf_tools/extract.js": {
-    "mtime": 1785287224.3445423,
-    "ast_hash": "29d1b8d3c38759c4370a5a5d05c8166e",
-    "semantic_hash": ""
+    "mtime": 1789122339.3132603,
+    "ast_hash": "de6cc180e61ec7c27e7e2975284fbb52",
+    "semantic_hash": "de6cc180e61ec7c27e7e2975284fbb52"
   },
   "server/utils/leadEmail.ts": {
-    "mtime": 1785288856.5432913,
-    "ast_hash": "24d6bb6a8d6eecd14547c098f0ea0617",
+    "mtime": 1789905653.8883505,
+    "ast_hash": "af4ade19a9f65fc6f0569b1e153b9265",
     "semantic_hash": ""
   },
   "server/utils/rateLimit.ts": {
-    "mtime": 1785288856.5432913,
+    "mtime": 1789122339.3897195,
     "ast_hash": "9c34a6add18350717141f3b43325c47f",
-    "semantic_hash": ""
+    "semantic_hash": "9c34a6add18350717141f3b43325c47f"
   },
   "utils/contactValidation.ts": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "c8ca48ac6dae90d6b251377eeb7ec414",
-    "semantic_hash": ""
+    "mtime": 1789772253.235924,
+    "ast_hash": "96ac3f74c2b67c17128e308af007e8d9",
+    "semantic_hash": "96ac3f74c2b67c17128e308af007e8d9"
   },
   "pages/documents/index.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "adecb5d9370aaaa4437b979ff1598fd2",
-    "semantic_hash": ""
+    "mtime": 1789892472.566692,
+    "ast_hash": "b7545748b65e688da4f96bd2a29aed2b",
+    "semantic_hash": "b7545748b65e688da4f96bd2a29aed2b"
   },
   "pages/special/index.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "1a2384e308bac001a2db6797292a0b59",
-    "semantic_hash": ""
+    "mtime": 1789862170.0162745,
+    "ast_hash": "37fc4bdace50e8741040ed80c50002a7",
+    "semantic_hash": "37fc4bdace50e8741040ed80c50002a7"
   },
   "utils/contentfulRichText.ts": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "fc7cfaaec1bf57755d4f79b854246927",
+    "mtime": 1789903351.3477597,
+    "ast_hash": "43dc5a2ce2ca60c148c0bdb251049830",
     "semantic_hash": ""
   },
   ".cursor/skills/stop-slop/SKILL.md": {
-    "mtime": 1785288856.5323207,
+    "mtime": 1789122339.30229,
     "ast_hash": "c4807c98db715bafaf8949d9e1b5c6ff",
     "semantic_hash": ""
   },
   ".cursor/skills/stop-slop/references.md": {
-    "mtime": 1785288856.5323207,
+    "mtime": 1789122339.3032875,
     "ast_hash": "f172a323dfb05cb16e0a013838ef5031",
     "semantic_hash": ""
   },
-  "public/docs/\u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
-    "mtime": 1785337574.5295033,
-    "ast_hash": "d672812fec56c71f91e5f5ee26443ac4",
-    "semantic_hash": ""
-  },
-  "public/docs/\u041e\u043f\u0440\u043e\u0441\u043d\u044b\u0439 \u043b\u0438\u0441\u0442 \u0432\u044b\u0441\u043e\u043a\u043e\u0432\u043e\u043b\u044c\u0442\u043d\u043e\u0439 \u0430\u043f\u043f\u0430\u0440\u0430\u0442\u0443\u0440\u044b \u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
-    "mtime": 1785337574.5315223,
-    "ast_hash": "e276b989d4422fca6df099f289d3753d",
-    "semantic_hash": ""
-  },
-  "public/docs/\u041e\u043f\u0440\u043e\u0441\u043d\u044b\u0439 \u043b\u0438\u0441\u0442 \u043d\u0430 \u044d\u043b\u0435\u043a\u0442\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043c\u0430\u0448\u0438\u043d\u044b \u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
-    "mtime": 1785337574.5325198,
-    "ast_hash": "250c39de0a7f966fe555aa5ebf9148d2",
-    "semantic_hash": ""
-  },
-  "public/docs/\u041f\u0435\u0440\u0435\u0447\u0435\u043d\u044c \u0437\u0430\u043f\u0430\u0441\u043d\u044b\u0445 \u0447\u0430\u0441\u0442\u0435\u0439 \u041e\u0410\u041e \u041a\u042d\u041c\u0417.pdf": {
-    "mtime": 1785337574.5365145,
-    "ast_hash": "68c22eb806c746d2165225c643672a3e",
-    "semantic_hash": ""
-  },
   "components/AppFooter.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "fb9b3e956520f49ca8b21dc7d228f0d2",
+    "mtime": 1790160870.2394998,
+    "ast_hash": "7305f33795a04d1c8ddde29219c66478",
     "semantic_hash": ""
   },
   "components/AppHeader.vue": {
-    "mtime": 1785363566.234203,
-    "ast_hash": "49f06c71c3c61c38c03e9d5693076ec5",
+    "mtime": 1789904127.2040255,
+    "ast_hash": "2bddc555915fdada0bc1c581a3799d47",
     "semantic_hash": ""
   },
   "components/home/HomeCapabilities.vue": {
-    "mtime": 1785337574.4928234,
-    "ast_hash": "08754b0b9692fcb557a0f6158ccf3f73",
-    "semantic_hash": ""
-  },
-  "components/home/HomeDirections.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "65ea868d84210689b459e7f9b59e479d",
+    "mtime": 1790023623.4595268,
+    "ast_hash": "561af7c3b57b5a587f30a462a000f2b2",
     "semantic_hash": ""
   },
   "components/home/HomeHero.vue": {
-    "mtime": 1785363566.2361987,
-    "ast_hash": "5569f265d3cae150aba61c4074695da5",
+    "mtime": 1790160860.2195115,
+    "ast_hash": "9e85d766309646f0dd3f45415ff9e23a",
     "semantic_hash": ""
   },
   "composables/useSiteNav.ts": {
-    "mtime": 1785337574.4964068,
-    "ast_hash": "5c8fd4b2a7a475b1ae8a7c64d56cb21b",
-    "semantic_hash": ""
+    "mtime": 1789689243.3789155,
+    "ast_hash": "2a5665e197cea1b0db3e5685ebc536ad",
+    "semantic_hash": "2a5665e197cea1b0db3e5685ebc536ad"
   },
   "public/media/hero-excavator-schematic.png": {
-    "mtime": 1785337574.6636882,
+    "mtime": 1789122339.368998,
     "ast_hash": "dfa56ffee5e10003165c19033dc961b5",
     "semantic_hash": ""
   },
-  "components/home/HomeSupplyMap.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "1c15de135105c55a9cbad045f65976ec",
-    "semantic_hash": ""
-  },
   "components/FormConsent.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "58bcea25255b6928d89807e520433e0e",
-    "semantic_hash": ""
+    "mtime": 1789772253.235924,
+    "ast_hash": "ed9d94e99789e300b5bcb964904f2f38",
+    "semantic_hash": "ed9d94e99789e300b5bcb964904f2f38"
   },
   "pages/legal/index.vue": {
-    "mtime": 1785363566.2418947,
-    "ast_hash": "6694b48f53a08df6565d8ea1d5b2195a",
-    "semantic_hash": ""
+    "mtime": 1789892473.4407737,
+    "ast_hash": "0cc55e388c5e18bfbf2a38583a43e83c",
+    "semantic_hash": "0cc55e388c5e18bfbf2a38583a43e83c"
   },
   "utils/legalContent.ts": {
-    "mtime": 1785337574.768293,
-    "ast_hash": "27eee9ba9aa8b78485a63fb73306c5b4",
-    "semantic_hash": ""
+    "mtime": 1789868435.730874,
+    "ast_hash": "d3a8db9a103141c6231283fbf7a1f6ec",
+    "semantic_hash": "d3a8db9a103141c6231283fbf7a1f6ec"
   },
   "utils/supplyMapCoords.ts": {
-    "mtime": 1785337574.7688048,
+    "mtime": 1789239506.2980068,
     "ast_hash": "cd32b1f72125744bf1c9cd73995049de",
-    "semantic_hash": ""
-  },
-  "components/home/HomeContactLead.vue": {
-    "mtime": 1785363566.2503393,
-    "ast_hash": "a48ff6abd805769d8f7d64249b3c2ae0",
-    "semantic_hash": ""
+    "semantic_hash": "cd32b1f72125744bf1c9cd73995049de"
   },
   "components/home/HomeGeography.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "1046a05dc8cc12ea9ad48cef113aa222",
-    "semantic_hash": ""
-  },
-  "components/home/HomeProcess.vue": {
-    "mtime": 1785363566.2447565,
-    "ast_hash": "eebafe8bf78b8a5934426a318bce180f",
-    "semantic_hash": ""
-  },
-  "components/home/HomeStats.vue": {
-    "mtime": 1785337574.4953814,
-    "ast_hash": "9bff8a668a615aec450e830f9828b740",
+    "mtime": 1790022455.0609112,
+    "ast_hash": "f09c3658d753d40020f921a70ba09289",
     "semantic_hash": ""
   },
   "utils/homeContent.ts": {
-    "mtime": 1785363566.2321844,
-    "ast_hash": "3398bd6349033ccaad62db9f40ea4d7b",
+    "mtime": 1790160861.1181638,
+    "ast_hash": "4e8f238c678dab7da6be5c3fbe65c099",
     "semantic_hash": ""
   },
   "composables/usePageSeo.ts": {
-    "mtime": 1785363566.2503393,
-    "ast_hash": "e6e68d63000a0be6dd24f7acb1e023c9",
-    "semantic_hash": ""
+    "mtime": 1789862210.3446262,
+    "ast_hash": "e404d8109b6a3aa76145d5d7c63c4cb8",
+    "semantic_hash": "e404d8109b6a3aa76145d5d7c63c4cb8"
   },
   "utils/siteSeo.ts": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "fed2e7555a940d4cbd4917df53ae216d",
+    "mtime": 1790160869.353682,
+    "ast_hash": "09a246a0ad6e7d89bea7023e7fdbddaf",
     "semantic_hash": ""
   },
   "assets/images/kemz-logo.webp": {
-    "mtime": 1785354808.659,
+    "mtime": 1789122339.3062794,
     "ast_hash": "fe54d50071e211758918aa7ba8b101d1",
     "semantic_hash": ""
   },
   "public/media/dir-drilling-rig-480.webp": {
-    "mtime": 1785354948.936,
+    "mtime": 1789122339.3515296,
     "ast_hash": "623879b474d432d17a315deed18af04c",
     "semantic_hash": ""
   },
   "public/media/dir-drilling-rig.webp": {
-    "mtime": 1785354949.016,
+    "mtime": 1789122339.3515296,
     "ast_hash": "3cd126832818974c3ecd1830fe0072ce",
     "semantic_hash": ""
   },
   "public/media/dir-excavator-drive-480.webp": {
-    "mtime": 1785354948.78,
+    "mtime": 1789122339.3525279,
     "ast_hash": "cb36b81a6b1959add6ad945c62f434b8",
     "semantic_hash": ""
   },
   "public/media/dir-excavator-drive.webp": {
-    "mtime": 1785354948.883,
+    "mtime": 1789122339.3530328,
     "ast_hash": "59fe32eb0f57948fd6fb6de63cba2a52",
     "semantic_hash": ""
   },
   "public/media/dir-hv-switchgear-480.webp": {
-    "mtime": 1785354949.216,
+    "mtime": 1789122339.3535523,
     "ast_hash": "8a2691acb8d5d5b3a7ab3ca38604c953",
     "semantic_hash": ""
   },
   "public/media/dir-hv-switchgear.webp": {
-    "mtime": 1785354949.31,
+    "mtime": 1789122339.3540623,
     "ast_hash": "0722d902e67c12528cc8fb658fba7a51",
     "semantic_hash": ""
   },
   "public/media/dir-mine-motor-480.webp": {
-    "mtime": 1785354949.366,
+    "mtime": 1789122339.3545763,
     "ast_hash": "afe8128c2c1aab6dcba5dd7a42d9cde7",
     "semantic_hash": ""
   },
   "public/media/dir-mine-motor.webp": {
-    "mtime": 1785354949.474,
+    "mtime": 1789122339.355091,
     "ast_hash": "2a4c2d312dbb12d16f4f490451be46c3",
     "semantic_hash": ""
   },
   "public/media/dir-traction-motor-480.webp": {
-    "mtime": 1785354949.07,
+    "mtime": 1789122339.355091,
     "ast_hash": "ddbd880a6881d93d830ea36ac7076629",
     "semantic_hash": ""
   },
   "public/media/dir-traction-motor.webp": {
-    "mtime": 1785354949.156,
+    "mtime": 1789122339.3556054,
     "ast_hash": "b44aa8feeb7e8879f334a184c7bfe57a",
     "semantic_hash": ""
   },
   "public/media/hero-excavator-schematic-640.webp": {
-    "mtime": 1785354948.597,
+    "mtime": 1789122339.3561158,
     "ast_hash": "ea6c95c69921bc9d14dd82b3d8379913",
     "semantic_hash": ""
   },
   "public/media/hero-excavator-schematic.webp": {
-    "mtime": 1785354948.721,
+    "mtime": 1789122339.378683,
     "ast_hash": "5c5a652bd95e56b7a9f633074f25585e",
     "semantic_hash": ""
   },
   "public/media/map-eurasia-supply.webp": {
-    "mtime": 1785354681.804,
+    "mtime": 1789122339.3816736,
     "ast_hash": "7bea3feb89bc30ab04a7c525becfdaa4",
     "semantic_hash": ""
   },
   "public/media/plant-foundry.webp": {
-    "mtime": 1785354949.577,
+    "mtime": 1789122339.3867276,
     "ast_hash": "e92e25bc9f9f908241185ba94605230c",
     "semantic_hash": ""
   },
   "public/media/plant-teststand.webp": {
-    "mtime": 1785354949.758,
+    "mtime": 1789122339.3867276,
     "ast_hash": "01d09c978aa722ab3720255105988833",
     "semantic_hash": ""
   },
   "public/media/plant-windings.webp": {
-    "mtime": 1785354949.667,
+    "mtime": 1789122339.3877254,
     "ast_hash": "5113e87aa956591061ff83bbac59d1e3",
     "semantic_hash": ""
   },
   "components/about/AboutCta.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "0d55543953290c548793658e17e7f8cd",
-    "semantic_hash": ""
+    "mtime": 1789762525.991429,
+    "ast_hash": "2f8efbdbe93c9affbd014ad05880e5bb",
+    "semantic_hash": "2f8efbdbe93c9affbd014ad05880e5bb"
   },
   "components/about/AboutCycle.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "d0a91ad5b20c0205d229661bc75f6196",
-    "semantic_hash": ""
-  },
-  "components/about/AboutFacts.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "ca7b92865d43c240ae22ee174b281bde",
-    "semantic_hash": ""
-  },
-  "components/about/AboutGallery.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "30f41ae76d9635804292ae6c7a55ccf3",
-    "semantic_hash": ""
+    "mtime": 1789808835.8901606,
+    "ast_hash": "bc0dcb194ebda4cb49dee9b4f47f2aa6",
+    "semantic_hash": "bc0dcb194ebda4cb49dee9b4f47f2aa6"
   },
   "components/about/AboutHero.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "51d7f75f60e5d9c34123cf50786a093d",
-    "semantic_hash": ""
-  },
-  "components/about/AboutLines.vue": {
-    "mtime": 1785363566.2448468,
-    "ast_hash": "32cf6e5fd23e5d201391ffca10d59366",
-    "semantic_hash": ""
-  },
-  "components/about/AboutPlant.vue": {
-    "mtime": 1785363566.2453568,
-    "ast_hash": "3f9598981b43016e38a19bc161f718a0",
+    "mtime": 1790160866.5647526,
+    "ast_hash": "5be32525721ea945f907cc85259b6d89",
     "semantic_hash": ""
   },
   "components/about/AboutStory.vue": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "5311a529bab7e75135d2f21d5f28d968",
-    "semantic_hash": ""
+    "mtime": 1789866295.2307103,
+    "ast_hash": "90d1a2bacea6374cffb515feb4bcec22",
+    "semantic_hash": "90d1a2bacea6374cffb515feb4bcec22"
   },
   "utils/aboutContent.ts": {
-    "mtime": 1785363566.2493422,
-    "ast_hash": "aa11519d030b584363ebb6e3de91e62e",
+    "mtime": 1790160924.8148806,
+    "ast_hash": "dc606983b6833191a70e89a004d6bbe2",
     "semantic_hash": ""
   },
   "public/media/about-assembly-480.webp": {
-    "mtime": 1785355658.115,
+    "mtime": 1789122339.3427176,
     "ast_hash": "36b28e05c4fcc2be1fec202dcd67fec2",
     "semantic_hash": ""
   },
   "public/media/about-assembly.webp": {
-    "mtime": 1785355658.047,
+    "mtime": 1789122339.3427176,
     "ast_hash": "8d637f5a86a72508a68f86172eb9d426",
     "semantic_hash": ""
   },
   "public/media/about-hero-640.webp": {
-    "mtime": 1785355750.017,
+    "mtime": 1789122339.3437133,
     "ast_hash": "102c7445b0adc9d4f670afd51b007a90",
     "semantic_hash": ""
   },
   "public/media/about-hero.webp": {
-    "mtime": 1785355749.918,
+    "mtime": 1789122339.345551,
     "ast_hash": "78edfb9a396aceac27785be0962225f8",
     "semantic_hash": ""
   },
   "public/media/about-plant-640.webp": {
-    "mtime": 1785355657.527,
+    "mtime": 1789122339.3465438,
     "ast_hash": "6105593d2cfa71364c7af8c2d5971c63",
     "semantic_hash": ""
   },
   "public/media/about-plant.webp": {
-    "mtime": 1785355657.437,
+    "mtime": 1789122339.347541,
     "ast_hash": "f7e9e536c910762a965bb06a267f7ce8",
     "semantic_hash": ""
   },
   "public/media/about-shop-1-480.webp": {
-    "mtime": 1785355657.755,
+    "mtime": 1789122339.3485377,
     "ast_hash": "b9ae3d1ef5d11a80c8126afc00ad89c0",
     "semantic_hash": ""
   },
   "public/media/about-shop-1.webp": {
-    "mtime": 1785355657.664,
+    "mtime": 1789122339.3485377,
     "ast_hash": "d449b2dbc6ab8857f34bc4c9c7d57af7",
     "semantic_hash": ""
   },
   "public/media/about-shop-2-480.webp": {
-    "mtime": 1785355657.935,
+    "mtime": 1789122339.349535,
     "ast_hash": "b73ac99d26e5b578711dede5ddad114e",
     "semantic_hash": ""
   },
   "public/media/about-shop-2.webp": {
-    "mtime": 1785355657.875,
+    "mtime": 1789122339.349535,
     "ast_hash": "0f2b35949aa1b5f95e2ebf66159fba94",
     "semantic_hash": ""
   },
   "public/media/about-test-480.webp": {
-    "mtime": 1785355658.303,
+    "mtime": 1789122339.350533,
     "ast_hash": "bf98791a03ec20637a32c5f07fdcd558",
     "semantic_hash": ""
   },
   "public/media/about-test.webp": {
-    "mtime": 1785355658.239,
+    "mtime": 1789122339.3515296,
     "ast_hash": "5cd81445ab1e7bc46c793db44de270ec",
+    "semantic_hash": ""
+  },
+  "pages/production/index.vue": {
+    "mtime": 1789892475.1913066,
+    "ast_hash": "3ff8f8a84589244ecb8ed1666d897783",
+    "semantic_hash": "3ff8f8a84589244ecb8ed1666d897783"
+  },
+  "docs/DESIGN_SYSTEM.md": {
+    "mtime": 1789864373.0403697,
+    "ast_hash": "745178758a921fb6a32621ce915f2a8c",
+    "semantic_hash": ""
+  },
+  "graphify-out/converted/kemz-capabilities_bc7423f0.md": {
+    "mtime": 1789689915.0398026,
+    "ast_hash": "418438ef2766f844752be295076377d5",
+    "semantic_hash": ""
+  },
+  "public/docs/kemz-catalog.pdf": {
+    "mtime": 1789122339.338627,
+    "ast_hash": "d672812fec56c71f91e5f5ee26443ac4",
+    "semantic_hash": ""
+  },
+  "public/docs/kemz-questionnaire-hv.pdf": {
+    "mtime": 1789122339.340163,
+    "ast_hash": "e276b989d4422fca6df099f289d3753d",
+    "semantic_hash": ""
+  },
+  "public/docs/kemz-questionnaire-machines.pdf": {
+    "mtime": 1789122339.3406744,
+    "ast_hash": "250c39de0a7f966fe555aa5ebf9148d2",
+    "semantic_hash": ""
+  },
+  "public/docs/kemz-spare-parts.pdf": {
+    "mtime": 1789122339.3422117,
+    "ast_hash": "68c22eb806c746d2165225c643672a3e",
+    "semantic_hash": ""
+  },
+  ".eslintrc.cjs": {
+    "mtime": 1789728367.5251505,
+    "ast_hash": "871e99afc454ecc848ae5a2a963efc53",
+    "semantic_hash": "871e99afc454ecc848ae5a2a963efc53"
+  },
+  "components/home/HomeEngineeringIcon.vue": {
+    "mtime": 1789809252.6941772,
+    "ast_hash": "ad98fa0ea39f79d7183009ec8050cd86",
+    "semantic_hash": "ad98fa0ea39f79d7183009ec8050cd86"
+  },
+  "scripts/check-home-behavior.cjs": {
+    "mtime": 1789742393.4905028,
+    "ast_hash": "a2ba56da347c6614e98e625053294037",
+    "semantic_hash": "a2ba56da347c6614e98e625053294037"
+  },
+  "scripts/check-home.cjs": {
+    "mtime": 1789742378.3755727,
+    "ast_hash": "87f33da837b22f4749f0e452a496202a",
+    "semantic_hash": "87f33da837b22f4749f0e452a496202a"
+  },
+  "scripts/prepare-home-assets.cjs": {
+    "mtime": 1789739313.763355,
+    "ast_hash": "ff061f54c1fc70dd688aa7fbe50be7a0",
+    "semantic_hash": "ff061f54c1fc70dd688aa7fbe50be7a0"
+  },
+  "utils/contentfulTypes.ts": {
+    "mtime": 1789739313.7683394,
+    "ast_hash": "673fcdddad41e1a89a553f77965543c6",
+    "semantic_hash": "673fcdddad41e1a89a553f77965543c6"
+  },
+  "public/fonts/RobotoCondensed-OFL.txt": {
+    "mtime": 1789727452.9063308,
+    "ast_hash": "fa7ba941e9cebb2c8c35a057329603ec",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drilling-rig-quarry-720.webp": {
+    "mtime": 1789727418.14,
+    "ast_hash": "7a8bff2c58672f5fb9c76c4d61e09443",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drilling-rig-quarry.png": {
+    "mtime": 1789725557.6209488,
+    "ast_hash": "72ca98fa8d5659955409d2036a4e8cdd",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drilling-rig-quarry.webp": {
+    "mtime": 1789727418.079,
+    "ast_hash": "7588ce503de48180f23e8a5ad7802300",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drive-gearboxes-720.webp": {
+    "mtime": 1789727418.353,
+    "ast_hash": "a51a461dd3a9503fbf4b50cbf004f2a0",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drive-gearboxes.png": {
+    "mtime": 1789726243.976607,
+    "ast_hash": "49b54d867210e7c96b718d9557bc9e00",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drive-gearboxes.webp": {
+    "mtime": 1789727418.293,
+    "ast_hash": "33209589dddd3ebd169d45a84f81e954",
+    "semantic_hash": ""
+  },
+  "public/media/generated/electric-machinery-shop-720.webp": {
+    "mtime": 1789727418.601,
+    "ast_hash": "29a574aacb012abcbcb83da592dab4fe",
+    "semantic_hash": ""
+  },
+  "public/media/generated/electric-machinery-shop.png": {
+    "mtime": 1789726343.0766063,
+    "ast_hash": "402c0df79a870b4bea68d2818d5d9be0",
+    "semantic_hash": ""
+  },
+  "public/media/generated/electric-machinery-shop.webp": {
+    "mtime": 1789727418.53,
+    "ast_hash": "3aa19fefb0a4f2bba7156bc3148cae9e",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-720.webp": {
+    "mtime": 1789727418.835,
+    "ast_hash": "5b2514bcdb1f4dc66ffbc3cafd9aaae3",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline.png": {
+    "mtime": 1789725518.3160732,
+    "ast_hash": "21f967ef4a7cd6ddb944b4d6b13f6d15",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline.webp": {
+    "mtime": 1789727418.773,
+    "ast_hash": "18e2d830bf78c0c4a643fa5a64005d7c",
+    "semantic_hash": ""
+  },
+  "public/media/generated/high-voltage-motor-testshop-720.webp": {
+    "mtime": 1789727419.055,
+    "ast_hash": "0a75b13a87c196ada05826e65f423f9b",
+    "semantic_hash": ""
+  },
+  "public/media/generated/high-voltage-motor-testshop.png": {
+    "mtime": 1789726484.0700479,
+    "ast_hash": "45f737d656268d6c864ded20f59d2af1",
+    "semantic_hash": ""
+  },
+  "public/media/generated/high-voltage-motor-testshop.webp": {
+    "mtime": 1789727418.993,
+    "ast_hash": "0802046ce01e396a79cfc79347cc6bb2",
+    "semantic_hash": ""
+  },
+  "public/media/generated/high-voltage-switchgear-720.webp": {
+    "mtime": 1789727419.263,
+    "ast_hash": "84998456681ba388bde17083a6dbb79f",
+    "semantic_hash": ""
+  },
+  "public/media/generated/high-voltage-switchgear.png": {
+    "mtime": 1789726155.8279474,
+    "ast_hash": "3a2ef52469fe524e7fa8860688892e75",
+    "semantic_hash": ""
+  },
+  "public/media/generated/high-voltage-switchgear.webp": {
+    "mtime": 1789727419.204,
+    "ast_hash": "73a9e07edaf20ee3243e5a2d19a334eb",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-metal-components-720.webp": {
+    "mtime": 1789727419.462,
+    "ast_hash": "c750fbc9225c3575ba08fec091ac6cc9",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-metal-components.png": {
+    "mtime": 1789726592.9693918,
+    "ast_hash": "161294bdfb52bdd982f942df2ebde8be",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-metal-components.webp": {
+    "mtime": 1789727419.405,
+    "ast_hash": "2d363d8981b06c8811c2a5fd377f5561",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-steel-shaft-720.webp": {
+    "mtime": 1789727419.634,
+    "ast_hash": "efbe4f0c495867d3e78418787085f96c",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-steel-shaft.png": {
+    "mtime": 1789726278.5478206,
+    "ast_hash": "af9c48b9052affbe36fb89ef7494edff",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-steel-shaft.webp": {
+    "mtime": 1789727419.585,
+    "ast_hash": "b391608570e9bdb15ea903333fa5ee82",
+    "semantic_hash": ""
+  },
+  "public/media/generated/mine-locomotive-720.webp": {
+    "mtime": 1789727419.853,
+    "ast_hash": "30d9576ff6394d3e17e03ffa42e47e04",
+    "semantic_hash": ""
+  },
+  "public/media/generated/mine-locomotive.png": {
+    "mtime": 1789726105.7835288,
+    "ast_hash": "8714896064237eef6b58e913d9c871f0",
+    "semantic_hash": ""
+  },
+  "public/media/generated/mine-locomotive.webp": {
+    "mtime": 1789727419.792,
+    "ast_hash": "fcbae60ffe5b03cbd91a40f1bcaa440e",
+    "semantic_hash": ""
+  },
+  "public/media/generated/motor-rotor-workshop-720.webp": {
+    "mtime": 1789727420.087,
+    "ast_hash": "5b84632bfc5d2446931b33f0bbb1e445",
+    "semantic_hash": ""
+  },
+  "public/media/generated/motor-rotor-workshop.png": {
+    "mtime": 1789726193.652849,
+    "ast_hash": "c81e095423d1baf2cf3355b7f404e3b1",
+    "semantic_hash": ""
+  },
+  "public/media/generated/motor-rotor-workshop.webp": {
+    "mtime": 1789727420.019,
+    "ast_hash": "5895a4a19fd9bfbf2dff1998258e4ae2",
+    "semantic_hash": ""
+  },
+  "public/media/generated/news-quarry-excavator-720.webp": {
+    "mtime": 1789727420.32,
+    "ast_hash": "c09ae47b456091a699c76ff13ed533c3",
+    "semantic_hash": ""
+  },
+  "public/media/generated/news-quarry-excavator.png": {
+    "mtime": 1789726634.5699532,
+    "ast_hash": "58bbce7c18205901cd6adb1e9495db4d",
+    "semantic_hash": ""
+  },
+  "public/media/generated/news-quarry-excavator.webp": {
+    "mtime": 1789727420.253,
+    "ast_hash": "c4150ab6577c49c1481ea633e2de8f1a",
+    "semantic_hash": ""
+  },
+  "public/media/generated/underground-mine-rail-720.webp": {
+    "mtime": 1789727420.568,
+    "ast_hash": "87ccb6eaabde1a275bb651d8a7d6830a",
+    "semantic_hash": ""
+  },
+  "public/media/generated/underground-mine-rail.png": {
+    "mtime": 1789725593.3777804,
+    "ast_hash": "f98c913be19bfef60a6dbb6ecc28a80f",
+    "semantic_hash": ""
+  },
+  "public/media/generated/underground-mine-rail.webp": {
+    "mtime": 1789727420.5,
+    "ast_hash": "6a5331239ee8613f550943ba55b50157",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v2.png": {
+    "mtime": 1789742061.902352,
+    "ast_hash": "feb08463dccedfce50da6e9bc0a82d73",
+    "semantic_hash": ""
+  },
+  "components/home/HomeActionButton.vue": {
+    "mtime": 1789772253.230938,
+    "ast_hash": "e827c4248e629c8e81193425d5b3df5c",
+    "semantic_hash": "e827c4248e629c8e81193425d5b3df5c"
+  },
+  "public/media/generated/hero-quarry-dragline-mobile-v2.png": {
+    "mtime": 1789744501.1925776,
+    "ast_hash": "27a8ed5163d528a8e27a46e99515267e",
+    "semantic_hash": ""
+  },
+  "public/media/generated/supply-geography-map-v2.png": {
+    "mtime": 1789749463.8265152,
+    "ast_hash": "dd734e43c90c3a3b3549b04ae4f25f6d",
+    "semantic_hash": ""
+  },
+  "public/media/generated/supply-geography-map-v2.webp": {
+    "mtime": 1789753684.516,
+    "ast_hash": "6e7a9c0fccfd4513685a9bd9d56b6281",
+    "semantic_hash": ""
+  },
+  "components/about/AboutOutlineIcon.vue": {
+    "mtime": 1789766000.6704338,
+    "ast_hash": "09551f0d170cb855542a3f9cd845f831",
+    "semantic_hash": "09551f0d170cb855542a3f9cd845f831"
+  },
+  "scripts/check-about.cjs": {
+    "mtime": 1789780151.5638714,
+    "ast_hash": "73b2574182c702a2eb3509885366ee58",
+    "semantic_hash": "73b2574182c702a2eb3509885366ee58"
+  },
+  "components/CookieConsentBanner.vue": {
+    "mtime": 1790023625.435252,
+    "ast_hash": "f2b240669fbfb3253c0ac295c128bd26",
+    "semantic_hash": ""
+  },
+  "scripts/build-privacy-pdf.py": {
+    "mtime": 1789774433.6293886,
+    "ast_hash": "1c9da168f11e7a611dd8504dcfa1d94d",
+    "semantic_hash": "1c9da168f11e7a611dd8504dcfa1d94d"
+  },
+  "public/docs/kemz-privacy-policy.pdf": {
+    "mtime": 1789774434.3585715,
+    "ast_hash": "add2b86b5ad00e0fe6dd1c88b0f27c79",
+    "semantic_hash": ""
+  },
+  "public/media/about/016dbdf3-ab8b-449c-a6f6-7289ca94ef8f.png": {
+    "mtime": 1789756814.5615463,
+    "ast_hash": "aa0881657401c32deee8ca28e00ef408",
+    "semantic_hash": ""
+  },
+  "public/media/about/017e9e53-4799-4605-9c56-1e4d9601d031.png": {
+    "mtime": 1789757243.003114,
+    "ast_hash": "0b26c7537d539f06af07006eba10c528",
+    "semantic_hash": ""
+  },
+  "public/media/about/190e04e3-de6b-4d7b-8374-a8ccacc0e927.png": {
+    "mtime": 1789757577.5169804,
+    "ast_hash": "83ff3feeb0665ac53789aa614dc8c166",
+    "semantic_hash": ""
+  },
+  "public/media/about/25af672d-ac15-4a44-adf6-be5fd8c76a8d.png": {
+    "mtime": 1789758288.1409779,
+    "ast_hash": "77ab7d4009c6a79044a4b7f552f8737d",
+    "semantic_hash": ""
+  },
+  "public/media/about/40b7debb-7076-4c75-9e56-35e0c9d9773e.png": {
+    "mtime": 1789758088.9766533,
+    "ast_hash": "d539cff99a7a8cb1e8d225cae088ddd1",
+    "semantic_hash": ""
+  },
+  "public/media/about/41f51c90-f8b4-486e-9062-a1859d9d9aae.png": {
+    "mtime": 1789758623.9287355,
+    "ast_hash": "1bab2b6667ae6f69a17a16f953b9f80e",
+    "semantic_hash": ""
+  },
+  "public/media/about/5099e104-a958-41ae-a187-2c68d4676d4b.png": {
+    "mtime": 1789757529.750929,
+    "ast_hash": "e947b26cc2bd88a4e539b5bf845d9f49",
+    "semantic_hash": ""
+  },
+  "public/media/about/65d98916-1913-4fda-b48c-769007d56b7b.png": {
+    "mtime": 1789758229.7759528,
+    "ast_hash": "b767eef4234a7133500031be17f72f7f",
+    "semantic_hash": ""
+  },
+  "public/media/about/924ea965-f478-47d4-ae78-cbf953e185d1.png": {
+    "mtime": 1789758693.3925893,
+    "ast_hash": "fa85cd77742763f800e3f130a2e6fbb6",
+    "semantic_hash": ""
+  },
+  "public/media/about/9e69191e-8f1d-4e49-96c4-69ad7c7406f0.png": {
+    "mtime": 1789758545.205806,
+    "ast_hash": "2da296ab7d73296e18ecff836df22503",
+    "semantic_hash": ""
+  },
+  "public/media/about/ChatGPT Image 18 \u0441\u0435\u043d\u0442. 2026 \u0433., 21_03_31.png": {
+    "mtime": 1789754611.614085,
+    "ast_hash": "5248d1c13bf0826f19ee033e04c8fd1b",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-blueprint-wide.png": {
+    "mtime": 1789759055.9075372,
+    "ast_hash": "7f9d5d7a4b4d25cd709f35f8f1474b6d",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-castings-wide.png": {
+    "mtime": 1789758229.7759528,
+    "ast_hash": "b767eef4234a7133500031be17f72f7f",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-engineer-blueprint.png": {
+    "mtime": 1789757529.750929,
+    "ast_hash": "e947b26cc2bd88a4e539b5bf845d9f49",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-engineer-brand.png": {
+    "mtime": 1789765723.9458299,
+    "ast_hash": "da62f1047321537c0e58fb02c4a14016",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-galvanic-line.png": {
+    "mtime": 1789765743.9837573,
+    "ast_hash": "d3bc14270cea02305350c0e607995310",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-geography-map.png": {
+    "mtime": 1789758693.3925893,
+    "ast_hash": "fa85cd77742763f800e3f130a2e6fbb6",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-hero-archive-clean.png": {
+    "mtime": 1789762250.9286761,
+    "ast_hash": "1b5c35a02d2145999986181842c20f55",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-hero-archive-wide.png": {
+    "mtime": 1789756814.5615463,
+    "ast_hash": "aa0881657401c32deee8ca28e00ef408",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-history-1960.png": {
+    "mtime": 1789757243.003114,
+    "ast_hash": "0b26c7537d539f06af07006eba10c528",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-history-aerial.png": {
+    "mtime": 1789765838.7067287,
+    "ast_hash": "72a75f378f3e0c0faa51415763a18cdc",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-machine-assembly-wide.png": {
+    "mtime": 1789757577.5169804,
+    "ast_hash": "83ff3feeb0665ac53789aa614dc8c166",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-machined-parts-wide.png": {
+    "mtime": 1789758545.205806,
+    "ast_hash": "2da296ab7d73296e18ecff836df22503",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-machined-shaft-wide.png": {
+    "mtime": 1789758288.1409779,
+    "ast_hash": "77ab7d4009c6a79044a4b7f552f8737d",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-motor-shop-wide.png": {
+    "mtime": 1789758623.9287355,
+    "ast_hash": "1bab2b6667ae6f69a17a16f953b9f80e",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-plant-brand.png": {
+    "mtime": 1789765681.8437698,
+    "ast_hash": "6cb7267adcc2f61b8cd63d33cc570c27",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-plant-exterior-wide.png": {
+    "mtime": 1789756951.84752,
+    "ast_hash": "9c9675345badc4a217453ba902b12610",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-worker-lathe-clean.png": {
+    "mtime": 1789762335.7122762,
+    "ast_hash": "b13f75c2d6c94355870932c894f62659",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-worker-lathe.png": {
+    "mtime": 1789758088.9766533,
+    "ast_hash": "d539cff99a7a8cb1e8d225cae088ddd1",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-worker-rotor-brand.png": {
+    "mtime": 1789765123.382971,
+    "ast_hash": "23263771e991ee3748d80f25625458cc",
+    "semantic_hash": ""
+  },
+  "public/media/about/e366f453-cfcb-415a-a22c-0fbdc13942d9.png": {
+    "mtime": 1789759055.9075372,
+    "ast_hash": "7f9d5d7a4b4d25cd709f35f8f1474b6d",
+    "semantic_hash": ""
+  },
+  "public/media/about/e8769ded-0ac2-439a-8b04-cebf1ce0da35.png": {
+    "mtime": 1789756951.84752,
+    "ast_hash": "9c9675345badc4a217453ba902b12610",
+    "semantic_hash": ""
+  },
+  "public/media/about/ref-about-mock.png": {
+    "mtime": 1789754611.614085,
+    "ast_hash": "5248d1c13bf0826f19ee033e04c8fd1b",
+    "semantic_hash": ""
+  },
+  "public/media/generated/8ae07377-9793-400d-ab82-e0331b4177cb.png": {
+    "mtime": 1789756240.2017138,
+    "ast_hash": "ec7d7f0c014178f66ba3f8b8257f07d9",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v10-user.png": {
+    "mtime": 1789756114.2590175,
+    "ast_hash": "29b1b3324b0b5210a1fbd92761e47b29",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v11-user.png": {
+    "mtime": 1789756250.3825915,
+    "ast_hash": "7423594d0d86aaf77506520767fa2158",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v11.png": {
+    "mtime": 1789756240.2017138,
+    "ast_hash": "ec7d7f0c014178f66ba3f8b8257f07d9",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v7-center.png": {
+    "mtime": 1789755820.6094737,
+    "ast_hash": "5b9a9886a6b0cc5d151a4ac7d295ae73",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v8-center.png": {
+    "mtime": 1789756021.749493,
+    "ast_hash": "3eaf2a1b06cf078213dfb71b14b81cb6",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v9-center.png": {
+    "mtime": 1789756072.500174,
+    "ast_hash": "57896fba83dc59235fd4d35e2e59bc98",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-ropeshovel-v3.png": {
+    "mtime": 1789754727.523842,
+    "ast_hash": "7c57f6236465bd903190e385a841ebec",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-ropeshovel-v4.png": {
+    "mtime": 1789754783.9460897,
+    "ast_hash": "13f004268b36ff70657f3fc219b2403c",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-ropeshovel-v5-mobile.png": {
+    "mtime": 1789754891.6748338,
+    "ast_hash": "7eeb0c279314b7df6ed4854b3f232242",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-ropeshovel-v5.png": {
+    "mtime": 1789754868.5260065,
+    "ast_hash": "7425dc656250c4dde9c795d4abc1666c",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-ropeshovel-v6-wide.png": {
+    "mtime": 1789755411.414893,
+    "ast_hash": "ee9566600c6ecb15bb3e24e49ee8d77d",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-unsplash-excavator-sky.jpg": {
+    "mtime": 1789754809.3502903,
+    "ast_hash": "12e028b4478922702445a95e1ccd2e0b",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-unsplash-hambach.jpg": {
+    "mtime": 1789754810.6761003,
+    "ast_hash": "9aeced50f25e467869a601f92255c4ab",
+    "semantic_hash": ""
+  },
+  "public/media/generated/production-steel-rotor-v1.png": {
+    "mtime": 1789755660.4680939,
+    "ast_hash": "ea7d3e00629cd1341f431734f1754bdf",
+    "semantic_hash": ""
+  },
+  "public/media/legal/1aca6cdc-5111-44f9-a59f-b297895b1438.png": {
+    "mtime": 1789767955.963561,
+    "ast_hash": "bdb334b8a083f546af4e98e9cf986c56",
+    "semantic_hash": ""
+  },
+  "public/media/legal/81ffc4cb-981b-41c0-90fc-4ab9704988a3.png": {
+    "mtime": 1789768038.0676641,
+    "ast_hash": "779760f1b871662e272945f02647df4b",
+    "semantic_hash": ""
+  },
+  "public/media/legal/ChatGPT Image 18 \u0441\u0435\u043d\u0442. 2026 \u0433., 21_01_57.png": {
+    "mtime": 1789754517.7383,
+    "ast_hash": "cbbe01db9b5dae6d540a651c45bfc3c1",
+    "semantic_hash": ""
+  },
+  "public/media/legal/legal-cta-motor.png": {
+    "mtime": 1789768038.0676641,
+    "ast_hash": "779760f1b871662e272945f02647df4b",
+    "semantic_hash": ""
+  },
+  "public/media/legal/legal-hero-machinery.png": {
+    "mtime": 1789767955.963561,
+    "ast_hash": "bdb334b8a083f546af4e98e9cf986c56",
+    "semantic_hash": ""
+  },
+  "public/media/legal/ref-legal-mock.png": {
+    "mtime": 1789754517.7383,
+    "ast_hash": "cbbe01db9b5dae6d540a651c45bfc3c1",
+    "semantic_hash": ""
+  },
+  "components/documents/DocumentsFileIcon.vue": {
+    "mtime": 1789774839.795339,
+    "ast_hash": "d99eb7a068b8cf31cdf7fc967336f942",
+    "semantic_hash": "d99eb7a068b8cf31cdf7fc967336f942"
+  },
+  "utils/documentsContent.ts": {
+    "mtime": 1790160868.4404278,
+    "ast_hash": "8fecc48de8cab2e76f4229ac27361230",
+    "semantic_hash": ""
+  },
+  "public/documents/43a5d53c-740d-4991-9d0f-029af6edcaa4.png": {
+    "mtime": 1789774869.0536346,
+    "ast_hash": "375c33d6b9d600d1c29b3fa360cab448",
+    "semantic_hash": ""
+  },
+  "public/media/documents/docs-cta-machinery.png": {
+    "mtime": 1789774712.6986706,
+    "ast_hash": "46e28136a24aac4b14fca234c0703f50",
+    "semantic_hash": ""
+  },
+  "public/media/documents/docs-hero-motor-schematic.png": {
+    "mtime": 1789774925.2536838,
+    "ast_hash": "ea4fcb32cc8e4b58b3188a2a310c2095",
+    "semantic_hash": ""
+  },
+  "public/media/documents/ref-documents-mock.png": {
+    "mtime": 1789774625.3615582,
+    "ast_hash": "15cc4cd29eddb7887a8bc34ffa042a9f",
+    "semantic_hash": ""
+  },
+  "public/documents/2f60c230-ba48-4cc3-9266-826a65c3c19f.png": {
+    "mtime": 1789775112.6247861,
+    "ast_hash": "892938b152f55224464f012da5c48edc",
+    "semantic_hash": ""
+  },
+  "public/media/documents/docs-cta-motors.png": {
+    "mtime": 1789775112.6247861,
+    "ast_hash": "892938b152f55224464f012da5c48edc",
+    "semantic_hash": ""
+  },
+  "public/media/documents/docs-hero-blueprint.png": {
+    "mtime": 1789774869.0536346,
+    "ast_hash": "375c33d6b9d600d1c29b3fa360cab448",
+    "semantic_hash": ""
+  },
+  "components/BackToTop.vue": {
+    "mtime": 1789776859.5538907,
+    "ast_hash": "7a28af35fbe443bdf0cbfccb404576a2",
+    "semantic_hash": "7a28af35fbe443bdf0cbfccb404576a2"
+  },
+  "utils/newsContent.ts": {
+    "mtime": 1789868689.7968507,
+    "ast_hash": "b644995d92da0ec5c37714e1bf2de4a3",
+    "semantic_hash": "b644995d92da0ec5c37714e1bf2de4a3"
+  },
+  "public/media/documents/docs-hero-blueprint-src.png": {
+    "mtime": 1789774869.0536346,
+    "ast_hash": "375c33d6b9d600d1c29b3fa360cab448",
+    "semantic_hash": ""
+  },
+  "public/news/ChatGPT Image 18 \u0441\u0435\u043d\u0442. 2026 \u0433., 21_02_14.png": {
+    "mtime": 1789754534.5127974,
+    "ast_hash": "8c17ab30a00ac8e064cff8cd43a6c80f",
+    "semantic_hash": ""
+  },
+  "public/news/cec1ed34-c63f-4e0b-a7a5-f9b6b3b95191.png": {
+    "mtime": 1789777170.5622542,
+    "ast_hash": "635b0084f2cd8946375010edc686b786",
+    "semantic_hash": ""
+  },
+  "public/news/news-hero.png": {
+    "mtime": 1789777170.5622542,
+    "ast_hash": "635b0084f2cd8946375010edc686b786",
+    "semantic_hash": ""
+  },
+  "public/news/ref-news-mock.png": {
+    "mtime": 1789754534.5127974,
+    "ast_hash": "8c17ab30a00ac8e064cff8cd43a6c80f",
+    "semantic_hash": ""
+  },
+  "components/contacts/ContactsSalesForm.vue": {
+    "mtime": 1789924416.712527,
+    "ast_hash": "6a37cb441d3237a86b849ba7624b966b",
+    "semantic_hash": ""
+  },
+  "components/production/ProductionLineIcon.vue": {
+    "mtime": 1789819386.1193223,
+    "ast_hash": "df2631c8af91b97e13e848c68dbf1cf6",
+    "semantic_hash": "df2631c8af91b97e13e848c68dbf1cf6"
+  },
+  "components/products/CatalogFilters.vue": {
+    "mtime": 1789831448.2596724,
+    "ast_hash": "57e74402476d094244b3c3d74808a2f5",
+    "semantic_hash": "57e74402476d094244b3c3d74808a2f5"
+  },
+  "components/products/CatalogProductCard.vue": {
+    "mtime": 1789830534.5727663,
+    "ast_hash": "3af6c51e024fa7244f33e7b8f4c396b9",
+    "semantic_hash": "3af6c51e024fa7244f33e7b8f4c396b9"
+  },
+  "components/products/ProductsCatalog.vue": {
+    "mtime": 1789830859.2062995,
+    "ast_hash": "f7da8c1124d8ef403fc00d4d8feb9d42",
+    "semantic_hash": "f7da8c1124d8ef403fc00d4d8feb9d42"
+  },
+  "scripts/check-motion.cjs": {
+    "mtime": 1789809455.8103852,
+    "ast_hash": "60e22ba3093c22f6a1ba1853b13aa8c2",
+    "semantic_hash": "60e22ba3093c22f6a1ba1853b13aa8c2"
+  },
+  "scripts/check-production.cjs": {
+    "mtime": 1789864372.1377838,
+    "ast_hash": "4ca8063ecb81299996b9f6b1e3b27942",
+    "semantic_hash": "4ca8063ecb81299996b9f6b1e3b27942"
+  },
+  "scripts/check-products.cjs": {
+    "mtime": 1789835266.44101,
+    "ast_hash": "6fbfe3c298d99af692c24f93b5d00644",
+    "semantic_hash": "6fbfe3c298d99af692c24f93b5d00644"
+  },
+  "utils/catalog.ts": {
+    "mtime": 1789830858.317358,
+    "ast_hash": "aad1abfe80f3834fcbf50080d18cbcb6",
+    "semantic_hash": "aad1abfe80f3834fcbf50080d18cbcb6"
+  },
+  "utils/contactsContent.ts": {
+    "mtime": 1789868436.6665273,
+    "ast_hash": "2bb2b6b65a4175c26e6a96db3fd94eef",
+    "semantic_hash": "2bb2b6b65a4175c26e6a96db3fd94eef"
+  },
+  "utils/productionContent.ts": {
+    "mtime": 1790160864.755653,
+    "ast_hash": "9974ccadac41bca7112528ec986c166b",
+    "semantic_hash": ""
+  },
+  "utils/productsContent.ts": {
+    "mtime": 1790160863.8460197,
+    "ast_hash": "db97fce7c58a1972ea35b47f8c61a6ac",
+    "semantic_hash": ""
+  },
+  "docs/about-assets-2026-09-19.md": {
+    "mtime": 1789866347.3084564,
+    "ast_hash": "b0a2b22c9b00e77c16a02fcd55d9182f",
+    "semantic_hash": ""
+  },
+  "docs/about-cycle-panorama-2026-09-19.md": {
+    "mtime": 1789809407.8520298,
+    "ast_hash": "8df7d8ed94f53b7d6edb61f7ca8f30af",
+    "semantic_hash": ""
+  },
+  "docs/production-assets-2026-09-19.md": {
+    "mtime": 1789867474.7215283,
+    "ast_hash": "9847a0b98cbc5f1445adeb61af923267",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-cycle-panorama-v2.png": {
+    "mtime": 1789808762.1525233,
+    "ast_hash": "aa48c3d6f48e772e63e12f2bf1f19574",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-drive-hero-v1.png": {
+    "mtime": 1789815070.9203124,
+    "ast_hash": "a67e4069eb1c3b2f8192ebbb15a3ea09",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-factory-hero-v2.png": {
+    "mtime": 1789816211.5294132,
+    "ast_hash": "2d4ab06a24a309b7558289621c3dbd7f",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-factory-hero-v3.png": {
+    "mtime": 1789818088.8045113,
+    "ast_hash": "fb7a4c00bcde8a4149b61f2c295a68d6",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-hero-stator-v1.png": {
+    "mtime": 1789819192.1867876,
+    "ast_hash": "8d2f7c0a5ef29ffd68af939fbbd1c03f",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-01-design.png": {
+    "mtime": 1789819191.6404238,
+    "ast_hash": "39c56a2be25d0c7326b4fc124aa5cb16",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-02-foundry.png": {
+    "mtime": 1789819194.300565,
+    "ast_hash": "e9c2a292fecc3c54da720988609fb975",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-03-machining.png": {
+    "mtime": 1789819211.3368993,
+    "ast_hash": "a59a46d23e524c122ea0142023c376e6",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-04-assembly.png": {
+    "mtime": 1789819210.018788,
+    "ast_hash": "e07ef01ab21c93e9b646334ab2bd2227",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-05-testing.png": {
+    "mtime": 1789819212.301602,
+    "ast_hash": "418ec6ab4f4af4d8b9cbc04259e49813",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_1.jpg": {
+    "mtime": 1760403189.0,
+    "ast_hash": "61224efd7b42bb02060f510063027121",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_2.jpg": {
+    "mtime": 1760403189.0,
+    "ast_hash": "9d2591329c9f4ec34e4ed3d76e014911",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_3.jpg": {
+    "mtime": 1760403189.0,
+    "ast_hash": "505d82cf3196dec7febe867f33cb2bd1",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_4.jpg": {
+    "mtime": 1760403189.0,
+    "ast_hash": "323d3b70dddaf12645c0e819bd405524",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_5.jpg": {
+    "mtime": 1760403189.0,
+    "ast_hash": "d744d66636d39b215f447458f0d4a05a",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/modernization.jpg": {
+    "mtime": 1760403189.0,
+    "ast_hash": "63ff6a003b4dd531db8dd005735af29c",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/newkemz.jpg": {
+    "mtime": 1760403189.0,
+    "ast_hash": "11efd07aa077d81c15e8f77645a9c674",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/profile.png": {
+    "mtime": 1760403189.0,
+    "ast_hash": "7dee7173513233f695d83f738f8becb8",
+    "semantic_hash": ""
+  },
+  "components/products/CategoryEquipment.vue": {
+    "mtime": 1789833431.7945251,
+    "ast_hash": "7e061ed714829449177a6b1f9985e4c0",
+    "semantic_hash": "7e061ed714829449177a6b1f9985e4c0"
+  },
+  "components/products/CategorySpecifications.vue": {
+    "mtime": 1789904128.1007688,
+    "ast_hash": "709791aed14a6bf68cec7f25d46cba05",
+    "semantic_hash": ""
+  },
+  "scripts/check-category.cjs": {
+    "mtime": 1789833431.886278,
+    "ast_hash": "c47f2bdf31187967f292890f16eb9a77",
+    "semantic_hash": "c47f2bdf31187967f292890f16eb9a77"
+  },
+  "scripts/check-documents.cjs": {
+    "mtime": 1789834619.7484357,
+    "ast_hash": "ae370356a7edf319d69132a7c7505330",
+    "semantic_hash": "ae370356a7edf319d69132a7c7505330"
+  },
+  "components/error/NotFoundLeadForm.vue": {
+    "mtime": 1789924417.6117666,
+    "ast_hash": "04ee26494233f0cacf51c6c4b2fef8f3",
+    "semantic_hash": ""
+  },
+  "components/error/NotFoundPage.vue": {
+    "mtime": 1789868439.381355,
+    "ast_hash": "d770dd6c0f27d306c746043c8a2bd1db",
+    "semantic_hash": "d770dd6c0f27d306c746043c8a2bd1db"
+  },
+  "server/routes/robots.txt.ts": {
+    "mtime": 1789861565.4705102,
+    "ast_hash": "f18da03aa87db6f78c155399a8f5c498",
+    "semantic_hash": "f18da03aa87db6f78c155399a8f5c498"
+  },
+  "server/routes/sitemap.xml.ts": {
+    "mtime": 1789862167.2425115,
+    "ast_hash": "ab73b0eeed27e23a0f12062a66d5304b",
+    "semantic_hash": "ab73b0eeed27e23a0f12062a66d5304b"
+  },
+  "server/utils/contentfulPublic.ts": {
+    "mtime": 1789861563.8689017,
+    "ast_hash": "10e9ae39e33ebc782d9a106c3a6961f7",
+    "semantic_hash": "10e9ae39e33ebc782d9a106c3a6961f7"
+  },
+  "server/middleware/canonicalPath.ts": {
+    "mtime": 1789863242.5560422,
+    "ast_hash": "70f9b00e261c6c561fbf394874331f9b",
+    "semantic_hash": "70f9b00e261c6c561fbf394874331f9b"
+  },
+  "components/about/AboutCapabilities.vue": {
+    "mtime": 1789772253.230938,
+    "ast_hash": "619146c8fa6a9b8f3ccbd0bd3a0b1c27",
+    "semantic_hash": "619146c8fa6a9b8f3ccbd0bd3a0b1c27"
+  },
+  "components/about/AboutGeography.vue": {
+    "mtime": 1789866296.159985,
+    "ast_hash": "4fff7447761e0ce1d352dcaf63043589",
+    "semantic_hash": "4fff7447761e0ce1d352dcaf63043589"
+  },
+  "components/about/AboutPage.vue": {
+    "mtime": 1789864126.3148582,
+    "ast_hash": "bb35703e4ce355e1aa1c5a061bb3e9a1",
+    "semantic_hash": "bb35703e4ce355e1aa1c5a061bb3e9a1"
+  },
+  "components/about/AboutPeople.vue": {
+    "mtime": 1789772253.235924,
+    "ast_hash": "f8ffa8005f51b10d66e80da74037dc66",
+    "semantic_hash": "f8ffa8005f51b10d66e80da74037dc66"
+  },
+  "components/about/AboutQuality.vue": {
+    "mtime": 1789808836.8002913,
+    "ast_hash": "d3507d84ef8223dceccc6a9654ac4e2e",
+    "semantic_hash": "d3507d84ef8223dceccc6a9654ac4e2e"
+  },
+  "components/about/AboutTimeline.vue": {
+    "mtime": 1789772253.235924,
+    "ast_hash": "69e53925f1bab253f93757ae6488976d",
+    "semantic_hash": "69e53925f1bab253f93757ae6488976d"
+  },
+  "components/about/AboutToday.vue": {
+    "mtime": 1789772253.235924,
+    "ast_hash": "a924d8ef829fc4a475930e7f1d667c56",
+    "semantic_hash": "a924d8ef829fc4a475930e7f1d667c56"
+  },
+  "components/contacts/ContactsDirectory.vue": {
+    "mtime": 1789781158.9535375,
+    "ast_hash": "98b0aed347078af64fd88c7f4cb11729",
+    "semantic_hash": "98b0aed347078af64fd88c7f4cb11729"
+  },
+  "components/contacts/ContactsForm.vue": {
+    "mtime": 1789815292.221295,
+    "ast_hash": "28ee62bdcd10b193af62f5781f57520d",
+    "semantic_hash": "28ee62bdcd10b193af62f5781f57520d"
+  },
+  "components/contacts/ContactsHero.vue": {
+    "mtime": 1789856127.2087257,
+    "ast_hash": "c17495e52ca9f108d465ac25f57601b0",
+    "semantic_hash": "c17495e52ca9f108d465ac25f57601b0"
+  },
+  "components/contacts/ContactsPage.vue": {
+    "mtime": 1789864163.447701,
+    "ast_hash": "c4f2d7ec56cdbcc2cb47d18e733b0ff2",
+    "semantic_hash": "c4f2d7ec56cdbcc2cb47d18e733b0ff2"
+  },
+  "components/documents/DocumentsCta.vue": {
+    "mtime": 1789864201.7294395,
+    "ast_hash": "8584102c6f27fcad7385773dbfd6844d",
+    "semantic_hash": "8584102c6f27fcad7385773dbfd6844d"
+  },
+  "components/documents/DocumentsHero.vue": {
+    "mtime": 1789856942.523133,
+    "ast_hash": "94b36158c793ae29ccb9a68e161bb455",
+    "semantic_hash": "94b36158c793ae29ccb9a68e161bb455"
+  },
+  "components/documents/DocumentsList.vue": {
+    "mtime": 1789774775.6004646,
+    "ast_hash": "48efa2e756680b28e4fd045ee378ce91",
+    "semantic_hash": "48efa2e756680b28e4fd045ee378ce91"
+  },
+  "components/documents/DocumentsPage.vue": {
+    "mtime": 1789864164.7088795,
+    "ast_hash": "c71968bae8155238f068db8d33ebcee1",
+    "semantic_hash": "c71968bae8155238f068db8d33ebcee1"
+  },
+  "components/home/HomeCtaBand.vue": {
+    "mtime": 1789775510.068018,
+    "ast_hash": "b1c3e52b42d6b6aac528b7ac02f4b570",
+    "semantic_hash": "b1c3e52b42d6b6aac528b7ac02f4b570"
+  },
+  "components/home/HomeNews.vue": {
+    "mtime": 1789868636.423437,
+    "ast_hash": "5f7e5ac7a279afdb6959d06ec3a7efda",
+    "semantic_hash": "5f7e5ac7a279afdb6959d06ec3a7efda"
+  },
+  "components/home/HomePage.vue": {
+    "mtime": 1789892400.6618423,
+    "ast_hash": "fbbf04a679df83c0012f2003e6386027",
+    "semantic_hash": "fbbf04a679df83c0012f2003e6386027"
+  },
+  "components/home/HomeProduction.vue": {
+    "mtime": 1790160862.9309492,
+    "ast_hash": "46bcaf1e68fc43eef1fe32ff6478ace7",
+    "semantic_hash": ""
+  },
+  "components/home/HomeRequest.vue": {
+    "mtime": 1789740820.7860045,
+    "ast_hash": "e6833fe6c5dd19fea2a99fbecc0152f3",
+    "semantic_hash": "e6833fe6c5dd19fea2a99fbecc0152f3"
+  },
+  "components/home/HomeShowcase.vue": {
+    "mtime": 1790161447.5118222,
+    "ast_hash": "561c7ca24cbe30e6bc339baf5809bcdb",
+    "semantic_hash": ""
+  },
+  "components/legal/LegalCta.vue": {
+    "mtime": 1789864202.8586943,
+    "ast_hash": "d3b07fe793d8a7000fec6d7480d36ddf",
+    "semantic_hash": "d3b07fe793d8a7000fec6d7480d36ddf"
+  },
+  "components/legal/LegalDocument.vue": {
+    "mtime": 1789774604.0980334,
+    "ast_hash": "e725dd8af3ebc1855845ed104da11169",
+    "semantic_hash": "e725dd8af3ebc1855845ed104da11169"
+  },
+  "components/legal/LegalHero.vue": {
+    "mtime": 1789856128.1055956,
+    "ast_hash": "312cb7529a6fb3bb99c6fba621ccbecb",
+    "semantic_hash": "312cb7529a6fb3bb99c6fba621ccbecb"
+  },
+  "components/legal/LegalPage.vue": {
+    "mtime": 1789864165.976248,
+    "ast_hash": "3f9efb49fd62cd42e5b90506fa414f4a",
+    "semantic_hash": "3f9efb49fd62cd42e5b90506fa414f4a"
+  },
+  "components/news/NewsArticlePage.vue": {
+    "mtime": 1790170886.753973,
+    "ast_hash": "ca6e54e0f7a2c8386fee20f0b0ec3cca",
+    "semantic_hash": ""
+  },
+  "components/news/NewsCta.vue": {
+    "mtime": 1789864204.0109735,
+    "ast_hash": "5cafa1382a4ade4d35c7b7d56974c54d",
+    "semantic_hash": "5cafa1382a4ade4d35c7b7d56974c54d"
+  },
+  "components/news/NewsHero.vue": {
+    "mtime": 1789856126.321254,
+    "ast_hash": "89a242eb028081c0503e7a17a5f8d492",
+    "semantic_hash": "89a242eb028081c0503e7a17a5f8d492"
+  },
+  "components/news/NewsList.vue": {
+    "mtime": 1789778239.1811037,
+    "ast_hash": "2b19bf8316702154e2deb800ec198017",
+    "semantic_hash": "2b19bf8316702154e2deb800ec198017"
+  },
+  "components/news/NewsPage.vue": {
+    "mtime": 1789864167.1089752,
+    "ast_hash": "32035c75d41655be3cd39f5a9fc77f50",
+    "semantic_hash": "32035c75d41655be3cd39f5a9fc77f50"
+  },
+  "components/production/ProductionPage.vue": {
+    "mtime": 1790160865.6634512,
+    "ast_hash": "87a21203b34b510dd3efa372809eb5a6",
+    "semantic_hash": ""
+  },
+  "components/products/CategoryPage.vue": {
+    "mtime": 1790170887.6639757,
+    "ast_hash": "02cab65bfbb99e14bad629fb763fce8a",
+    "semantic_hash": ""
+  },
+  "components/products/ProductPage.vue": {
+    "mtime": 1790170888.5736408,
+    "ast_hash": "e57b6463330e120a699c32487b9c160e",
+    "semantic_hash": ""
+  },
+  "components/products/ProductsCategories.vue": {
+    "mtime": 1789835191.2269278,
+    "ast_hash": "9032b3c46cd50099021bdc193edfa81b",
+    "semantic_hash": "9032b3c46cd50099021bdc193edfa81b"
+  },
+  "components/products/ProductsCta.vue": {
+    "mtime": 1789864205.0485497,
+    "ast_hash": "c193d93ddd86a0aec664f293313846ba",
+    "semantic_hash": "c193d93ddd86a0aec664f293313846ba"
+  },
+  "components/products/ProductsHero.vue": {
+    "mtime": 1789892547.272688,
+    "ast_hash": "31d739c1d467b497cf071e5cd9e0470d",
+    "semantic_hash": "31d739c1d467b497cf071e5cd9e0470d"
+  },
+  "components/products/ProductsPage.vue": {
+    "mtime": 1789864168.2980602,
+    "ast_hash": "4a320bf49c451605ab8996131d71a97c",
+    "semantic_hash": "4a320bf49c451605ab8996131d71a97c"
+  },
+  "server/plugins/htmlCompression.ts": {
+    "mtime": 1789870506.4964094,
+    "ast_hash": "dedc9a9a30d3c0124036b531a4c00357",
+    "semantic_hash": "dedc9a9a30d3c0124036b531a4c00357"
+  },
+  "docs/HOME_QA.md": {
+    "mtime": 1789864373.9462416,
+    "ast_hash": "abaeea11af51e39e409e3296232ce7a6",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-castings-wide.webp": {
+    "mtime": 1789866238.3615074,
+    "ast_hash": "b575caeffa5354e84034e9bf4ed8ba6f",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-cycle-panorama-v2.webp": {
+    "mtime": 1789866237.9514282,
+    "ast_hash": "56607c3cfc2a3436d7b1416d8e09f6e9",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-engineer-blueprint.webp": {
+    "mtime": 1789866240.2971504,
+    "ast_hash": "c351b544df461a373c30334dc402c962",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-engineer-brand.webp": {
+    "mtime": 1789866775.2980726,
+    "ast_hash": "b9c6898340f5c8f2b4e20851ee5181d6",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-galvanic-line.webp": {
+    "mtime": 1789866239.0405972,
+    "ast_hash": "9fae607ac0ff564ad707a1adfbf7f119",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-geography-map.webp": {
+    "mtime": 1789866239.9701035,
+    "ast_hash": "92f98f3e2b5748005df3a119f6e22776",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-hero-archive-clean.webp": {
+    "mtime": 1789866235.673979,
+    "ast_hash": "c1552b0e72a765bc9623ab58ffce1904",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-history-1960.webp": {
+    "mtime": 1789866236.392494,
+    "ast_hash": "fd52509c4185f1fe7d86f5d134b191e3",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-history-aerial.webp": {
+    "mtime": 1789866237.3893454,
+    "ast_hash": "4f8af1443eaeb75b9eea90376a749c7c",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-machine-assembly-wide.webp": {
+    "mtime": 1789866236.6757495,
+    "ast_hash": "cf1e2ea4d0855a46d0373088652888e3",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-machined-parts-wide.webp": {
+    "mtime": 1789866239.3364851,
+    "ast_hash": "5c9bbb49a69a8ede559ced79b3079314",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-machined-shaft-wide.webp": {
+    "mtime": 1789866238.6633272,
+    "ast_hash": "8671635c8d6cacb7749794edf108394d",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-motor-shop-wide.webp": {
+    "mtime": 1789866239.6990428,
+    "ast_hash": "896081db755955b056fc3d50d610e781",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-plant-brand.webp": {
+    "mtime": 1789866235.9759586,
+    "ast_hash": "df0b6f51531f684ccc2868dd1be2bfd9",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-plant-exterior-wide.webp": {
+    "mtime": 1789866236.9895897,
+    "ast_hash": "c342bee96d7d16201ea98aa438c425b4",
+    "semantic_hash": ""
+  },
+  "public/media/about/about-worker-rotor-brand.webp": {
+    "mtime": 1789866237.6988645,
+    "ast_hash": "d522bd413efff2916415f290fe6df67e",
+    "semantic_hash": ""
+  },
+  "public/media/documents/docs-cta-machinery.webp": {
+    "mtime": 1789868354.7961593,
+    "ast_hash": "90b964bfed020d15eb2f799be94341de",
+    "semantic_hash": ""
+  },
+  "public/media/documents/docs-cta-motors.webp": {
+    "mtime": 1789868354.62492,
+    "ast_hash": "3ec9fc3c202aa2f1d05ac01aabfbe169",
+    "semantic_hash": ""
+  },
+  "public/media/documents/docs-hero-blueprint.webp": {
+    "mtime": 1789868354.357407,
+    "ast_hash": "f7c30191922359ce6de93a14f8aef9d1",
+    "semantic_hash": ""
+  },
+  "public/media/drawer-blueprint.png": {
+    "mtime": 1789859788.487223,
+    "ast_hash": "2110e3339460b82d063d6ae770e22715",
+    "semantic_hash": ""
+  },
+  "public/media/drawer-blueprint.webp": {
+    "mtime": 1789868114.0210223,
+    "ast_hash": "19f5f7bb7d4f08eb488d36814cdb69aa",
+    "semantic_hash": ""
+  },
+  "public/media/error/not-found-engineering.png": {
+    "mtime": 1789852281.87901,
+    "ast_hash": "00c96a421967c5eb709296e7eb48f068",
+    "semantic_hash": ""
+  },
+  "public/media/error/not-found-engineering.webp": {
+    "mtime": 1789868355.7320821,
+    "ast_hash": "da652ce304c3588a40582b26b94903e0",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v11-960.webp": {
+    "mtime": 1789867694.9480822,
+    "ast_hash": "17b9225412de1473a88dda02154b0ff7",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v11.webp": {
+    "mtime": 1789867694.804374,
+    "ast_hash": "ff3ecdb0548d2631ebb9756d2f497f76",
+    "semantic_hash": ""
+  },
+  "public/media/generated/production-steel-rotor-v1.webp": {
+    "mtime": 1789867695.1333017,
+    "ast_hash": "cfd3b44458c65de2e63397127cf25df0",
+    "semantic_hash": ""
+  },
+  "public/media/legal/legal-cta-motor.webp": {
+    "mtime": 1789868355.3888438,
+    "ast_hash": "7888313c354f0f06b003508d3a64fcbc",
+    "semantic_hash": ""
+  },
+  "public/media/legal/legal-hero-machinery.webp": {
+    "mtime": 1789868355.1046052,
+    "ast_hash": "7224c5033d0eb5b65a3f7f756cd06fff",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-hero-stator-v1-720.webp": {
+    "mtime": 1789870117.005955,
+    "ast_hash": "7b97f927ea61ebe18e71cc19b2a529eb",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-hero-stator-v1.webp": {
+    "mtime": 1789867412.873705,
+    "ast_hash": "03bbb62282d52cd7da1c50417e2d0626",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-01-design-720.webp": {
+    "mtime": 1789870117.0946982,
+    "ast_hash": "f1cb08e6dab37c10891426f3ec72fc8e",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-01-design.webp": {
+    "mtime": 1789867413.0371234,
+    "ast_hash": "091c02d3f40c2cb906ec91af590a16ab",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-02-foundry-720.webp": {
+    "mtime": 1789870117.206415,
+    "ast_hash": "35c42070eb9d78beef4c37f89639176f",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-02-foundry.webp": {
+    "mtime": 1789867413.252445,
+    "ast_hash": "e3f7241146b042865b9591988fb36bbe",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-03-machining-720.webp": {
+    "mtime": 1789870117.3320007,
+    "ast_hash": "93a61452855dd797b03525b0705f1906",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-03-machining.webp": {
+    "mtime": 1789867413.4789321,
+    "ast_hash": "6724f7e25626813a609f88dfb28bb378",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-04-assembly-720.webp": {
+    "mtime": 1789870117.4527102,
+    "ast_hash": "60570b5d5c03683c9367b50bab9e62fe",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-04-assembly.webp": {
+    "mtime": 1789867413.703547,
+    "ast_hash": "38da0f597633e01c4b9097feb782ac8e",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-05-testing-720.webp": {
+    "mtime": 1789870117.5535643,
+    "ast_hash": "92d3d46dfb0e23bbbfc95e4960efc162",
+    "semantic_hash": ""
+  },
+  "public/media/production/production-stage-05-testing.webp": {
+    "mtime": 1789867413.8821006,
+    "ast_hash": "b30bc915643f25482c8d71b5d1d78545",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_1-960.webp": {
+    "mtime": 1789870117.8209333,
+    "ast_hash": "e27a43eccbcd35d251121d70b6a29d40",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_1.webp": {
+    "mtime": 1789867414.5024598,
+    "ast_hash": "eac7ca1da8c874f1fc22017806322edb",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_2-960.webp": {
+    "mtime": 1789870118.01328,
+    "ast_hash": "52f7ee98ae909deadbe8190003596f74",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_2.webp": {
+    "mtime": 1789867414.913004,
+    "ast_hash": "ac10eaa72e7fb2c0e7d25b4a149d999b",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_3-960.webp": {
+    "mtime": 1789870118.24453,
+    "ast_hash": "fce82a85e98fd4ffb0d90e779b8448a2",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_3.webp": {
+    "mtime": 1789867415.441044,
+    "ast_hash": "2905431bbf089ad97d1953628568b2b2",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_4-960.webp": {
+    "mtime": 1789870118.4627056,
+    "ast_hash": "f407606d0738f38877f0c8dc309fafe6",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_4.webp": {
+    "mtime": 1789867415.9044147,
+    "ast_hash": "39c19afc6e20e815a36108f43800e3d0",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_5-960.webp": {
+    "mtime": 1789870118.6900327,
+    "ast_hash": "f8d542ac68b27acb3c54c87e7011a8ef",
+    "semantic_hash": ""
+  },
+  "public/media/production/real/about_5.webp": {
+    "mtime": 1789867416.431226,
+    "ast_hash": "132e73f4ce8037343154df1f07f7c947",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-belaz-hero-v1.png": {
+    "mtime": 1789854379.3287203,
+    "ast_hash": "426eef987a4387aa9a6e96c5acbb977e",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-belaz-hero-v1.webp": {
+    "mtime": 1789868356.4117124,
+    "ast_hash": "808e2f5c309bfaf47ff5ae2da0d6b8ed",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-drilling-rigs-hero-v1.png": {
+    "mtime": 1789854419.908299,
+    "ast_hash": "60d91bc890cc392296179ad4334a49a0",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-drilling-rigs-hero-v1.webp": {
+    "mtime": 1789868356.6875262,
+    "ast_hash": "f0e93da7e3a7a23d11848d1579dcca38",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-mining-hero-v1.png": {
+    "mtime": 1789854340.2629235,
+    "ast_hash": "0bac1638259ebdf0992e6d9afd1aed34",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-mining-hero-v1.webp": {
+    "mtime": 1789868356.0662987,
+    "ast_hash": "700a28dc9408705332029820943d526d",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-new-developments-hero-v1.png": {
+    "mtime": 1789854581.7792017,
+    "ast_hash": "485314fd4827a3ea957ef66bf402bf4f",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-new-developments-hero-v1.webp": {
+    "mtime": 1789868357.911936,
+    "ast_hash": "a9611b064ba36f7415d1dccd3b3dfc3a",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-other-hero-v1.png": {
+    "mtime": 1789854544.982628,
+    "ast_hash": "841f6ebd883a65d34aa561a8d9bb0293",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-other-hero-v1.webp": {
+    "mtime": 1789868357.6066191,
+    "ast_hash": "75d1777e5c79beecb0b86f7a07bbd4a4",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-railway-transport-hero-v1.png": {
+    "mtime": 1789854456.2431736,
+    "ast_hash": "678199e21ac8d6a0b6a6b7ee6f03aa32",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-railway-transport-hero-v1.webp": {
+    "mtime": 1789868357.019954,
+    "ast_hash": "f6a5fe6d39be5b192a9ac1a37ca0b363",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-urban-electric-transport-hero-v1.png": {
+    "mtime": 1789854494.9347517,
+    "ast_hash": "ac5dd380809575dbd042ba2394419a1b",
+    "semantic_hash": ""
+  },
+  "public/media/products/heroes/category-urban-electric-transport-hero-v1.webp": {
+    "mtime": 1789868357.3314412,
+    "ast_hash": "a43b8c93b85c606cf94a06db70e8737b",
+    "semantic_hash": ""
+  },
+  "public/news/news-hero.webp": {
+    "mtime": 1789868674.7162197,
+    "ast_hash": "77cb050442d12b9275b4175fd6f1c353",
+    "semantic_hash": ""
+  },
+  "components/LeadSubmitState.vue": {
+    "mtime": 1789923973.91733,
+    "ast_hash": "5bebd4f96e3f7ee5e2a23965221e2c7f",
+    "semantic_hash": ""
+  },
+  "pages/[...slug].vue": {
+    "mtime": 1790170413.1500618,
+    "ast_hash": "5e43f2dd99dfbc5502f9da7c07762c36",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v11-640.webp": {
+    "mtime": 1790022530.573323,
+    "ast_hash": "6d3594dfac04f39ad2f720add31a99f8",
+    "semantic_hash": ""
+  },
+  "public/media/generated/production-steel-rotor-v1-720.webp": {
+    "mtime": 1790022530.6700654,
+    "ast_hash": "96ade8d04035d07bd1e1efc5fd307f99",
+    "semantic_hash": ""
+  },
+  "public/media/generated/supply-geography-map-v2-800.webp": {
+    "mtime": 1790022530.7518468,
+    "ast_hash": "4451f6b0524af0bcff81e0c863cb3705",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drilling-rig-quarry-480.webp": {
+    "mtime": 1790023590.7610517,
+    "ast_hash": "2500fb0f38b1ada77900cd501ac913a4",
+    "semantic_hash": ""
+  },
+  "public/media/generated/drive-gearboxes-480.webp": {
+    "mtime": 1790023590.9710815,
+    "ast_hash": "a970194833bb1b239cb0aab769d45f7c",
+    "semantic_hash": ""
+  },
+  "public/media/generated/electric-machinery-shop-480.webp": {
+    "mtime": 1790023591.068823,
+    "ast_hash": "7b9c9e062f63b6260d7c902a72688ad4",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-480.webp": {
+    "mtime": 1790023590.714177,
+    "ast_hash": "79c759c8d930e8e359070967bd9b898b",
+    "semantic_hash": ""
+  },
+  "public/media/generated/hero-quarry-dragline-wide-v11-480.webp": {
+    "mtime": 1790023591.1436229,
+    "ast_hash": "a65d178a3372c69ba0756b5d90973c9f",
+    "semantic_hash": ""
+  },
+  "public/media/generated/high-voltage-switchgear-480.webp": {
+    "mtime": 1790023590.9216218,
+    "ast_hash": "40e6d6b1aed64f5f1f19ad0d916ae628",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-metal-components-480.webp": {
+    "mtime": 1790023591.1147003,
+    "ast_hash": "24584151e0cbbe82e4d9a74993a36d79",
+    "semantic_hash": ""
+  },
+  "public/media/generated/machined-steel-shaft-480.webp": {
+    "mtime": 1790023591.0019987,
+    "ast_hash": "fc5f71338ac179ba580dabcdd0807ad2",
+    "semantic_hash": ""
+  },
+  "public/media/generated/mine-locomotive-480.webp": {
+    "mtime": 1790023590.8727527,
+    "ast_hash": "39fca33f390fc31e00a216b917c921a8",
+    "semantic_hash": ""
+  },
+  "public/media/generated/underground-mine-rail-480.webp": {
+    "mtime": 1790023590.8208916,
+    "ast_hash": "98110ebcfa61d17ac6c3d4db38e56fc4",
     "semantic_hash": ""
   }
 }

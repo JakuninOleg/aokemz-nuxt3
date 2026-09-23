@@ -1,0 +1,18 @@
+$ORIGIN aokemz.ru.
+$TTL 600
+
+; Сайт → Timeweb App (СПб)
+@       IN  A       89.23.117.133
+www     IN  A       89.23.117.133
+
+; Почта (с Vercel DNS, без vpn)
+mail    IN  A       90.150.150.54
+mail1   IN  A       94.230.135.42
+@       IN  MX  10  mail.aokemz.ru.
+@       IN  MX  20  mail1.aokemz.ru.
+
+; SPF / DMARC / DKIM / ADSP
+@               IN  TXT  "v=spf1 ip4:90.150.150.54 ip4:94.230.135.42 mx ~all"
+_dmarc          IN  TXT  "v=DMARC1; p=reject; adkim=s; aspf=s; rua=mailto:postmaster@aokemz.ru"
+mail._domainkey IN  TXT  "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4AGNADCBjQKBgQDYjOqbC9CblT6s/rMzSLW+Yj36Qr1W50BswM29OMnVOtbyJSiRyZZcsYLN3AvE1k4+O4sFYVZJm/8sWaQ1aMzlc26f4pjzSUsutLFLTTUzVj4liVshAe9/ZGNZhSautBQNWTJelBuialBZRvW2t4ObX+qJ9gfqv36e+Y+sl0bQIDAQAB"
+_adsp._domainkey IN TXT  "dkim=all"

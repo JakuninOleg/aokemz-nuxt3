@@ -28,6 +28,7 @@
 import { PAGE_SEO } from '~/utils/siteSeo'
 
 usePageSeo(PAGE_SEO.special)
+useSeoMeta({ robots: 'noindex, nofollow' })
 </script>
 
 <style lang="scss" src="~/assets/css/catalog-light.scss"></style>

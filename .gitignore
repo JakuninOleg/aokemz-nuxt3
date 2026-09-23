@@ -2,6 +2,9 @@
 .output
 .data
 .nuxt
+.nuxt-validation
+.nuxt-about-check/
+artifacts/
 .nitro
 .cache
 dist
@@ -39,3 +42,4 @@ docs/_extract_pdf_raw.py
 
 .lighthouse-home.json
 .lighthouse*.json
+.vercel

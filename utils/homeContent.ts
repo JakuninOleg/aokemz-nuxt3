@@ -45,10 +45,10 @@ export type HomeGeoRegion = {
 
 export const HOME_STATS: HomeStat[] = [
   { value: '1960', label: 'год основания', long: false },
-  { value: '54–560 кВт', label: 'двигатели ДПЭ и ДПВ', long: true },
+  { value: '54–600 кВт', label: 'электродвигатели', long: true },
   { value: 'до 1250 кВт', label: 'генераторы 4ГПЭ', long: true },
   { value: 'до 1000 кВт', label: 'буровые ДПБ', long: true },
-  { value: '27,5 / 35 кВ', label: 'высоковольтная аппаратура', long: true },
+  { value: '15–1250 кВт', label: 'генераторы', long: true },
 ]
 
 export const HOME_PRODUCTS: HomeProduct[] = [

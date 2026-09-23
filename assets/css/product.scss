@@ -1,0 +1,91 @@
+.kemz-product-detail {
+  .product-top { padding-block: 28px 44px; background: linear-gradient(110deg, #eaf3fb, var(--home-white) 75%); }
+  .product-top__crumbs { font-size: 16px; line-height: 1.4; margin-bottom: 28px; }
+  .product-top__grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; }
+  .product-top__media { position: relative; isolation: isolate; min-height: 420px; padding: 24px; background: transparent; }
+  .product-top__media::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('/media/about/about-blueprint-wide.png') center / cover; opacity: .09; }
+  .product-top__media img { width: 100%; height: 420px; max-height: none; object-fit: contain; }
+  .product-top h1 { font-size: clamp(34px, 3.6vw, 58px); font-weight: 750; line-height: 1.04; overflow-wrap: anywhere; }
+  .product-section h2, .product-specifications h2, .product-related h2 { font-weight: 700; }
+  .product-top__label { line-height: 1.4; font-size: 13px; letter-spacing: .035em; }
+  .product-top__sub { font-size: clamp(18px, 1.8vw, 25px); font-weight: 400; line-height: 1.3; }
+  .product-top__lead { color: var(--home-muted); line-height: 1.5; }
+  .product-assurances { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 32px 0 0; padding: 0; list-style: none; }
+  .product-assurances li { display: flex; align-items: center; gap: 12px; padding-inline: 14px; border-right: 1px solid var(--home-line); font-size: 14px; line-height: 1.3; }
+  .product-assurances li:first-child { padding-left: 0; }
+  .product-assurances li:last-child { border: 0; padding-right: 0; }
+  .product-assurances svg { width: 32px; height: 32px; flex-shrink: 0; color: var(--home-blue); }
+  .product-layout { padding-block: 40px 32px; grid-template-columns: 210px minmax(0, 1fr); gap: 32px; }
+  .product-layout > div, .product-section__grid > * { min-width: 0; }
+  .product-nav a { padding: 14px 16px; line-height: 1.3; }
+  .product-nav a:hover, .product-nav a:focus-visible { background: var(--home-paper); }
+  .product-section { margin-bottom: 0; scroll-margin-top: 110px; }
+  .product-section__grid { grid-template-columns: minmax(0, 1.4fr) minmax(220px, 1fr); }
+  .product-rich { color: var(--home-muted); line-height: 1.55; overflow-wrap: anywhere; }
+  .product-rich ul, .product-rich ol { padding-left: 24px; }
+  .product-rich a { color: var(--home-blue); text-decoration: underline; }
+  .product-aside-figure { position: relative; height: 220px; isolation: isolate; }
+  .product-aside-figure img { height: 100%; width: 100%; object-fit: cover; opacity: .5; }
+  .product-aside-figure::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #041b34d9, transparent); z-index: 0; }
+  .product-aside-figure figcaption { position: absolute; inset: 0; display: flex; align-items: center; padding: 28px; max-width: 210px; font-size: 23px; line-height: 1.25; font-weight: 400; letter-spacing: 0; z-index: 1; }
+  .product-specifications { padding: 28px 32px 32px; border: 1px solid var(--home-line); border-radius: var(--home-radius); background: linear-gradient(105deg, #edf5fcf5, #edf5fce8), url('/media/about/about-blueprint-wide.png') right center / cover; scroll-margin-top: 110px; margin-bottom: 28px; }
+  .product-specifications h2, .product-related h2 { margin: 0; font-family: var(--home-heading); font-size: clamp(27px, 2.6vw, 36px); line-height: 1.15; color: var(--home-navy); }
+  .product-specifications h2 { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
+  .product-specifications h2 svg { width: 32px; height: 32px; color: var(--home-blue); flex-shrink: 0; }
+  .product-specifications { display: block; }
+  .product-specifications__scroll { overflow-x: auto; }
+  .product-rich .kemz-table-scroll { margin-inline: 0; padding-inline: 0; max-width: 100%; }
+  .product-rich table { background: #ffffff85; font-size: 15px; min-width: 100%; }
+  .product-rich table:has(tr > :nth-child(3)) { min-width: 36rem; }
+  .product-rich td, .product-rich th { padding: 12px 16px; min-width: 110px; }
+  .product-rich th { color: var(--home-navy); background: #e2eef9; }
+  .product-rich tr:nth-child(even) { background: #eaf3fb88; }
+  .product-rich td p, .product-rich th p { margin: 0; }
+  .product-detail-cta { border-radius: var(--home-radius); overflow: hidden; min-height: 220px; }
+  .product-detail-cta .ref-photo-cta__inner { width: calc(100% - 64px); min-height: 220px; padding-block: 32px; }
+  .product-detail-cta .ref-photo-cta__aside { display: none; }
+  .product-detail-cta .ref-photo-cta__copy { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 40px; width: 100%; max-width: none; }
+  .product-detail-cta .ref-photo-cta__copy h2 { font-size: clamp(28px, 3vw, 40px); }
+  .product-detail-cta .ref-photo-cta__actions { grid-column: 2; grid-row: 1 / 3; align-self: center; margin: 0; }
+  .product-related { padding-block: 32px 48px; }
+  .product-related header { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; margin-bottom: 20px; }
+  .product-related__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .product-related__card { display: flex; flex-direction: column; padding: 14px; border: 1px solid var(--home-line); border-radius: var(--home-radius); background: linear-gradient(white, var(--home-paper)); }
+  .product-related__image { display: grid; place-items: center; aspect-ratio: 1.5; color: var(--home-muted); font-size: 14px; }
+  .product-related__image img { width: 100%; height: 100%; max-height: 185px; object-fit: contain; mix-blend-mode: multiply; }
+  .product-related h3 { margin-top: 12px; font-size: 19px; line-height: 1.25; color: var(--home-navy); }
+  .product-related p { font-size: 14px; color: var(--home-muted); margin-top: 8px; }
+  .product-related__card > .ref-link { margin-top: auto; padding-top: 18px; }
+  .product-related__card:hover .ref-link span, .product-related__card:focus-visible .ref-link span { transform: translateX(5px); }
+  @media (max-width: 1100px) {
+    .product-top__grid { gap: 24px; }
+    .product-top__media { min-height: 0; height: auto; }
+    .product-top__media img { height: 300px; }
+    .product-assurances { grid-template-columns: 1fr; gap: 14px; }
+    .product-assurances li { padding: 0; border: 0; }
+    .product-layout { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; }
+    .product-section__grid { grid-template-columns: 1fr; }
+    .product-related__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 720px) {
+    .product-top { padding-block: 24px 32px; }
+    .product-top__crumbs { font-size: 15px; }
+    .product-top__grid, .product-layout { grid-template-columns: 1fr; }
+    .product-top__media { height: auto; padding: 12px; }
+    .product-top__media img { height: 260px; }
+    .product-top h1 { font-size: 36px; }
+    .product-nav { display: flex; flex-wrap: wrap; overflow: visible; }
+    .product-nav a { white-space: normal; padding: 10px 0; }
+    .product-nav .product-back { width: 100%; }
+    .product-specifications { padding: 22px 16px; }
+    .product-specifications h2 { gap: 10px; }
+    .product-rich { font-size: 15px; }
+    .product-detail-cta .ref-photo-cta__inner { width: calc(100% - 32px); }
+    .product-detail-cta .ref-photo-cta__copy { display: block; }
+    .product-detail-cta .ref-photo-cta__actions { margin-top: 24px; }
+    .product-related header { flex-direction: column; align-items: start; }
+    .product-related__grid { gap: 10px; }
+    .product-related__card { padding: 10px; }
+    .product-related h3 { font-size: 16px; overflow-wrap: anywhere; }
+  }
+}

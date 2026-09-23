@@ -6,27 +6,32 @@
       <slot />
     </main>
     <AppFooter />
+    <CookieConsentBanner />
+    <BackToTop />
   </div>
 </template>
 
 <script setup lang="ts">
 import { organizationJsonLd, SITE_NAME } from '~/utils/siteSeo'
 
+const config = useRuntimeConfig()
+const activeError = useError()
+
 useHead({
   titleTemplate: (title) => (title && !title.includes(SITE_NAME) ? `${title}` : title || SITE_NAME),
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify(organizationJsonLd()),
-    },
-  ],
-  noscript: [
-    {
-      children:
-        '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=IBM+Plex+Mono:wght@400&family=Source+Sans+3:wght@400;600;700&display=swap">',
+      innerHTML: JSON.stringify(organizationJsonLd()),
     },
   ],
   htmlAttrs: { lang: 'ru' },
+})
+
+useSeoMeta({
+  robots: () => activeError.value || !config.public.indexableDeployment
+    ? 'noindex, nofollow'
+    : 'index, follow',
 })
 </script>
 

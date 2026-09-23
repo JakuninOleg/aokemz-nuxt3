@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://aokemz.ru/sitemap.xml

@@ -9,7 +9,9 @@
     />
     <span class="form-consent__text">
       {{ formConsentLabel }}
-      <NuxtLink to="/legal" class="form-consent__link">Правовая информация</NuxtLink>
+      <NuxtLink to="/legal#consent" class="form-consent__link"
+        >Правовая информация</NuxtLink
+      >
     </span>
   </label>
 </template>

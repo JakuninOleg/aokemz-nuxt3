@@ -1,3 +1,5 @@
+import type { ContentfulEntries } from '~/utils/contentfulTypes'
+
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
 
@@ -13,6 +15,9 @@ export default defineNuxtPlugin(() => {
         createClient({
           space: config.public.CTF_SPACE_ID as string,
           accessToken: config.public.CTF_CDA_ACCESS_TOKEN as string,
+          // An unavailable CMS must not stall SSR through long retry chains.
+          timeout: 8000,
+          retryLimit: 0,
         }),
       )
     }
@@ -22,9 +27,9 @@ export default defineNuxtPlugin(() => {
   return {
     provide: {
       contentful: {
-        getEntries: async (query?: Record<string, unknown>) => {
+        getEntries: async <T = unknown>(query?: Record<string, unknown>): Promise<ContentfulEntries<T>> => {
           const client = await getClient()
-          return client.getEntries(query)
+          return await client.getEntries(query) as ContentfulEntries<T>
         },
       },
     },

@@ -7,9 +7,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "npx nuxt dev --host 127.0.0.1",
+    "build": "npx nuxi build",
+    "start": "npx nuxi preview",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
     "lint": "yarn lint:js"
@@ -21,17 +21,22 @@
     "@tailwindcss/typography": "^0.5.9",
     "contentful": "^11.5.18",
     "leaflet": "^1.9.4",
-    "nodemailer": "^6.10.1",
+    "nodemailer": "^10.0.10",
     "nuxt": "^3.12.0",
     "postcss-nesting": "^12.1.0",
     "sass": "^1.87.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/leaflet": "^1.9.22",
+    "@types/nodemailer": "^8.0.2",
+    "@typescript-eslint/parser": "8.31.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-vue": "^9.18.1",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "typescript": "5.8.3",
+    "vue-tsc": "2.2.10"
   }
 }

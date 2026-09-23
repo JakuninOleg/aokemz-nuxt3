@@ -6,6 +6,70 @@ export const SITE_LOCALE = 'ru_RU'
 
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/media/hero-excavator-schematic.png`
 
+export type BreadcrumbItem = { name: string; path: string }
+
+export function canonicalUrl(path = '/') {
+  const normalized = path === '/' ? '/' : `/${path.replace(/^\/+|\/+$/g, '')}`
+  return `${SITE_URL}${normalized}`
+}
+
+export function absoluteSiteUrl(url?: string) {
+  if (!url) return undefined
+  return /^https?:\/\//i.test(url) ? url : canonicalUrl(url)
+}
+
+export function breadcrumbJsonLd(items: BreadcrumbItem[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: canonicalUrl(item.path),
+    })),
+  }
+}
+
+export function productJsonLd(input: {
+  name: string
+  path: string
+  description?: string
+  image?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: input.name,
+    url: canonicalUrl(input.path),
+    ...(input.description ? { description: input.description } : {}),
+    ...(input.image ? { image: input.image } : {}),
+  }
+}
+
+export function newsArticleJsonLd(input: {
+  headline: string
+  path: string
+  datePublished: string
+  description?: string
+  image?: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: input.headline,
+    mainEntityOfPage: canonicalUrl(input.path),
+    datePublished: input.datePublished,
+    ...(input.description ? { description: input.description } : {}),
+    ...(input.image ? { image: input.image } : {}),
+    publisher: {
+      '@type': 'Organization',
+      name: 'ОАО «Карпинский электромашиностроительный завод»',
+      url: SITE_URL,
+    },
+  }
+}
+
 export type PageSeo = {
   title: string
   description: string
@@ -16,7 +80,7 @@ export type PageSeo = {
 
 export const PAGE_SEO = {
   home: {
-    title: 'Электрические машины для карьера и шахты | ОАО «КЭМЗ»',
+    title: 'Электрические машины для горнодобывающей техники | ОАО «КЭМЗ»',
     description:
       'Карпинский электромашиностроительный завод: двигатели и генераторы для ЭКГ, ЭШ, буровых установок и шахтного оборудования. Карпинск, с 1960 года.',
     path: '/',
@@ -40,9 +104,9 @@ export const PAGE_SEO = {
     path: '/news',
   },
   documents: {
-    title: 'Документы и опросные листы | ОАО «КЭМЗ»',
+    title: 'Документы и опросный лист | ОАО «КЭМЗ»',
     description:
-      'Презентация завода, опросные листы на электрические машины и высоковольтную аппаратуру, перечень запасных частей ОАО «КЭМЗ».',
+      'Презентация завода, опросный лист на электрические машины и перечень запасных частей ОАО «КЭМЗ».',
     path: '/documents',
   },
   contacts: {
@@ -52,9 +116,9 @@ export const PAGE_SEO = {
     path: '/contacts',
   },
   legal: {
-    title: 'Правовая информация — персональные данные | ОАО «КЭМЗ»',
+    title: 'Правовая информация | ОАО «КЭМЗ»',
     description:
-      'Политика обработки персональных данных ОАО «Карпинский электромашиностроительный завод» (aokemz.ru).',
+      'Политика персональных данных, согласие, cookie, пользовательское соглашение и сведения о владельце сайта aokemz.ru (ОАО «КЭМЗ»).',
     path: '/legal',
   },
   special: {
