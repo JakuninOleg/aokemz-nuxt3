@@ -164,7 +164,7 @@ async function submitForm() {
       <textarea
         v-model="form.message"
         name="message"
-        rows="5"
+        rows="4"
         placeholder="Сообщение"
         maxlength="2000"
         :class="{ 'is-invalid': errors.message }"

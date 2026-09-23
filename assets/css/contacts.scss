@@ -330,6 +330,7 @@
 
   .contacts-sales-form {
     display: grid;
+    align-content: start;
     gap: 14px;
     max-width: 640px;
   }
@@ -376,8 +377,9 @@
   .contacts-sales-form input[type="tel"] {
     width: 100%;
     box-sizing: border-box;
-    min-height: 46px;
-    padding: 11px 14px;
+    height: 48px;
+    min-height: 48px;
+    padding: 10px 12px;
     border: 1px solid rgba(6, 22, 56, 0.18) !important;
     border-radius: var(--home-radius);
     background: var(--home-white);
@@ -387,8 +389,8 @@
   }
 
   .contacts-sales-form__field textarea {
-    min-height: 116px;
-    padding: 11px 14px;
+    min-height: 120px;
+    padding: 10px 12px;
     resize: vertical;
   }
 
@@ -551,6 +553,18 @@
 
     .contacts-sales-form__row {
       grid-template-columns: 1fr;
+    }
+
+    .contacts-sales-form__field input,
+    .contacts-sales-form input[type="tel"] {
+      height: 48px;
+      min-height: 48px;
+      padding: 10px 12px;
+    }
+
+    .contacts-sales-form__field textarea {
+      min-height: 112px;
+      padding: 8px 12px;
     }
 
     .contacts-sales-form__state {

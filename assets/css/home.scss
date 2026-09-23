@@ -1,8 +1,8 @@
 @font-face {
   font-family: "KEMZ Condensed";
-  /* The homepage only needs the Russian/Latin character set. Keeping a
-     subset here avoids making the first-screen heading wait for unused glyphs. */
-  src: url("/fonts/RobotoCondensed-Home.subset.woff2") format("woff2");
+  /* This subset retains the complete Cyrillic alphabet used by uppercase
+     headings, so no individual glyphs fall back to a visibly wider font. */
+  src: url("/fonts/RobotoCondensed-Variable.subset.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
 }
@@ -1338,6 +1338,40 @@
 @media (min-width: 1700px) {
   .kemz-home .ref-hero {
     height: clamp(650px, 33vw, 780px);
+  }
+}
+
+/* Give supporting copy room to breathe on high-resolution desktop displays. */
+@media (min-width: 1800px) {
+  .kemz-home .ref-label,
+  .kemz-home .ref-fact span,
+  .kemz-home .ref-fact p,
+  .kemz-home .ref-showcase__intro,
+  .kemz-home .ref-product p,
+  .kemz-home .ref-product__more,
+  .kemz-home .ref-capabilities__intro p,
+  .kemz-home .ref-capability p,
+  .kemz-home .ref-production__stages li,
+  .kemz-home .ref-geography__trust li,
+  .kemz-home .ref-request__copy > p:not(.ref-label),
+  .kemz-home .ref-request__benefits li,
+  .kemz-home .ref-news time,
+  .kemz-home .ref-news__more,
+  .contacts-dir__meta p,
+  .contacts-dir__links a,
+  .contacts-form-band__copy > p {
+    font-size: 16px;
+  }
+
+  .kemz-home .ref-body {
+    font-size: 19px;
+  }
+
+  .site-header.site-header--reference .site-header__link,
+  .site-header.site-header--reference .site-header__cta,
+  .site-footer nav,
+  .site-footer__bottom {
+    font-size: 15px;
   }
 }
 @media (max-width: 1150px) {
