@@ -31,6 +31,7 @@ export default defineNuxtConfig({
         },
         { name: 'theme-color', content: '#2f78cd' },
         { name: 'format-detection', content: 'telephone=no' },
+        { name: 'yandex-verification', content: '8dc082e957b9fdc0' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
