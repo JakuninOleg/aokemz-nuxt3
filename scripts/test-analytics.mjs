@@ -70,3 +70,24 @@ for (const path of ['components/Form.vue', 'components/contacts/ContactsSalesFor
   assert.ok(source.indexOf('trackLeadSent();') > source.indexOf('const response = await $fetch'))
 }
 console.log('PASS: consent, SPA deduplication, referrer sanitization, goals, withdrawal, preview isolation, honeypots')
+
+const handlerExports = {}
+const middleware = fs.readFileSync(new URL('../server/middleware/canonicalPath.ts', import.meta.url), 'utf8')
+vm.runInNewContext(ts.transpileModule(middleware, {
+  compilerOptions: { module: ts.ModuleKind.CommonJS },
+}).outputText, {
+  exports: handlerExports,
+  defineEventHandler: cb => cb,
+  require: () => ({ getRequestURL: event => new URL(event.url), sendRedirect: (_, location, status) => ({ location, status }) }),
+})
+for (const host of ['www.aokemz.ru', 'aokemz-nuxt3.vercel.app']) {
+  for (const method of ['GET', 'HEAD']) {
+    const result = handlerExports.default({ method, url: `https://${host}/contacts/?a=b` })
+    assert.equal(result.status, 301)
+    assert.equal(result.location, 'https://aokemz.ru/contacts?a=b')
+  }
+  assert.equal(handlerExports.default({ method: 'POST', url: `https://${host}/api/sendMail` }), undefined)
+}
+assert.equal(handlerExports.default({ method: 'GET', url: 'https://aokemz-nuxt3-dev-codex.vercel.app/contacts' }), undefined)
+assert.equal(handlerExports.default({ method: 'GET', url: 'https://aokemz.ru/contacts' }), undefined)
+console.log('PASS: canonical redirects preserve path/query, previews and POST requests stay untouched')
