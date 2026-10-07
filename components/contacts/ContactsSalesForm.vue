@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { trackLeadSent } from "~/utils/analyticsConsent";
 import {
   type ContactLeadField,
   validateContactField,
@@ -80,11 +81,13 @@ async function submitForm() {
 
   sending.value = true;
   try {
-    await $fetch("/api/sendMail", {
+    const response = await $fetch<{ success: boolean }>("/api/sendMail", {
       method: "POST",
       body: { ...parsed.data, website: "", consent: true },
     });
+    if (!response.success) throw new Error("Не удалось отправить заявку");
     sent.value = true;
+    trackLeadSent();
     clearForm();
   } catch (error: any) {
     submitError.value =

@@ -178,6 +178,7 @@
 </template>
 
 <script setup lang="ts">
+import { trackLeadSent } from "~/utils/analyticsConsent";
 import { reactive, ref } from "vue";
 import InputPhone from "./InputPhone.vue";
 import {
@@ -325,6 +326,7 @@ const submit = async () => {
 
     if (response.success) {
       sent.value = true;
+      trackLeadSent();
       clearFields();
     } else {
       throw new Error("Неизвестная ошибка");

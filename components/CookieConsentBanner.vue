@@ -1,21 +1,21 @@
 <script setup lang="ts">
+import { COOKIE_BANNER } from "~/utils/legalContent";
 import {
-  COOKIE_BANNER,
-  legalOperator,
-} from "~/utils/legalContent";
+  readAnalyticsConsent,
+  saveAnalyticsConsent,
+} from "~/utils/analyticsConsent";
 
-const CONSENT_KEY = "kemz-cookie-consent";
 const visible = ref(false);
 
 onMounted(() => {
   if (!import.meta.client) return;
-  const stored = window.localStorage.getItem(CONSENT_KEY);
+  const stored = readAnalyticsConsent();
   visible.value = !stored;
 });
 
 const save = (value: "necessary" | "all") => {
   if (!import.meta.client) return;
-  window.localStorage.setItem(CONSENT_KEY, value);
+  saveAnalyticsConsent(value);
   visible.value = false;
 };
 </script>
@@ -44,7 +44,11 @@ const save = (value: "necessary" | "all") => {
         >
           {{ COOKIE_BANNER.necessaryOnly }}
         </button>
-        <button type="button" class="cookie-banner__primary" @click="save('all')">
+        <button
+          type="button"
+          class="cookie-banner__primary"
+          @click="save('all')"
+        >
           {{ COOKIE_BANNER.acceptAll }}
         </button>
       </div>

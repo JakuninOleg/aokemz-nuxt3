@@ -12,7 +12,7 @@ export const legalOperator = {
   phoneSales: "+7 (343) 278-37-43",
 } as const;
 
-export const legalUpdatedAt = "19 сентября 2026 г.";
+export const legalUpdatedAt = "7 октября 2026 г.";
 
 /** Short label for form checkbox (links to /legal#consent). */
 export const formConsentLabel =
@@ -78,8 +78,8 @@ export const LEGAL_CTA = {
 
 export const COOKIE_BANNER = {
   title: "Файлы cookie",
-  text: "Сайт использует необходимые cookie для работы страниц и сохранения вашего выбора. Стороннюю веб-аналитику сейчас не подключаем. Подробнее:",
+  text: "Сайт сохраняет ваш выбор cookie. С вашего согласия Яндекс Метрика собирает статистику посещений и успешных заявок без записи содержимого форм. Подробнее:",
   linkLabel: "политика cookie",
-  acceptAll: "Принять",
+  acceptAll: "Принять все",
   necessaryOnly: "Только необходимые",
 };

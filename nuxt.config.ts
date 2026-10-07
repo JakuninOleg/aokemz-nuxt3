@@ -1,9 +1,8 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://aokemz.ru'
-const isIndexableDeployment = process.env.VERCEL_ENV
-  ? process.env.VERCEL_ENV === 'production'
-  : process.env.NODE_ENV === 'production'
+const isIndexableDeployment =
+  !process.env.VERCEL_ENV && process.env.NODE_ENV === 'production'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-04-30',
@@ -70,14 +69,21 @@ export default defineNuxtConfig({
         headers: { 'cache-control': 'public, max-age=31536000, immutable' },
       },
       '/news/**': {
-        headers: { 'cache-control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400' },
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=300, stale-while-revalidate=86400',
+        },
       },
       '/products/**': {
-        headers: { 'cache-control': 'public, max-age=0, s-maxage=300, stale-while-revalidate=86400' },
+        headers: {
+          'cache-control':
+            'public, max-age=0, s-maxage=300, stale-while-revalidate=86400',
+        },
       },
       '/**': {
         headers: {
-          'content-security-policy': "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://cdn.contentful.com https://images.ctfassets.net;",
+          'content-security-policy':
+            "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'; object-src 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline' https://mc.yandex.ru https://yastatic.net; connect-src 'self' https://cdn.contentful.com https://images.ctfassets.net https://mc.yandex.ru https://mc.yandex.com;",
           'permissions-policy': 'camera=(), geolocation=(), microphone=()',
           'referrer-policy': 'strict-origin-when-cross-origin',
           'x-content-type-options': 'nosniff',
@@ -100,6 +106,7 @@ export default defineNuxtConfig({
       CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
       siteUrl,
       indexableDeployment: isIndexableDeployment,
+      metrikaId: '113528354',
     },
   },
 
