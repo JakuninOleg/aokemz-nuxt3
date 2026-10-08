@@ -208,15 +208,18 @@ export async function categoryHeroMedia(
   slug: string,
   categoryImage: Parameters<typeof publicMedia>[0],
   categoryTitle: string,
-): Promise<{ src: string; alt: string }> {
+): Promise<{ src: string; srcSet?: string; alt: string }> {
+  const staticVariants = (src: string) => [640, 960, 1600]
+    .map(width => `${src.replace(/\.webp$/, `-delivery-${width}.webp`)} ${width}w`).join(', ');
   const override = CATEGORY_HERO_OVERRIDES[slug as keyof typeof CATEGORY_HERO_OVERRIDES];
   if (slug === 'excavator') {
-    return { src: PRODUCTS_HERO.image, alt: categoryTitle || 'Оборудование КЭМЗ' };
+    return { src: PRODUCTS_HERO.image, srcSet: staticVariants(PRODUCTS_HERO.image), alt: categoryTitle || 'Оборудование КЭМЗ' };
   }
-  if (override) return { src: override.image, alt: override.alt };
+  if (override) return { src: override.image, srcSet: staticVariants(override.image), alt: override.alt };
   const media = await publicMedia(categoryImage);
   return {
     src: media?.url || PRODUCTS_HERO.image,
+    srcSet: media?.srcSet || (media ? undefined : staticVariants(PRODUCTS_HERO.image)),
     alt: media?.alt && /[А-Яа-яЁё]/.test(media.alt) ? media.alt : categoryTitle || 'Оборудование КЭМЗ',
   };
 }

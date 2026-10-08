@@ -1,18 +1,18 @@
 import Link from '@/components/site/PublicLink';
-import Image from 'next/image';
 import { NEWS_HERO } from '@/lib/news-content';
 
 export function NewsHero() {
   return (
     <section className="news-hero internal-hero internal-hero--mobile-surface" aria-labelledby="news-title">
-      <Image
+      <img
         className="news-hero__image internal-hero__image"
         src={NEWS_HERO.image}
+        srcSet={[640, 960, 1600].map(width => `/news/news-hero-delivery-${width}.webp ${width}w`).join(', ')}
         alt={NEWS_HERO.imageAlt}
         width={1915}
         height={821}
         sizes="100vw"
-        quality={80}
+        loading="eager"
         fetchPriority="high"
         decoding="async"
       />

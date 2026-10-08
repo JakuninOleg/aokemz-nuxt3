@@ -1,5 +1,4 @@
 import Link from '@/components/site/PublicLink';
-import Image from 'next/image';
 import type { CatalogFilterItem } from '@/lib/catalog-content';
 
 export function CatalogProductCard({ item }: { item: CatalogFilterItem }) {
@@ -7,7 +6,7 @@ export function CatalogProductCard({ item }: { item: CatalogFilterItem }) {
     <Link href={item.href} className="catalog-card">
       <div className="catalog-card__image">
         {item.imageUrl ? (
-          <Image src={item.imageUrl} sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 30vw" alt={item.imageAlt} width={480} height={360} quality={80} loading="lazy" />
+          <img src={item.imageUrl} srcSet={item.imageSrcSet} sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 30vw" alt={item.imageAlt} width={480} height={360} loading="lazy" decoding="async" />
         ) : (
           <span>Изображение уточняется</span>
         )}

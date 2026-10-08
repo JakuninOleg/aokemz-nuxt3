@@ -54,7 +54,7 @@ export default async function CategoryPage({ params }: Props) {
 
   return (
     <div className="kemz-home kemz-products kemz-category">
-      <CategoryHero title={record.title} lead={lead} image={hero.src} imageAlt={hero.alt || record.title} />
+      <CategoryHero title={record.title} lead={lead} image={hero.src} imageSrcSet={hero.srcSet} imageAlt={hero.alt || record.title} />
       <CategoryPageView
         equipment={equipment}
         hasDocuments={files.length > 0}

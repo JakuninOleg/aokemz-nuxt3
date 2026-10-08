@@ -5,6 +5,7 @@ import { getPayload } from 'payload';
 process.env.NODE_ENV = 'production';
 const { default: config } = await import('../src/payload.config.ts');
 const origin = new URL(process.env.AUDIT_ORIGIN || 'http://127.0.0.1:3100').origin;
+const mediaOrigin = new URL(process.env.S3_ENDPOINT).origin;
 const payload = await getPayload({ config });
 const published = { _status: { equals: 'published' } };
 const { docs: categories } = await payload.find({ collection: 'categories', overrideAccess: false, depth: 0, pagination: false, where: published });
@@ -45,13 +46,17 @@ for (const route of routes) {
     if (url.origin === origin || url.origin === 'https://aokemz.ru') links.add(url.pathname);
   }
   for (const match of html.matchAll(/(?:src|href)="(\/(?:media|fonts|news|docs|files|_next\/static)\/[^"?#]+)[^"]*"/g)) assets.add(match[1]);
+  for (const match of html.matchAll(/\bsrc="(https:\/\/[^"\s]+)"/g)) {
+    const url = new URL(match[1].replaceAll('&amp;', '&'));
+    if (url.origin === mediaOrigin) assets.add(url.href);
+  }
   for (const match of html.matchAll(/srcset="([^"]+)"/gi)) for (const candidate of match[1].split(',')) {
     const src = candidate.trim().split(/\s/)[0].replaceAll('&amp;', '&');
-    if (src.startsWith('/')) assets.add(src);
+    if (src.startsWith('/') || new URL(src, origin).origin === mediaOrigin) assets.add(src);
   }
 }
 for (const route of links) { const response = await fetch(`${origin}${route}`); assert.equal(response.status,200,`internal link: ${route}`); }
-for (const asset of assets) { const response = await fetch(`${origin}${asset}`, {method:'HEAD'}); assert.equal(response.status,200,`asset: ${asset}`); }
+for (const asset of assets) { const response = await fetch(new URL(asset, origin), {method:'HEAD'}); assert.equal(response.status,200,`asset: ${asset}`); }
 const sitemap = await (await fetch(`${origin}/sitemap.xml`)).text();
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
 assert.ok(sitemapUrls.length > 60);

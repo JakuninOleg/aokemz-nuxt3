@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 
 import Link from '@/components/site/PublicLink';
 import {
@@ -98,7 +97,7 @@ export function CategorySpecifications({ options, selectedId, children }: Props)
         <div className="category-specifications__visual">
           <Link href={current.href} className="category-specifications__image" aria-label={`Открыть: ${current.name}`}>
             {current.imageUrl ? (
-              <Image src={current.imageUrl} sizes="(max-width: 720px) 90vw, 45vw" alt={current.imageAlt} width={640} height={480} quality={80} loading="lazy" />
+              <img src={current.imageUrl} srcSet={current.imageSrcSet} sizes="(max-width: 720px) 90vw, 45vw" alt={current.imageAlt} width={640} height={480} loading="lazy" decoding="async" />
             ) : (
               <span>{current.name}</span>
             )}

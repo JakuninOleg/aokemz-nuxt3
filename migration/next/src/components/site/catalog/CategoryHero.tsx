@@ -1,28 +1,28 @@
 import Link from '@/components/site/PublicLink';
-import Image from 'next/image';
 import { HomeEngineeringIcon } from '@/components/site/home/HomeEngineeringIcon';
 
 type Props = {
   title: string;
   lead: string;
   image: string;
+  imageSrcSet?: string;
   imageAlt: string;
 };
 
-export function CategoryHero({ title, lead, image, imageAlt }: Props) {
+export function CategoryHero({ title, lead, image, imageSrcSet, imageAlt }: Props) {
   return (
     <section
       className="category-hero internal-hero internal-hero--mobile-surface internal-hero--mobile-about"
       aria-labelledby="category-title"
     >
-      <Image
+      <img
         className="category-hero__image internal-hero__image"
         src={image}
+        srcSet={imageSrcSet}
         alt={imageAlt}
         width={1920}
         height={800}
         sizes="100vw"
-        quality={80}
         loading="eager"
         fetchPriority="high"
       />
