@@ -1,6 +1,7 @@
 .kemz-product-detail {
   .product-top { padding-block: 28px 44px; background: linear-gradient(110deg, #eaf3fb, var(--home-white) 75%); }
   .product-top__crumbs { font-size: 16px; line-height: 1.4; margin-bottom: 28px; }
+  .product-top__crumbs .products-hero__crumbs { color: var(--home-muted); }
   .product-top__grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; }
   .product-top__media { position: relative; isolation: isolate; min-height: 420px; padding: 24px; background: transparent; }
   .product-top__media::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('/media/about/about-blueprint-product-v2.webp') center / cover; opacity: .09; }
@@ -72,6 +73,8 @@
     .product-top__crumbs { font-size: 15px; }
     .product-top__grid, .product-layout { grid-template-columns: 1fr; }
     .product-top__media { height: auto; padding: 12px; }
+    // Keep the mobile first screen focused on the actual product, not a raster decoration.
+    .product-top__media::before { background-image: none; }
     .product-top__media img { height: 260px; }
     .product-top h1 { font-size: 36px; }
     .product-nav { display: flex; flex-wrap: wrap; overflow: visible; }

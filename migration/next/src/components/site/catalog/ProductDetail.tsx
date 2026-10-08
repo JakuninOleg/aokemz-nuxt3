@@ -26,7 +26,7 @@ export async function ProductDetail({ category, product, media, leadText, relate
 
   return (
     <div className="kemz-home kemz-products kemz-product-detail">
-      <link rel="preload" as="image" href="/media/about/about-blueprint-product-v2.webp" fetchPriority="high" />
+      <link rel="preload" as="image" href="/media/about/about-blueprint-product-v2.webp" media="(min-width: 721px)" fetchPriority="high" />
       <section className="product-top">
         <div className="ref-container">
           <div className="product-top__crumbs">
