@@ -8,7 +8,11 @@
 
 Это не подтверждение готовности production. До переключения остаются внешний Timeweb-стенд, безопасный baseline/backup БД, проверка reverse proxy/rate limit, реальная доставка писем и измерение PageSpeed 90+ на мобильном и desktop. После обновления Next npm audit всё ещё показывает 15 advisory (5 moderate, 10 high) в других зависимостях; отчёт не чистый.
 
-Ветка `codex/next-payload`, приложение `migration/next`. Действующий Nuxt на aokemz.ru и ветка master не переключались. Коммит и push не выполнялись.
+Ветка `codex/next-payload`, приложение `migration/next`. Миграция опубликована только в этой ветке (8715db0, 7b6bf80). Действующий Nuxt на aokemz.ru и ветка master не переключались.
+
+Отдельный Timeweb App 266961 «КЭМЗ Next staging»: 2 ГБ RAM, 810 ₽/месяц, Node 22, сборка и запуск Next 16.3.8 на Linux успешны. Добавлен только тестовый DNS `staging.aokemz.ru` → 92.51.23.7; production/www/mail/vpn записи не менялись. SITE_INDEXABLE=false. Проверка внешнего HTTPS и PageSpeed ещё выполняется.
+
+После очистки неиспользуемых констант и пяти статических изображений повторный production build и crawl всех 75 маршрутов — PASS. Удалённые изображения сохранены локально в `.migration-private/unused-static-assets` и доступны в Git-истории. ESLint переведён на flat config; Next lint/typecheck и unit-тесты форм, медиа, Lexical — PASS. Проверка PostgreSQL была read-only: 46 товаров, 9 категорий, 11 новостей, 82 медиа; migration history содержит dev/batch -1, поэтому initial migration не запускалась.
 
 ## Перенесено
 

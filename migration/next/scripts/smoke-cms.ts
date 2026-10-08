@@ -132,7 +132,6 @@ try {
   }
   // pg.stop must not clear a prior test failure.
   if (failureBeforeStop) {
-    failed = true;
     process.exitCode = 1;
   }
 }

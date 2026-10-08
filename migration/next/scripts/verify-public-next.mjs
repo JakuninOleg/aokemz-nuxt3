@@ -3,7 +3,7 @@ import { getPayload } from 'payload';
 // An audit must never invoke development schema push against the imported DB.
 process.env.NODE_ENV = 'production';
 const { default: config } = await import('../src/payload.config.ts');
-const origin = 'http://127.0.0.1:3100';
+const origin = new URL(process.env.AUDIT_ORIGIN || 'http://127.0.0.1:3100').origin;
 const payload = await getPayload({ config });
 const published = { _status: { equals: 'published' } };
 const { docs: categories } = await payload.find({ collection: 'categories', overrideAccess: false, depth: 0, pagination: false, where: published });
