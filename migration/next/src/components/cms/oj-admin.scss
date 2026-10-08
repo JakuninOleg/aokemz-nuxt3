@@ -197,6 +197,21 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--oj-blue); outli
   box-shadow: none; border-color: var(--oj-line);
 }
 .field-type input:focus, .field-type textarea:focus { border-color: var(--oj-blue); }
+/* Auth fields already sit inside the document gutter. Avoid a second inset. */
+.collection-edit--users .collection-edit__auth {
+  padding: 0;
+  background: transparent;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.collection-edit--users .auth-fields__controls { gap: 12px; }
+.collection-edit--users .auth-fields__controls .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 8px 14px;
+}
 .table tbody tr:focus-within { background: var(--oj-blue-soft); }
 .list-create-new-doc__create-new-button {
   --bg-color: var(--oj-blue); --hover-bg: #004798; --color: #fff;
@@ -215,6 +230,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--oj-blue); outli
 .popup__content { border-radius: 8px; box-shadow: 0 10px 30px #17232e18; }
 .toast { border-radius: 8px; }
 .login__brand { margin-bottom: 32px; }
+/* Both login fields remain required; only the redundant visual markers are hidden. */
+.login__form .field-label > .required { display: none; }
 .template-minimal:has(.login__brand) { background: var(--oj-surface); position: relative; isolation: isolate; }
 .template-minimal:has(.login__brand)::before {
   content: ''; position: fixed; z-index: -1; inset: 0;

@@ -8,7 +8,9 @@ import pg from 'pg';
 import EmbeddedPostgres from 'embedded-postgres';
 
 const app = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const root = path.resolve(app, '../../.migration-private/release-restore-20261008');
+const privateRoot = path.resolve(app, '../../.migration-private');
+const root = path.resolve(privateRoot, process.env.KEMZ_RELEASE_BACKUP_DIR || 'release-restore-20261008');
+if (path.dirname(root) !== privateRoot) throw new Error('Backup must use a direct private workspace directory');
 const binaries = path.join(app, 'node_modules/@embedded-postgres/windows-x64/native/bin');
 const dumpFile = path.join(root, 'kemz-staging.dump');
 const dumpTool = process.env.PG_DUMP_BIN || path.join(binaries, 'pg_dump.exe');

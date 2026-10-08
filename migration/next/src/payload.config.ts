@@ -21,7 +21,9 @@ export default buildConfig({
   routes: { admin: '/admin' },
   serverURL: process.env.PUBLIC_SITE_URL || 'http://127.0.0.1:3100',
   email: cmsEmailAdapter,
-  i18n: { supportedLanguages: { ru }, fallbackLanguage: 'ru' },
+  i18n: { supportedLanguages: { ru }, fallbackLanguage: 'ru', translations: {
+    ru: { general: { payloadSettings: 'Настройки OJ CMS' } },
+  } },
   admin: { user: 'users', theme: 'light', dateFormat: 'dd.MM.yyyy, HH:mm', meta: { titleSuffix: ' · КЭМЗ / OJ CMS', icons: { icon: '/favicon.ico', shortcut: '/favicon.ico' } }, importMap: { baseDir: directory }, components: {
     beforeLogin: ['/components/cms/OJLoginIntro'],
     afterLogin: ['/components/cms/OJLoginCredit'],
