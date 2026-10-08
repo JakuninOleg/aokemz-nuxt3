@@ -6,6 +6,8 @@ import type { LeadStore } from './lead-store';
 type Delivery = (mail: { replyTo: string; subject: string; text: string; html: string }) => Promise<void>;
 const buckets = new Map<string, { count: number; until: number }>();
 const windowMs = 15 * 60 * 1000;
+const perIpAttemptLimit = 5;
+const sharedAttemptLimit = 50;
 export function resetLeadLimitsForTest() { buckets.clear(); }
 const reply = (status: number, message: string, extra: Record<string, unknown> = {}, headers = {}) => Response.json({ success: false, message, ...extra }, { status, headers });
 
@@ -48,7 +50,9 @@ export async function handleLead(request: Request, delivery: Delivery, ip = 'unk
   const now = Date.now();
   for (const [key, bucket] of buckets) if (bucket.until <= now) buckets.delete(key);
   const bucket = buckets.get(ip);
-  if (bucket && bucket.count >= 5) {
+  // Without a verified proxy IP, this bucket serves the whole site.
+  const attemptLimit = ip === 'unknown' ? sharedAttemptLimit : perIpAttemptLimit;
+  if (bucket && bucket.count >= attemptLimit) {
     const retryAfter = Math.ceil((bucket.until - now) / 1000);
     return reply(429, 'Слишком много заявок. Попробуйте позже.', { retryAfterSec: retryAfter }, { 'Retry-After': String(retryAfter) });
   }

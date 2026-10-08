@@ -22,6 +22,15 @@ const limited = await handleLead(request(lead),delivery,'rate');
 assert.equal(limited.status,429); assert.ok(limited.headers.get('Retry-After'));
 assert.equal(delivered,1);
 resetLeadLimitsForTest();
+// The fallback bucket is shared by visitors when proxy IP trust is disabled.
+for (let i=0;i<50;i++) assert.equal((await handleLead(request({...lead,consent:false}),delivery)).status,400);
+const sharedLimited = await handleLead(request(lead),delivery);
+assert.equal(sharedLimited.status,429);
+assert.ok(sharedLimited.headers.get('Retry-After'));
+assert.equal(delivered,1);
+// A saturated fallback bucket must not consume a known client's allowance.
+assert.equal((await handleLead(request({...lead,consent:false}),delivery,'separate-client')).status,400);
+resetLeadLimitsForTest();
 let reserved = 0;
 let finished: 'sent' | 'failed' | undefined;
 const store = { reserve: async () => { reserved++; return { id: 1, created: true }; }, finish: async (_id: number, status: 'sent' | 'failed') => { finished = status; } };
