@@ -1,0 +1,12 @@
+import { getPayload } from 'payload';
+import config from '../src/payload.config.ts';
+import { getStorageFilePath } from '@payloadcms/plugin-cloud-storage/utilities';
+const payload = await getPayload({ config });
+const { docs } = await payload.find({ collection: 'media', limit: 1, depth: 0 });
+const doc = docs[0];
+const key = await getStorageFilePath({ doc, filename: doc.sizes.content.filename, collectionPrefix: 'kemz/media' });
+const url = new URL(`${process.env.S3_BUCKET}/${key.split('/').map(encodeURIComponent).join('/')}`, `${process.env.S3_ENDPOINT}/`);
+const response = await fetch(url, { method: 'HEAD' });
+console.log(JSON.stringify({ publicMediaStatus: response.status, type: response.headers.get('content-type') }));
+await payload.destroy();
+setTimeout(() => process.exit(response.ok ? 0 : 1), 200);

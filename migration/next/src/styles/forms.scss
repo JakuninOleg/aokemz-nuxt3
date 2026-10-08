@@ -1,0 +1,40 @@
+.next-lead-surface { display: grid; position: relative; min-width: 0; }
+.next-lead-form { grid-area: 1 / 1; display: grid; align-content: start; gap: 16px; }
+.next-lead-form[aria-hidden='true'] { visibility: hidden; pointer-events: none; }
+.next-lead-state { position: absolute; inset: 0; z-index: 1; min-height: 0; height: 100%; overflow: auto; }
+.next-lead-fields { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.next-lead-field { display: grid; align-content: start; gap: 7px; min-width: 0; font-size: 16px; }
+.next-lead-field input, .next-lead-field textarea, .next-lead-field select { width: 100%; height: 48px; padding: 10px 12px; border: 1px solid var(--home-line); border-radius: 4px; color: var(--home-ink); background: white; font: 400 16px/1.4 var(--home-body); }
+.next-lead-field textarea { height: 120px; resize: vertical; }
+.next-lead-field input::placeholder, .next-lead-field textarea::placeholder { color: #63778d; opacity: 1; }
+.next-lead-field small, .next-lead-error { color: #a22529; font-size: 14px; }
+.next-lead-field [aria-invalid='true'] { border-color: #a22529; }
+.next-lead-form .form-consent__text { font-family: var(--home-body); font-size: 14px; }
+.next-lead-form .kemz-action { min-height: 48px; justify-self: start; }
+.next-lead-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.next-lead-surface--technical { background: white; border-radius: var(--home-radius); padding: clamp(20px,3vw,36px); color: var(--home-ink); }
+.next-lead-surface--technical .next-lead-fields { grid-template-areas: 'equipment name' 'machine phone' 'power email' 'company message'; }
+.next-lead-surface--technical .next-lead-state { border: 0; box-shadow: none; padding: 26px 12px; }
+.next-lead-surface--simple .next-lead-state { padding: 32px 20px; }
+.next-lead-surface--simple .lead-submit-state { gap: 14px; }
+.next-lead-surface--simple .lead-submit-state__check { width: 96px; height: 96px; }
+.next-lead-surface--simple .lead-submit-state__check svg { width: 72px; height: 72px; }
+.next-lead-surface--simple .lead-submit-state__contact { margin-top: 8px; padding-top: 18px; }
+.not-found-page__form .next-lead-surface { padding: 24px; background: var(--home-paper); border: 1px solid var(--home-line); border-radius: var(--home-radius); }
+.kemz-home .technical-form .next-lead-form { display: grid; grid-template-columns: minmax(0,1fr); gap: 20px; }
+.kemz-home .technical-form .next-lead-fields { grid-column: 1; }
+.kemz-home .technical-form .next-lead-form > .form-consent,
+.kemz-home .technical-form .next-lead-form > .kemz-action,
+.kemz-home .technical-form .next-lead-form > .next-lead-error { grid-column: 1; grid-row: auto; }
+.kemz-home .technical-form .next-lead-state { min-height: 0; }
+.kemz-home .technical-form .next-lead-form > h3 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.kemz-home .technical-form .next-lead-field input,
+.kemz-home .technical-form .next-lead-field select { height: 48px; padding: 10px 12px; font-size: 16px; }
+.kemz-home .technical-form .next-lead-field textarea { height: 80px; padding: 10px 12px; font-size: 16px; }
+.next-lead-surface--simple .next-lead-fields { grid-template-areas: 'name email' 'phone phone' 'message message'; }
+.next-lead-field.technical-form__name { grid-area: name; }
+.next-lead-field.technical-form__email { grid-area: email; }
+.next-lead-field.technical-form__phone { grid-area: phone; }
+.next-lead-field.technical-form__message { grid-area: message; }
+@media(max-width:600px) { .next-lead-surface--simple .next-lead-fields { grid-template-areas: 'name' 'email' 'phone' 'message'; } }
+@media(max-width:600px) { .next-lead-fields { grid-template-columns: 1fr; } .next-lead-surface--technical .next-lead-fields { grid-template-areas: 'equipment' 'machine' 'power' 'company' 'name' 'phone' 'email' 'message'; } }

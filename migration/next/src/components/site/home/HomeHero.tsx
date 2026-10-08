@@ -1,0 +1,68 @@
+import { HOME_HERO_FACTS } from '@/lib/home-content';
+import { HomeActionButton } from './HomeActionButton';
+import { HomeEngineeringIcon } from './HomeEngineeringIcon';
+
+export function HomeHero() {
+  return (
+    <>
+      <section className="ref-hero" aria-labelledby="home-title">
+        <picture>
+          <source
+            media="(max-width: 480px)"
+            srcSet="/media/generated/hero-quarry-dragline-wide-v11-480.webp"
+          />
+          <source
+            media="(max-width: 600px)"
+            srcSet="/media/generated/hero-quarry-dragline-wide-v11-640.webp"
+          />
+          <img
+            className="ref-hero__image"
+            src="/media/generated/hero-quarry-dragline-wide-v11.webp"
+            sizes="100vw"
+            width={1600}
+            height={533}
+            alt="Карьерный экскаватор ЭКГ в центре открытой выработки"
+            fetchPriority="high"
+            decoding="sync"
+          />
+        </picture>
+        <div className="ref-container ref-hero__content">
+          <p className="ref-hero__eyebrow">
+            С 1960 года <span>|</span> Карпинск
+          </p>
+          <h1 id="home-title">
+            Электрические
+            <br />
+            машины для
+            <br />
+            горнодобывающей
+            <br />
+            техники
+          </h1>
+          <p className="ref-hero__description">
+            Проектируем, производим и испытываем двигатели и генераторы для
+            экскаваторов, карьерных самосвалов и шахтной техники.
+          </p>
+          <div className="ref-hero__actions">
+            <HomeActionButton href="/products" onDark>
+              Перейти в каталог
+            </HomeActionButton>
+          </div>
+        </div>
+      </section>
+      <section className="ref-facts" aria-label="Оборудование и поставки">
+        <div className="ref-container ref-facts__grid">
+          {HOME_HERO_FACTS.map((fact) => (
+            <div key={fact.value} className="ref-fact">
+              <HomeEngineeringIcon name={fact.icon} />
+              <div>
+                <strong>{fact.value}</strong>
+                <span>{fact.label}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}

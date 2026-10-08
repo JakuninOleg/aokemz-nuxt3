@@ -1,0 +1,54 @@
+/*
+ * Native <dialog class="next-menu site-drawer"> overrides.
+ * legacy/header.scss keeps approved drawer tokens; its closed-state
+ * translateX(100%) must not fight dialog[open] / :modal visibility.
+ */
+
+dialog.next-menu.site-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  z-index: 1001;
+  display: flex;
+  width: min(100vw, 22rem);
+  max-width: 100%;
+  height: 100dvh;
+  max-height: 100dvh;
+  flex-direction: column;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 0;
+  padding: 0;
+  color: #061638;
+  background: #f8fbfe;
+  box-shadow: -18px 0 50px rgba(2, 19, 42, 0.26);
+  transform: none;
+  transition: none;
+}
+
+dialog.next-menu.site-drawer:not([open]) {
+  display: none;
+}
+
+dialog.next-menu.site-drawer::backdrop {
+  background: rgba(3, 17, 36, 0.68);
+  backdrop-filter: blur(3px);
+}
+
+/* Blueprint loads only while the dialog is open (no .open class required). */
+dialog.next-menu.site-drawer[open] .site-drawer__blueprint {
+  background-image: url('/media/drawer-blueprint.webp');
+}
+
+@media (min-width: 1024px) {
+  dialog.next-menu.site-drawer,
+  dialog.next-menu.site-drawer::backdrop {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.next-menu.site-drawer {
+    transition: none;
+  }
+}

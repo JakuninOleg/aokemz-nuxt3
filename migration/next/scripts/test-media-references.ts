@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import { referencesMedia } from '../src/hooks/media-references';
+assert.equal(referencesMedia({ image: 7 }, 7), true);
+assert.equal(referencesMedia({ files: [5, { id: 7 }] }, 7), true);
+assert.equal(referencesMedia({ file: { id: 7 } }, '7'), true);
+assert.equal(referencesMedia({ root: { children: [{ type: 'upload', relationTo: 'media', value: 7 }] } }, 7), true);
+assert.equal(referencesMedia({ version: { body: { root: { children: [{ type: 'upload', relationTo: 'media', value: { id: 7 } }] } } } }, 7), true);
+assert.equal(referencesMedia({ id: 7, title: '7', image: 8 }, 7), false);
+assert.equal(referencesMedia({ type: 'upload', relationTo: 'products', value: 7 }, 7), false);
+assert.equal(referencesMedia(null, 7), false);
+console.log('Media reference checks: 8 PASS.');

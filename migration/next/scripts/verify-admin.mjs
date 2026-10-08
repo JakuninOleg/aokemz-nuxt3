@@ -1,0 +1,24 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+const credentials = JSON.parse(await readFile('../../.migration-private/oj-cms-admin.json', 'utf8'));
+const origin = 'http://127.0.0.1:3100';
+const response = await fetch(`${origin}/api/users/login`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: credentials.email, password: credentials.password }) });
+assert.equal(response.status, 200);
+const result = await response.json();
+assert.equal(result.user.role, 'administrator');
+assert.ok(result.token);
+const headers = { authorization: `JWT ${result.token}` };
+const products = await fetch(`${origin}/api/products?limit=1`, { headers });
+assert.equal(products.status, 200);
+// Payload's browser admin uses cookies, not the Local API authorization header.
+const cookie = response.headers.getSetCookie().map(item => item.split(';')[0]).join('; ');
+const dashboard = await fetch(`${origin}/admin`, { headers: { cookie } });
+assert.equal(dashboard.status, 200);
+const html = await dashboard.text();
+assert.ok(html.includes('oj-dashboard__title'));
+assert.equal((html.match(/class="oj-dashboard__stat"/g) || []).length, 5, 'Five real collection cards');
+assert.ok(html.includes('OJ CMS'));
+assert.ok(html.includes('/admin/collections/products'));
+const anonymous = await fetch(`${origin}/api/users`);
+assert.ok([401, 403].includes(anonymous.status));
+console.log(JSON.stringify({ administratorLogin: true, authenticatedDashboard: true, realCollectionLinks: true, anonymousUsersDenied: true }));

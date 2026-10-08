@@ -43,3 +43,8 @@ docs/_extract_pdf_raw.py
 .lighthouse-home.json
 .lighthouse*.json
 .vercel
+
+# Private migration snapshots: content and original media, never published
+.migration-private/
+**/.next/
+**/tsconfig.tsbuildinfo
