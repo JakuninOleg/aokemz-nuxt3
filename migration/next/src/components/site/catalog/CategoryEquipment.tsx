@@ -1,6 +1,7 @@
 'use client';
 
 import Link from '@/components/site/PublicLink';
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import type { CategoryEquipmentItem } from '@/lib/catalog-content';
 
@@ -81,7 +82,7 @@ export function CategoryEquipment({ products, hasDocuments, onInspect }: Props) 
                   <h3>{item.name}</h3>
                   <div className="category-machine__image">
                     {item.imageUrl ? (
-                      <img src={item.imageUrl} srcSet={item.imageSrcSet} sizes="(max-width: 720px) 90vw, 30vw" alt={item.imageAlt} width={480} height={360} loading="lazy" />
+                      <Image src={item.imageUrl} sizes="(max-width: 720px) 90vw, (max-width: 1100px) 45vw, 22vw" alt={item.imageAlt} width={480} height={360} quality={80} loading="lazy" />
                     ) : (
                       <span>Фото уточняется</span>
                     )}

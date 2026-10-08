@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { newsBySlug, newsPath, publicMedia } from '@/lib/public-content';
+import { news, newsBySlug, newsPath, publicMedia } from '@/lib/public-content';
 import { newsSummaryLead } from '@/lib/news-content';
 import { NewsArticleView } from '@/components/site/news/NewsArticleView';
+import { pageMetadata } from '@/lib/static-content/page-seo';
 
 type Props = { params: Promise<{ article: string }> };
 
 export const revalidate = 60;
-export function generateStaticParams() { return []; }
+export async function generateStaticParams() {
+  return (await news()).map(record => ({ article: record.slug }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { article } = await params;
@@ -19,17 +22,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   );
   const media = await publicMedia(record.image);
   const path = newsPath(record);
+  const base = pageMetadata({ title: `${record.title} | Новости ОАО «КЭМЗ»`, description, path,
+    ...(media ? { ogImage: media.url } : {}) });
   return {
-    title: `${record.title} | Новости`,
-    description,
-    alternates: { canonical: `https://aokemz.ru${path}` },
+    ...base,
     openGraph: {
+      ...base.openGraph,
       type: 'article',
-      title: `${record.title} | Новости ОАО «КЭМЗ»`,
-      description,
-      url: `https://aokemz.ru${path}`,
       ...(record.publishedAt ? { publishedTime: record.publishedAt } : {}),
-      ...(media ? { images: [{ url: media.url }] } : {}),
+      modifiedTime: record.updatedAt,
     },
   };
 }

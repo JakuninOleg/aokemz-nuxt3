@@ -9,7 +9,7 @@ export function createMailTransport() {
   const user=process.env.SMTP_USER, pass=process.env.SMTP_PASS;
   if (!user || !pass) throw new Error('Mail transport is not configured');
   const port=Number(process.env.SMTP_PORT || 465);
-  return nodemailer.createTransport({host:process.env.SMTP_HOST || 'smtp.gmail.com',port,secure:port===465,
+  return nodemailer.createTransport({host:process.env.SMTP_HOST || 'smtp.gmail.com',port,secure:port===465,requireTLS:port===587,
     auth:{user,pass},connectionTimeout:10_000,greetingTimeout:10_000,socketTimeout:20_000});
 }
 // Never use Payload's console adapter: reset tokens must not enter server logs.

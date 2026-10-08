@@ -8,6 +8,12 @@ import { isUsableImageVariant } from './media-policy';
 
 const cms = cache(() => getPayload({ config }));
 const published = { _status: { equals: 'published' } };
+// Include existing public URLs even when a category is hidden from navigation.
+// This does not publish drafts or change the catalog's visibility rules.
+export const categoryRoutes = cache(async () => (await (await cms()).find({
+  collection: 'categories', overrideAccess: false, depth: 0, pagination: false,
+  where: published, select: { slug: true },
+})).docs);
 export const categories = cache(async () => (await (await cms()).find({
   collection: 'categories', overrideAccess: false, depth: 0, pagination: false,
   where: { and: [published, { visible: { equals: true } }] }, sort: ['sourceCreatedAt', 'id'],

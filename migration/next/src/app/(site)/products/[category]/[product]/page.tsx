@@ -1,13 +1,19 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { categoryBySlug, productBySlug, publicMedia } from '@/lib/public-content';
+import { categoryRoutes, categoryBySlug, productBySlug, productsForCategory, publicMedia } from '@/lib/public-content';
 import { productLeadFromDescription, relatedProducts, specificationModels } from '@/lib/catalog-content';
 import { ProductDetail } from '@/components/site/catalog/ProductDetail';
+import { productSearchCopy } from '@/lib/catalog-seo';
+import { pageMetadata } from '@/lib/static-content/page-seo';
 
 type Props = { params: Promise<{ category: string; product: string }> };
 
 export const revalidate = 60;
-export function generateStaticParams() { return []; }
+export async function generateStaticParams() {
+  return (await Promise.all((await categoryRoutes()).map(async category =>
+    (await productsForCategory(category.id)).map(record => ({ category: category.slug, product: record.slug }))
+  ))).flat();
+}
 
 async function recordFor(params: Props['params']) {
   const route = await params;
@@ -20,24 +26,12 @@ async function recordFor(params: Props['params']) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { product, category } = await recordFor(params);
-  const lead =
-    productLeadFromDescription(product.description) ||
-    `${product.title}: технические данные и применение. ОАО «Карпинский электромашиностроительный завод», Карпинск.`;
+  const lead = productLeadFromDescription(product.description);
   const media = await publicMedia(product.image);
   const path = `/products/${category.slug}/${product.slug}`;
-  const models = specificationModels(product.specifications);
-  const title = `${product.title}${models && !product.title.includes(models) ? ` (${models})` : ''} — ${category.title}`;
-  return {
-    title,
-    description: lead,
-    alternates: { canonical: `https://aokemz.ru${path}` },
-    openGraph: {
-      title: `${title} | ОАО «КЭМЗ»`,
-      description: lead,
-      url: `https://aokemz.ru${path}`,
-      ...(media ? { images: [{ url: media.url }] } : {}),
-    },
-  };
+  const copy = productSearchCopy(product, lead, specificationModels(product.specifications), category.title);
+  return pageMetadata({ ...copy, title: `${copy.title} | ОАО «КЭМЗ»`, path,
+    ...(media ? { ogImage: media.url } : {}) });
 }
 
 export default async function ProductPage({ params }: Props) {

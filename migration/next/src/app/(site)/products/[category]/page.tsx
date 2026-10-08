@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { categoryBySlug, productsForCategory, publicMedia } from '@/lib/public-content';
+import { categoryRoutes, categoryBySlug, productsForCategory, publicMedia } from '@/lib/public-content';
 import {
   categoryEquipmentItems,
   categoryHeroLead,
@@ -14,29 +14,24 @@ import { CategoryPageView } from '@/components/site/catalog/CategoryPageView';
 import { CategorySpecPanel } from '@/components/site/catalog/CategorySpecifications';
 import { CategoryDocuments } from '@/components/site/catalog/CategoryDocuments';
 import { CategoryCta } from '@/components/site/catalog/CategoryCta';
+import { categorySearchCopy } from '@/lib/catalog-seo';
+import { pageMetadata } from '@/lib/static-content/page-seo';
 
 type Props = { params: Promise<{ category: string }> };
 
 export const revalidate = 60;
-export function generateStaticParams() { return []; }
+export async function generateStaticParams() {
+  return (await categoryRoutes()).map(record => ({ category: record.slug }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: slug } = await params;
   const record = await categoryBySlug(slug);
   if (!record) notFound();
-  const lead = categoryHeroLead(record.slug, record.description);
   const hero = await categoryHeroMedia(record.slug, record.image, record.title);
-  return {
-    title: `${record.title} — каталог`,
-    description: lead,
-    alternates: { canonical: `https://aokemz.ru/products/${record.slug}` },
-    openGraph: {
-      title: `${record.title} | ОАО «КЭМЗ»`,
-      description: lead,
-      url: `https://aokemz.ru/products/${record.slug}`,
-      images: [{ url: hero.src }],
-    },
-  };
+  const copy = categorySearchCopy(record);
+  return pageMetadata({ ...copy, title: `${copy.title} | ОАО «КЭМЗ»`,
+    path: `/products/${record.slug}`, ogImage: hero.src });
 }
 
 export default async function CategoryPage({ params }: Props) {

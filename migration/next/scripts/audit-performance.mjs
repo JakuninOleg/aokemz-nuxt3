@@ -28,6 +28,7 @@ try {
     const run = await lighthouse(url, options, config);
     if (!run?.lhr || run.lhr.runtimeError) throw new Error(`${device} ${route}: ${run?.lhr?.runtimeError?.message || 'Missing result'}`);
     await writeFile(path.join(output, filename), JSON.stringify(run.lhr));
+    if (process.env.AUDIT_TRACE === '1') await writeFile(path.join(output, filename.replace('.json', '-trace.json')), JSON.stringify(run.artifacts.Trace));
     const metrics = Object.fromEntries(['first-contentful-paint', 'largest-contentful-paint', 'total-blocking-time', 'cumulative-layout-shift', 'speed-index'].map(key => [key, run.lhr.audits[key].numericValue]));
     const entry = { route, device, score: Math.round(run.lhr.categories.performance.score * 100), metrics, report: filename, lighthouseVersion: run.lhr.lighthouseVersion, fetchTime: run.lhr.fetchTime, warnings: run.lhr.runWarnings };
     results.push(entry);

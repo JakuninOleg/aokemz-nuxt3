@@ -46,7 +46,7 @@ for (const route of routes) {
   }
   for (const match of html.matchAll(/(?:src|href)="(\/(?:media|fonts|news|docs|files|_next\/static)\/[^"?#]+)[^"]*"/g)) assets.add(match[1]);
   for (const match of html.matchAll(/srcset="([^"]+)"/gi)) for (const candidate of match[1].split(',')) {
-    const src = candidate.trim().split(/\s/)[0];
+    const src = candidate.trim().split(/\s/)[0].replaceAll('&amp;', '&');
     if (src.startsWith('/')) assets.add(src);
   }
 }

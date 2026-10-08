@@ -1,0 +1,40 @@
+query,source,checked_at,engine,region,device,period,operator,metric_name,metric_value,intent,brand_flag,page_type,candidate_url,evidence,confidence,status
+"КЭМЗ Карпинск","brand-facts",2026-10-08,,,,,,,"","brand",true,home,/,"Карпинский электромашиностроительный завод",high,candidate
+"Карпинский электромашиностроительный завод","brand-facts",2026-10-08,,,,,,,"","brand",true,home,/,"Подтверждённое название",high,candidate
+"КЭМЗ каталог продукции","brand-facts",2026-10-08,,,,,,,"","commercial",true,catalog,/products,"Официальный каталог",high,candidate
+"электрические машины для горнодобывающей техники","brand-facts",2026-10-08,,,,,,,"","commercial",false,home,/,"Профиль завода и действующий hero",high,candidate
+"электродвигатели для экскаваторов ЭКГ","catalog + web-search",2026-10-08,unspecified,unspecified,unspecified,,,,"","commercial",false,category,/products/excavator,"Комплекты ЭКГ в собственном каталоге; Технопривод",high,candidate
+"электрические машины для экскаваторов ЭШ","catalog",2026-10-08,,,,,,,"","commercial",false,category,/products/excavator,"Комплекты ЭШ в собственном каталоге",high,candidate
+"комплект электрических машин ЭКГ 5А","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/excavator/ekg-3-ekg-5a,"Существующий комплект",high,candidate
+"комплект электродвигателей ЭКГ 10","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/excavator/ekg-8-ekg-12,"Существующий комплект; различать DC и AC варианты",medium,candidate
+"электродвигатели ЭКГ 15М","contentful-export",2026-10-08,,,,,,,"","commercial",false,product,/products/excavator/AC_engines_set_EKG15,"Действующая карточка асинхронных машин",high,candidate
+"комплект машин ЭШ 6 45","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/excavator/esh6-esh11,"Существующий комплект ЭШ",high,candidate
+"генераторы 4ГПЭ","catalog + web-search",2026-10-08,unspecified,unspecified,unspecified,,,,"","commercial",false,product,/products/another/generator4gpe,"Собственная серия и страницы поставщиков",high,candidate
+"генераторы 4ГПЭМ","catalog + web-search",2026-10-08,unspecified,unspecified,unspecified,,,,"","commercial",false,product,/products/another/generator4gpem,"Собственная серия; KCCC и СЭТЗ",high,candidate
+"генератор 4ГПЭМ 220","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/another/generator4gpem,"Исполнение из каталога; отдельный URL не нужен без отдельной ценности",medium,candidate
+"электродвигатель ДПЭ 54","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/another/electricmotorsdpv54,"Модель проверять по названию записи: slug исторический",high,candidate
+"электродвигатель ДПЭ 90 1","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/another/dpe901,"Действующая карточка",high,candidate
+"электродвигатели ДПЭ 560 ДПЭ 500","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/another/electricmotorsdpe560,"Действующая страница серии",high,candidate
+"электродвигатель ДПВ 60","catalog + web-search",2026-10-08,unspecified,unspecified,unspecified,,,,"","commercial",false,product,/products/another/electrodvigposttokadpv60,"Собственная модель; предложения поставщиков",high,candidate
+"электродвигатели ДПВ 200 ДПВ 150","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/another/elpostdpv200_150,"Существующая карточка",high,candidate
+"рудничный тяговый двигатель ДПТ 45","catalog + web-search",2026-10-08,unspecified,unspecified,unspecified,,,,"","commercial",false,product,/products/mining/dpt45,"Собственная карточка в доступной выборке поиска",high,candidate
+"шахтные электродвигатели","catalog",2026-10-08,,,,,,,"","commercial",false,category,/products/mining,"Категория и реальные серии",high,candidate
+"двигатели ДАТВ ДАКВ","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/mining/datvidakv,"Существующая карточка",high,candidate
+"двигатель ДАРВ 315","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/mining/darv315,"Существующая карточка",high,candidate
+"двигатель ДАРВ 250","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/mining/darv250,"Существующая карточка",high,candidate
+"двигатель ДАРВ 280","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/mining/darv280,"Существующая карточка",high,candidate
+"электродвигатели для буровых установок","catalog + web-search",2026-10-08,unspecified,unspecified,unspecified,,,,"","commercial",false,category,/products/drilling-rigs,"Собственный каталог; поставщики выделяют серию ДПБ",high,candidate
+"двигатель ДПБ 90","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/drilling-rigs/elpostdpb90,"Существующая карточка",high,candidate
+"двигатели ДПБ 1000 ДПБ 750 ДПБ 560","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/drilling-rigs/elposttoka1000_750_560,"Существующая страница серии",high,candidate
+"электромагнитный тормоз ТЭП 45","catalog",2026-10-08,,,,,,,"","commercial",false,product,/products/drilling-rigs/tep45,"Существующая карточка",high,candidate
+"тяговый двигатель БЕЛАЗ ДПТ 590 2","brand-facts + contentful-export",2026-10-08,,,,,,,"","commercial",false,product,/products/belaz/dpt590-2,"Подтверждённая модель; не дизель",high,candidate
+"тяговый электродвигатель ДПТ 810","contentful-export",2026-10-08,,,,,,,"","commercial",false,product,/products/railway-transport/elektrodvigdpt810_2,"Существующая карточка",high,candidate
+"дроссель ДР 150","contentful-export",2026-10-08,,,,,,,"","commercial",false,product,/products/railway-transport/drosseldr150,"Существующая карточка",high,candidate
+"вводы трансформаторные КЭМЗ","catalog",2026-10-08,,,,,,,"","commercial",true,product,/products/other/transformator_insulator,"Существующая карточка",high,candidate
+"вводы конденсаторные КЭМЗ","catalog",2026-10-08,,,,,,,"","commercial",true,product,/products/other/condensator_insulator,"Существующая карточка",high,candidate
+"опросный лист электрические машины КЭМЗ","brand-facts",2026-10-08,,,,,,,"","commercial-support",true,documents,/documents,"Официальный опросный лист",high,candidate
+"КЭМЗ отдел продаж контакты","brand-facts",2026-10-08,,,,,,,"","brand-commercial",true,contacts,/contacts,"Реальные контакты предприятия",high,candidate
+"как подобрать двигатель для экскаватора","buyer-task hypothesis",2026-10-08,,,,,,,"","informational",false,category,/products/excavator,"Кандидат для инженерной инструкции; спрос и формат пока не подтверждены",low,hypothesis
+"что указать в опросном листе двигателя","buyer-task hypothesis",2026-10-08,,,,,,,"","informational",false,documents,/documents,"Кандидат для инструкции на основе официального листа",low,hypothesis
+"КЭМЗ Кизляр авиационный двигатель","negative-topic",2026-10-08,,,,,,,"","irrelevant",true,none,,"Другое предприятие",high,excluded
+"БЕЛАЗ дизельный двигатель цена","negative-topic",2026-10-08,,,,,,,"","irrelevant",false,none,,"Не электрический тяговый двигатель КЭМЗ",high,excluded
