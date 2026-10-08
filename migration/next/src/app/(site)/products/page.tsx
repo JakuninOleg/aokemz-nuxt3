@@ -6,7 +6,7 @@ import { ProductsCatalog } from '@/components/site/catalog/ProductsCatalog';
 import { ProductsCta } from '@/components/site/catalog/ProductsCta';
 import { JsonLd } from '@/components/site/Content';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Каталог продукции — электродвигатели и приводы',

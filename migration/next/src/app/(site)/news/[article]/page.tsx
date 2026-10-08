@@ -7,7 +7,7 @@ import { pageMetadata } from '@/lib/static-content/page-seo';
 
 type Props = { params: Promise<{ article: string }> };
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export async function generateStaticParams() {
   return (await news()).map(record => ({ article: record.slug }));
 }

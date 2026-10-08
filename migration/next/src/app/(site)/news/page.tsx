@@ -5,7 +5,7 @@ import { NewsList } from '@/components/site/news/NewsList';
 import { NewsCta } from '@/components/site/news/NewsCta';
 import { JsonLd } from '@/components/site/Content';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Новости завода',

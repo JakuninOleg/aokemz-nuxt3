@@ -8,7 +8,7 @@ import { pageMetadata } from '@/lib/static-content/page-seo';
 
 type Props = { params: Promise<{ category: string; product: string }> };
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export async function generateStaticParams() {
   return (await Promise.all((await categoryRoutes()).map(async category =>
     (await productsForCategory(category.id)).map(record => ({ category: category.slug, product: record.slug }))

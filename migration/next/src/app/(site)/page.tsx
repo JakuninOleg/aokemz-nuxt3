@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { HomePage } from '@/components/site/home/HomePage';
 import { pageMetadata } from '@/lib/static-content/page-seo';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export const metadata: Metadata = pageMetadata({
   title: 'Электрические машины для горнодобывающей техники | ОАО «КЭМЗ»',

@@ -20,7 +20,7 @@ import { pageMetadata } from '@/lib/static-content/page-seo';
 
 type Props = { params: Promise<{ category: string }> };
 
-export const revalidate = 60;
+export const revalidate = 3600;
 export async function generateStaticParams() {
   return (await categoryRoutes()).map(record => ({ category: record.slug }));
 }

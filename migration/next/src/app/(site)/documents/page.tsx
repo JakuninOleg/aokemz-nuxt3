@@ -4,7 +4,7 @@ import { DOCUMENTS_HERO } from '@/lib/static-content/documents';
 import { publishedDocuments } from '@/lib/static-content/documents-query';
 import { breadcrumbJsonLd, PAGE_SEO, pageMetadata } from '@/lib/static-content/page-seo';
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export const metadata = pageMetadata({
   ...PAGE_SEO.documents,

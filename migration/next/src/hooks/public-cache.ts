@@ -7,7 +7,9 @@ function invalidate() {
     revalidatePath('/', 'layout');
   } catch (error) {
     // Import/maintenance scripts run outside a Next request. Their changes are
-    // still picked up by the 60-second public cache expiry.
+    // still picked up by the hourly public cache expiry. Normal CMS saves
+    // invalidate immediately here instead of repeatedly rebuilding unchanged
+    // public pages while their static assets are being delivered.
     if (error instanceof Error && /static generation store missing|work store missing/i.test(error.message)) return;
     throw error;
   }
