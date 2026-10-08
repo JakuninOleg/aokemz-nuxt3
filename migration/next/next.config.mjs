@@ -1,10 +1,20 @@
 import { withPayload } from '@payloadcms/next/withPayload';
 import { fileURLToPath } from 'node:url';
+const storageEndpoint = new URL(process.env.S3_ENDPOINT || 'https://s3.twcstorage.ru');
 
 export default withPayload({
   output: 'standalone',
   turbopack: { root: fileURLToPath(new URL('.', import.meta.url)) },
   poweredByHeader: false,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    qualities: [75, 80, 85],
+    minimumCacheTTL: 86400,
+    remotePatterns: process.env.S3_BUCKET ? [{
+      protocol: 'https', hostname: storageEndpoint.hostname,
+      pathname: `/${process.env.S3_BUCKET}/kemz/media/**`, search: '',
+    }] : [],
+  },
   async redirects() {
     return [
       { source: '/payload-admin/:path*', destination: '/admin/:path*', permanent: true },

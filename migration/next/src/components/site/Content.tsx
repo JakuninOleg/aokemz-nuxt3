@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react';
 import type { Product } from '@/payload-types';
 import { publicRichText, type PublicMedia } from '@/lib/public-content';
 
 export function MediaImage({ media, alt, priority = false, sizes = '(max-width: 720px) 100vw, 50vw', className }: { media: PublicMedia | null; alt: string; priority?: boolean; sizes?: string; className?: string }) {
   if (!media) return <span className="media-empty">Изображение уточняется</span>;
-  return <img className={className} src={media.url} srcSet={media.srcSet} sizes={sizes} width={media.width || 800} height={media.height || 600} alt={media.alt && /[А-Яа-яЁё]/.test(media.alt) ? media.alt : alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : undefined} decoding="async" />;
+  return <Image className={className} src={media.url} sizes={sizes} width={media.width || 800} height={media.height || 600} quality={80} alt={media.alt && /[А-Яа-яЁё]/.test(media.alt) ? media.alt : alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'low'} decoding="async" />;
 }
 const safeHref = (value: unknown) => typeof value === 'string' && !value.includes('\\') && !Array.from(value).some(char => char.charCodeAt(0) <= 32) && (/^(https?:|mailto:|tel:)/i.test(value) || /^\/(?!\/)/.test(value) || value.startsWith('#')) ? value : undefined;
 const converters: JSXConvertersFunction = ({ defaultConverters }) => ({

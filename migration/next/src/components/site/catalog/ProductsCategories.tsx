@@ -24,7 +24,7 @@ export async function ProductsCategories() {
                         className="products-cat__media"
                         media={media}
                         alt={category.title}
-                        sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        sizes="(max-width: 720px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       />
                     ) : (
                       <div className="products-cat__placeholder" aria-hidden="true" />

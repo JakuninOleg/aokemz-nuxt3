@@ -6,7 +6,8 @@ import { NewsArticleView } from '@/components/site/news/NewsArticleView';
 
 type Props = { params: Promise<{ article: string }> };
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export function generateStaticParams() { return []; }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { article } = await params;

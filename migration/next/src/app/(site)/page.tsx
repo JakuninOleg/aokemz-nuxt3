@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { HomePage } from '@/components/site/home/HomePage';
 import { pageMetadata } from '@/lib/static-content/page-seo';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
 
 export const metadata: Metadata = pageMetadata({
   title: 'Электрические машины для горнодобывающей техники | ОАО «КЭМЗ»',
@@ -25,12 +25,14 @@ export default async function Page() {
         rel="preload"
         as="image"
         href="/media/generated/hero-quarry-dragline-wide-v11.webp"
+        fetchPriority="high"
         media="(min-width: 601px)"
       />
       <link
         rel="preload"
         as="image"
         href="/media/generated/hero-quarry-mobile-v1-1024.avif"
+        fetchPriority="high"
         type="image/avif"
         imageSrcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
         imageSizes="100vw"

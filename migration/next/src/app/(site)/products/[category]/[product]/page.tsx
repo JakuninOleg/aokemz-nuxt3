@@ -6,7 +6,8 @@ import { ProductDetail } from '@/components/site/catalog/ProductDetail';
 
 type Props = { params: Promise<{ category: string; product: string }> };
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export function generateStaticParams() { return []; }
 
 async function recordFor(params: Props['params']) {
   const route = await params;

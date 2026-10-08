@@ -17,7 +17,8 @@ import { CategoryCta } from '@/components/site/catalog/CategoryCta';
 
 type Props = { params: Promise<{ category: string }> };
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 60;
+export function generateStaticParams() { return []; }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category: slug } = await params;

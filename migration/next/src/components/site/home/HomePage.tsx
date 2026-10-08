@@ -15,10 +15,7 @@ export async function HomePage() {
       <HomeCapabilities />
       <HomeGeography />
       <HomeRequest />
-      <Suspense fallback={<section className="ref-news ref-container" aria-busy="true" aria-label="Загрузка новостей" style={{ minHeight: 360 }} />}>
-        <HomeNews />
-      </Suspense>
+      <HomeNews />
     </div>
   );
 }
-import { Suspense } from 'react';

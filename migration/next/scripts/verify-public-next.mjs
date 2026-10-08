@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { writeFile } from 'node:fs/promises';
 import { getPayload } from 'payload';
 // An audit must never invoke development schema push against the imported DB.
 process.env.NODE_ENV = 'production';
@@ -18,6 +19,7 @@ const categorySlug = (product) => {
 const routes = ['/', '/about', '/production', '/contacts', '/documents', '/legal', '/special', '/products', '/news', ...categories.map(doc => `/products/${doc.slug}`),
   ...products.map(doc => `/products/${categorySlug(doc)}/${doc.slug}`),
   ...news.map(doc => `/news/${doc.slug}`)];
+if (process.env.AUDIT_MANIFEST) await writeFile(process.env.AUDIT_MANIFEST, JSON.stringify(routes, null, 2));
 let tables = 0;
 const links = new Set(), assets = new Set(), titles = new Map();
 for (const route of routes) {

@@ -5,6 +5,7 @@ import { MAX_PHOTO_PIXELS, MEDIA_UPLOAD_HELP } from './lib/media-policy';
 import { protectReferencedMedia } from './hooks/media-references';
 import { automaticSlug, immutableProductCategory } from './hooks/slug';
 import { isValidSlug } from './lib/slug.mjs';
+import { publicContentChanged, publicContentDeleted } from './hooks/public-cache';
 
 /** Import / migration metadata: editors see identity fields; sensitive payloads stay admin-only. */
 const sourceFields = (): Field[] => [
@@ -135,6 +136,8 @@ export const Media: CollectionConfig = {
     beforeOperation: [validateMediaBeforeOperation],
     beforeValidate: [validateMediaUpload],
     beforeDelete: [protectReferencedMedia],
+    afterChange: [publicContentChanged],
+    afterDelete: [publicContentDeleted],
   },
   upload: {
     staticDir: '.data/media',
@@ -206,6 +209,7 @@ export const Media: CollectionConfig = {
 };
 
 export const Documents: CollectionConfig = {
+  hooks: { afterChange: [publicContentChanged], afterDelete: [publicContentDeleted] },
   slug: 'documents',
   labels: { singular: 'Документ', plural: 'Документы' },
   admin: {
@@ -235,6 +239,7 @@ export const Documents: CollectionConfig = {
 };
 
 export const Categories: CollectionConfig = {
+  hooks: { afterChange: [publicContentChanged], afterDelete: [publicContentDeleted] },
   slug: 'categories',
   labels: { singular: 'Категория', plural: 'Категории' },
   admin: {
@@ -286,6 +291,7 @@ export const Categories: CollectionConfig = {
 };
 
 export const Products: CollectionConfig = {
+  hooks: { afterChange: [publicContentChanged], afterDelete: [publicContentDeleted] },
   slug: 'products',
   labels: { singular: 'Товар', plural: 'Продукция' },
   admin: {
@@ -357,6 +363,7 @@ export const Products: CollectionConfig = {
 };
 
 export const News: CollectionConfig = {
+  hooks: { afterChange: [publicContentChanged], afterDelete: [publicContentDeleted] },
   slug: 'news',
   labels: { singular: 'Новость', plural: 'Новости' },
   admin: {

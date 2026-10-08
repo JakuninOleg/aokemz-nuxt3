@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import Link from 'next/link';
-import { validateContactLead, validateContactField, validateTechnicalLeadDetails, type ContactLeadField, formatRuPhoneDisplay, normalizeRuPhone } from '@/lib/contact-validation';
+import type { ContactLeadField } from '@/lib/contact-validation';
 
 export function LeadForm({ variant = 'simple', header, className = '' }: { variant?: 'simple' | 'technical'; header?: string; className?: string }) {
   const id = useId();
@@ -12,11 +12,28 @@ export function LeadForm({ variant = 'simple', header, className = '' }: { varia
   const lock = useRef(false);
   const submission = useRef<{ fingerprint: string; requestId: string } | null>(null);
   useEffect(() => { if (state !== 'form') heading.current?.focus(); }, [state]);
-  const blur = (field: ContactLeadField, value: unknown) => setErrors(current => ({ ...current, [field]: validateContactField(field, value) }));
+  async function blur(field: ContactLeadField, value: unknown) {
+    try {
+      const { validateContactField, normalizeRuPhone, formatRuPhoneDisplay } = await import('@/lib/contact-validation');
+      const control = form.current?.querySelector<HTMLInputElement | HTMLTextAreaElement>(`[name="${field}"]`);
+      if (typeof value === 'string' && control && control.value !== value) return;
+      if (field === 'phone' && typeof value === 'string') {
+        const phone = normalizeRuPhone(value);
+        const input = form.current?.querySelector<HTMLInputElement>('[name="phone"]');
+        if (phone && input && input.value === value) input.value = formatRuPhoneDisplay(phone);
+      }
+      setErrors(current => ({ ...current, [field]: validateContactField(field, value) }));
+    } catch { setError('Не удалось загрузить проверку формы. Обновите страницу и попробуйте ещё раз.'); }
+  }
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); if (lock.current) return;
     const data = new FormData(event.currentTarget);
     const raw = { name: data.get('name'), email: data.get('email'), phone: data.get('phone'), message: data.get('message'), consent: data.get('consent') === 'on' };
+    let validation: typeof import('@/lib/contact-validation');
+    try { validation = await import('@/lib/contact-validation'); }
+    catch { setError('Не удалось загрузить проверку формы. Обновите страницу и попробуйте ещё раз.'); return; }
+    if (lock.current) return;
+    const { validateContactLead, validateTechnicalLeadDetails } = validation;
     const parsed = validateContactLead(raw);
     const nextErrors: Partial<Record<ContactLeadField, string>> = {};
     if (!parsed.success) {
@@ -41,7 +58,7 @@ export function LeadForm({ variant = 'simple', header, className = '' }: { varia
     finally { lock.current = false; }
   }
   const field = (name: ContactLeadField, title: string, type = 'text', placeholder = title, maxLength = 120) => <label className={`next-lead-field technical-form__${name}`} style={variant === 'technical' ? { gridArea: name } : undefined}>
-    <span>{title}</span>{name === 'message' ? <textarea name={name} rows={4} maxLength={2000} placeholder={placeholder} required aria-invalid={Boolean(errors[name])} aria-describedby={errors[name] ? `${id}-${name}` : undefined} onBlur={event => blur(name,event.target.value)} /> : <input name={name} type={type} maxLength={maxLength} placeholder={placeholder} required autoComplete={name === 'phone' ? 'tel' : name === 'email' ? 'email' : 'name'} inputMode={type === 'tel' ? 'tel' : undefined} aria-invalid={Boolean(errors[name])} aria-describedby={errors[name] ? `${id}-${name}` : undefined} onBlur={event => { if (name === 'phone') { const phone = normalizeRuPhone(event.target.value); if (phone) event.target.value = formatRuPhoneDisplay(phone); } blur(name,event.target.value); }} />}
+    <span>{title}</span>{name === 'message' ? <textarea name={name} rows={4} maxLength={2000} placeholder={placeholder} required aria-invalid={Boolean(errors[name])} aria-describedby={errors[name] ? `${id}-${name}` : undefined} onBlur={event => blur(name,event.target.value)} /> : <input name={name} type={type} maxLength={maxLength} placeholder={placeholder} required autoComplete={name === 'phone' ? 'tel' : name === 'email' ? 'email' : 'name'} inputMode={type === 'tel' ? 'tel' : undefined} aria-invalid={Boolean(errors[name])} aria-describedby={errors[name] ? `${id}-${name}` : undefined} onBlur={event => blur(name,event.target.value)} />}
     {errors[name] && <small id={`${id}-${name}`}>{errors[name]}</small>}</label>;
   return <div className={`next-lead-surface next-lead-surface--${variant} ${className}`}>
     <form ref={form} className="next-lead-form" noValidate onSubmit={submit} aria-hidden={state !== 'form'} inert={state !== 'form'}>

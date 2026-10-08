@@ -8,6 +8,7 @@ export function HomeRequest() {
       className="ref-request"
       aria-labelledby="request-title"
     >
+      <img className="ref-request__background" src="/media/hero-excavator-schematic.webp" alt="" loading="lazy" fetchPriority="low" decoding="async" />
       <div className="ref-container ref-request__grid">
         <div className="ref-request__copy">
           <p className="ref-label">Запросить подбор</p>
