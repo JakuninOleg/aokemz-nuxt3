@@ -12,6 +12,10 @@
 
 Отдельный Timeweb App 266961 «КЭМЗ Next staging»: 2 ГБ RAM, 810 ₽/месяц, Node 22, сборка и запуск Next 16.3.8 на Linux успешны. Добавлен только тестовый DNS `staging.aokemz.ru` → 92.51.23.7; production/www/mail/vpn записи не менялись. SITE_INDEXABLE=false. Проверка внешнего HTTPS и PageSpeed ещё выполняется.
 
+Внешняя проверка 17:10–17:13: Node/curl получают TLS alert internal error, PageSpeed Insights сообщает, что не смог открыть staging URL. Установленный в панели сертификат пока не подтверждён успешным HTTPS-запросом. Создан тикет Timeweb 12799369 по SSL/маршрутизации и безопасному X-Forwarded-For. На dashboard также указана блокировка исходящих SMTP 465/587; открытие 465 запрошено на подтверждение пользователя. Реальная доставка писем и PageSpeed 90+ **не подтверждены**. PUBLIC_SITE_URL в панели изменён на https://staging.aokemz.ru.
+
+Удалён ошибочно унаследованный Yandex verification код старого Vercel-домена. Используется f18b57bd3f58d96e — код aokemz.ru, подтверждённый текущими TXT-записями Timeweb.
+
 После очистки неиспользуемых констант и пяти статических изображений повторный production build и crawl всех 75 маршрутов — PASS. Удалённые изображения сохранены локально в `.migration-private/unused-static-assets` и доступны в Git-истории. ESLint переведён на flat config; Next lint/typecheck и unit-тесты форм, медиа, Lexical — PASS. Проверка PostgreSQL была read-only: 46 товаров, 9 категорий, 11 новостей, 82 медиа; migration history содержит dev/batch -1, поэтому initial migration не запускалась.
 
 ## Перенесено
