@@ -17,6 +17,14 @@ const config = withPayload({
   },
   async redirects() {
     return [
+      ...(process.env.SITE_INDEXABLE === 'true' && process.env.PUBLIC_SITE_URL === 'https://aokemz.ru' ? [
+        {
+          source: '/:path*',
+          has: [{ type: 'host', value: 'www\\.aokemz\\.ru' }],
+          destination: 'https://aokemz.ru/:path*',
+          permanent: true,
+        },
+      ] : []),
       { source: '/payload-admin/:path*', destination: '/admin/:path*', permanent: true },
       { source: '/cms-login', destination: '/admin/login', permanent: true },
       ...['categories', 'products', 'news', 'documents', 'media', 'users'].map(collection => ({

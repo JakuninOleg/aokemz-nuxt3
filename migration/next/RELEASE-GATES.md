@@ -165,7 +165,9 @@ localhost clone. Удалённый baseline, переключение productio
 Приложение 252079 сохраняет прежнюю network policy и SMTP-доступ.
 При согласованном переключении: Next.js, Node.js 22+, рабочая директория
 `migration/next`, build `npm ci && npm run build`, start
-`HOSTNAME=0.0.0.0 npm start`, health path `/`. Не включать schema push или
+`npm start`, переменная окружения `HOSTNAME=0.0.0.0`, health path `/`.
+Timeweb не поддерживает inline assignment в поле запуска: он интерпретирует
+`HOSTNAME=0.0.0.0` как имя Node-файла. Не включать schema push или
 автоматический initial при запуске. Не менять mail/vpn DNS.
 
 Проверенный staging имеет 2 ГБ RAM; текущий Nuxt production — 1 ГБ.
