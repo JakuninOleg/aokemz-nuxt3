@@ -12,6 +12,7 @@ import { MAX_DOCUMENT_BYTES } from './lib/media-policy';
 import { Leads } from './collections/Leads';
 import { analyticsEndpoint } from './lib/metrika';
 import { adminSearchEndpoint } from './lib/admin-search';
+import { databasePool } from './lib/database-pool';
 
 const directory = path.dirname(fileURLToPath(import.meta.url));
 const secret = process.env.PAYLOAD_SECRET;
@@ -33,7 +34,7 @@ export default buildConfig({
   endpoints: [analyticsEndpoint, adminSearchEndpoint],
   editor: lexicalEditor({ features: ({ defaultFeatures }) => [...defaultFeatures, FixedToolbarFeature(), EXPERIMENTAL_TableFeature()] }),
   secret,
-  db: postgresAdapter({ pool: { connectionString: process.env.DATABASE_URL || '' } }),
+  db: postgresAdapter({ pool: databasePool() }),
   typescript: { outputFile: path.resolve(directory, 'payload-types.ts') },
   sharp,
   upload: {

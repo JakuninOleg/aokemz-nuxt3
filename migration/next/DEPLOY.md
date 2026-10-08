@@ -34,6 +34,7 @@ Select-String -Path src\migrations\*_initial.ts -Pattern '"prefix"|"_objectkey"'
 | Имя | Назначение |
 | --- | --- |
 | `DATABASE_URL` | PostgreSQL connection string миграционного/staging приложения |
+| `DATABASE_CA_CERT` | PEM сертификат CA Timeweb. На Linux не использовать локальный Windows-путь `sslrootcert`; сертификат задаётся в env, проверка TLS и hostname остаётся включённой |
 | `PAYLOAD_SECRET` | Секрет Payload |
 | `PUBLIC_SITE_URL` | Публичный origin preview/staging (не production Nuxt) |
 | `SITE_INDEXABLE` | `true` только вместе с `PUBLIC_SITE_URL=https://aokemz.ru`; иначе robots/noindex |
