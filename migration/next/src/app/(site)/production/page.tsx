@@ -22,3 +22,4 @@ export default function ProductionRoute() {
     </>
   );
 }
+import '@/styles/legacy/production.scss';

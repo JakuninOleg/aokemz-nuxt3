@@ -22,3 +22,4 @@ export default function LegalRoute() {
     </>
   );
 }
+import '@/styles/legacy/legal.scss';

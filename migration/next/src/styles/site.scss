@@ -1,24 +1,15 @@
 @use './legacy/header';
 @use './legacy/home';
-@use './legacy/products';
-@use './legacy/category';
-@use './legacy/product';
-@use './legacy/news';
 @use './legacy/internal-hero';
-@use './legacy/contacts';
-@use './legacy/about';
-@use './legacy/production';
-@use './legacy/documents';
-@use './legacy/legal';
 @use './legacy/lead-state';
 @use './legacy/form-consent';
 @use './forms';
 @use './legacy/cookie-banner';
 @use './legacy/not-found';
 @use './legacy/catalog-light';
-@font-face { font-family: ProximaNova; src: url('/fonts/ProximaNova-Regular.woff') format('woff'); font-weight: 400; font-display: swap; }
-@font-face { font-family: ProximaNova; src: url('/fonts/ProximaNova-Semibold.woff') format('woff'); font-weight: 600; font-display: swap; }
-@font-face { font-family: ProximaNova; src: url('/fonts/ProximaNova-Bold.woff') format('woff'); font-weight: 700; font-display: swap; }
+@font-face { font-family: ProximaNova; src: url('/fonts/ProximaNova-Regular-Web.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+@font-face { font-family: ProximaNova; src: url('/fonts/ProximaNova-Semibold-Web.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+@font-face { font-family: ProximaNova; src: url('/fonts/ProximaNova-Bold-Web.woff2') format('woff2'); font-weight: 700; font-display: swap; }
 * { box-sizing: border-box; }
 body { margin: 0; color: var(--home-ink); font-family: var(--home-body); }
 a { color: inherit; text-decoration: none; }

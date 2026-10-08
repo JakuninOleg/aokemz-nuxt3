@@ -17,7 +17,7 @@ export default async function Page() {
       <link
         rel="preload"
         as="font"
-        href="/fonts/RobotoCondensed-Variable.subset.woff2"
+        href="/fonts/RobotoCondensed-Web.woff2"
         type="font/woff2"
         crossOrigin="anonymous"
       />
@@ -30,14 +30,11 @@ export default async function Page() {
       <link
         rel="preload"
         as="image"
-        href="/media/generated/hero-quarry-dragline-wide-v11-480.webp"
-        media="(max-width: 480px)"
-      />
-      <link
-        rel="preload"
-        as="image"
-        href="/media/generated/hero-quarry-dragline-wide-v11-640.webp"
-        media="(min-width: 481px) and (max-width: 600px)"
+        href="/media/generated/hero-quarry-mobile-v1-1024.avif"
+        type="image/avif"
+        imageSrcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
+        imageSizes="100vw"
+        media="(max-width: 600px)"
       />
       <HomePage />
     </>

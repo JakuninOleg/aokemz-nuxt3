@@ -22,3 +22,4 @@ export default function AboutRoute() {
     </>
   );
 }
+import '@/styles/legacy/about.scss';

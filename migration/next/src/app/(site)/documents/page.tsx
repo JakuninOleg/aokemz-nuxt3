@@ -27,3 +27,4 @@ export default async function DocumentsRoute() {
     </>
   );
 }
+import '@/styles/legacy/documents.scss';

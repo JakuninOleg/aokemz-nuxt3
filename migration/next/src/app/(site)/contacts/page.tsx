@@ -19,3 +19,4 @@ export default function ContactsPage() {
     <JsonLd value={{ '@context':'https://schema.org','@type':'ContactPage',name:'Контакты ОАО «КЭМЗ»',url:'https://aokemz.ru/contacts' }} />
   </div>;
 }
+import '@/styles/legacy/contacts.scss';

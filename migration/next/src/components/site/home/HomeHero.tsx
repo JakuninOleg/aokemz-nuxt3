@@ -8,12 +8,15 @@ export function HomeHero() {
       <section className="ref-hero" aria-labelledby="home-title">
         <picture>
           <source
-            media="(max-width: 480px)"
-            srcSet="/media/generated/hero-quarry-dragline-wide-v11-480.webp"
+            media="(max-width: 600px)"
+            type="image/avif"
+            srcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
+            sizes="100vw"
           />
           <source
             media="(max-width: 600px)"
-            srcSet="/media/generated/hero-quarry-dragline-wide-v11-640.webp"
+            srcSet="/media/generated/hero-quarry-mobile-v1-640.webp 640w, /media/generated/hero-quarry-mobile-v1-1024.webp 1024w"
+            sizes="100vw"
           />
           <img
             className="ref-hero__image"
@@ -21,9 +24,9 @@ export function HomeHero() {
             sizes="100vw"
             width={1600}
             height={533}
-            alt="Карьерный экскаватор ЭКГ в центре открытой выработки"
+            alt="Карьерный экскаватор в открытой выработке"
             fetchPriority="high"
-            decoding="sync"
+            decoding="async"
           />
         </picture>
         <div className="ref-container ref-hero__content">
