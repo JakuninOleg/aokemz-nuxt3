@@ -34,7 +34,7 @@ export default async function Page() {
         href="/media/generated/hero-quarry-mobile-v1-1024.avif"
         fetchPriority="high"
         type="image/avif"
-        imageSrcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
+        imageSrcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-832.avif 832w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
         imageSizes="100vw"
         media="(max-width: 600px)"
       />

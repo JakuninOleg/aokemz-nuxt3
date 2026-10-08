@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { ABOUT_PEOPLE } from '@/lib/static-content/about';
 import { Multiline } from '../multiline';
 

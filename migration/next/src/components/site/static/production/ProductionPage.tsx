@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import {
   PRODUCTION_CAPABILITIES,
   PRODUCTION_CTA,

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import type { CatalogFilterItem } from '@/lib/catalog-content';
 
 export function CatalogProductCard({ item }: { item: CatalogFilterItem }) {

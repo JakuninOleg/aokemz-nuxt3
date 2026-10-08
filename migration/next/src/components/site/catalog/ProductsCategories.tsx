@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { categories, publicMedia } from '@/lib/public-content';
 import { MediaImage } from '@/components/site/Content';
 

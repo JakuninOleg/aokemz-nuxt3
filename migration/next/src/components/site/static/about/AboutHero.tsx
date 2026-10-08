@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { ABOUT_HERO } from '@/lib/static-content/about';
 import { ActionButton } from '../ActionButton';
 import { Multiline } from '../multiline';

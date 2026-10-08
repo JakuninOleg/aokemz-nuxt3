@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { DOCUMENTS_HERO } from '@/lib/static-content/documents';
 
 export function DocumentsHero() {

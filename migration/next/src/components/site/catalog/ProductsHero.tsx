@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { HomeEngineeringIcon } from '@/components/site/home/HomeEngineeringIcon';
 import { PRODUCTS_HERO } from '@/lib/catalog-content';
 

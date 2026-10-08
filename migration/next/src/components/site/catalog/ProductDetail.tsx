@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { HomeActionButton } from '@/components/site/home/HomeActionButton';
 import { HomeEngineeringIcon } from '@/components/site/home/HomeEngineeringIcon';
 import { Breadcrumbs, JsonLd, MediaImage, RichContent } from '@/components/site/Content';

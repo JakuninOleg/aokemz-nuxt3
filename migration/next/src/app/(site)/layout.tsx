@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { Header } from '@/components/site/Header';
 import { navigation } from '@/lib/navigation';
 import { siteIndexable, SITE_URL } from '@/lib/site-config';

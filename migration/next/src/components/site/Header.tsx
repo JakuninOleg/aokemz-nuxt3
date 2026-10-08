@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { usePathname } from 'next/navigation';
 import { navigation } from '@/lib/navigation';
 import '@/styles/mobile-menu.scss';

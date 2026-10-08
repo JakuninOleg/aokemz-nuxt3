@@ -10,12 +10,12 @@ export function HomeHero() {
           <source
             media="(max-width: 600px)"
             type="image/avif"
-            srcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
+            srcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-832.avif 832w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
             sizes="100vw"
           />
           <source
             media="(max-width: 600px)"
-            srcSet="/media/generated/hero-quarry-mobile-v1-640.webp 640w, /media/generated/hero-quarry-mobile-v1-1024.webp 1024w"
+            srcSet="/media/generated/hero-quarry-mobile-v1-640.webp 640w, /media/generated/hero-quarry-mobile-v1-832.webp 832w, /media/generated/hero-quarry-mobile-v1-1024.webp 1024w"
             sizes="100vw"
           />
           <img

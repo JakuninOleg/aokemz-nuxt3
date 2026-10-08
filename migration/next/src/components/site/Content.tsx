@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import Image from 'next/image';
 import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react';
 import type { Product } from '@/payload-types';

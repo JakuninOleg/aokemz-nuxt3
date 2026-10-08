@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import Image from 'next/image';
 import { NEWS_HERO } from '@/lib/news-content';
 

@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import type { ContactLeadField } from '@/lib/contact-validation';
 
 export function LeadForm({ variant = 'simple', header, className = '' }: { variant?: 'simple' | 'technical'; header?: string; className?: string }) {

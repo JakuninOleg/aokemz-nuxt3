@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { JsonLd, MediaImage, RichContent } from '@/components/site/Content';
 import type { PublicMedia } from '@/lib/public-content';
 import { newsPath } from '@/lib/public-content';

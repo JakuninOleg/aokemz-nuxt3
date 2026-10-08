@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { ABOUT_CYCLE, ABOUT_CYCLE_MEDIA } from '@/lib/static-content/about';
 
 export function AboutCycle() {

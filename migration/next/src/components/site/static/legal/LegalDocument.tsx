@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { useEffect, useState } from 'react';
 import {
   LEGAL_DOWNLOAD,

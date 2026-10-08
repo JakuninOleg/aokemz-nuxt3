@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/site/PublicLink';
 import { categories } from '@/lib/public-content';
 import { HOME_SHOWCASE_TILES, matchShowcaseHref } from '@/lib/home-content';
 
