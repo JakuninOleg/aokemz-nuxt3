@@ -6,6 +6,8 @@ import { Multiline } from '../multiline';
 export function AboutHero() {
   return (
     <section className="abt-hero" aria-labelledby="about-title">
+      <picture>
+      <source type="image/avif" srcSet="/media/about/about-hero-archive-delivery-v2.avif" />
       <img
         className="abt-hero__image"
         src={ABOUT_HERO.image}
@@ -15,6 +17,7 @@ export function AboutHero() {
         fetchPriority="high"
         decoding="async"
       />
+      </picture>
       <div className="ref-container abt-hero__content">
         <nav className="abt-hero__crumbs" aria-label="Хлебные крошки">
           <Link href="/">Главная</Link>

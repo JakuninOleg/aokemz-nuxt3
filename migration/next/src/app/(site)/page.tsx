@@ -16,15 +16,9 @@ export default async function Page() {
     <>
       <link
         rel="preload"
-        as="font"
-        href="/fonts/RobotoCondensed-Web.woff2"
-        type="font/woff2"
-        crossOrigin="anonymous"
-      />
-      <link
-        rel="preload"
         as="image"
-        href="/media/generated/hero-quarry-dragline-wide-v11.webp"
+        href="/media/generated/hero-quarry-dragline-wide-v12.avif"
+        type="image/avif"
         fetchPriority="high"
         media="(min-width: 601px)"
       />

@@ -21,6 +21,8 @@ export async function NewsArticleView({ record, media, seoDescription }: Props) 
       : record.title
     : NEWS_ARTICLE_FIGURE.imageAlt;
   const dateLabel = record.publishedAt ? formatNewsDate(record.publishedAt) : '';
+  const figureWidth = media?.width || 1280;
+  const figureHeight = media?.height || 720;
 
   return (
     <div className="kemz-home kemz-news">
@@ -45,7 +47,11 @@ export async function NewsArticleView({ record, media, seoDescription }: Props) 
               {dateLabel}
             </time>
           ) : null}
-          <figure className="news-article__figure">
+          <figure className="news-article__figure" style={{
+            // Match the existing natural-size / 30vh cap before image decoding.
+            width: `min(100%, ${figureWidth}px, ${30 * figureWidth / figureHeight}vh)`,
+            aspectRatio: `${figureWidth} / ${figureHeight}`,
+          }}>
             {media ? (
               <MediaImage media={media} alt={figureAlt} priority sizes="(max-width: 720px) 100vw, 960px" />
             ) : (

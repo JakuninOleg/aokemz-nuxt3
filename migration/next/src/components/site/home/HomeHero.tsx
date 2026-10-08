@@ -18,6 +18,7 @@ export function HomeHero() {
             srcSet="/media/generated/hero-quarry-mobile-v1-640.webp 640w, /media/generated/hero-quarry-mobile-v1-832.webp 832w, /media/generated/hero-quarry-mobile-v1-1024.webp 1024w"
             sizes="100vw"
           />
+          <source media="(min-width: 601px)" type="image/avif" srcSet="/media/generated/hero-quarry-dragline-wide-v12.avif" />
           <img
             className="ref-hero__image"
             src="/media/generated/hero-quarry-dragline-wide-v11.webp"

@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 export default function AboutRoute() {
   return (
     <>
-      <link rel="preload" as="image" href={ABOUT_HERO.image} type="image/webp" />
+      <link rel="preload" as="image" href="/media/about/about-hero-archive-delivery-v2.avif" type="image/avif" fetchPriority="high" />
       <JsonLd
         value={breadcrumbJsonLd([
           { name: 'Главная', path: '/' },
