@@ -14,6 +14,7 @@ import { CategoryPageView } from '@/components/site/catalog/CategoryPageView';
 import { CategorySpecPanel } from '@/components/site/catalog/CategorySpecifications';
 import { CategoryDocuments } from '@/components/site/catalog/CategoryDocuments';
 import { CategoryCta } from '@/components/site/catalog/CategoryCta';
+import { CategoryOverview } from '@/components/site/catalog/CategoryOverview';
 import { categorySearchCopy } from '@/lib/catalog-seo';
 import { pageMetadata } from '@/lib/static-content/page-seo';
 
@@ -40,6 +41,7 @@ export default async function CategoryPage({ params }: Props) {
   if (!record) notFound();
 
   const products = await productsForCategory(record.id);
+  const publishedCategories = (await categoryRoutes()).map(category => category.slug);
   const lead = categoryHeroLead(record.slug, record.description);
   const hero = await categoryHeroMedia(record.slug, record.image, record.title);
   const equipment = await categoryEquipmentItems(record.slug, products);
@@ -64,6 +66,7 @@ export default async function CategoryPage({ params }: Props) {
         ))}
       />
       <CategoryDocuments files={files} />
+      <CategoryOverview slug={record.slug} products={products} publishedCategories={publishedCategories} />
       <CategoryCta />
       <JsonLd
         value={{

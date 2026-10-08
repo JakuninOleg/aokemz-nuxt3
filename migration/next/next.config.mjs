@@ -2,7 +2,7 @@ import { withPayload } from '@payloadcms/next/withPayload';
 import { fileURLToPath } from 'node:url';
 const storageEndpoint = new URL(process.env.S3_ENDPOINT || 'https://s3.twcstorage.ru');
 
-export default withPayload({
+const config = withPayload({
   output: 'standalone',
   turbopack: { root: fileURLToPath(new URL('.', import.meta.url)) },
   poweredByHeader: false,
@@ -43,3 +43,17 @@ export default withPayload({
       { source: '/fonts/:path*', headers: [{ key: 'Cache-Control', value: 'public, max-age=86400, stale-while-revalidate=604800' }] }];
   },
 });
+
+// Payload appends theme negotiation to every route. Both the public site and
+// admin use a fixed light theme, so Critical-CH only forces Chromium to replay
+// the first navigation. Keep all unrelated security, robots and cache headers.
+const payloadHeaders = config.headers;
+config.headers = async () => (await payloadHeaders()).map(rule => ({
+  ...rule,
+  headers: rule.headers.filter(header => !(
+    ['accept-ch', 'critical-ch', 'vary'].includes(header.key.toLowerCase())
+    && header.value.toLowerCase() === 'sec-ch-prefers-color-scheme'
+  )),
+})).filter(rule => rule.headers.length > 0);
+
+export default config;

@@ -3,7 +3,7 @@
   .product-top__crumbs { font-size: 16px; line-height: 1.4; margin-bottom: 28px; }
   .product-top__grid { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; }
   .product-top__media { position: relative; isolation: isolate; min-height: 420px; padding: 24px; background: transparent; }
-  .product-top__media::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('/media/about/about-blueprint-background.webp') center / cover; opacity: .09; }
+  .product-top__media::before { content: ''; position: absolute; inset: 0; z-index: -1; background: url('/media/about/about-blueprint-product-v2.webp') center / cover; opacity: .09; }
   .product-top__media img { width: 100%; height: 420px; max-height: none; object-fit: contain; }
   .product-top h1 { font-size: clamp(34px, 3.6vw, 58px); font-weight: 750; line-height: 1.04; overflow-wrap: anywhere; }
   .product-section h2, .product-specifications h2, .product-related h2 { font-weight: 700; }
@@ -28,7 +28,7 @@
   .product-aside-figure img { height: 100%; width: 100%; object-fit: cover; opacity: .5; }
   .product-aside-figure::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #041b34d9, transparent); z-index: 0; }
   .product-aside-figure figcaption { position: absolute; inset: 0; display: flex; align-items: center; padding: 28px; max-width: 210px; font-size: 23px; line-height: 1.25; font-weight: 400; letter-spacing: 0; z-index: 1; }
-  .product-specifications { padding: 28px 32px 32px; border: 1px solid var(--home-line); border-radius: var(--home-radius); background: linear-gradient(105deg, #edf5fcf5, #edf5fce8), url('/media/about/about-blueprint-background.webp') right center / cover; scroll-margin-top: 110px; margin-bottom: 28px; }
+  .product-specifications { padding: 28px 32px 32px; border: 1px solid var(--home-line); border-radius: var(--home-radius); background: linear-gradient(105deg, #edf5fcf5, #edf5fce8), url('/media/about/about-blueprint-product-v2.webp') right center / cover; scroll-margin-top: 110px; margin-bottom: 28px; }
   .product-specifications h2, .product-related h2 { margin: 0; font-family: var(--home-heading); font-size: clamp(27px, 2.6vw, 36px); line-height: 1.15; color: var(--home-navy); }
   .product-specifications h2 { display: flex; align-items: center; gap: 18px; margin-bottom: 24px; }
   .product-specifications h2 svg { width: 32px; height: 32px; color: var(--home-blue); flex-shrink: 0; }

@@ -1,9 +1,12 @@
 import Link from '@/components/site/PublicLink';
-import { categories, publicMedia } from '@/lib/public-content';
+import { categories, categoryRoutes, publicMedia } from '@/lib/public-content';
+import { CATEGORY_EDITORIAL } from '@/lib/category-editorial';
 import { MediaImage } from '@/components/site/Content';
 
 export async function ProductsCategories() {
   const records = await categories();
+  const additionalRoutes = (await categoryRoutes()).filter(category =>
+    !records.some(record => record.slug === category.slug) && CATEGORY_EDITORIAL[category.slug]);
   return (
     <section className="products-cats" aria-labelledby="products-cats-title">
       <div className="ref-container">
@@ -41,6 +44,15 @@ export async function ProductsCategories() {
               }),
             )}
           </div>
+        )}
+        {additionalRoutes.length > 0 && (
+          <nav className="products-status" aria-label="Серийные характеристики оборудования">
+            {additionalRoutes.map(category => (
+              <Link key={category.slug} href={`/products/${category.slug}`}>
+                {CATEGORY_EDITORIAL[category.slug].label}
+              </Link>
+            ))}
+          </nav>
         )}
       </div>
     </section>

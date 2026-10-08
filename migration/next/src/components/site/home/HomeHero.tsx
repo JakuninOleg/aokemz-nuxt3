@@ -10,7 +10,7 @@ export function HomeHero() {
           <source
             media="(max-width: 600px)"
             type="image/avif"
-            srcSet="/media/generated/hero-quarry-mobile-v1-640.avif 640w, /media/generated/hero-quarry-mobile-v1-832.avif 832w, /media/generated/hero-quarry-mobile-v1-1024.avif 1024w"
+            srcSet="/media/generated/hero-quarry-mobile-v2-640.avif 640w, /media/generated/hero-quarry-mobile-v2-832.avif 832w, /media/generated/hero-quarry-mobile-v2-1024.avif 1024w"
             sizes="100vw"
           />
           <source
