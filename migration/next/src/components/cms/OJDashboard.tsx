@@ -4,6 +4,8 @@ import Link from 'next/link';
 import OJAnalytics from './OJAnalytics';
 import OJIcon from './OJIcon';
 import OJCalendar from './OJCalendar';
+import { readableDashboardCollections } from '../../lib/dashboard-access';
+import { administrators } from '../../access';
 
 const COLLECTIONS = [
   { slug: 'products', label: 'Продукция', create: 'Добавить продукцию' },
@@ -28,7 +30,8 @@ const filterQuery = (where: Where) => {
 export default async function OJDashboard({ initPageResult }: AdminViewServerProps) {
   const { req, visibleEntities, permissions } = initPageResult;
   if (!req.user) return null;
-  const visible = new Set(visibleEntities?.collections ?? []);
+  const visible = readableDashboardCollections(visibleEntities?.collections ?? [], permissions);
+  const canViewAnalytics = administrators({ req });
   const url = (slug: CollectionSlug, suffix = '') => formatAdminURL({ adminRoute: req.payload.config.routes.admin, path: `/collections/${slug}${suffix}` });
   const checks: { collection: CollectionSlug; label: string; where: Where; icon: string }[] = [
     { collection: 'products', label: 'Продукция без изображения', where: { image: { exists: false } }, icon: 'products' },
@@ -68,12 +71,12 @@ export default async function OJDashboard({ initPageResult }: AdminViewServerPro
       <OJCalendar initialNow={now} />
       <Link href="/production" target="_blank" rel="noopener noreferrer" className="oj-overview__banner"><img src="/media/cms/kemz-workshop.webp" alt="Иллюстрация сборочного цеха электрических машин" width="1536" height="1024" /><span>Электрические машины<br />для горнодобывающей техники</span><i><OJIcon name="arrow" /></i></Link>
     </header>
-    <section className={`oj-overview__stats${leads ? '' : ' oj-overview__stats--editor'}`} aria-label="Показатели сайта">
+    <section className={`oj-overview__stats${canViewAnalytics ? '' : ' oj-overview__stats--editor'}`} aria-label="Показатели сайта">
       {cards.map(card => <article className="oj-overview__stat" key={card.slug}>
         <Link href={url(card.slug)}><span className="oj-icon-tile"><OJIcon name={card.slug} size={24} /></span><span>{card.label}</span><span className="oj-overview__chevron" aria-hidden="true">›</span></Link>
         <strong>{card.count}</strong><p><span className="oj-dot" />{card.published} опубликовано<br /><span className="oj-overview__drafts">{card.count - card.published} в черновиках</span></p>
       </article>)}
-      {leads && <OJAnalytics compact />}
+      {canViewAnalytics && <OJAnalytics compact />}
     </section>
     <div className="oj-overview__columns">
       <div className="oj-overview__main">
@@ -85,7 +88,7 @@ export default async function OJDashboard({ initPageResult }: AdminViewServerPro
             <td><time dateTime={item.updatedAt}>{date(item.updatedAt)}<small>{clock(item.updatedAt)}</small></time></td>
           </tr>)}</tbody></table></div> : <p className="oj-overview__empty">Здесь появятся обновлённые записи.</p>}
         </section>
-        {leads && <OJAnalytics />}
+        {canViewAnalytics && <OJAnalytics />}
       </div>
       <aside className="oj-overview__aside">
         <section className="oj-panel oj-overview__attention" aria-labelledby="oj-attention-title"><header><h2 id="oj-attention-title">Требует внимания {issueCount > 0 && <span className="oj-attention-count">{issueCount}</span>}</h2></header>

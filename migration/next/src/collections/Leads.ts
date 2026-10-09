@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload';
-import { administrators } from '../access';
+import { administrators, editors } from '../access';
 
 const immutable = { create: () => false, update: () => false };
 export const Leads: CollectionConfig = {
@@ -7,9 +7,9 @@ export const Leads: CollectionConfig = {
   labels: { singular: 'Заявка', plural: 'Заявки' },
   admin: {
     group: 'Обращения', useAsTitle: 'name', defaultColumns: ['name', 'status', 'email', 'mailStatus', 'createdAt'],
-    description: 'Обращения со всех форм сайта. Заявка сохраняется до отправки почтового уведомления. Контакты доступны только администраторам.',
+    description: 'Обращения со всех форм сайта. Заявка сохраняется до отправки почтового уведомления. Редактор может просматривать заявки; обработка и удаление доступны администратору.',
   },
-  access: { read: administrators, create: () => false, update: administrators, delete: administrators, admin: administrators },
+  access: { read: editors, create: () => false, update: administrators, delete: administrators, admin: editors },
   fields: [
     { name: 'status', label: 'Статус обработки', type: 'select', required: true, defaultValue: 'new', index: true,
       options: [{ label: 'Новая', value: 'new' }, { label: 'В работе', value: 'in_progress' }, { label: 'Закрыта', value: 'closed' }, { label: 'Спам', value: 'spam' }] },
