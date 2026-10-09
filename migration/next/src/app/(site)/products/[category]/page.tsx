@@ -8,7 +8,7 @@ import {
   categorySpecOptions,
   hasSpecifications,
 } from '@/lib/catalog-content';
-import { RichContent, JsonLd } from '@/components/site/Content';
+import { SpecificationsContent, JsonLd } from '@/components/site/Content';
 import { CategoryHero } from '@/components/site/catalog/CategoryHero';
 import { CategoryPageView } from '@/components/site/catalog/CategoryPageView';
 import { CategorySpecPanel } from '@/components/site/catalog/CategorySpecifications';
@@ -61,7 +61,7 @@ export default async function CategoryPage({ params }: Props) {
         specOptions={specOptions}
         specPanels={withSpecs.map((product) => (
           <CategorySpecPanel key={product.id} id={String(product.id)}>
-            <RichContent data={product.specifications} />
+            <SpecificationsContent data={product.specifications} />
           </CategorySpecPanel>
         ))}
       />

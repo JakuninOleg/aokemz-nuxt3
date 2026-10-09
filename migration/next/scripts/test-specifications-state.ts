@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import { specificationsNeedEnquiry } from '../src/lib/specifications-state';
+const doc = (...children: object[]) => ({ root: { children } });
+const text = (value: string) => ({ type: 'text', text: value });
+assert.equal(specificationsNeedEnquiry(null), true);
+assert.equal(specificationsNeedEnquiry(doc({ type: 'table', children: [{ type: 'tablerow', children: [{ type: 'tablecell', children: [{ type: 'paragraph', children: [text('  ')] }] }] }] })), true);
+assert.equal(specificationsNeedEnquiry(doc({ type: 'paragraph', children: [text('уточняйте в отделе продаж.')] })), true);
+assert.equal(specificationsNeedEnquiry(doc(text('Уточняйте в отделе продаж'))), true);
+assert.equal(specificationsNeedEnquiry(doc(text('Мощность'), text('100 кВт'))), false);
+assert.equal(specificationsNeedEnquiry(doc({ type: 'upload', value: 1 })), false);
+assert.equal(specificationsNeedEnquiry(doc(text('Уточняйте в отделе продаж'), text('Напряжение 380 В'))), false);
+console.log('PASS: empty tables and legacy placeholders use enquiry state; actual data and media retained');

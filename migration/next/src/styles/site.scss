@@ -45,4 +45,15 @@ ul, ol { margin: 0; padding: 0; }
 @media (max-width: 720px) { .kemz-contacts .contacts-hero__rail { display: none; } }
 @media (max-width: 720px) { .kemz-legal .legal-hero__rail { display: none; } }
 .product-rich img { height: auto; }
+.kemz-home .specifications-empty {
+  margin: 0;
+  padding: 24px;
+  color: var(--home-muted);
+  font-family: var(--home-body);
+  font-size: 17px;
+  line-height: 1.5;
+}
+.specifications-empty a { color: var(--home-blue); text-decoration: underline; text-underline-offset: 4px; }
+.product-specifications .specifications-empty { padding: 0; }
+@media (max-width: 720px) { .kemz-home .category-specifications .specifications-empty { padding: 20px; font-size: 16px; } }
 .news-article__body { line-height: 1.6; }

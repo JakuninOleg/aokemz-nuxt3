@@ -2,6 +2,7 @@ import Link from '@/components/site/PublicLink';
 import { RichText, type JSXConvertersFunction } from '@payloadcms/richtext-lexical/react';
 import type { Product } from '@/payload-types';
 import { publicRichText, type PublicMedia } from '@/lib/public-content';
+import { specificationsNeedEnquiry } from '@/lib/specifications-state';
 
 export function MediaImage({ media, alt, priority = false, sizes = '(max-width: 720px) 100vw, 50vw', className }: { media: PublicMedia | null; alt: string; priority?: boolean; sizes?: string; className?: string }) {
   if (!media) return <span className="media-empty">Изображение уточняется</span>;
@@ -23,6 +24,11 @@ const converters: JSXConvertersFunction = ({ defaultConverters }) => ({
 export async function RichContent({ data, className = 'product-rich' }: { data: Product['description']; className?: string }) {
   const publicData = await publicRichText(data);
   return publicData ? <RichText data={publicData} converters={converters} className={className} /> : null;
+}
+export function SpecificationsContent({ data }: { data: Product['specifications'] }) {
+  return specificationsNeedEnquiry(data)
+    ? <p className="specifications-empty"><Link href="/contacts">Уточняйте в отделе продаж</Link></p>
+    : <RichContent data={data} />;
 }
 export function Breadcrumbs({ items }: { items: [string, string?][] }) {
   return <nav className="products-hero__crumbs internal-hero__crumbs" aria-label="Хлебные крошки">{items.map(([label, href], index) => <span key={label}>{index > 0 && <span aria-hidden="true"> / </span>}{href ? <Link href={href}>{label}</Link> : <span aria-current="page">{label}</span>}</span>)}</nav>;

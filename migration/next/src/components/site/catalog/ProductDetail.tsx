@@ -1,7 +1,7 @@
 import Link from '@/components/site/PublicLink';
 import { HomeActionButton } from '@/components/site/home/HomeActionButton';
 import { HomeEngineeringIcon } from '@/components/site/home/HomeEngineeringIcon';
-import { Breadcrumbs, JsonLd, MediaImage, RichContent } from '@/components/site/Content';
+import { Breadcrumbs, JsonLd, MediaImage, RichContent, SpecificationsContent } from '@/components/site/Content';
 import type { PublicMedia } from '@/lib/public-content';
 import type { Product } from '@/payload-types';
 import { CATEGORY_CTA } from '@/lib/catalog-content';
@@ -121,7 +121,7 @@ export async function ProductDetail({ category, product, media, leadText, relate
             aria-label="Технические характеристики изделия"
             tabIndex={0}
           >
-            <RichContent data={product.specifications} />
+            <SpecificationsContent data={product.specifications} />
           </div>
         </section>
       ) : null}
