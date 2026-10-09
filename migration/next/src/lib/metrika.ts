@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { z } from 'zod';
 import type { Endpoint } from 'payload';
-import { administrators } from '../access';
+import { editors } from '../access';
 
 const summarySchema = z.object({ totals: z.array(z.number().finite().nonnegative()).min(3), sampled: z.boolean().optional() });
 const timelineSchema = z.object({ totals: z.array(z.array(z.number().finite().nonnegative())).min(1) });
@@ -48,7 +48,7 @@ export async function getMetrikaReport(days: 7 | 30 | 90 = 30): Promise<Analytic
 }
 
 export const analyticsEndpoint: Endpoint = { path: '/analytics', method: 'get', handler: async req => {
-  if (!administrators({ req })) return Response.json({ message: 'Доступ запрещён.' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
+  if (!editors({ req })) return Response.json({ message: 'Доступ запрещён.' }, { status: 403, headers: { 'Cache-Control': 'no-store' } });
   const days = Number(new URL(req.url || 'http://localhost').searchParams.get('days') || 30);
   if (days !== 7 && days !== 30 && days !== 90) return Response.json({ message: 'Допустимые периоды: 7, 30 и 90 дней.' }, { status: 400 });
   return Response.json(await getMetrikaReport(days), { headers: { 'Cache-Control': 'private, no-store' } });

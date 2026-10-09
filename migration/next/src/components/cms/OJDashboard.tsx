@@ -5,7 +5,7 @@ import OJAnalytics from './OJAnalytics';
 import OJIcon from './OJIcon';
 import OJCalendar from './OJCalendar';
 import { readableDashboardCollections } from '../../lib/dashboard-access';
-import { administrators } from '../../access';
+import { editors } from '../../access';
 
 const COLLECTIONS = [
   { slug: 'products', label: 'Продукция', create: 'Добавить продукцию' },
@@ -31,7 +31,7 @@ export default async function OJDashboard({ initPageResult }: AdminViewServerPro
   const { req, visibleEntities, permissions } = initPageResult;
   if (!req.user) return null;
   const visible = readableDashboardCollections(visibleEntities?.collections ?? [], permissions);
-  const canViewAnalytics = administrators({ req });
+  const canViewAnalytics = editors({ req });
   const url = (slug: CollectionSlug, suffix = '') => formatAdminURL({ adminRoute: req.payload.config.routes.admin, path: `/collections/${slug}${suffix}` });
   const checks: { collection: CollectionSlug; label: string; where: Where; icon: string }[] = [
     { collection: 'products', label: 'Продукция без изображения', where: { image: { exists: false } }, icon: 'products' },
