@@ -4,6 +4,8 @@ const storageEndpoint = new URL(process.env.S3_ENDPOINT || 'https://s3.twcstorag
 
 const config = withPayload({
   output: 'standalone',
+  // Bound build-time PostgreSQL pools independently of the builder's CPU count.
+  experimental: { cpus: 1, staticGenerationMaxConcurrency: 1 },
   turbopack: { root: fileURLToPath(new URL('.', import.meta.url)) },
   poweredByHeader: false,
   images: {

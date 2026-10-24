@@ -1,13 +1,18 @@
 import assert from 'node:assert/strict';
 import { databasePool } from '../src/lib/database-pool';
 const local = 'postgresql://user:password@localhost:5432/test';
-assert.deepEqual(databasePool({ DATABASE_URL: local }), { connectionString: local });
+assert.deepEqual(databasePool({ DATABASE_URL: local }), {
+  connectionString: local, max: 2, idleTimeoutMillis: 10000, connectionTimeoutMillis: 10000,
+});
 const ca = '-----BEGIN CERTIFICATE-----\\nTEST\\n-----END CERTIFICATE-----';
 const pool = databasePool({ DATABASE_URL: `${local}?sslrootcert=C%3A%2Fprivate%2Fca.crt&sslmode=verify-full&application_name=kemz`, DATABASE_CA_CERT: ca });
 assert.equal(pool.ssl?.rejectUnauthorized, true);
+assert.equal(pool.max, 2);
+assert.equal(pool.idleTimeoutMillis, 10000);
+assert.equal(pool.connectionTimeoutMillis, 10000);
 assert.equal(pool.ssl?.ca, ca.replace(/\\n/g, '\n'));
 assert.equal(new URL(pool.connectionString).searchParams.has('sslrootcert'), false);
 assert.equal(new URL(pool.connectionString).searchParams.get('application_name'), 'kemz');
 assert.throws(() => databasePool({ DATABASE_URL: 'invalid', DATABASE_CA_CERT: ca }), /PostgreSQL/);
 assert.throws(() => databasePool({ DATABASE_URL: local, DATABASE_CA_CERT: 'invalid' }), /PEM/);
-console.log('database pool: 7 checks PASS');
+console.log('database pool: 10 checks PASS');
