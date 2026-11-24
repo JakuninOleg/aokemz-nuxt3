@@ -1,7 +1,7 @@
 import type { PayloadRequest, ServerProps } from 'payload'
 import { getTranslation } from '@payloadcms/translations'
 import { Logout } from '@payloadcms/ui'
-import { EntityType, getNavGroups } from '@payloadcms/ui/shared'
+import { getNavGroups } from '@payloadcms/ui/shared'
 import { NavHamburger, NavWrapper } from '@payloadcms/next/client'
 import { formatAdminURL } from 'payload/shared'
 import Link from 'next/link'
@@ -13,21 +13,22 @@ export type OJNavProps = {
   req?: PayloadRequest
 } & ServerProps
 
-const COLLECTION_ORDER = [
+const NAV_ORDER = [
   'products',
   'categories',
   'documents',
   'news',
+  'contacts',
   'media',
   'leads',
   'users',
 ] as const
 
 function sortSlug(a: string, b: string): number {
-  const ai = COLLECTION_ORDER.indexOf(a as (typeof COLLECTION_ORDER)[number])
-  const bi = COLLECTION_ORDER.indexOf(b as (typeof COLLECTION_ORDER)[number])
-  const av = ai === -1 ? COLLECTION_ORDER.length : ai
-  const bv = bi === -1 ? COLLECTION_ORDER.length : bi
+  const ai = NAV_ORDER.indexOf(a as (typeof NAV_ORDER)[number])
+  const bi = NAV_ORDER.indexOf(b as (typeof NAV_ORDER)[number])
+  const av = ai === -1 ? NAV_ORDER.length : ai
+  const bv = bi === -1 ? NAV_ORDER.length : bi
   if (av !== bv) return av - bv
   return a.localeCompare(b)
 }
@@ -61,14 +62,13 @@ export default async function OJNav(props: OJNavProps) {
     i18n,
   )
 
-  const collectionLinks: OJNavLink[] = groups
+  const links: OJNavLink[] = groups
     .flatMap((group) => group.entities)
-    .filter((entity) => entity.type === EntityType.collection)
     .map((entity) => ({
       slug: entity.slug,
       href: formatAdminURL({
         adminRoute,
-        path: `/collections/${entity.slug}`,
+        path: `/${entity.type}/${entity.slug}`,
       }),
       id: `nav-${entity.slug}`,
       label: getTranslation(entity.label, i18n),
@@ -100,9 +100,9 @@ export default async function OJNav(props: OJNavProps) {
         </div>
 
         <nav className="oj-nav__navigation" aria-label="Основная навигация">
-          <OJNavClient links={collectionLinks} dashboardHref={dashboardHref} />
-          {collectionLinks.length === 0 ? (
-            <p className="oj-nav__empty">Нет доступных коллекций для вашей роли.</p>
+          <OJNavClient links={links} dashboardHref={dashboardHref} />
+          {links.length === 0 ? (
+            <p className="oj-nav__empty">Нет доступных разделов для вашей роли.</p>
           ) : null}
         </nav>
 

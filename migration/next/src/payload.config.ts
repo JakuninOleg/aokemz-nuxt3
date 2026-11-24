@@ -10,6 +10,7 @@ import { Users, Media, Categories, Products, News, Documents } from './collectio
 import { cmsEmailAdapter } from './lib/mail-transport';
 import { MAX_DOCUMENT_BYTES } from './lib/media-policy';
 import { Leads } from './collections/Leads';
+import { Contacts } from './globals/Contacts';
 import { analyticsEndpoint } from './lib/metrika';
 import { adminSearchEndpoint } from './lib/admin-search';
 import { databasePool } from './lib/database-pool';
@@ -33,6 +34,7 @@ export default buildConfig({
     graphics: { Logo: '/components/cms/OJBrand', Icon: '/components/cms/OJBrand' },
   } },
   collections: [Users, Media, Categories, Products, News, Documents, Leads],
+  globals: [Contacts],
   endpoints: [analyticsEndpoint, adminSearchEndpoint],
   editor: lexicalEditor({ features: ({ defaultFeatures }) => [...defaultFeatures, FixedToolbarFeature(), EXPERIMENTAL_TableFeature()] }),
   secret,

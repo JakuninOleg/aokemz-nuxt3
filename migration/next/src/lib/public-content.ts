@@ -7,6 +7,9 @@ import type { Category, Product, News, Media } from '@/payload-types';
 import { isUsableImageVariant } from './media-policy';
 
 const cms = cache(() => getPayload({ config }));
+export const contactDirectory = cache(async () => (await cms()).findGlobal({
+  slug: 'contacts', depth: 0, overrideAccess: false,
+}));
 const published = { _status: { equals: 'published' } };
 // Include existing public URLs even when a category is hidden from navigation.
 // This does not publish drafts or change the catalog's visibility rules.

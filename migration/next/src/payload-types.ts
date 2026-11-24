@@ -97,8 +97,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    contacts: Contact;
+  };
+  globalsSelect: {
+    contacts: ContactsSelect<false> | ContactsSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -856,6 +860,56 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contacts".
+ */
+export interface Contact {
+  id: number;
+  departments?:
+    | {
+        position: string;
+        person?: string | null;
+        phones?:
+          | {
+              number: string;
+              id?: string | null;
+            }[]
+          | null;
+        email?: string | null;
+        icon: 'reception' | 'sales' | 'supply' | 'otk' | 'quality' | 'hr';
+        id?: string | null;
+      }[]
+    | null;
+  address: string;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contacts_select".
+ */
+export interface ContactsSelect<T extends boolean = true> {
+  departments?:
+    | T
+    | {
+        position?: T;
+        person?: T;
+        phones?:
+          | T
+          | {
+              number?: T;
+              id?: T;
+            };
+        email?: T;
+        icon?: T;
+        id?: T;
+      };
+  address?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

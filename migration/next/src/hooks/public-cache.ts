@@ -1,10 +1,10 @@
-import type { CollectionAfterChangeHook, CollectionAfterDeleteHook } from 'payload';
+import type { CollectionAfterChangeHook, CollectionAfterDeleteHook, GlobalAfterChangeHook } from 'payload';
 import { revalidatePath } from 'next/cache';
 
-function invalidate() {
+function invalidate(path = '/', type: 'layout' | 'page' = 'layout') {
   try {
     // Only public pages use ISR; the authenticated CMS and APIs remain dynamic.
-    revalidatePath('/', 'layout');
+    revalidatePath(path, type);
   } catch (error) {
     // Import/maintenance scripts run outside a Next request. Their changes are
     // still picked up by the hourly public cache expiry. Normal CMS saves
@@ -17,3 +17,4 @@ function invalidate() {
 
 export const publicContentChanged: CollectionAfterChangeHook = ({ doc }) => { invalidate(); return doc; };
 export const publicContentDeleted: CollectionAfterDeleteHook = ({ doc }) => { invalidate(); return doc; };
+export const contactsChanged: GlobalAfterChangeHook = ({ doc }) => { invalidate('/contacts', 'page'); return doc; };

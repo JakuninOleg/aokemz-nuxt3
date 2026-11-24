@@ -1,15 +1,4 @@
-/** Static copy and directory for /contacts redesign. Phones/emails from brand-facts + existing page. */
-
-export type ContactPhone = { label: string; href: string };
-
-export type ContactEntry = {
-  position: string;
-  person?: string;
-  phones: ContactPhone[];
-  email: string;
-  /** Simple icon key for the directory row. */
-  icon: "reception" | "sales" | "supply" | "otk" | "quality" | "hr";
-};
+import type { Contact } from '../payload-types';
 
 export const CONTACTS_HERO = {
   title: "Контакты",
@@ -31,8 +20,6 @@ export const CONTACTS_ADDRESS = {
     "624930, Свердловская область,",
     "г. Карпинск, ул. Карпинского, 1",
   ] as const,
-  mapHref:
-    "https://yandex.ru/maps/?text=624930%2C%20Свердловская%20область%2C%20г.%20Карпинск%2C%20ул.%20Карпинского%2C%201",
   mapLabel: "Показать на карте",
   /** Real plant exterior from the pre-redesign about gallery. */
   entranceImage: "/media/about-plant.webp",
@@ -50,47 +37,47 @@ export const CONTACTS_FORM = {
   aside: ["Опыт", "Качество", "Сотрудничество"] as const,
 } as const;
 
-export const CONTACTS_LIST: ContactEntry[] = [
+/** Initial data for the editable contact directory. */
+export const CONTACTS_LIST = [
   {
     icon: "reception",
     position: "Приёмная генерального директора",
-    phones: [{ label: "+7 (34383) 3-28-51", href: "tel:+73438332851" }],
+    phones: [{ number: "+7 (34383) 3-28-51" }],
     email: "info@aokemz.ru",
   },
   {
     icon: "sales",
     position: "Отдел продаж",
-    phones: [{ label: "+7 (343) 278-37-43", href: "tel:+73432783743" }],
+    phones: [{ number: "+7 (343) 278-37-43" }],
     email: "sales@aokemz.ru",
   },
   {
     icon: "supply",
     position: "Отдел материально-технического снабжения",
     phones: [
-      { label: "+7 (34383) 3-35-22", href: "tel:+73438333522" },
-      { label: "+7 (34383) 3-36-40", href: "tel:+73438333640" },
-      { label: "+7 (34383) 3-28-96", href: "tel:+73438332896" },
+      { number: "8 (34383) 3-36-25" },
+      { number: "8 (34383) 3-31-19" },
     ],
     email: "omts@aokemz.ru",
   },
   {
     icon: "otk",
     position: "Отдел технического контроля",
-    phones: [{ label: "+7 (34383) 3-36-30", href: "tel:+73438333630" }],
+    phones: [{ number: "+7 (34383) 3-36-30" }],
     email: "otk@aokemz.ru",
   },
   {
     icon: "quality",
     position: "Начальник службы качества",
     person: "Тягунов Антон Сергеевич",
-    phones: [{ label: "+7 (34383) 3-36-30", href: "tel:+73438333630" }],
+    phones: [{ number: "+7 (34383) 3-36-30" }],
     email: "tas@aokemz.ru",
   },
   {
     icon: "hr",
     position: "Начальник отдела кадров",
     person: "Архиреева Любовь Алексеевна",
-    phones: [{ label: "+7 (343) 833-36-89", href: "tel:+73438333689" }],
+    phones: [{ number: "+7 (343) 833-36-89" }],
     email: "laa@aokemz.ru",
   },
-];
+] satisfies NonNullable<Contact['departments']>;
