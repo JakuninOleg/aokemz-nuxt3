@@ -55,8 +55,8 @@ export const CONTACTS_LIST = [
     icon: "supply",
     position: "Отдел материально-технического снабжения",
     phones: [
-      { number: "8 (34383) 3-36-25" },
-      { number: "8 (34383) 3-31-19" },
+      { number: "+7 (34383) 3-36-25" },
+      { number: "+7 (34383) 3-31-19" },
     ],
     email: "omts@aokemz.ru",
   },
